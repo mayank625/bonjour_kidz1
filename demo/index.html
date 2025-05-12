@@ -42,27 +42,28 @@
     height: 200px;
   }
 }
-
 @media (max-width: 480px) {
   .callout, .callout1 {
     margin-bottom: 30px;
   }
 }
+
 @media (max-width: 768px) {
   .callout, .callout1 {
-    max-width: 90%;
+    max-width: 90%; /* Ensures the callout does not take full width on mid-size screens */
     width: 90%;
-    left: 5%;
-    right: 5%;
-    bottom: auto;
-    top: auto;
-    position: relative;
-    margin: 20px auto;
+    left: 5%; /* Centers the callout horizontally */
+    position: relative; /* Allow it to be part of the document flow */
+    margin: 20px auto; /* Centers the callout and adds top/bottom margins */
+    bottom: auto; /* Disable bottom alignment */
+    top: auto; /* Disable top alignment */
   }
 
   .callout-header, .callout1-header {
-    font-size: 24px;
+    font-size: 24px; /* Adjusts font size for smaller screens */
   }
+}
+
 
   .slider, .slider1 {
     height: auto;
@@ -319,7 +320,9 @@ body {font-family: Arial, Helvetica, sans-serif;}
           align-items: center; /* Center vertically */
           text-align: center; /* Center the text */
         }
-      </style>
+/* Center callout */
+
+ </style>
 </head>
 
 <body>
@@ -364,7 +367,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
             </div>
         </div>
     </div>
-  
+
   <!-- Callout on the left side -->
   <div class="callout1" style="width: 100%; margin-bottom: 0px;">
     <a href="#"><div class="callout1-header">Events</div></a>
@@ -390,6 +393,39 @@ body {font-family: Arial, Helvetica, sans-serif;}
       </div>
     </div>
   </div>
+
+  <div class="center-callout" style="
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #da3c3c;
+    padding: 8px 16px;
+    border-radius: 9999px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    z-index: 1000;
+    color: white;
+    font-weight: 500;
+    font-size: 13px;
+    max-width: 75%; /* Default width */
+    flex-wrap: wrap;
+    text-align: center;
+">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';" 
+        style="cursor: pointer; font-size: 20px; margin-left: auto; margin-top: 14px;">×</span>
+
+    <a href="#" style="text-decoration: none; color: white; width: 100%;">
+        <div class="callout-header" style="background-color: transparent; font-size: 1.5rem;">
+            Enquiry for Franchisee
+        </div>
+    </a>
+</div>
+
+
 
   <script>
     // Example code that still runs even if the div is hidden
@@ -974,49 +1010,35 @@ let slideInterval1 = setInterval(function() {
                     <div class="row g-0">
                         <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
                             <div class="h-100 d-flex flex-column justify-content-center p-5">
-                                <h1 class="mb-4">Make Appointment</h1>
-                                <form>
-                                    <div class="row g-3">
-                                        <div class="col-sm-6">
-                                            <div class="form-floating">
-                                                <input type="text" class="form-control border-0" id="gname" placeholder="Gurdian Name">
-                                                <label for="gname">Gurdian Name</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="form-floating">
-                                                <input type="email" class="form-control border-0" id="gmail" placeholder="Gurdian Email">
-                                                <label for="gmail">Gurdian Email</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="form-floating">
-                                                <input type="text" class="form-control border-0" id="cname" placeholder="Child Name">
-                                                <label for="cname">Child Name</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="form-floating">
-                                                <input type="text" class="form-control border-0" id="cage" placeholder="Child Age">
-                                                <label for="cage">Child Age</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="form-floating">
-                                                <textarea class="form-control border-0" placeholder="Leave a message here" id="message" style="height: 100px"></textarea>
-                                                <label for="message">Message</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <button class="btn btn-primary w-100 py-3" type="submit">Submit</button>
-                                        </div>
+                                <h1 class="mb-4">Franchisee Enquiry Form</h1>
+                                <form id="joinUsForm">
+                                    <div class="mb-3">
+                                        <label for="name" class="form-label">Name</label>
+                                        <input type="text" class="form-control" id="name" placeholder="Enter Name:" required>
                                     </div>
+                                    <div class="mb-3">
+                                        <label for="email" class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="email" placeholder="Enter Email:" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="phone" class="form-label">Mobile</label>
+                                        <input type="phone" class="form-control" id="phone" placeholder="Phone No:" maxlength="10" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="message" class="form-label">Message</label>
+                                        <textarea class="form-control" id="message" rows="3" required></textarea>
+                                    </div>
+                                    <div class="text-center">
+                                        <button type="submit"  class="btn btn-danger">Submit</button>
+                                        <button type="submit" class="btn btn-dark">Close</button>
+                                    </div>
+                                    
                                 </form>
                             </div>
                         </div>
                         <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s" style="min-height: 400px;">
                             <div class="position-relative h-100">
-                                <img class="position-absolute w-100 h-100 rounded" src="img/appointment.jpg" style="object-fit: cover;">
+                                <img class="position-absolute w-80 h-100 rounded" src="img/preschool.png" style="object-fit: cover;">
                             </div>
                         </div>
                     </div>

@@ -11,10 +11,13 @@ document.write(`
                 <div class="navbar-nav mx-auto ">
                     <a href="index.html" class="nav-item nav-link active">Home</a>
                     <a href="#" class="nav-item nav-link">About Us</a>
-                    <a href="#" class="nav-item nav-link">Classes</a>
+                    <a href="services.html" class="nav-item nav-link">Services</a>
+                    <a href="#" class="nav-item nav-link">Celebrations</a>
                     <a href="#" class="nav-item nav-link">Gallery</a>
+                    <a href="franchise.html" class="nav-item nav-link">Franchise</a>
+
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">More</a>
                         <div class="dropdown-menu rounded-0 rounded-bottom border-0 shadow-sm m-0">
                             <a href="#" class="dropdown-item">School Facilities</a>
                             <a href="#" class="dropdown-item">Popular Teachers</a>
@@ -24,7 +27,9 @@ document.write(`
                             <a href="#" class="dropdown-item">404 Error</a>
                         </div>
                     </div>
+                    
                     <a href="#" class="nav-item nav-link">Contact Us</a>
+
                 </div>
                 <!-- Join Us Button -->
 <a href="#" class="btn btn-primary rounded-pill px-3" data-bs-toggle="modal" data-bs-target="#joinUsModal">
