@@ -64,8 +64,9 @@ document.write(`
                             <textarea class="form-control" id="message" rows="3" required></textarea>
                         </div>
                         <div class="text-center">
-                            <button type="submit"  class="btn btn-danger">Submit</button>
-                            <button type="submit" class="btn btn-dark">Close</button>
+                            <button type="submit" class="btn btn-danger">Submit</button>
+                            <button type="close"  class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                     
                         </div>
                         
                     </form>

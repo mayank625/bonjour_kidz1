@@ -1,192 +1,89 @@
 docoument.write(`
- <div class="container-fluid">
-  <div class="row">
-    <div class="col-lg-12 align-self-center">
-      <div class="row">
-        <div class="col-lg-12">
-          <form id="contact" action="" method="post" style="margin-bottom:30px;">
-            <div class="row">
-              <div class="col-lg-12">
-                <h2>Locate our office</h2>
-              </div>
-              <div class="col-md-12">
-                <div class="contact-details">
-                  <style>
-                    .tab-btn {
-                      background-color: #f1f1f1;
-                      border: 3px solid #FF0000;
-                      padding: 10px 20px;
-                      cursor: pointer;
-                      margin-bottom: 10px;
-                      margin-right: 10px; /* Adds space between buttons */
-                    }
+     <!-- Footer Start -->
+        <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-lg-3 col-md-6">
+                        <h3 class="text-white mb-4">Get In Touch</h3>
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>B1, 101, Cherry County, Noida Extension, Greater Noida West-201306
+                            Landmark: Near Ryan International School</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 9759033533</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 8860887227</p>
+                        <p class="mb-2"style="font-size: 15px; text-decoration: bold;"><i class="fa fa-envelope me-3 "></i>bonjourplayschool@gmail.com</p>
+                        <div class="d-flex pt-2">
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h3 class="text-white mb-4">Quick Links</h3>
+                        <a class="btn btn-link text-white-50" href="">About Us</a>
+                        <a class="btn btn-link text-white-50" href="">Contact Us</a>
+                        <a class="btn btn-link text-white-50" href="">Our Services</a>
+                        <a class="btn btn-link text-white-50" href="">Privacy Policy</a>
+                        <a class="btn btn-link text-white-50" href="">Terms & Condition</a>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h3 class="text-white mb-4">Our Branches</h3>
+                        <div class="row g-2 pt-2">
+                            <div class="col-4">
+                                <img class="img-fluid rounded bg-light p-1" src="img/classes-1.jpg" alt="">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid rounded bg-light p-1" src="img/classes-2.jpg" alt="">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid rounded bg-light p-1" src="img/classes-3.jpg" alt="">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid rounded bg-light p-1" src="img/classes-4.jpg" alt="">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid rounded bg-light p-1" src="img/classes-5.jpg" alt="">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid rounded bg-light p-1" src="img/classes-6.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h3 class="text-white mb-4">Location</h3>
+                        <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.9634727177536!2d77.4460608!3d28.6008726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cee5fc3ffffff%3A0x8c869ff033944ed0!2sBonjour%20Kidz%20Play%20School%20%26%20Day%20Care!5e0!3m2!1sen!2sin!4v1746683440591!5m2!1sen!2sin" 
+                            width="100%" 
+                            height="200" 
+                            style="border-radius:5px;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
 
-                    .button {
-                      background-color: #04AA6D;
-                      border: none;
-                      color: white;
-                      padding: 5px 10px;
-                      text-align: center;
-                      display: inline-block;
-                      font-size: 16px;
-                      margin: 4px 2px;
-                      transition-duration: 0.4s;
-                      cursor: pointer;
-                    }
-                    
-                    .button0 {
-                      background-color: white;
-                      color: black;
-                      border: 2px solid #04AA6D;
-                    }
-
-                    .button0:hover {
-                      background-color: purple;
-                      color: white;
-                    }
-                    .button1 {
-                      background-color: white;
-                      color: black;
-                      border: 2px solid #04AA6D;
-                    }
-
-                    .button1:hover {
-                      background-color: #04AA6D;
-                      color: white;
-                    }
-
-                    .button2 {
-                      background-color: white;
-                      color: black;
-                      border: 2px solid #008CBA;
-                    }
-
-                    .button2:hover {
-                      background-color: #008CBA;
-                      color: white;
-                    }
-
-                    .button3 {
-                      background-color: white;
-                      color: black;
-                      border: 2px solid #f44336;
-                    }
-
-                    .button3:hover {
-                      background-color: #f44336;
-                      color: white;
-                    }
-
-                    .button4 {
-                      background-color: white;
-                      color: black;
-                      border: 2px solid #4d13b9;
-                    }
-
-                    .button4:hover {
-                      background-color: blue;
-                      color: white;
-                    }
-
-                    /* Centering content in the display-container */
-                    .display-container {
-                      border: 2px solid #ddd;
-                      padding: 20px;
-                      margin-top: 20px;
-                      min-height: 100px;
-                      display: flex;
-                      justify-content: center; /* Center horizontally */
-                      align-items: center; /* Center vertically */
-                      text-align: center; /* Center the text */
-                    }
-                  </style>
-
-                  <!-- Buttons -->
-                  <div class="tab-container-fluid">
-                   <div class="tab-btn button button0" onclick="openTab('tab0')">NOIDA </div>
-                    <div class="tab-btn button button1" onclick="openTab('tab1')">NOIDA EXTENSION</div>
-                    <div class="tab-btn button button2" onclick="openTab('tab2')">GREATER NOIDA BRANCH I</div>
-                    <div class="tab-btn button button3" onclick="openTab('tab3')">GREATER NOIDA BRANCH II</div>
-                    <div class="tab-btn button button4" onclick="openTab('tab4')">DELHI</div>
-                  </div>
-
-                  <!-- Hidden content for each tab -->
-                   <div id="tab0" class="tab-content" style="display:none;">
-                    <ul class="contact">
-                      <h6><strong>Noida</strong></h6>
-                      <li><p><strong>Address:- </strong>G-8 Ground Floor, Krishna Complex, Sector-31, Noida-201301, U.P.</p></li>
-                      <li><p><i class="fa fa-phone"></i> <strong>Phone:</strong> +91 8368979712,6380486914</p></li>
-                      <li><p><i class="fa fa-envelope"></i> <strong>Email:</strong> a1training167@gmail.com</p></li>
-                    </ul>
-                  </div>
-                  <div id="tab1" class="tab-content" style="display:none;">
-                    <ul class="contact">
-                      <h6><strong>Noida Extension</strong></h6>
-                      <li><p><strong>Address:- </strong>Earthcon Sanskriti, Sector 1, Noida Extension</p></li>
-                      <li><p><i class="fa fa-phone"></i> <strong>Phone:</strong> +91 8368979712,6380486914</p></li>
-                      <li><p><i class="fa fa-envelope"></i> <strong>Email:</strong> a1training167@gmail.com</p></li>
-                    </ul>
-                  </div>
-
-                  <div id="tab2" class="tab-content" style="display:none;">
-                    <ul class="contact">
-                      <h6><strong>Greater Noida-Alpha Branch I</strong></h6>
-                      <li><p><strong>Address:- </strong>Alpha Commercial Belt, Paras Nath Tower, 3rd Floor</p></li>
-                      <li><p><i class="fa fa-phone"></i> <strong>Phone:</strong> +91 8368979712,6380486914</p></li>
-                      <li><p><i class="fa fa-envelope"></i> <strong>Email:</strong> a1training167@gmail.com</p></li>
-                    </ul>
-                  </div>
-
-                  <div id="tab3" class="tab-content" style="display:none;">
-                    <ul class="contact">
-                      <h6><strong>Greater Noida-Omicron Branch II</strong></h6>
-                      <li><p><strong>Address:- </strong>C-167, Omicron I, Block C, 6% Abadi, Greater Noida</p></li>
-                      <li><p><i class="fa fa-phone"></i> <strong>Phone:</strong> +91 8368979712,6380486914</p></li>
-                      <li><p><i class="fa fa-envelope"></i> <strong>Email:</strong> a1training167@gmail.com</p></li>
-                    </ul>
-                  </div>
-
-                  <div id="tab4" class="tab-content" style="display:none;">
-                    <ul class="contact">
-                      <h6><strong>Delhi-Timarpur Branch</strong></h6>
-                      <li><p><strong>Address:- </strong>347, Lancer Road, Timarpur, New Delhi-110054</p></li>
-                      <li><p><i class="fa fa-phone"></i> <strong>Phone:</strong> +91 6206126433,8368979712</p></li>
-                      <li><p><i class="fa fa-envelope"></i> <strong>Email:</strong> a1training167@gmail.com</p></li>
-                    </ul>
-                  </div>
-
-                  <script>
-                    function openTab(tabName) {
-                      var i, tabContent;
-                      var displayContainer = document.getElementById('display-container');
-                      displayContainer.style.display='block'
-
-                      // Hide all tab contents
-                      tabContent = document.getElementsByClassName("tab-content");
-                      for (i = 0; i < tabContent.length; i++) {
-                        tabContent[i].style.display = "none";
-                      }
-
-                      // Get the selected tab's content and show it in the display container
-                      var selectedTabContent = document.getElementById(tabName).innerHTML;
-                      displayContainer.innerHTML = selectedTabContent;
-                    }
-                  </script>
+                    </div>
                 </div>
-                
-                <!-- Content display div, located below the buttons -->
-                <div id="display-container" class="display-container" style="display:none;">
-                  Click on a button to see the details here.
-                </div>
-
-              </div>
             </div>
-          </form>
+            <div class="container">
+                <div class="copyright">
+                    <div class="row">
+                        <div class="col-sm-6 text-center text-md-start mb-3 mb-md-0">
+                         <p style="font-size: smaller;">© 2025 Bonjour Kidz Play School & Day Care. All rights reserved | Design by <span style="color: #008CBA;"> <a href=""> EGT</a></span>
+                            </p>  
+							
+							<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+						
+                        </div>
+                        <div class="col-md-6 text-center text-md-end">
+                            <div class="footer-menu">
+                                <a href="">Home</a>
+                                <a href="">Cookies</a>
+                                <a href="">Help</a>
+                                <a href="">FQAs</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
+        <!-- Footer End -->
 `)

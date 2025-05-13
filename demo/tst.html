@@ -1,458 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <title>Kider - Preschool Website Template</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
-
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
-
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@600&family=Lobster+Two:wght@700&display=swap"
-        rel="stylesheet">
-
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
-    <script src="menu.js"></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-
-
-        <style>
-        @keyframes floatUp {
-    0% {
-        transform: translateY(0) scale(1);
-        opacity: 0.4;
-    }
-    50% {
-        opacity: 0.8;
-    }
-    100% {
-        transform: translateY(-1000px) scale(1.2);
-        opacity: 0;
-    }
-}
-
-        /* Global Styles */
-        :root {
-            --primary: #FF9E7D; /* Warm coral */
-            --secondary: #6BBBAE; /* Soft teal */
-            --dark: #2C3E50; /* Navy blue */
-            --light: #FDF6E3; /* Cream */
-            --accent: #FFD166; /* Sunny yellow */
-            --fun1: #A5DEE5; /* Sky blue */
-            --fun2: #F4A7B9; /* Bubblegum pink */
-            --fun3: #B5EAD7; /* Mint green */
-        }
-        
-        
-        
-        /* Testimonials */
-        .testimonials {
-            background: linear-gradient(135deg, var(--fun1), var(--fun3));
-            color: var(--dark);
-            position: relative;
-        }
-        
-        .testimonials::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 20px;
-            background: linear-gradient(90deg, 
-                var(--fun1), var(--fun2), var(--fun3), 
-                var(--accent), var(--primary), var(--secondary));
-        }
-        
-        .testimonial-slider {
-            max-width: 800px;
-            margin: 50px auto 0;
-            position: relative;
-        }
-        
-        .testimonial {
-            background: rgba(255, 255, 255, 0.7);
-            padding: 30px;
-            border-radius: 15px;
-            text-align: center;
-            display: none;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .testimonial.active {
-            display: block;
-            animation: fadeIn 1s;
-        }
-        
-        @keyframes fadeIn {
-            from {opacity: 0;}
-            to {opacity: 1;}
-        }
-        
-        .testimonial-text {
-            font-style: italic;
-            margin-bottom: 20px;
-            font-size: 1.2rem;
-            position: relative;
-        }
-        
-        .testimonial-text::before,
-        .testimonial-text::after {
-            content: '"';
-            font-size: 2rem;
-            color: var(--primary);
-            opacity: 0.5;
-        }
-        
-        .testimonial-author {
-            font-weight: 700;
-            color: var(--secondary);
-        }
-        
-        .testimonial-nav {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
-        
-        .testimonial-nav button {
-            background: white;
-            border: none;
-            width: 15px;
-            height: 15px;
-            border-radius: 50%;
-            margin: 0 5px;
-            cursor: pointer;
-            opacity: 0.5;
-            transition: all 0.3s ease;
-        }
-        
-        .testimonial-nav button.active {
-            opacity: 1;
-            background: var(--accent);
-            transform: scale(1.2);
-        }
-        
-       
-       
-        /* Decorative Elements */
-        .bubble {
-            position: absolute;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.2);
-            z-index: 0;
-        }
-        
-        /* Responsive Styles */
-        @media (max-width: 992px) {
-            h1 {
-                font-size: 2.2rem;
-            }
-            
-            h2 {
-                font-size: 1.8rem;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .header-container {
-                padding: 0 20px;
-            }
-            
-            nav {
-                position: fixed;
-                top: 70px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 70px);
-                background: var(--dark);
-                transition: all 0.5s ease;
-                z-index: 999;
-            }
-            
-            nav.active {
-                left: 0;
-            }
-            
-            nav ul {
-                flex-direction: column;
-                padding: 30px;
-            }
-            
-            nav ul li {
-                margin: 15px 0;
-            }
-            
-            .mobile-menu-btn {
-                display: block;
-            }
-            
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero p {
-                font-size: 1.1rem;
-            }
-            
-            section {
-                padding: 40px 0;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .btn {
-                padding: 10px 25px;
-            }
-            
-            .feature-card {
-                padding: 20px;
-            }
-            
-            .contact-info {
-                padding: 15px 20px;
-            }
-        }
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Franchisee Enquiry Form with Close Button</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
 </head>
-
 <body>
-    <div class="container-xxl bg-white p-0">
-        <!-- Spinner Start -->
-        <div id="spinner"
-            class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-                <span class="sr-only">Loading...</span>
-            </div>
-        </div>
-        <!-- Spinner End -->
 
-        <!-- Page Header End -->
-        <div class="container-xxl py-5 page-header position-relative mb-5">
-            <div class="container py-5">
-                <h1 class="display-2 text-white animated slideInDown mb-4">Services</h1>
-                <nav aria-label="breadcrumb animated slideInDown">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                        <li class="breadcrumb-item text-white active" aria-current="page">Classes</li>
-                    </ol>
-                </nav>
-            </div>
-        </div>
-        <!-- Page Header End -->
-
-
-
-        <!-- Testimonial Start -->
-        <section class="testimonials" id="testimonials">
-            <div class="container">
-                <h2 class="text-center">Our Franchise Success Stories</h2>
-
-                <div class="testimonial-slider">
-                    <div class="testimonial active">
-                        <p class="testimonial-text">Joining Bonjour as a franchisee was the best decision I made. Within
-                            6 months, we had full enrollment and were expanding to accommodate more students.</p>
-                        <p class="testimonial-author">- Priya Sharma, Bonjour Jaipur</p>
-                    </div>
-
-                    <div class="testimonial">
-                        <p class="testimonial-text">The training and support from Bonjour helped me transition from
-                            being a homemaker to running a successful preschool business in my community.</p>
-                        <p class="testimonial-author">- Anjali Patel, Bonjour Ahmedabad</p>
-                    </div>
-
-                    <div class="testimonial">
-                        <p class="testimonial-text">As an investor, I appreciate the transparency and proven business
-                            model. Our second Bonjour center is already in the works!</p>
-                        <p class="testimonial-author">- Rajiv Malhotra, Bonjour Delhi</p>
-                    </div>
-
-                    <div class="testimonial-nav">
-                        <button class="active" data-slide="0"></button>
-                        <button data-slide="1"></button>
-                        <button data-slide="2"></button>
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="bg-light rounded">
+            <div class="row g-0">
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="h-100 d-flex flex-column justify-content-center p-5">
+                        <h1 class="mb-4">Franchisee Enquiry Form</h1>
+                        <form id="joinUsForm">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="name" placeholder="Enter Name:" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="Enter Email:" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="phone" class="form-label">Mobile</label>
+                                <input type="tel" class="form-control" id="phone" placeholder="Phone No:" maxlength="10" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" rows="3" required></textarea>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-danger me-2">Submit</button>
+                                <button type="button" class="btn btn-secondary" id="closeBtn">Close</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
-            </div>
-        </section>
-
-
-        <script>
-            // Testimonial Slider
-            const testimonials = document.querySelectorAll('.testimonial');
-            const testimonialNavBtns = document.querySelectorAll('.testimonial-nav button');
-            let currentTestimonial = 0;
-
-            function showTestimonial(index) {
-                testimonials.forEach(testimonial => testimonial.classList.remove('active'));
-                testimonialNavBtns.forEach(btn => btn.classList.remove('active'));
-
-                testimonials[index].classList.add('active');
-                testimonialNavBtns[index].classList.add('active');
-                currentTestimonial = index;
-            }
-
-            testimonialNavBtns.forEach((btn, index) => {
-                btn.addEventListener('click', () => showTestimonial(index));
-            });
-
-            // Auto-rotate testimonials
-            setInterval(() => {
-                let nextTestimonial = (currentTestimonial + 1) % testimonials.length;
-                showTestimonial(nextTestimonial);
-            }, 5000);
-
-            function createBubbles() {
-                const colors = ['var(--fun1)', 'var(--fun2)', 'var(--fun3)', 'var(--accent)', 'var(--primary)', 'var(--secondary)'];
-                const testimonialsSection = document.querySelector('.testimonials');
-
-                for (let i = 0; i < 15; i++) {
-                    const bubble = document.createElement('div');
-                    bubble.classList.add('bubble');
-
-                    const size = Math.random() * 40 + 20; // bubble size between 20-60px
-                    const posX = Math.random() * 100;     // horizontal position in %
-                    const delay = Math.random() * 5;      // animation delay
-                    const duration = Math.random() * 10 + 10; // animation duration
-
-                    bubble.style.width = `${size}px`;
-                    bubble.style.height = `${size}px`;
-                    bubble.style.left = `${posX}%`;
-                    bubble.style.bottom = `-100px`; // start off-screen
-                    bubble.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-                    bubble.style.animation = `floatUp ${duration}s linear ${delay}s infinite`;
-
-                    testimonialsSection.appendChild(bubble);
-                }
-            }
-            createBubbles(); // Call it when the script runs
-
-        </script>
-        <!-- Testimonial End -->
-
-
-        <!-- Footer Start -->
-        <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
-            <div class="container py-5">
-                <div class="row g-5">
-                    <div class="col-lg-3 col-md-6">
-                        <h3 class="text-white mb-4">Get In Touch</h3>
-                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
-                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
-                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
-                        <div class="d-flex pt-2">
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <h3 class="text-white mb-4">Quick Links</h3>
-                        <a class="btn btn-link text-white-50" href="">About Us</a>
-                        <a class="btn btn-link text-white-50" href="">Contact Us</a>
-                        <a class="btn btn-link text-white-50" href="">Our Services</a>
-                        <a class="btn btn-link text-white-50" href="">Privacy Policy</a>
-                        <a class="btn btn-link text-white-50" href="">Terms & Condition</a>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <h3 class="text-white mb-4">Photo Gallery</h3>
-                        <div class="row g-2 pt-2">
-                            <div class="col-4">
-                                <img class="img-fluid rounded bg-light p-1" src="img/classes-1.jpg" alt="">
-                            </div>
-                            <div class="col-4">
-                                <img class="img-fluid rounded bg-light p-1" src="img/classes-2.jpg" alt="">
-                            </div>
-                            <div class="col-4">
-                                <img class="img-fluid rounded bg-light p-1" src="img/classes-3.jpg" alt="">
-                            </div>
-                            <div class="col-4">
-                                <img class="img-fluid rounded bg-light p-1" src="img/classes-4.jpg" alt="">
-                            </div>
-                            <div class="col-4">
-                                <img class="img-fluid rounded bg-light p-1" src="img/classes-5.jpg" alt="">
-                            </div>
-                            <div class="col-4">
-                                <img class="img-fluid rounded bg-light p-1" src="img/classes-6.jpg" alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <h3 class="text-white mb-4">Newsletter</h3>
-                        <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
-                        <div class="position-relative mx-auto" style="max-width: 400px;">
-                            <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text"
-                                placeholder="Your email">
-                            <button type="button"
-                                class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="copyright">
-                    <div class="row">
-                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                            &copy; <a class="border-bottom" href="#">Your Site Name</a>, All Right Reserved.
-
-                            <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                            Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
-                        </div>
-                        <div class="col-md-6 text-center text-md-end">
-                            <div class="footer-menu">
-                                <a href="">Home</a>
-                                <a href="">Cookies</a>
-                                <a href="">Help</a>
-                                <a href="">FQAs</a>
-                            </div>
-                        </div>
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s" style="min-height: 400px;">
+                    <div class="position-relative h-100">
+                        <img class="position-absolute w-80 h-100 rounded" src="img/preschool.png" alt="Preschool image" style="object-fit: cover;">
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Footer End -->
-
-
-        <!-- Back to Top -->
-        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
     </div>
+</div>
 
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+<script>
+    // Get the form container so we can hide/show it
+    const formContainer = document.querySelector('.bg-light.rounded');
+    const closeBtn = document.getElementById('closeBtn');
 
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+    closeBtn.addEventListener('click', () => {
+        // Hide the entire form container on close
+        formContainer.style.display = 'none';
+    });
+</script>
+
 </body>
-
 </html>
+
