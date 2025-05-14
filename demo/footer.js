@@ -1,6 +1,6 @@
-docoument.write(`
+document.write(`
      <!-- Footer Start -->
-        <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s"style="margin-bottom:40px;">
             <div class="container py-5">
                 <div class="row g-5">
                     <div class="col-lg-3 col-md-6">
@@ -8,7 +8,7 @@ docoument.write(`
                         <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>B1, 101, Cherry County, Noida Extension, Greater Noida West-201306
                             Landmark: Near Ryan International School</p>
                         <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 9759033533</p>
-                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 8860887227</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 8367913533</p>
                         <p class="mb-2"style="font-size: 15px; text-decoration: bold;"><i class="fa fa-envelope me-3 "></i>bonjourplayschool@gmail.com</p>
                         <div class="d-flex pt-2">
                             <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
@@ -70,7 +70,6 @@ docoument.write(`
                          <p style="font-size: smaller;">© 2025 Bonjour Kidz Play School & Day Care. All rights reserved | Design by <span style="color: #008CBA;"> <a href=""> EGT</a></span>
                             </p>  
 							
-							<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
 						
                         </div>
                         <div class="col-md-6 text-center text-md-end">
@@ -84,6 +83,28 @@ docoument.write(`
                     </div>
                 </div>
             </div>
+            
         </div>
-        <!-- Footer End -->
+        
+  <!-- futr -->
+  <div class="futr">
+    <!-- Social Media Icons -->
+    <div class="social-icons">   </div>
+
+
+    <!-- Action Links with icons and slash -->
+    <div class="action-links">
+      <a href="#"><img src="img/admission_icon.png" alt="Admission Icon" /> Admission Enquiry</a>
+      <div class="slash">/</div>
+      <a href="#"><img src="img/start-a-franchise.png" alt="Franchise Icon" /> Start a Franchise</a>
+    </div>
+
+    <!-- Right End Section -->
+    <div class="right-end">  </div>
+      
+    
+  </div>
+    <!-- futr END -->
+
+<!-- Footer End -->
 `)

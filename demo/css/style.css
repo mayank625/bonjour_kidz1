@@ -81,7 +81,7 @@ h4,
 .display-4,
 .display-5,
 .display-6 {
-    font-family: 'Lobster Two', cursive;
+    font-family: 'Arial';
     font-weight: 700;
 }
 
@@ -93,7 +93,7 @@ h6,
 }
 
 .font-secondary {
-    font-family: 'Lobster Two', cursive;
+    font-family: 'Arial';
 }
 
 
@@ -501,3 +501,85 @@ h6,
     padding-right: 0;
     border-right: none;
 }
+        /* Futr */
+
+        .futr {
+            /* background-color: var(--primary); */
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            z-index: 100;
+            border: none;/* Add Border  */
+            /* box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2); */
+            flex-wrap: wrap;
+        }
+
+        .futr>div {
+            max-width: 100%;
+        }
+
+       
+       
+
+        .futr .action-links {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-shrink: 1;
+            flex-wrap: wrap;
+            justify-content: center;
+           background-color: #FE5D37;
+            padding: 10px;
+            border-top-left-radius: 20px;
+            border-top-Right-radius: 20px;
+            margin-bottom: -10px;
+        }
+
+        .futr .action-links a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 14px;
+            white-space: nowrap;
+        }
+
+        .futr .action-links a img {
+            width: 18px;
+            height: 18px;
+        }
+
+        .futr .slash {
+            transform: rotate(15deg);
+            font-size: 18px;
+            opacity: 0.6;
+        }
+
+        
+
+        @media (max-width: 600px) {
+
+            .futr .social-icons,
+            .futr .right-end {
+                display: none;
+            }
+
+            .futr {
+                justify-content: center;
+                padding: 12px 10px;
+                border-top-left-radius: 20px;
+                border-top-right-radius: 20px;
+            }
+
+            .futr .action-links {
+                gap: 10px;
+                flex-wrap: wrap;
+            }
+        }
+

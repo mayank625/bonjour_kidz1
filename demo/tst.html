@@ -1,65 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Franchisee Enquiry Form with Close Button</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>futr Design</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+ 
 </head>
 <body>
 
-<div class="container-xxl py-5">
-    <div class="container">
-        <div class="bg-light rounded">
-            <div class="row g-0">
-                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
-                    <div class="h-100 d-flex flex-column justify-content-center p-5">
-                        <h1 class="mb-4">Franchisee Enquiry Form</h1>
-                        <form id="joinUsForm">
-                            <div class="mb-3">
-                                <label for="name" class="form-label">Name</label>
-                                <input type="text" class="form-control" id="name" placeholder="Enter Name:" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="email" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="email" placeholder="Enter Email:" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="phone" class="form-label">Mobile</label>
-                                <input type="tel" class="form-control" id="phone" placeholder="Phone No:" maxlength="10" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="message" class="form-label">Message</label>
-                                <textarea class="form-control" id="message" rows="3" required></textarea>
-                            </div>
-                            <div class="text-center">
-                                <button type="submit" class="btn btn-danger me-2">Submit</button>
-                                <button type="button" class="btn btn-secondary" id="closeBtn">Close</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s" style="min-height: 400px;">
-                    <div class="position-relative h-100">
-                        <img class="position-absolute w-80 h-100 rounded" src="img/preschool.png" alt="Preschool image" style="object-fit: cover;">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+ <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      padding-bottom: 60px; /* Prevent content from hiding behind fixed futr */
+    }
+
+    .futr {
+      background-color: #ff6f61;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      z-index: 100;
+      border: 1px solid #ccc;
+      box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
+      flex-wrap: wrap;
+    }
+
+    .futr > div {
+      max-width: 100%;
+    }
+
+    .futr .social-icons {
+      display: flex;
+      gap: 15px;
+      flex-shrink: 0;
+    }
+
+    .futr .social-icons a {
+      color: white;
+      font-size: 20px;
+      text-decoration: none;
+    }
+
+    .futr .action-links {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      flex-shrink: 1;
+      flex-wrap: wrap;
+      justify-content: center;
+      background-color: #FF9E7D;
+      padding: 10px;
+      border-top-left-radius:20px ;
+      border-top-Right-radius:20px ;
+      margin-bottom: -10px;
+    }
+
+    .futr .action-links a {
+      color: white;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    .futr .action-links a img {
+      width: 18px;
+      height: 18px;
+    }
+
+    .futr .slash {
+      transform: rotate(15deg);
+      font-size: 18px;
+      opacity: 0.6;
+    }
+
+    .futr .right-end {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      flex-shrink: 0;
+    }
+
+    .futr .right-end h1 {
+      margin: 0;
+      font-size: 14px;
+    }
+
+   @media (max-width: 600px) {
+  .futr .social-icons,
+  .futr .right-end {
+    display: none;
+  }
+
+  .futr {
+    justify-content: center;
+    padding: 12px 10px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+
+  .futr .action-links {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+}
+
+  </style>
+  <!-- futr -->
+  <div class="futr">
+    <!-- Social Media Icons -->
+    <div class="social-icons">
+  <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+  <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
 </div>
 
-<script>
-    // Get the form container so we can hide/show it
-    const formContainer = document.querySelector('.bg-light.rounded');
-    const closeBtn = document.getElementById('closeBtn');
 
-    closeBtn.addEventListener('click', () => {
-        // Hide the entire form container on close
-        formContainer.style.display = 'none';
-    });
-</script>
+    <!-- Action Links with icons and slash -->
+    <div class="action-links">
+      <a href="#"><img src="img/admission_icon.png" alt="Admission Icon" /> Admission Enquiry</a>
+      <div class="slash">/</div>
+      <a href="#"><img src="img/start-a-franchise.png" alt="Franchise Icon" /> Start a Franchise</a>
+    </div>
+
+    <!-- Right End Section -->
+    <div class="right-end">
+      <h1>Right End</h1>
+    </div>
+  </div>
 
 </body>
 </html>
-
