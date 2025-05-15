@@ -1,146 +1,811 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>futr Design</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="utf-8">
+  <title>Kider - Preschool Website Template</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
 
+  <!-- Favicon -->
+  <link href="img/favicon.ico" rel="icon">
  
-</head>
-<body>
+ <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@600&family=Lobster+Two:wght@700&display=swap" rel="stylesheet">
+    
+  <!-- Icon Font Stylesheet -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
- <style>
-    * {
-      box-sizing: border-box;
+  <!-- Libraries Stylesheet -->
+  <link href="lib/animate/animate.min.css" rel="stylesheet">
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+  <!-- Customized Bootstrap Stylesheet -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+
+  <!-- Template Stylesheet -->
+  <link href="css/style.css" rel="stylesheet">
+  <script src="menu.js"></script>
+
+
+
+  <style>
+    /* Global Styles */
+    :root {
+      --primary: #FF9E7D;
+      /* Warm coral */
+      --secondary: #6BBBAE;
+      /* Soft teal */
+      --dark: #2C3E50;
+      /* Navy blue */
+      --light: #ffffff;
+      /* Cream */
+      --accent: #FFD166;
+      /* Sunny yellow */
+      --fun1: #A5DEE5;
+      /* Sky blue */
+      --fun2: #F4A7B9;
+      /* Bubblegum pink */
+      --fun3: #B5EAD7;
+      /* Mint green */
+
+
+/* Background Bubble Animation */
+      --bubble1: #f470b2;
+      --bubble2: #6eb1f4;
+      --bubble3: #96ff96;
+      --bubble4: #f4b271;
+      --bubble5: #f57070;
+      --bubble6: #6cf7c9;
+/* Background Bubble Animation */
     }
 
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      padding-bottom: 60px; /* Prevent content from hiding behind fixed futr */
+
+
+    /* Testimonials */
+    .testimonials {
+      background: linear-gradient(135deg, var(--light), var(--light));
+      color: var(--dark);
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      /* Ensure bubbles stay behind testimonial content */
     }
 
-    .futr {
-      background-color: #ff6f61;
+    .testimonials::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg,
+          var(--fun1), var(--fun2), var(--fun3),
+          var(--accent), var(--primary), var(--secondary));
+    }
+
+    .testimonial-slider {
+      max-width: 1000px;
+      margin: 50px auto 0;
+      position: relative;
+    }
+
+    .testimonial {
+      background: rgba(255, 255, 255, 0.7);
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      display: none;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .testimonial.active {
+      display: block;
+      animation: fadeIn 1s;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    .testimonial-text {
+      font-style: italic;
+      margin-bottom: 20px;
+      font-size: 1.2rem;
+      position: relative;
+    }
+
+    .testimonial-text::before,
+    .testimonial-text::after {
+      content: '"';
+      font-size: 2rem;
+      color: var(--primary);
+      opacity: 0.5;
+    }
+
+    .testimonial-author {
+      font-weight: 700;
+      color: var(--secondary);
+    }
+
+    .testimonial-nav {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .testimonial-nav button {
+      background: white;
+      border: none;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      margin: 0 5px;
+      cursor: pointer;
+      opacity: 0.5;
+      transition: all 0.3s ease;
+    }
+
+    .testimonial-nav button.active {
+      opacity: 1;
+      background: var(--accent);
+      transform: scale(1.2);
+    }
+
+
+
+   
+
+    /* ACHIEVEMENTS */
+    .bonjour-header {
+      text-align: center;
+      padding: 20px;
+      background-color: #ff6e6177;
       color: white;
-      padding: 10px 20px;
+    }
+
+    .bonjour-header__title {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    .bonjour-header__tagline {
+      font-size: 1.2rem;
+      font-style: italic;
+    }
+
+    .expansion-section {
+      background: #ffe6e0;
+      border-left: 8px solid #ff6f61;
+      padding: 30px 25px;
+      margin: 30px auto;
+      border-radius: 8px;
+      max-width: 1000px;
+      color: #333;
+      box-shadow: 0 4px 10px rgba(255, 111, 97, 0.1);
+    }
+
+    .expansion-section__text {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .expansion-section__highlight {
+      color: #ff6f61;
+    }
+
+    .expansion-section__items {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .expansion-section__item {
+      background-color: #fff3f1;
+      border-radius: 6px;
+      padding: 15px 20px;
+      box-shadow: 0 2px 6px rgba(255, 111, 97, 0.15);
+      font-size: 1.1rem;
+      color: #5c3a34;
+      transition: background-color 0.3s ease;
+    }
+
+    .expansion-section__item:hover {
+      background-color: #ffdad1;
+      cursor: default;
+    }
+
+    .expansion-section__item strong {
+      color: #ff6f61;
+    }
+
+    /* Responsive for smaller screens */
+    @media (max-width: 480px) {
+      .expansion-section__items {
+        gap: 10px;
+      }
+
+      .expansion-section__item {
+        font-size: 1rem;
+        padding: 12px 15px;
+      }
+    }
+
+    .franchise-benefits {
+      background: #000000;
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: 40px auto;
+      border-radius: 10px;
+      box-shadow: 0 6px 15px rgba(255, 111, 97, 0.15);
+      color: #5c3a34;
+      font-family: Arial, sans-serif;
+      opacity: 0;
+      animation: fadeIn 1s forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    .franchise-benefits__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+    }
+
+    .franchise-benefits__item {
+      background: white;
+      border-radius: 8px;
+      padding: 20px 15px;
+      box-shadow: 0 3px 8px rgba(255, 111, 97, 0.12);
+      text-align: center;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: slideIn 0.5s forwards;
+      animation-delay: var(--delay);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    /* Staggered animation delay for each item */
+    .franchise-benefits__item:nth-child(1) {
+      --delay: 0.2s;
+    }
+
+    .franchise-benefits__item:nth-child(2) {
+      --delay: 0.4s;
+    }
+
+    .franchise-benefits__item:nth-child(3) {
+      --delay: 0.6s;
+    }
+
+    .franchise-benefits__item:nth-child(4) {
+      --delay: 0.8s;
+    }
+
+    @keyframes slideIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .franchise-benefits__item:hover,
+    .franchise-benefits__item:focus-within {
+      transform: translateY(-6px) scale(1.07);
+      box-shadow: 0 8px 20px rgba(255, 111, 97, 0.25);
+      outline: none;
+    }
+
+    .franchise-benefits__icon {
+      font-size: 3.5rem;
+      margin-bottom: 15px;
+      user-select: none;
+      display: inline-block;
+      animation: bounceIn 1s;
+      transition: transform 0.3s ease;
+    }
+
+    .franchise-benefits__item:hover .franchise-benefits__icon,
+    .franchise-benefits__item:focus-within .franchise-benefits__icon {
+      animation: bounce 0.6s;
+      animation-iteration-count: 1;
+      transform-origin: center bottom;
+    }
+
+    @keyframes bounceIn {
+      0% {
+        transform: scale(0.5);
+        opacity: 0;
+      }
+
+      60% {
+        transform: scale(1.2);
+        opacity: 1;
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    @keyframes bounce {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    .franchise-benefits__item-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin: 0 0 10px 0;
+      color: #ff6f61;
+      transition: color 0.4s ease;
+    }
+
+    .franchise-benefits__item-desc {
+      font-size: 1rem;
+      line-height: 1.4;
+      color: #624435;
+      margin: 0;
+      transition: color 0.4s ease;
+    }
+
+    .franchise-benefits__item:hover .franchise-benefits__item-title,
+    .franchise-benefits__item:focus-within .franchise-benefits__item-title {
+      color: #e85c50;
+    }
+
+    .franchise-benefits__item:hover .franchise-benefits__item-desc,
+    .franchise-benefits__item:focus-within .franchise-benefits__item-desc {
+      color: #503826;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 480px) {
+      .franchise-benefits {
+        padding: 30px 15px;
+      }
+
+      .franchise-benefits__title {
+        font-size: 1.6rem;
+      }
+
+      .franchise-benefits__icon {
+        font-size: 3rem;
+      }
+    }
+
+
+    /* Bonjour family */
+    .bonjour-invitation {
+      max-width: 1000px;
+      margin: 50px auto;
+      padding: 40px 30px;
+      background: #ffe6e0;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(255, 111, 97, 0.4);
+      color: #000000;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .bonjour-invitation__container {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .bonjour-invitation__text {
+      flex: 1 1 450px;
+      max-width: 520px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .bonjour-invitation__title {
+      font-size: 2.8rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+      line-height: 1.1;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+      animation: slideIn 0.7s ease-in-out;
+    }
+
+    .bonjour-invitation__intro {
+      font-size: 1.3rem;
+      line-height: 1.6;
+      margin-bottom: 25px;
+      font-weight: 500;
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    .bonjour-invitation__quote {
+      font-size: 1.5rem;
+      font-weight: 600;
+      font-style: italic;
+      border-left: 5px solid rgba(236, 140, 140, 0.7);
+      padding-left: 15px;
+      margin-bottom: 30px;
+      color: rgba(236, 140, 140, 0.7);
+      animation: fadeIn 1.4s ease-in-out;
+    }
+
+    .bonjour-invitation__call-to-action {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 35px;
+      text-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 1.6s ease-in-out;
+    }
+
+    .bonjour-invitation__btn {
+      background-color: #fff;
+      color: #ff6f61;
+      padding: 15px 35px;
+      font-weight: 700;
+      font-size: 1.15rem;
+      border-radius: 35px;
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(255, 111, 97, 0.7);
+      transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+      display: inline-block;
+      animation: fadeInUp 1.8s ease forwards;
+    }
+
+    .bonjour-invitation__btn:hover,
+    .bonjour-invitation__btn:focus {
+      background-color: #ff4a41;
+      color: #fff;
+      outline: none;
+      box-shadow: 0 8px 30px rgba(255, 74, 65, 0.9);
+    }
+
+    .bonjour-invitation__image-container {
+      position: relative;
+      flex: 1 1 350px;
+      max-width: 400px;
+      border-radius: 20px;
+      overflow: hidden;
+      height: 400px;
+      box-shadow: 0 12px 35px rgba(255, 111, 97, 0.5);
+      animation: imageFadeIn 1.5s ease forwards;
+    }
+
+    .bonjour-invitation__image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      box-shadow: 0 10px 25px rgba(255, 111, 97, 0.6);
+      border-radius: 20px;
+      transition: transform 0.5s ease;
+    }
+
+    .bonjour-invitation__image-container:hover .bonjour-invitation__image,
+    .bonjour-invitation__image-container:focus-within .bonjour-invitation__image {
+      transform: scale(1.05);
+    }
+
+    .decorative-shape {
+      position: absolute;
+      bottom: -10px;
+      left: -10px;
+      width: 150px;
+      height: 150px;
+      background: rgba(255, 111, 97, 0.3);
+      border-radius: 50%;
+      filter: blur(40px);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideIn {
+      0% {
+        transform: translateX(-40px);
+        opacity: 0;
+      }
+
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes imageFadeIn {
+      0% {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .bonjour-invitation {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .bonjour-invitation__container {
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 30px;
+      }
+
+      .bonjour-invitation__text,
+      .bonjour-invitation__image-container {
+        max-width: 100%;
+        flex: none;
+      }
+
+      .bonjour-invitation__title {
+        font-size: 2.1rem;
+        text-align: center;
+      }
+
+      .bonjour-invitation__intro,
+      .bonjour-invitation__call-to-action {
+        font-size: 1.1rem;
+        text-align: center;
+      }
+
+      .bonjour-invitation__quote {
+        font-size: 1.3rem;
+        margin-left: auto;
+        margin-right: auto;
+        border-left: 4px solid rgba(255, 255, 255, 0.7);
+        padding-left: 10px;
+        max-width: 90%;
+        text-align: center;
+      }
+
+      .bonjour-invitation__btn {
+        padding: 14px 30px;
+        font-size: 1rem;
+        display: block;
+        margin: 0 auto;
+      }
+
+      .bonjour-invitation__image-container {
+        height: 300px;
+      }
+    }
+
+
+  
+/* Background Bubble Animation Start Root Up ⬆️*/
+    .bubble-wrapper {
       position: fixed;
       bottom: 0;
-      width: 100%;
-      z-index: 100;
-      border: 1px solid #ccc;
-      box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
-      flex-wrap: wrap;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 1;
+      pointer-events: none;
+      overflow: hidden;
     }
 
-    .futr > div {
-      max-width: 100%;
+    .bubble {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.5;
+      z-index: 1;
     }
 
-    .futr .social-icons {
-      display: flex;
-      gap: 15px;
-      flex-shrink: 0;
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0);
+        opacity: 0.;
+      }
+      100% {
+        transform: translateY(-120vh);
+        opacity: 0;
+      }
     }
+/* Background Bubble Animation End */
+  
 
-    .futr .social-icons a {
-      color: white;
-      font-size: 20px;
-      text-decoration: none;
-    }
 
-    .futr .action-links {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      flex-shrink: 1;
-      flex-wrap: wrap;
-      justify-content: center;
-      background-color: #FF9E7D;
-      padding: 10px;
-      border-top-left-radius:20px ;
-      border-top-Right-radius:20px ;
-      margin-bottom: -10px;
-    }
+        /* Back TO Top Btn */
+        .back-to-top {
+  position: fixed;
+  bottom: 60px;
+  right: 20px;
+  z-index: 9999; /* Make sure it's higher than other elements */
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
 
-    .futr .action-links a {
-      color: white;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      font-size: 14px;
-      white-space: nowrap;
-    }
-
-    .futr .action-links a img {
-      width: 18px;
-      height: 18px;
-    }
-
-    .futr .slash {
-      transform: rotate(15deg);
-      font-size: 18px;
-      opacity: 0.6;
-    }
-
-    .futr .right-end {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      flex-shrink: 0;
-    }
-
-    .futr .right-end h1 {
-      margin: 0;
-      font-size: 14px;
-    }
-
-   @media (max-width: 600px) {
-  .futr .social-icons,
-  .futr .right-end {
-    display: none;
-  }
-
-  .futr {
-    justify-content: center;
-    padding: 12px 10px;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-  }
-
-  .futr .action-links {
-    gap: 10px;
-    flex-wrap: wrap;
-  }
+/* Gradient text */
+.gradient-text {
+  font-size: 48px;
+  font-weight: bold;
+  background: linear-gradient(90deg, #0600ff, #ff0000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
   </style>
-  <!-- futr -->
-  <div class="futr">
-    <!-- Social Media Icons -->
-    <div class="social-icons">
-  <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-  <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-</div>
+</head>
 
+<body>
+  <div class="container-xxl bg-white p-0">
+ 
+    <!-- Why Choose US  -->
+    <section class="franchise-benefits" aria-label="Why Choose Bonjour Franchise">
+      <h2 class="franchise-benefits__title text-center">Why Choose Bonjour for Your Franchise Investment?</h2>
+      <div class="franchise-benefits__grid">
+        <div class="franchise-benefits__item">
+          <div class="franchise-benefits__icon" aria-hidden="true">💰</div>
+          <h3 class="franchise-benefits__item-title">Low Investment, High Returns</h3>
+          <p class="franchise-benefits__item-desc">Start your franchise journey with affordable investment and enjoy
+            substantial financial growth.</p>
+        </div>
 
-    <!-- Action Links with icons and slash -->
-    <div class="action-links">
-      <a href="#"><img src="img/admission_icon.png" alt="Admission Icon" /> Admission Enquiry</a>
-      <div class="slash">/</div>
-      <a href="#"><img src="img/start-a-franchise.png" alt="Franchise Icon" /> Start a Franchise</a>
+        <div class="franchise-benefits__item">
+          <div class="franchise-benefits__icon" aria-hidden="true">🎓</div>
+          <h3 class="franchise-benefits__item-title">Complete Setup & Training Support</h3>
+          <p class="franchise-benefits__item-desc">Receive thorough training and end-to-end setup assistance to
+            kickstart your franchise seamlessly.</p>
+        </div>
+
+        <div class="franchise-benefits__item">
+          <div class="franchise-benefits__icon" aria-hidden="true">📚</div>
+          <h3 class="franchise-benefits__item-title">Proven Curriculum Designed by Experts</h3>
+          <p class="franchise-benefits__item-desc">Empower your franchise with our expert-designed curriculum trusted by
+            educators and parents alike.</p>
+        </div>
+
+        <div class="franchise-benefits__item">
+          <div class="franchise-benefits__icon" aria-hidden="true">📈</div>
+          <h3 class="franchise-benefits__item-title">Marketing Assistance & Operational Guidance</h3>
+          <p class="franchise-benefits__item-desc">Benefit from dedicated marketing support and operational expertise to
+            grow your business efficiently.</p>
+        </div>
+      </div>
+    </section>
+  
+    <!-- Enquiry form Start -->
+    <div class="modal fade" id="EnquiryForFranchisee" data-bs-backdrop="false" tabindex="-1"
+      aria-labelledby="joinUsModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="joinUsModalLabel">Enquiry For Franchisee</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+              style="filter: invert(1);"></button>
+          </div>
+          <div class="modal-body">
+            <form id="joinUsForm">
+              <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter Name:" required>
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter Email:" required>
+              </div>
+              <div class="mb-3">
+                <label for="phone" class="form-label">Mobile</label>
+                <input type="phone" class="form-control" id="phone" placeholder="Phone No:" maxlength="10" required>
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label">Message</label>
+                <textarea class="form-control" id="message" rows="3" required></textarea>
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn btn-danger">Submit</button>
+                <button type="close" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
+    <!-- Enquiry form End -->
 
-    <!-- Right End Section -->
-    <div class="right-end">
-      <h1>Right End</h1>
-    </div>
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg back-to-top btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
   </div>
 
+  <!-- JavaScript Libraries -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/wow/wow.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/waypoints/waypoints.min.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+  <!-- Template Javascript -->
+  <script src="js/main.js"></script>
+
+
+    <!-- Background bubbles -->
+  <div class="bubble-wrapper"></div>
+    <script>
+    function createBubbles() {
+      const colors = ['var(--bubble1)', 'var(--bubble2)', 'var(--bubble3))', 'var(--bubble4)', 'var(--bubble5)', 'var(--bubble6)'];
+      const bubbleWrapper = document.querySelector('.bubble-wrapper');
+
+      for (let i = 0; i < 20; i++) {
+        const bubble = document.createElement('div');
+        bubble.classList.add('bubble');
+
+        const size = Math.random() * 40 + 20;
+        const posX = Math.random() * 100;
+        const delay = Math.random() * 5;
+        const duration = Math.random() * 10 + 10;
+
+        bubble.style.width = `${size}px`;
+        bubble.style.height = `${size}px`;
+        bubble.style.left = `${posX}%`;
+        bubble.style.bottom = `-100px`;
+        bubble.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        bubble.style.animation = `floatUp ${duration}s linear ${delay}s infinite`;
+
+        bubbleWrapper.appendChild(bubble);
+      }
+    }
+
+    // Automatically run on page load
+    createBubbles();
+  </script>
+   <script src="footer.js"></script>
 </body>
+
 </html>

@@ -1,6 +1,7 @@
+
 document.write(`
      <!-- Footer Start -->
-        <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s"style="margin-bottom:40px;">
+        <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s"  >
             <div class="container py-5">
                 <div class="row g-5">
                     <div class="col-lg-3 col-md-6">
@@ -94,9 +95,14 @@ document.write(`
 
     <!-- Action Links with icons and slash -->
     <div class="action-links">
-      <a href="#"><img src="img/admission_icon.png" alt="Admission Icon" /> Admission Enquiry</a>
-      <div class="slash">/</div>
-      <a href="#"><img src="img/start-a-franchise.png" alt="Franchise Icon" /> Start a Franchise</a>
+                      <!-- Join Us Button -->
+   <a href="#" class="btn btn-primary rounded-pill px-3" data-bs-toggle="modal" data-bs-target="#admission">
+      <img src="img/admission_icon.png" alt="Admission Icon" /> Admission Enquiry 
+   </a>   
+   
+      <div class="slash">|</div>
+
+      <a href="franchise.html"><img src="img/start-a-franchise.png" alt="Franchise Icon" /> Start a Franchise</a>
     </div>
 
     <!-- Right End Section -->
@@ -107,4 +113,83 @@ document.write(`
     <!-- futr END -->
 
 <!-- Footer End -->
+
+<!-- Modal -->
+    <div class="modal fade" id="admission" data-bs-backdrop="false" 
+        tabindex="-1" aria-labelledby="joinUsModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="joinUsModalLabel">Admission Enquiry Form</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="filter: invert(1);"></button>
+                </div>
+                <div class="modal-body">
+                   
+
+<div class="form-wrapper">
+  <form id="admission">
+    <div class="mb-3">
+      <label for="name" class="form-label">
+        <i class="fa fa-user form-icon"></i> Child's Name
+      </label>
+      <input type="text" class="form-control" id="name" placeholder="e.g., Aarav or Meera" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="email" class="form-label">
+        <i class="fa fa-envelope form-icon"></i> Parent's Email
+      </label>
+      <input type="email" class="form-control" id="email" placeholder="example@mail.com" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="phone" class="form-label">
+        <i class="fa fa-phone form-icon"></i> Contact Number
+      </label>
+      <input type="tel" class="form-control" id="phone" placeholder="10-digit mobile number" maxlength="10" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="message" class="form-label">
+        <i class="fa fa-comment form-icon"></i> Message
+      </label>
+      <textarea class="form-control" id="message" rows="3" placeholder="Write your query..." required></textarea>
+    </div>
+
+    <div class="text-center">
+      <button type="submit" class="btn btn-danger">
+        <i class="fa fa-paper-plane"></i> Submit
+      </button>
+      <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+        <i class="fa fa-times"></i> Close
+      </button>
+    </div>
+  </form>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
 `)
+const style = document.createElement('style');
+style.innerHTML = `
+  .form-wrapper {
+    background-image: url('img/form-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  #admission {
+    background-color: rgba(255, 255, 255, 0);
+    padding: 30px;
+    border-radius: 15px;
+  }
+`;
+document.head.appendChild(style);
