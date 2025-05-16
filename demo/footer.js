@@ -121,7 +121,7 @@ document.write(`
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="joinUsModalLabel">Admission Enquiry Form</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="filter: invert(1);"></button>
+                    <button type="button" class="btn-danger color-danger btn-close " data-bs-dismiss="modal" aria-label="Close" ></button>
                 </div>
                 <div class="modal-body">
                    

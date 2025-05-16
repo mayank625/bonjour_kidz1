@@ -3,19 +3,21 @@
 
 <head>
   <meta charset="utf-8">
-  <title> Teachers-Bonjour Play School</title>
+  <title>Kider - Preschool Website Template</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
 
   <!-- Favicon -->
   <link href="img/favicon.ico" rel="icon">
- 
- <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@600&family=Lobster+Two:wght@700&display=swap" rel="stylesheet">
-    
+
+  <!-- Google Web Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@600&family=Lobster+Two:wght@700&display=swap"
+    rel="stylesheet">
+
   <!-- Icon Font Stylesheet -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
@@ -26,13 +28,6 @@
 
   <!-- Customized Bootstrap Stylesheet -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
-<!-- Load Bootstrap JS -->
- <!-- Font Awesome (Add this in <head>) -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-
-<!-- Bootstrap (if not already included) -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
 
 
   <!-- Template Stylesheet -->
@@ -42,68 +37,197 @@
 
 
   <style>
-    /* Global Styles */
-    :root {
-/* Background Bubble Animation */
-      --bubble1: #f470b2;
-      --bubble2: #6eb1f4;
-      --bubble3: #96ff96;
-      --bubble4: #f4b271;
-      --bubble5: #f57070;
-      --bubble6: #6cf7c9;
-/* Background Bubble Animation */
-    }
-    
-/* Background Bubble Animation Start Root Up ⬆️*/
-    .bubble-wrapper {
+    .background-overlay {
       position: fixed;
-      bottom: 0;
+      top: 0;
       left: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: 1;
-      pointer-events: none;
-      overflow: hidden;
+      width: 100%;
+      height: 100%;
+      background: url('img/bg-03.png') no-repeat center center fixed;
+      background-size: cover;
+      z-index: -1;
+      opacity: 0.3;
+      /* Adjust this value to control transparency */
     }
 
-    .bubble {
+    .content {
+      position: relative;
+      z-index: 1;
+      /* Your content styling */
+    }
+
+    .teacher-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      padding: 40px 20px;
+      /*  background: linear-gradient(to bottom, #ffffff, #000000); */
+      position: relative;
+      z-index: 0;
+      min-height: 400px;
+    }
+
+    /* Flip cards */
+    .flip-card {
+      position: relative;
+      z-index: 1;
+      background: transparent;
+      width: calc((100% / 4) - 20px);
+      /* 3 per row minus gap */
+      gap: 20px;
+      height: 300px;
+      perspective: 1000px;
+      border-radius: 15px;
+      transition: transform 0.3s ease;
+      /* box-shadow: 0 0 30px rgba(255, 83, 45, 0.5); /* default glow color (red) */
+    }
+
+    .flip-card:hover {
+      transform: scale(1.05);
+    }
+
+
+    .flip-inner {
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      transform-style: preserve-3d;
+      position: relative;
+      border-radius: 15px;
+
+      /* Same glow for all cards */
+      box-shadow: 0 0 30px rgba(255, 83, 45, 0.8);
+      ;
+      /* Blue glow */
+    }
+
+
+
+    .flip-card:hover .flip-inner {
+      transform: rotateY(200deg);
+    }
+
+    .flip-front,
+    .flip-back {
       position: absolute;
-      border-radius: 50%;
-      opacity: 0.5;
-      z-index: 1;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 15px;
+      overflow: hidden;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      box-sizing: border-box;
     }
 
-    @keyframes floatUp {
-      0% {
-        transform: translateY(0);
-        opacity: 0.;
-      }
-      100% {
-        transform: translateY(-120vh);
-        opacity: 0;
+    .flip-front {
+      background: #fff;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .teacher-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 12px;
+      transition: transform 0.3s ease;
+    }
+
+    .flip-card:hover .teacher-img {
+      transform: scale(1.05);
+    }
+
+    .teacher-name {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      width: 100%;
+      color: #333;
+    }
+
+    .teacher-role {
+      margin: 5px 0 0;
+      color: #777;
+      font-size: 1rem;
+    }
+
+    .flip-back {
+      background: #FE5D37;
+      color: #fff;
+      transform: rotateY(180deg);
+      justify-content: center;
+      text-align: left;
+      font-size: 0.9rem;
+      line-height: 1.4;
+      box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .flip-back p {
+      margin: 8px 0;
+    }
+
+    .social-links {
+      margin-top: auto;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .social-links a {
+      color: white;
+      font-size: 1.3rem;
+      transition: color 0.3s ease;
+    }
+
+    .social-links a:hover {
+      color: #222;
+    }
+
+    /* Responsive */
+    @media (max-width: 1200px) {
+      .flip-card {
+        width: calc((100% / 3) - 20px);
+        /* keep 3 per row */
+        height: 280px;
       }
     }
-/* Background Bubble Animation End */
-  
-/* Back TO Top Btn */
-.back-to-top {
-  position: fixed;
-  bottom: 60px;
-  right: 20px;
-  z-index: 9999; /* Make sure it's higher than other elements */
-  border-radius: 50%;
-  width: 45px;
-  height: 45px;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-}
+
+    @media (max-width: 900px) {
+      .flip-card {
+        width: calc((100% / 2) - 20px);
+        /* 2 per row on smaller */
+        height: 260px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .teacher-grid {
+        flex-direction: column;
+        gap: 20px;
+        padding: 29px 60px;
+      }
+
+      .flip-card {
+        width: 90vw;
+        max-width: 300px;
+        height: 300px;
+      }
+    }
   </style>
 </head>
 
 <body>
-  <div class="container-fluid bg-white p-0">
-    <!-- Spinner Start -->
+  <div class="background-overlay"></div>
+  <div class="content">
     <div id="spinner"
       class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
       <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
@@ -113,175 +237,228 @@
     <!-- Spinner End -->
 
     <!-- Page Header End -->
-    <div class="container-fluid py-5 page-header position-relative mb-5">
+    <div class="container-fluid py-5 page-header position-relative mb-5 ">
       <div class="container py-5">
         <h1 class="display-2 text-white animated slideInDown mb-4">Teachers</h1>
         <nav aria-label="breadcrumb animated slideInDown">
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-            <li class="breadcrumb-item"><a href="franchise.html">Teachers</a></li>
+            <li class="breadcrumb-item"><a href="teachers.html">Teachers</a></li>
           </ol>
         </nav>
       </div>
     </div>
     <!-- Page Header End -->
-   
-    <!-- Popular Teachers Start -->
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                <h1 class="mb-3">Popular Teachers</h1>
-                <p>Eirmod sed ipsum dolor sit rebum labore magna erat. Tempor ut dolore lorem kasd vero ipsum sit
-                    eirmod sit. Ipsum diam justo sed rebum vero dolor duo.</p>
+    <!-- Teachers Start -->
+    <section class="teacher-grid container">
+      <div class="flip-card">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="img/teachers/rashmi-singh.png" alt="Teacher" class="teacher-img" />
+            <h3 class="teacher-name">Mrs. Rashmi Singh</h3>
+            <p class="teacher-role">Teacher</p>
+          </div>
+          <div class="flip-back">
+            <p class="position"><strong>DOB : </strong>28.03.1982</p>
+            <p class="subject"><strong>Email : </strong> rashmisingh0609@gmail.com</p>
+            <p class="subject"><strong>Phone : </strong> 7042496002</p>
+            <p class="subject"><strong>Joining : </strong>01.04.2025</p>
+            <div class="social-links">
+              <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
             </div>
-            <div class="row g-4">
-                <!-- First Teacher -->
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="team-item position-relative">
-                        <img class="img-fluid rounded-circle w-75" src="img/team-1.jpg" alt="">
-                        <div class="team-text">
-                            <h3>Full Name</h3>
-                            <p>Designation</p>
-                            <div class="d-flex align-items-center">
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-primary  mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square btn-primary  mx-1" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Second Teacher -->
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item position-relative">
-                        <img class="img-fluid rounded-circle w-75" src="img/team-2.jpg" alt="">
-                        <div class="team-text">
-                            <h3>Full Name</h3>
-                            <p>Designation</p>
-                            <div class="d-flex align-items-center">
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-primary  mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square btn-primary  mx-1" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Third Teacher -->
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="team-item position-relative">
-                        <img class="img-fluid rounded-circle w-75" src="img/team-3.jpg" alt="">
-                        <div class="team-text">
-                            <h3>Full Name</h3>
-                            <p>Designation</p>
-                            <div class="d-flex align-items-center">
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-primary  mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square btn-primary  mx-1" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Fourth Teacher -->
-                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="team-item position-relative">
-                        <img class="img-fluid rounded-circle w-75" src="img/team-1.jpg" alt="">
-                        <div class="team-text">
-                            <h3>Full Name</h3>
-                            <p>Designation</p>
-                            <div class="d-flex align-items-center">
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-primary  mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square btn-primary  mx-1" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                <!-- Fourth Teacher -->
-                </div>
-                <!-- Fifth Teacher -->
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item position-relative">
-                        <img class="img-fluid rounded-circle w-75" src="img/team-2.jpg" alt="">
-                        <div class="team-text">
-                            <h3>Full Name</h3>
-                            <p>Designation</p>
-                            <div class="d-flex align-items-center">
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-primary  mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square btn-primary  mx-1" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Sixth Teacher -->
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="team-item position-relative">
-                        <img class="img-fluid rounded-circle w-75" src="img/team-3.jpg" alt="">
-                        <div class="team-text">
-                            <h3>Full Name</h3>
-                            <p>Designation</p>
-                            <div class="d-flex align-items-center">
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-primary  mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square btn-primary  mx-1" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
-        
-    </div>
-    <!-- Popular Teachers End -->
+      </div>
 
+      <div class="flip-card">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="img/teachers/shraddha-pande.png" alt="Teacher" class="teacher-img" />
+            <h3 class="teacher-name">Mrs. Shraddha Pandey</h3>
+            <p class="teacher-role">Teacher</p>
+          </div>
+          <div class="flip-back">
+            <p class="position"><strong>DOB : </strong>27.10.1991</p>
+            <p class="subject"><strong>Email : </strong> Lshraddha.pande@gmail.com</p>
+            <p class="subject"><strong>Phone : </strong> 8922000623</p>
+            <p class="subject"><strong>Joining : </strong>01.12.2024</p>
+            <div class="social-links">
+              <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
 
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg back-to-top btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
-  </div>
+      <div class="flip-card">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="img/teachers/sangeeta-pathak.png" alt="Teacher" class="teacher-img" />
+            <h3 class="teacher-name">Mrs. Sangeeta Pathak</h3>
+            <p class="teacher-role">Teacher</p>
+          </div>
+          <div class="flip-back">
+            <p class="position"><strong>DOB : </strong>02.07.1996</p>
+            <p class="subject"><strong>Email : </strong> sangeetapathak533@gmail.com</p>
+            <p class="subject"><strong>Phone : </strong> 7983069271</p>
+            <p class="subject"><strong>Joining : </strong>02.04.2025</p>
+            <div class="social-links">
+              <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
 
-  <!-- JavaScript Libraries -->
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="lib/wow/wow.min.js"></script>
-  <script src="lib/easing/easing.min.js"></script>
-  <script src="lib/waypoints/waypoints.min.js"></script>
-  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+      <div class="flip-card">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="img/teachers/jyoti-mishra.png" alt="Teacher" class="teacher-img" />
+            <h3 class="teacher-name">Mrs. Jyoti Mishara</h3>
+            <p class="teacher-role">Teacher</p>
+          </div>
+          <div class="flip-back">
+            <p class="position"><strong>DOB : </strong>15.04.1993</p>
+            <p class="subject"><strong>Email : </strong> jyotimishrallb@gmail.com</p>
+            <p class="subject"><strong>Phone : </strong> 8181942631</p>
+            <p class="subject"><strong>Joining : </strong>01.05.2025</p>
+            <div class="social-links">
+              <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
 
-  <!-- Template Javascript -->
-  <script src="js/main.js"></script>
+      <div class="flip-card">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="img/teachers/tasim-co-ordinator.png" alt="Teacher" class="teacher-img" />
+            <h3 class="teacher-name">Mrs. Tasim Ara Parveen</h3>
+            <p class="teacher-role">Co-ordinator</p>
+          </div>
+          <div class="flip-back">
+            <p class="position"><strong>DOB : </strong>10.11.1984</p>
+            <p class="subject"><strong>Email : </strong> tasminparvin7@gmail.com</p>
+            <p class="subject"><strong>Phone : </strong> 8016223371</p>
+            <p class="subject"><strong>Joining : </strong>10.03.2024</p>
+            <div class="social-links">
+              <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="img/teachers/archana-Singh.png" alt="Teacher" class="teacher-img" />
+            <h3 class="teacher-name">Mrs. Archana Kumari</h3>
+            <p class="teacher-role">Teacher</p>
+          </div>
+          <div class="flip-back">
+            <p class="position"><strong>DOB : </strong>28.09.1982</p>
+            <p class="subject"><strong>Email : </strong> achanasingh28april@gmail.com</p>
+            <p class="subject"><strong>Phone : </strong> 8929125622</p>
+            <p class="subject"><strong>Joining : </strong>22.03.2025</p>
+            <div class="social-links">
+              <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="img/teachers/chetna-thakral.png" alt="Teacher" class="teacher-img" />
+            <h3 class="teacher-name">Mrs. Chetna Thakral</h3>
+            <p class="teacher-role">Teacher</p>
+          </div>
+          <div class="flip-back">
+            <p class="position"><strong>DOB : </strong>03.04.1992</p>
+            <p class="subject"><strong>Email : </strong> chetnataneja34@gmail.com</p>
+            <p class="subject"><strong>Phone : </strong> 9718255835</p>
+            <p class="subject"><strong>Joining : </strong>06.11.2024</p>
+            <div class="social-links">
+              <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flip-card">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="img/teachers/riya-gupta.png" alt="Teacher" class="teacher-img" />
+            <h3 class="teacher-name">Mrs. Riya Gupta</h3>
+            <p class="teacher-role">Teacher</p>
+          </div>
+          <div class="flip-back">
+            <p class="position"><strong>DOB : </strong>27.01.2000</p>
+            <p class="subject"><strong>Email : </strong> riyamgupta27@gmail.com</p>
+            <p class="subject"><strong>Phone : </strong> 7982151538</p>
+            <p class="subject"><strong>Joining : </strong>01.11.2021</p>
+            <div class="social-links">
+              <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Repeat flip-card divs as needed -->
+
+    </section>
+    <!-- Teachers End -->
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
 
 
     <!-- Background bubbles -->
-  <div class="bubble-wrapper"></div>
+    <div class="bubble-wrapper"></div>
     <script>
-    function createBubbles() {
-      const colors = ['var(--bubble1)', 'var(--bubble2)', 'var(--bubble3))', 'var(--bubble4)', 'var(--bubble5)', 'var(--bubble6)'];
-      const bubbleWrapper = document.querySelector('.bubble-wrapper');
+      function createBubbles() {
+        const colors = ['var(--bubble1)', 'var(--bubble2)', 'var(--bubble3))', 'var(--bubble4)', 'var(--bubble5)', 'var(--bubble6)'];
+        const bubbleWrapper = document.querySelector('.bubble-wrapper');
 
-      for (let i = 0; i < 20; i++) {
-        const bubble = document.createElement('div');
-        bubble.classList.add('bubble');
+        for (let i = 0; i < 20; i++) {
+          const bubble = document.createElement('div');
+          bubble.classList.add('bubble');
 
-        const size = Math.random() * 40 + 20;
-        const posX = Math.random() * 100;
-        const delay = Math.random() * 5;
-        const duration = Math.random() * 10 + 10;
+          const size = Math.random() * 40 + 20;
+          const posX = Math.random() * 100;
+          const delay = Math.random() * 5;
+          const duration = Math.random() * 10 + 10;
 
-        bubble.style.width = `${size}px`;
-        bubble.style.height = `${size}px`;
-        bubble.style.left = `${posX}%`;
-        bubble.style.bottom = `-100px`;
-        bubble.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-        bubble.style.animation = `floatUp ${duration}s linear ${delay}s infinite`;
+          bubble.style.width = `${size}px`;
+          bubble.style.height = `${size}px`;
+          bubble.style.left = `${posX}%`;
+          bubble.style.bottom = `-100px`;
+          bubble.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+          bubble.style.animation = `floatUp ${duration}s linear ${delay}s infinite`;
 
-        bubbleWrapper.appendChild(bubble);
+          bubbleWrapper.appendChild(bubble);
+        }
       }
-    }
 
-    // Automatically run on page load
-    createBubbles();
-  </script>
-  <div id="modal-container"></div>
-
-   <script src="footer.js"></script>
+      // Automatically run on page load
+      createBubbles();
+    </script>
+    <script src="footer.js"></script>
+  </div>
 </body>
 
 </html>
