@@ -12,7 +12,7 @@ document.write(`
                     <a href="index.html" class="nav-item nav-link active">Home</a>
                     <a href="#" class="nav-item nav-link">About Us</a>
                     <a href="services.html" class="nav-item nav-link">Services</a>
-                    <a href="#" class="nav-item nav-link">Celebrations</a>
+                    <a href="celebrations.html" class="nav-item nav-link">Celebrations</a>
                     <a href="#" class="nav-item nav-link">Gallery</a>
                     <a href="franchise.html" class="nav-item nav-link">Franchise</a>
                     <a href="teachers.html" class="nav-item nav-link">Teachers</a>
@@ -32,10 +32,7 @@ document.write(`
                     <a href="#" class="nav-item nav-link">Contact Us</a>
 
                 </div>
-                 <!-- Join Us Button -->
-   <a href="#" class="btn btn-primary rounded-pill px-3" data-bs-toggle="modal" data-bs-target="#joinUsModal">
-    Join Us <i class="fa fa-arrow-right ms-3"></i>
-</a>   
+  
 
     <!-- Modal -->
     <div class="modal fade" id="joinUsModal" data-bs-backdrop="false" 
