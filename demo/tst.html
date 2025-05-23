@@ -2,1073 +2,1574 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <title>Kider - Preschool Website Template</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
+  <meta charset="utf-8">
+  <title>Kider - Preschool Website Template</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
 
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+  <!-- Favicon -->
+  <link href="img/favicon.ico" rel="icon">
 
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@600&family=Lobster+Two:wght@700&display=swap" rel="stylesheet">
-    
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Google Web Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@600&family=Lobster+Two:wght@700&display=swap" rel="stylesheet">
 
-    <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <!-- Icon Font Stylesheet -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Libraries Stylesheet -->
+  <link href="lib/animate/animate.min.css" rel="stylesheet">
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
-
-    <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
-    <script  src="menu.js"></script>
-
-   
-</head>
-
-<body>
-    <div class="container-fluid  p-0">
-    
+  <!-- Customized Bootstrap Stylesheet -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
 
 
 
+  <!-- Template Stylesheet -->
+  <link href="css/style.css" rel="stylesheet">
+  <script src="menu.js"></script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+    /* Reset and base */
+    * {
+      box-sizing: border-box;
+      user-select: none;
+    }
+
+    body {
+      font-family: 'Poppins', Arial, sans-serif;
+      background: url('img/bg-06.png') no-repeat center center fixed;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      color: #222;
+    }
 
 
-        <!-- Page Header End -->
-        <div class="container-fluid py-5 page-header position-relative mb-5">
-            <div class="container py-5">
-                <h1 class="display-2 text-white animated slideInDown mb-4">Contact Us</h1>
-                <nav aria-label="breadcrumb animated slideInDown">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                        <li class="breadcrumb-item text-white active" aria-current="page">Contact Us</li>
-                    </ol>
-                </nav>
-            </div>
-        </div>  <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+    h1 {
+      text-align: center;
+      margin: 40px 0 20px;
+      font-size: 3.2rem;
+      color: #472d2d;
+      letter-spacing: 1.2px;
+      text-shadow:
+        2px 2px 0 #ff6f61,
+        -1px -1px 0 #ff6f61;
+    }
 
-        /* Reset and base */
-        * {
-            box-sizing: border-box;
-            user-select: none;
-        }
+    .celebrations-container {
+      max-width: 1525px;
+      margin: 0 auto 60px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px;
+      justify-content: center;
+      padding: 0 20px 40px;
+    }
 
-        body {
-            font-family: 'Poppins', Arial, sans-serif;
-            background: url('img/bg-06.png') no-repeat center center fixed;
-            background-size: cover;
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-            color: #222;
-        }
+    .festival-card {
+      width: 350px;
+      background: linear-gradient(145deg, #ffffff, #ffffff);
+      border-radius: 26px;
+        box-shadow:
+            0 8px 12px rgba(255, 255, 255, 0.859);
+           /*  inset -5px -5px 10px #fff3d6,
+            inset 5px 5px 17px #f2d492;  */
+      cursor: pointer;
+      overflow: hidden;
+      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+        box-shadow 0.3s ease;
+      position: relative;
+       
+    }
 
+    .festival-card::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 40%;
+      top: 0;
+      left: 0;
+      background: linear-gradient(45deg, #ff6f61);
+      border-bottom-left-radius: 26px;
+      border-bottom-right-radius: 26px;
+      filter: blur(15px);
+      opacity: 0.4;
+      z-index: 0;
+      transition: opacity 0.35s ease;
+    }
 
-        h1 {
-            text-align: center;
-            margin: 40px 0 20px;
-            font-size: 3.2rem;
-            color: #472d2d;
-            letter-spacing: 1.2px;
-            text-shadow:
-                2px 2px 0 #ff6f61,
-                -1px -1px 0 #ff6f61;
-        }
-
-        .celebrations-container {
-            max-width: 1100px;
-            margin: 0 auto 60px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 28px;
-            justify-content: center;
-            padding: 0 20px 40px;
-        }
-
-        .festival-card {
-            width: 280px;
-            background: linear-gradient(145deg, #ffffff, #ffffff);
-            border-radius: 26px;
-            /*  box-shadow:
-            0 8px 12px rgba(255 168 0 / 0.3),
-            inset -5px -5px 10px #fff3d6,
-            inset 5px 5px 17px #f2d492; */
-            cursor: pointer;
-            overflow: hidden;
-            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
-                box-shadow 0.3s ease;
-            position: relative;
-        }
-
-        .festival-card::before {
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: 40%;
-            top: 0;
-            left: 0;
-            background: linear-gradient(45deg, #ff6f61);
-            border-bottom-left-radius: 26px;
-            border-bottom-right-radius: 26px;
-            filter: blur(15px);
-            opacity: 0.4;
-            z-index: 0;
-            transition: opacity 0.35s ease;
-        }
-
-        .festival-card:hover {
-            transform: translateY(-12px);
-            box-shadow:
-                0 12px 25px rgb(255, 111, 97);
-            /*inset -5px -5px 20px #ff6f61,
+    .festival-card:hover {
+      transform: translateY(-12px);
+      box-shadow:
+        0 12px 25px rgb(255, 111, 97);
+      /*inset -5px -5px 20px #ff6f61,
             inset 5px 5px 22px #ff6f61;
      */
-        }
+    }
 
-        .festival-card:hover::before {
-            opacity: 0.7;
-        }
+    .festival-card:hover::before {
+      opacity: 0.7;
+    }
 
-        .festival-card img {
-            width: 100%;
-            height: 170px;
-            object-fit: cover;
-            filter: drop-shadow(0 8px 8px rgb(255 168 0 / 0.35));
-            border-bottom: 4px solid #ff6f61;
-            border-top-left-radius: 26px;
-            border-top-right-radius: 26px;
-            z-index: 1;
-            position: relative;
-            transition: transform 0.5s ease;
-        }
+    .festival-card img {
+      width: 100%;
+      height: 170px;
+      object-fit: cover;
+      filter: drop-shadow(0 8px 8px rgb(255 168 0 / 0.35));
+      border-bottom: 4px solid #ff6f61;
+      border-top-left-radius: 26px;
+      border-top-right-radius: 26px;
+      z-index: 1;
+      position: relative;
+      transition: transform 0.5s ease;
+    }
 
-        .festival-card:hover img {
-            transform: scale(1.03) rotate(2deg);
-        }
+    .festival-card:hover img {
+      transform: scale(1.03) rotate(2deg);
+    }
 
-        .festival-card h3 {
-            margin: 16px 0 8px;
-            font-size: 2rem;
-            color: #ff6f61;
-            text-shadow: 1px 1px 2px #ff6f61;
-            z-index: 1;
-            position: relative;
-        }
+    .festival-card h3 {
+      margin: 16px 0 8px;
+      font-size: 2rem;
+      color: #ff6f61;
+      text-shadow: 1px 1px 2px #ff6f61;
+      z-index: 1;
+      position: relative;
+    }
 
-        .festival-card p {
-            margin: 0 20px 24px;
-            font-size: 1.1rem;
-            line-height: 1.4;
-            font-weight: 500;
-            color: #6b3e00;
-            text-shadow: 0 0 1px #ff6f61;
-            z-index: 1;
-            position: relative;
-        }
+    .festival-card p {
+      margin: 0 20px 24px;
+      font-size: 1.1rem;
+      line-height: 1.4;
+      font-weight: 500;
+      color: #6b3e00;
+      text-shadow: 0 0 1px #ff6f61;
+      z-index: 1;
+      position: relative;
+    }
 
-        /* Modal */
+    /* Modal */
 
-        .festival-modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            display: none;
-            background: rgba(10, 10, 10, 0.85); 
-            z-index: 9999;
-            justify-content: center;
-            align-items: center;
-            overflow-y: auto;
-            -webkit-overflow-scrolling: touch;
-            animation: fadeInScale 0.5s ease forwards;
-            backdrop-filter: blur(10px);
-            padding: 20px;
-        }
+    .festival-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: none;
+      background: rgba(10, 10, 10, 0.85);
+      z-index: 999;
+      justify-content: center;
+      align-items: center;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      animation: fadeInScale 0.5s ease forwards;
+      backdrop-filter: blur(10px);
+      padding: 20px;
+    }
 
-        .festival-modal.active {
-            display: flex;
-        }
+    .festival-modal.active {
+      display: flex;
+    }
 
-        .festival-content {
-            position: relative;
-            background: radial-gradient(circle at top left, #fff, #fff);
-            padding: 36px 48px 48px;
-            border-radius: 32px;
-            text-align: center;
-            box-shadow:
-                0 12px 24px rgb(255, 111, 97);
-            ;
-            /* inset 0 0 80px 5px #ffac33; */
-            max-width: 750px;
-            max-height: 90vh;
-            overflow-y: auto;
-            color: #664400;
-        }
+    .festival-content {
+      position: relative;
+      /*  background: radial-gradient(circle at top left, #a40101, #fff); */
+      background-image: url('img/bg-07.png');
+      background-size: cover;
+      /* or 'contain' depending on your need */
+      background-repeat: no-repeat;
 
-        .festival-content::-webkit-scrollbar {
-            width: 10px;
-        }
+      padding: 36px 48px 48px;
+      border-radius: 32px;
+      text-align: center;
 
-        .festival-content::-webkit-scrollbar-track {
-            background: #fbe9b7;
-            border-radius: 20px;
-        }
+      box-shadow:
+        0 12px 24px rgb(97, 237, 255);
+      ;
+      /* inset 0 0 80px 5px #ffac33; */
+      max-width: 1600px;
+      max-height: 90vh;
+      overflow-y: auto;
+      color: #664400;
+    }
 
-        .festival-content::-webkit-scrollbar-thumb {
-            background: #ff9e0d;
-            border-radius: 20px;
-            box-shadow: inset 0 0 6px #a85e00;
-        }
+    .festival-content::-webkit-scrollbar {
+      width: 10px;
+    }
 
-        .close-btn {
-            position: absolute;
-            top: 16px;
-            right: 28px;
-            font-size:40px;
-            cursor: pointer;
-            color: #a75e00;
-            background: #ffe27a;
-            border-radius: 50%;
-            width: 44px;
-            height: 44px;
-            line-height: 44px;
-            text-align: center;
-            box-shadow:
-                0 3px 8pxrgb(255, 111, 97);
-            /* inset 0 0 8px #fff5a3; */
-            transition: background-color 0.3s ease, color 0.3s ease;
-            user-select: none;
-            border: none;
-        }
+    .festival-content::-webkit-scrollbar-track {
+      background: #fbe9b7;
+      border-radius: 20px;
+    }
 
-        .close-btn:hover,
-        .close-btn:focus {
-            background-color: #ff1212;
-            color: #fff;
-            outline: none;
-            box-shadow: 0 0 14px 2px #000000;
-        }
+    .festival-content::-webkit-scrollbar-thumb {
+      background: #ff9e0d;
+      border-radius: 20px;
+      box-shadow: inset 0 0 6px #a85e00;
+    }
 
-        #festivalTitle {
-            font-size: 2.8rem;
-            font-weight: 800;
-            margin-bottom: 18px;
-            /* text-shadow:
+    .close-btn {
+      position: absolute;
+      top: 16px;
+      right: 28px;
+      font-size: 40px;
+      cursor: pointer;
+      color: #a75e00;
+      background: #ffe27a;
+      border-radius: 50%;
+      width: 44px;
+      height: 44px;
+      line-height: 44px;
+      text-align: center;
+      box-shadow:
+        0 3px 8pxrgb(255, 111, 97);
+      /* inset 0 0 8px #fff5a3; */
+      transition: background-color 0.3s ease, color 0.3s ease;
+      user-select: none;
+      border: none;
+    }
+
+    .close-btn:hover,
+    .close-btn:focus {
+      background-color: #ff1212;
+      color: #fff;
+      outline: none;
+      box-shadow: 0 0 14px 2px #000000;
+    }
+
+    #festivalTitle {
+      font-size: 1.25rem;
+      font-weight: 800;
+      margin-bottom: 18px;
+      /* text-shadow:
           2px 2px 0 #ffa800,
           -1px -1px 0 #663a00; */
-            letter-spacing: 0.06em;
-        }
+      letter-spacing: 0.06em;
+    }
 
-        #festivalDesc {
-            font-size: 1.25rem;
-            line-height: 1.5;
-            margin-bottom: 24px;
-            color: #000000;
-            /* text-shadow: 0 0 8px #ffd87c40; */
-            font-weight: 600;
-        }
+    #festivalDesc {
+      font-size: 1rem;
+      line-height: 1.5;
+      margin-bottom: 24px;
+      color: #000000;
+      /* text-shadow: 0 0 8px #ffd87c40; */
+      font-weight: 600;
+    }
 
-        #festivalCanvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            z-index: 1;
-            pointer-events: none;
-            mix-blend-mode: screen;
-        }
+    #festivalCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 1;
+      pointer-events: none;
+      mix-blend-mode: screen;
+    }
 
-        /* Animations */
+    /* Animations */
 
-        @keyframes fadeInScale {
-            from {
-                opacity: 0;
-                transform: scale(0.8);
-            }
+    @keyframes fadeInScale {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
 
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
 
+    body.fancybox-active {
+  overflow: hidden !important;
+  z-index: 1 !important;
+}
+.fancybox__container {
+  animation: fadeIn 0.3s ease-in-out;
+}
 
-        
-    </style>
-    
-        <!-- Page Header End -->
-    <h1>Play School Celebrations</h1>
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 
- 
-    <div class="celebrations-container">
-        <div class="festival-card" data-festival="holi" tabindex="0" aria-label="Holi festival celebration card">
-            <img src="img/holi1.jpg" alt="Holi">
-            <h3>
-                <center>Holi</center>
-            </h3>
-            <p>Festival of Colors, joy, and togetherness!</p>
-        </div>
-        <div class="festival-card" data-festival="diwali" tabindex="0" aria-label="Diwali festival celebration card">
-            <img src="img/diwali1.jpg" alt="Diwali">
-            <h3>
-                <center>Diwali</center>
-            </h3>
-            <p>Festival of Lights, celebrated with diyas and fireworks.</p>
-        </div>
-        <div class="festival-card" data-festival="christmas" tabindex="0"
-            aria-label="Christmas festival celebration card">
-            <img src="img/christmas.jpg" alt="Christmas">
-            <h3>
-                <center>Christmas</center>
-            </h3>
-            <p>Celebrate joy, gifts, and Santa Claus!</p>
-        </div>
-        <div class="festival-card" data-festival="holi" tabindex="0" aria-label="Holi festival celebration card">
-            <img src="img/holi1.jpg" alt="Holi">
-            <h3>
-                <center>Holi</center>
-            </h3>
-            <p>Festival of Colors, joy, and togetherness!</p>
-        </div>
-        <div class="festival-card" data-festival="diwali" tabindex="0" aria-label="Diwali festival celebration card">
-            <img src="img/diwali1.jpg" alt="Diwali">
-            <h3>
-                <center>Diwali</center>
-            </h3>
-            <p>Festival of Lights, celebrated with diyas and fireworks.</p>
-        </div>
-        <div class="festival-card" data-festival="christmas" tabindex="0"
-            aria-label="Christmas festival celebration card">
-            <img src="img/christmas.jpg" alt="Christmas">
-            <h3>
-                <center>Christmas</center>
-            </h3>
-            <p>Celebrate joy, gifts, and Santa Claus!</p>
-        </div>
+  </style>
+</head>
+
+<!-- Before -->
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
+<body>
+  <div class="container-fluid  p-0">
+
+    <!-- Page Header End -->
+    <div class="container-fluid py-5 page-header position-relative mb-5">
+      <div class="container py-5">
+        <h1 class="display-2 text-white animated slideInDown mb-4">Celebrations </h1>
+        <nav aria-label="breadcrumb animated slideInDown">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item"><a href="celebrations.html">Celebrations</a></li>
+          </ol>
+        </nav>
+      </div>
     </div>
+
+<div class="celebrations-container"></div>
+
+<script>
+  const cards = [
+    {
+      key: "mothersDay", /*To Open Modal  */
+      title: "Mothers Day",
+      desc: "Festival of Love, joy, and togetherness!",
+      cardImage: "img/mothers-day.jfif",
+      ariaLabel: "mothers day festival celebration card"
+    },
+    {
+      key: "fathersDay",
+      title: "Fathers Day",
+      desc: "Festival of Love, joy, and togetherness!",
+      cardImage: "img/fathers-day.jfif",
+      ariaLabel: "fathers day festival celebration card"
+    },
+    {
+      key: "colours",
+      title: "Colours Day",
+      desc: "Festival of Colors, joy, and togetherness!",
+      cardImage: "img/holi1.jpg",
+      ariaLabel: "Holi festival celebration card"
+    },
+    {
+      key: "labour",
+      title: "Labours Day",
+      desc: "Festival of Lights, celebrated with diyas and fireworks.",
+      cardImage: "img/diwali1.jpg",
+      ariaLabel: "Diwali festival celebration card"
+    },
+    {
+      key: "laughter",
+      title: "World Laughter Day",
+      desc: "Celebrate joy, gifts, and Santa Claus!",
+      cardImage: "img/christmas.jpg",
+      ariaLabel: "Christmas festival celebration card"
+    }, 
+    {
+      key: "Baisakhi",
+      title: "Baisakhi ",
+      desc: "Celebrate joy, gifts, and Santa Claus!",
+      cardImage: "img/christmas.jpg",
+      ariaLabel: "Christmas festival celebration card"
+    }, 
+    {
+      key: "red_color_day",
+      title: "Red Colour Day",
+      desc: "Celebrate joy, gifts, and Santa Claus!",
+      cardImage: "img/christmas.jpg",
+      ariaLabel: "Christmas festival celebration card"
+    }, 
+    {
+      key: "Blue_color_day",
+      title: "Blue Colour Day",
+      desc: "Celebrate joy, gifts, and Santa Claus!",
+      cardImage: "img/christmas.jpg",
+      ariaLabel: "Christmas festival celebration card"
+    }, 
+    {
+      key: "Yellow_colour_day",
+      title: "Yellow Colour Day",
+      desc: "Celebrate joy, gifts, and Santa Claus!",
+      cardImage: "img/christmas.jpg",
+      ariaLabel: "Christmas festival celebration card"
+    }, 
+    {
+      key: "Cargill_Vijay_diwas",
+      title: "Cargill Vijay diwas",
+      desc: "Celebrate joy, gifts, and Santa Claus!",
+      cardImage: "img/christmas.jpg",
+      ariaLabel: "Christmas festival celebration card"
+    }, 
+    {
+      key: "World_Emoji_day",
+      title: "World Emoji day",
+      desc: "Celebrate joy, gifts, and Santa Claus!",
+      cardImage: "img/christmas.jpg",
+      ariaLabel: "Christmas festival celebration card"
+    }, 
+    {
+      key: "Chocolate",
+      title: "Chocolate day",
+      desc: "Celebrate joy, gifts, and Santa Claus!",
+      cardImage: "img/christmas.jpg",
+      ariaLabel: "Christmas festival celebration card"
+    },
+    {
+      key: "Hariyali_teej",
+      title: "Hariyali teej ",
+      desc: "Celebrate joy, gifts, and Santa Claus!",
+      cardImage: "img/christmas.jpg",
+      ariaLabel: "Christmas festival celebration card"
+    }, 
+    {
+      key: "International_Tiger_day",
+      title: "International Tiger day",
+      desc: "Celebrate joy, gifts, and Santa Claus!",
+      cardImage: "img/christmas.jpg",
+      ariaLabel: "Christmas festival celebration card"
+    }, 
+    {
+      key: "Green_Colour_Day",
+      title: "Green Colour Day",
+      desc: "Celebrate joy, gifts, and Santa Claus!",
+      cardImage: "img/christmas.jpg",
+      ariaLabel: "Christmas festival celebration card"
+    }, 
+    {
+      key: "Friendship",
+      title: "Friendship day",
+      desc: "Celebrate joy, gifts, and Santa Claus!",
+      cardImage: "img/christmas.jpg",
+      ariaLabel: "Christmas festival celebration card"
+    }, 
+    {
+      key: "Independence",
+      title: "Independence day ",
+      desc: "Celebrate joy, gifts, and Santa Claus!",
+      cardImage: "img/christmas.jpg",
+      ariaLabel: "Christmas festival celebration card"
+    }, 
+    {
+      key: "Raksha_Bandhan",
+      title: "Raksha Bandhan",
+      desc: "Celebrate joy, gifts, and Santa Claus!",
+      cardImage: "img/christmas.jpg",
+      ariaLabel: "Christmas festival celebration card"
+    }, 
+    {
+      key: "Sports_day",
+      title: "National sports day ",
+      desc: "Celebrate joy, gifts, and Santa Claus!",
+      cardImage: "img/christmas.jpg",
+      ariaLabel: "Christmas festival celebration card"
+    },  
+    {
+      key: "ganesh",
+      title: "Ganesh chaturthi ",
+      desc: "Celebrate joy, gifts, and Santa Claus!",
+      cardImage: "img/christmas.jpg",
+      ariaLabel: "Christmas festival celebration card"
+    }, 
+    {
+      key: "Black_day",
+      title: "Black day",
+      desc: "Celebrate joy, gifts, and Santa Claus!",
+      cardImage: "img/christmas.jpg",
+      ariaLabel: "Christmas festival celebration card"
+    }, 
+    {
+      key: "coconut",
+      title: "Coconut day",
+      desc: "Celebrate joy, gifts, and Santa Claus!",
+      cardImage: "img/christmas.jpg",
+      ariaLabel: "Christmas festival celebration card"
+    }, 
+    {
+      key: "Teachers",
+      title: "Teachers day",
+      desc: "Celebrate joy, gifts, and Santa Claus!",
+      cardImage: "img/christmas.jpg",
+      ariaLabel: "Christmas festival celebration card"
+    }, 
+    {
+      key: "Teddy_bear",
+      title: "National teddy bear day",
+      desc: "Celebrate joy, gifts, and Santa Claus!",
+      cardImage: "img/christmas.jpg",
+      ariaLabel: "Christmas festival celebration card"
+    }, 
+    {
+      key: "Hindi_Diwas",
+      title: "Hindi Diwas",
+      desc: "Celebrate joy, gifts, and Santa Claus!",
+      cardImage: "img/christmas.jpg",
+      ariaLabel: "Christmas festival celebration card"
+    }, 
+    {
+      key: "World_heart_day",
+      title: "World heart day",
+      desc: "Celebrate joy, gifts, and Santa Claus!",
+      cardImage: "img/christmas.jpg",
+      ariaLabel: "Christmas festival celebration card"
+    }, 
+    {
+      key: "White_day",
+      title: "White day",
+      desc: "Celebrate joy, gifts, and Santa Claus!",
+      cardImage: "img/christmas.jpg",
+      ariaLabel: "Christmas festival celebration card"
+    }, 
+    {
+      key: "Gandhi_jayanti",
+      title: "Gandhi jayanti",
+      desc: "Celebrate joy, gifts, and Santa Claus!",
+      cardImage: "img/christmas.jpg",
+      ariaLabel: "Christmas festival celebration card"
+    }, 
+    {
+      key: "World_smile_day",
+      title: "World smile day ",
+      desc: "Celebrate joy, gifts, and Santa Claus!",
+      cardImage: "img/christmas.jpg",
+      ariaLabel: "Christmas festival celebration card"
+    },   
+    {
+      key: "Global_handwashing_day",
+      title: "Global handwashing day",
+      desc: "Celebrate joy, gifts, and Santa Claus!",
+      cardImage: "img/christmas.jpg",
+      ariaLabel: "Christmas festival celebration card"
+    }, 
+    {
+      key: "Halloween",
+      title: "Halloween",
+      desc: "Celebrate joy, gifts, and Santa Claus!",
+      cardImage: "img/christmas.jpg",
+      ariaLabel: "Christmas festival celebration card"
+    }, 
+    {
+      key: "Orange",
+      title: "Orange day",
+      desc: "Celebrate joy, gifts, and Santa Claus!",
+      cardImage: "img/christmas.jpg",
+      ariaLabel: "Christmas festival celebration card"
+    }, 
+    {
+      key: "Guru_nanak_jayanti",
+      title: "Guru nanak jayanti",
+      desc: "Celebrate joy, gifts, and Santa Claus!",
+      cardImage: "img/christmas.jpg",
+      ariaLabel: "Christmas festival celebration card"
+    }, 
+    {
+      key: "Children",
+      title: "Children's day",
+      desc: "Celebrate joy, gifts, and Santa Claus!",
+      cardImage: "img/christmas.jpg",
+      ariaLabel: "Christmas festival celebration card"
+    }, 
+    {
+      key: "World_kindness_day",
+      title: "World kindness day",
+      desc: "Celebrate joy, gifts, and Santa Claus!",
+      cardImage: "img/christmas.jpg",
+      ariaLabel: "Christmas festival celebration card"
+    }, 
+    {
+      key: "Education",
+      title: "Education day",
+      desc: "Celebrate joy, gifts, and Santa Claus!",
+      cardImage: "img/christmas.jpg",
+      ariaLabel: "Christmas festival celebration card"
+    }, 
+    {
+      key: "Pink_day",
+      title: "Pink day",
+      desc: "Celebrate joy, gifts, and Santa Claus!",
+      cardImage: "img/christmas.jpg",
+      ariaLabel: "Christmas festival celebration card"
+    }
+  ];
+
+  const container = document.querySelector('.celebrations-container');
+  container.innerHTML = ''; // Clear existing content
+
+  cards.forEach(card => {
+    const cardDiv = document.createElement('div');
+    cardDiv.className = 'festival-card';
+    cardDiv.setAttribute('data-festival', card.key);
+    cardDiv.setAttribute('tabindex', '0');
+    cardDiv.setAttribute('aria-label', card.ariaLabel);
+
+    cardDiv.innerHTML = `
+     
+      <img src="${card.cardImage}" alt="${card.title}">
+      <h3><center>${card.title}</center></h3>
+      <p>${card.desc}</p>
+    `;
+
+    container.appendChild(cardDiv);
+  });
+</script>
 
     <div class="festival-modal" id="festivalModal" role="dialog" aria-modal="true" aria-labelledby="festivalTitle"
-        aria-describedby="festivalDesc">
-        <div class="festival-content">
-            <button class="close-btn" aria-label="Close celebration details">&times;</button>
-            <h2 id="festivalTitle"></h2>
-            <p id="festivalDesc"></p>
-            <canvas id="festivalCanvas"></canvas>
+      aria-describedby="festivalDesc">
 
-              <!-- Carousel -->
-            <div id="demo" class="carousel slide" data-bs-ride="carousel">
+      <div class="festival-content">
 
-                <!-- Indicators/dots -->
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-                    <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-                    <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
-                </div>
+        <button class="close-btn" aria-label="Close celebration details">&times;</button>
+        <h2 id="festivalTitle"></h2>
+        <p id="festivalDesc"></p>
+        <canvas id="festivalCanvas"></canvas>
 
-                <!-- The slideshow/carousel -->
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="img/diwali1.jpg" alt="Los Angeles" class="d-block" style="width:100%">
-                        <div class="carousel-caption">
-                            <h3>Los Angeles</h3>
-                            <p>We had such a great time in LA!</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="img/diwali2.jpg" alt="Chicago" class="d-block" style="width:100%">
-                        <div class="carousel-caption">
-                            <h3>Chicago</h3>
-                            <p>Thank you, Chicago!</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="img/diwali3.jpg" alt="New York" class="d-block" style="width:100%">
-                        <div class="carousel-caption">
-                            <h3>New York</h3>
-                            <p>We love the Big Apple!</p>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Left and right controls/icons -->
-                <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon"></span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
-                    <span class="carousel-control-next-icon"></span>
-                </button>
+        <!-- Filter Buttons -->
+        <div class="container mt-4">
+          <div class="row g-3 justify-content-center text-center">
+
+            <div class="col-12 col-md-auto">
+              <button class="btn btn-primary w-100 filter-btn" data-filter="all">
+                All
+              </button>
             </div>
 
-         
+            <div class="col-12 col-md-auto">
+              <button
+                class="btn btn-lg btn-info shadow-lg rounded-pill px-4 py-2 d-flex justify-content-center align-items-center w-100 filter-btn"
+                data-filter="image" data-target="#photoGallery">
+                <i class="fas fa-camera-retro me-2"></i> View Photos
+              </button>
+            </div>
+
+            <div class="col-12 col-md-auto">
+              <button
+                class="btn btn-lg btn-warning shadow-lg rounded-pill px-4 py-2 d-flex justify-content-center align-items-center w-100 filter-btn"
+                data-filter="video" data-target="#videoSection">
+                <i class="fas fa-video me-2"></i> Watch Video
+              </button>
+
+            </div>
+
+          </div>
         </div>
+        <!-- images / Videos card Container -->
+        <div class="container text-black py-4">
+          <div class="row g-4" id="mediaContainer">
+
+            <!-- IMAGE CARD -->
+            <div class="col-md-4 filter-item" data-type="image">
+              <div class="p-3 bg-secondary h-100 rounded shadow d-flex flex-column align-items-center text-center">
+                <img src="img/default.png" class="img-fluid rounded mb-3"
+                  style="height: 200px; object-fit: cover; width: 100%;">
+              </div>
+            </div>
+
+            <!-- VIDEO CARD -->
+            <div class="col-md-4 filter-item" data-type="video">
+              <div class="p-3 bg-secondary h-100 rounded shadow d-flex flex-column align-items-center text-center">
+                <video controls style="height: 200px;" class="mb-3 w-100 rounded">
+                  <source src="videos/default.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+
+
+
+
+          </div>
+        </div>
+
+        <!-- Filtering  BTN Script -->
+        <script>
+          const filterButtons = document.querySelectorAll('.filter-btn');
+
+          filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+              const filter = button.getAttribute('data-filter');
+
+              // Re-select filterItems on each click
+              const filterItems = document.querySelectorAll('.filter-item');
+              const items = Array.from(filterItems);
+
+              // Sort items so matching ones come first
+              const sortedItems = items.sort((a, b) => {
+                const aMatch = a.getAttribute('data-type') === filter;
+                const bMatch = b.getAttribute('data-type') === filter;
+
+                if (filter === 'all') return 0;
+                return aMatch === bMatch ? 0 : aMatch ? -1 : 1;
+              });
+
+              // Append sorted items back to container
+              const mediaContainer = document.getElementById('mediaContainer');
+              sortedItems.forEach(item => mediaContainer.appendChild(item));
+
+              // Toggle visibility
+              filterItems.forEach(item => {
+                const type = item.getAttribute('data-type');
+                if (filter === 'all' || type === filter) {
+                  item.classList.remove('d-none');
+                } else {
+                  item.classList.add('d-none');
+                }
+              });
+            });
+          });
+        </script>
+
+      </div>
     </div>
- 
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script>
-        const festivalData = {
-            holi: {
-                title: 'Holi Celebration',
-                desc: 'Children enjoyed Holi with natural colors, music, and dancing. It was a day full of laughter and colors!',
-                animation: 'holiColors'
-            },
-            diwali: {
-                title: 'Diwali Celebration',
-                desc: 'Bright diyas, paper lanterns, and fireworks lit up the school. Kids made rangolis and exchanged sweets.',
-                animation: 'diwaliLights'
-            },
-            christmas: {
-                title: 'Christmas Celebration',
-                desc: 'Santa visited the kids with gifts! They sang carols, decorated trees, and enjoyed cakes.',
-                animation: 'snowFall'
-            }
-
-        };
-
-        const modal = document.getElementById('festivalModal');
-        const title = document.getElementById('festivalTitle');
-        const desc = document.getElementById('festivalDesc');
-        const canvas = document.getElementById('festivalCanvas');
-        const ctx = canvas.getContext('2d');
-        const closeBtn = modal.querySelector('.close-btn');
-
-        let animationId;
-
-        function resizeCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
+      const festivalData = {
+        colours: {
+          title: 'Holi Celebration',
+          desc: 'Children enjoyed Holi with natural colors, music, and dancing. It was a day full of laughter and colors!',
+          animation: 'holiColors',
+          images: ['img/colour-1.jfif', 'img/colour-2.jfif', 'img/colour-1.jfif'], // Array of image paths
+          videos: ['videos/holi1.mp4', 'videos/holi2.mp4'] // Array of video paths
+        },
+        labour: {
+          title: 'Diwali Celebration',
+          desc: 'Bright diyas, paper lanterns, and fireworks lit up the school. Kids made rangolis and exchanged sweets.',
+          animation: 'diwaliLights',
+          images: ['img/diwali1.jpg', 'img/diwali2.jpg'], // Array of image paths
+          videos: ['videos/diwali1.mp4', 'videos/diwali1.mp4'] // Array of video paths
+        },
+        laughter: {
+          title: 'World Laughter Day Celebration',
+          desc: 'Santa visited the kids with gifts! They sang carols, decorated trees, and enjoyed cakes.',
+          animation: 'snowFall',
+          images: ['img/christmas1.png', 'img/christmas2.png'], // Array of image paths
+          videos: ['videos/christmas1.mp4'] // Array of video paths
+        },
+        mothersDay: {
+          title: 'Mother\'s Day Celebration',
+          desc: 'Kids made beautiful cards and gifts for their mothers. They performed a special dance to show their love.',
+          animation: 'mothersDay',
+          images: ['img/mothersDay1.jfif', 'img/mothersDay2.jfif'], // Array of image paths
+          videos: ['videos/vid-1.mp4'] // Array of video paths
+        },
+        fathersDay: {
+          title: 'Father\'s Day Celebration',
+          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
+          animation: 'mothersDay',
+          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
+          videos: ['videos/fathersDay1.mp4'] // Array of video paths
+        },
+        Baisakhi: {
+          title: 'Baisakhi Celebration',
+          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
+          animation: 'mothersDay',
+          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
+          videos: ['videos/fathersDay1.mp4'] // Array of video paths
+        },
+        red_color_day: {
+          title: ' Red Colour Day Celebration',
+          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
+          animation: 'mothersDay',
+          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
+          videos: ['videos/fathersDay1.mp4'] // Array of video paths
+        },
+        Blue_color_day: {
+          title: 'Father\'s Day Celebration',
+          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
+          animation: 'mothersDay',
+          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
+          videos: ['videos/fathersDay1.mp4'] // Array of video paths
+        },
+        Yellow_colour_day: {
+          title: 'Father\'s Day Celebration',
+          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
+          animation: 'mothersDay',
+          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
+          videos: ['videos/fathersDay1.mp4'] // Array of video paths
+        },
+        Cargill_Vijay_diwas: {
+          title: 'Father\'s Day Celebration',
+          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
+          animation: 'mothersDay',
+          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
+          videos: ['videos/fathersDay1.mp4'] // Array of video paths
+        },
+        World_Emoji_day: {
+          title: 'Father\'s Day Celebration',
+          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
+          animation: 'mothersDay',
+          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
+          videos: ['videos/fathersDay1.mp4'] // Array of video paths
+        },
+        Chocolate: {
+          title: 'Father\'s Day Celebration',
+          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
+          animation: 'mothersDay',
+          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
+          videos: ['videos/fathersDay1.mp4'] // Array of video paths
+        },
+        Hariyali_teej: {
+          title: 'Father\'s Day Celebration',
+          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
+          animation: 'mothersDay',
+          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
+          videos: ['videos/fathersDay1.mp4'] // Array of video paths
+        },
+        International_Tiger_day: {
+          title: 'Father\'s Day Celebration',
+          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
+          animation: 'mothersDay',
+          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
+          videos: ['videos/fathersDay1.mp4'] // Array of video paths
+        },
+        Green_Colour_Day: {
+          title: 'Father\'s Day Celebration',
+          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
+          animation: 'mothersDay',
+          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
+          videos: ['videos/fathersDay1.mp4'] // Array of video paths
+        },
+        Friendship: {
+          title: 'Father\'s Day Celebration',
+          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
+          animation: 'mothersDay',
+          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
+          videos: ['videos/fathersDay1.mp4'] // Array of video paths
+        },
+        Independence: {
+          title: 'Father\'s Day Celebration',
+          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
+          animation: 'mothersDay',
+          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
+          videos: ['videos/fathersDay1.mp4'] // Array of video paths
+        },
+        Raksha_Bandhan: {
+          title: 'Father\'s Day Celebration',
+          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
+          animation: 'mothersDay',
+          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
+          videos: ['videos/fathersDay1.mp4'] // Array of video paths
+        },
+        Sports_day: {
+          title: 'Father\'s Day Celebration',
+          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
+          animation: 'mothersDay',
+          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
+          videos: ['videos/fathersDay1.mp4'] // Array of video paths
+        },
+        ganesh: {
+          title: 'Father\'s Day Celebration',
+          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
+          animation: 'mothersDay',
+          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
+          videos: ['videos/fathersDay1.mp4'] // Array of video paths
+        },
+        Black_day: {
+          title: 'Father\'s Day Celebration',
+          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
+          animation: 'mothersDay',
+          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
+          videos: ['videos/fathersDay1.mp4'] // Array of video paths
+        },
+        coconut: {
+          title: 'Father\'s Day Celebration',
+          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
+          animation: 'mothersDay',
+          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
+          videos: ['videos/fathersDay1.mp4'] // Array of video paths
+        },
+        Teachers: {
+          title: 'Father\'s Day Celebration',
+          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
+          animation: 'mothersDay',
+          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
+          videos: ['videos/fathersDay1.mp4'] // Array of video paths
+        },
+        Teddy_bear: {
+          title: 'Father\'s Day Celebration',
+          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
+          animation: 'mothersDay',
+          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
+          videos: ['videos/fathersDay1.mp4'] // Array of video paths
+        },
+        Hindi_Diwas: {
+          title: 'Father\'s Day Celebration',
+          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
+          animation: 'mothersDay',
+          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
+          videos: ['videos/fathersDay1.mp4'] // Array of video paths
+        },
+        World_heart_day: {
+          title: 'Father\'s Day Celebration',
+          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
+          animation: 'mothersDay',
+          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
+          videos: ['videos/fathersDay1.mp4'] // Array of video paths
+        },
+        White_day: {
+          title: 'Father\'s Day Celebration',
+          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
+          animation: 'mothersDay',
+          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
+          videos: ['videos/fathersDay1.mp4'] // Array of video paths
+        },
+        Gandhi_jayanti: {
+          title: 'Father\'s Day Celebration',
+          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
+          animation: 'mothersDay',
+          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
+          videos: ['videos/fathersDay1.mp4'] // Array of video paths
+        },
+        World_smile_day: {
+          title: 'Father\'s Day Celebration',
+          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
+          animation: 'mothersDay',
+          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
+          videos: ['videos/fathersDay1.mp4'] // Array of video paths
+        },
+        Global_handwashing_day: {
+          title: 'Father\'s Day Celebration',
+          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
+          animation: 'mothersDay',
+          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
+          videos: ['videos/fathersDay1.mp4'] // Array of video paths
+        },
+        Halloween: {
+          title: 'Father\'s Day Celebration',
+          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
+          animation: 'mothersDay',
+          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
+          videos: ['videos/fathersDay1.mp4'] // Array of video paths
+        },
+        Orange: {
+          title: 'Father\'s Day Celebration',
+          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
+          animation: 'mothersDay',
+          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
+          videos: ['videos/fathersDay1.mp4'] // Array of video paths
+        },
+        Guru_nanak_jayanti: {
+          title: 'Father\'s Day Celebration',
+          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
+          animation: 'mothersDay',
+          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
+          videos: ['videos/fathersDay1.mp4'] // Array of video paths
+        },
+        Children: {
+          title: 'Father\'s Day Celebration',
+          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
+          animation: 'mothersDay',
+          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
+          videos: ['videos/fathersDay1.mp4'] // Array of video paths
+        },
+        World_kindness_day: {
+          title: 'Father\'s Day Celebration',
+          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
+          animation: 'mothersDay',
+          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
+          videos: ['videos/fathersDay1.mp4'] // Array of video paths
+        },
+        Education: {
+          title: 'Father\'s Day Celebration',
+          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
+          animation: 'mothersDay',
+          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
+          videos: ['videos/fathersDay1.mp4'] // Array of video paths
+        },
+        Pink_day: {
+          title: 'Father\'s Day Celebration',
+          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
+          animation: 'mothersDay',
+          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
+          videos: ['videos/fathersDay1.mp4'] // Array of video paths
         }
-        window.addEventListener('resize', () => {
-            if (modal.style.display === 'flex') resizeCanvas();
-        });
+      };
 
-        function openModal() {
-            modal.classList.add('active');
-            modal.style.display = 'flex';
-            resizeCanvas();
-            closeBtn.focus();
-            document.body.style.overflow = 'hidden';
+      const modal = document.getElementById('festivalModal');
+      const title = document.getElementById('festivalTitle');
+      const desc = document.getElementById('festivalDesc');
+      const canvas = document.getElementById('festivalCanvas');
+      const ctx = canvas.getContext('2d');
+      const closeBtn = modal.querySelector('.close-btn');
+
+      let animationId;
+
+      function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+      window.addEventListener('resize', () => {
+        if (modal.style.display === 'flex') resizeCanvas();
+      });
+
+      function openModal() {
+        modal.classList.add('active');
+        modal.style.display = 'flex';
+        resizeCanvas();
+        closeBtn.focus();
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeModal() {
+        modal.classList.remove('active');
+        modal.style.display = 'none';
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        cancelAnimationFrame(animationId);
+        document.body.style.overflow = '';
+      }
+
+      // Animate Holi colors as floating vibrant balloons that softly pop into splashes
+      function holiColorsAnimation() {
+        const balloons = [];
+        const colors = [
+          '#e91e63', '#9c27b0', '#673ab7', '#3f51b5', '#2196f3',
+          '#03a9f4', '#00bcd4', '#009688', '#4caf50', '#8bc34a',
+          '#cddc39', '#ffeb3b', '#ffc107', '#ff9800', '#ff5722'
+        ];
+
+        class Balloon {
+          constructor() {
+            this.radius = Math.random() * 18 + 20;
+            this.x = Math.random() * canvas.width;
+            this.y = canvas.height + this.radius + Math.random() * 100;
+            this.speedY = Math.random() * 1.4 + 0.5;
+            this.color = colors[Math.floor(Math.random() * colors.length)];
+            this.alpha = 1;
+            this.popped = false;
+            this.popSize = 0;
+            this.popX = 0;
+            this.popY = 0;
+          }
+
+          update() {
+            if (!this.popped) {
+              this.y -= this.speedY;
+              // Slight horizontal oscillation
+              this.x += Math.sin(this.y / 10) * 0.7;
+              if (this.y + this.radius < canvas.height / 3) {
+                this.pop();
+              }
+            } else {
+              this.popSize += 1.8;
+              this.alpha -= 0.03;
+              if (this.alpha < 0) this.alpha = 0;
+            }
+          }
+
+          pop() {
+            if (!this.popped) {
+              this.popped = true;
+              this.popX = this.x;
+              this.popY = this.y;
+            }
+          }
+
+          draw() {
+            if (!this.popped) {
+              // Balloon body (circle)
+              ctx.save();
+              ctx.globalAlpha = this.alpha;
+              ctx.fillStyle = this.color;
+              ctx.beginPath();
+              ctx.ellipse(this.x, this.y, this.radius * 0.7, this.radius, 0, 0, Math.PI * 2);
+              ctx.fill();
+
+              // Highlight
+              ctx.beginPath();
+              ctx.ellipse(this.x - this.radius * 0.3, this.y - this.radius * 0.4, this.radius * 0.15, this.radius * 0.3, 0, 0, Math.PI * 2);
+              ctx.fillStyle = 'rgba(255, 255, 255, 0.35)';
+              ctx.fill();
+              ctx.restore();
+
+              // String
+              ctx.save();
+              ctx.strokeStyle = 'rgba(0,0,0,0.1)';
+              ctx.lineWidth = 1.2;
+              ctx.beginPath();
+              ctx.moveTo(this.x, this.y + this.radius);
+              ctx.quadraticCurveTo(this.x + 5, this.y + this.radius + 15, this.x, this.y + this.radius + 30);
+              ctx.stroke();
+              ctx.restore();
+
+            } else {
+              // Draw pop splash shape growing and fading
+              ctx.save();
+              ctx.globalAlpha = this.alpha * 0.7;
+              const size = this.popSize;
+              const cx = this.popX;
+              const cy = this.popY;
+
+              // Draw splashes as colorful blobs: circles and ellipses arranged randomly around pop center
+              for (let i = 0; i < 6; i++) {
+                const angle = (Math.PI * 2 / 6) * i + (this.popSize / 10);
+                const dist = size * 0.6 + Math.sin(this.popSize / 4 + i) * 10;
+                const x = cx + Math.cos(angle) * dist;
+                const y = cy + Math.sin(angle) * dist;
+                const radius = size / 3 * (Math.sin(i * 3 + size / 5) * 0.3 + 0.7);
+                ctx.beginPath();
+                ctx.ellipse(x, y, radius * 1.3, radius * 0.7, angle / 2, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                ctx.fill();
+              }
+              // Center burst
+              ctx.beginPath();
+              ctx.ellipse(cx, cy, size * 0.9, size * 0.6, 0, 0, Math.PI * 2);
+              ctx.fillStyle = this.color;
+              ctx.fill();
+              ctx.restore();
+            }
+          }
+          isGone() {
+            return this.popped && this.alpha <= 0;
+          }
         }
 
-        function closeModal() {
-            modal.classList.remove('active');
-            modal.style.display = 'none';
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            cancelAnimationFrame(animationId);
-            document.body.style.overflow = '';
+        for (let i = 0; i < 40; i++) {
+          balloons.push(new Balloon());
         }
 
-        // Animate Holi colors as floating vibrant balloons that softly pop into splashes
-        function holiColorsAnimation() {
-            const balloons = [];
-            const colors = [
-                '#e91e63', '#9c27b0', '#673ab7', '#3f51b5', '#2196f3',
-                '#03a9f4', '#00bcd4', '#009688', '#4caf50', '#8bc34a',
-                '#cddc39', '#ffeb3b', '#ffc107', '#ff9800', '#ff5722'
-            ];
-
-            class Balloon {
-                constructor() {
-                    this.radius = Math.random() * 18 + 20;
-                    this.x = Math.random() * canvas.width;
-                    this.y = canvas.height + this.radius + Math.random() * 100;
-                    this.speedY = Math.random() * 1.4 + 0.5;
-                    this.color = colors[Math.floor(Math.random() * colors.length)];
-                    this.alpha = 1;
-                    this.popped = false;
-                    this.popSize = 0;
-                    this.popX = 0;
-                    this.popY = 0;
-                }
-
-                update() {
-                    if (!this.popped) {
-                        this.y -= this.speedY;
-                        // Slight horizontal oscillation
-                        this.x += Math.sin(this.y / 10) * 0.7;
-                        if (this.y + this.radius < canvas.height / 3) {
-                            this.pop();
-                        }
-                    } else {
-                        this.popSize += 1.8;
-                        this.alpha -= 0.03;
-                        if (this.alpha < 0) this.alpha = 0;
-                    }
-                }
-
-                pop() {
-                    if (!this.popped) {
-                        this.popped = true;
-                        this.popX = this.x;
-                        this.popY = this.y;
-                    }
-                }
-
-                draw() {
-                    if (!this.popped) {
-                        // Balloon body (circle)
-                        ctx.save();
-                        ctx.globalAlpha = this.alpha;
-                        ctx.fillStyle = this.color;
-                        ctx.beginPath();
-                        ctx.ellipse(this.x, this.y, this.radius * 0.7, this.radius, 0, 0, Math.PI * 2);
-                        ctx.fill();
-
-                        // Highlight
-                        ctx.beginPath();
-                        ctx.ellipse(this.x - this.radius * 0.3, this.y - this.radius * 0.4, this.radius * 0.15, this.radius * 0.3, 0, 0, Math.PI * 2);
-                        ctx.fillStyle = 'rgba(255 255 255 / 0.35)';
-                        ctx.fill();
-                        ctx.restore();
-
-                        // String
-                        ctx.save();
-                        ctx.strokeStyle = 'rgba(0,0,0,0.1)';
-                        ctx.lineWidth = 1.2;
-                        ctx.beginPath();
-                        ctx.moveTo(this.x, this.y + this.radius);
-                        ctx.quadraticCurveTo(this.x + 5, this.y + this.radius + 15, this.x, this.y + this.radius + 30);
-                        ctx.stroke();
-                        ctx.restore();
-
-                    } else {
-                        // Draw pop splash shape growing and fading
-                        ctx.save();
-                        ctx.globalAlpha = this.alpha * 0.7;
-                        const size = this.popSize;
-                        const cx = this.popX;
-                        const cy = this.popY;
-
-                        // Draw splashes as colorful blobs: circles and ellipses arranged randomly around pop center
-                        for (let i = 0; i < 6; i++) {
-                            const angle = (Math.PI * 2 / 6) * i + (this.popSize / 10);
-                            const dist = size * 0.6 + Math.sin(this.popSize / 4 + i) * 10;
-                            const x = cx + Math.cos(angle) * dist;
-                            const y = cy + Math.sin(angle) * dist;
-                            const radius = size / 3 * (Math.sin(i * 3 + size / 5) * 0.3 + 0.7);
-                            ctx.beginPath();
-                            ctx.ellipse(x, y, radius * 1.3, radius * 0.7, angle / 2, 0, Math.PI * 2);
-                            ctx.fillStyle = this.color;
-                            ctx.fill();
-                        }
-                        // Center burst
-                        ctx.beginPath();
-                        ctx.ellipse(cx, cy, size * 0.9, size * 0.6, 0, 0, Math.PI * 2);
-                        ctx.fillStyle = this.color;
-                        ctx.fill();
-                        ctx.restore();
-                    }
-                }
-                isGone() {
-                    return this.popped && this.alpha <= 0;
-                }
+        function animate() {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          balloons.forEach((b, i) => {
+            b.update();
+            b.draw();
+            if (b.isGone()) {
+              balloons[i] = new Balloon();
             }
+          });
+          animationId = requestAnimationFrame(animate);
+        }
+        animate();
+      }
 
-            for (let i = 0; i < 40; i++) {
-                balloons.push(new Balloon());
-            }
+      // Snowfall for Christmas — enhanced with twinkle shimmer
+      function snowFallAnimation() {
+        let flakes = [];
+        const maxFlakes = 120;
 
-            function animate() {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                balloons.forEach((b, i) => {
-                    b.update();
-                    b.draw();
-                    if (b.isGone()) {
-                        balloons[i] = new Balloon();
-                    }
-                });
-                animationId = requestAnimationFrame(animate);
+        class Flake {
+          constructor() {
+            this.x = Math.random() * canvas.width;
+            this.y = Math.random() * canvas.height;
+            this.radius = Math.random() * 4 + 1;
+            this.speed = Math.random() * 1.5 + 0.2;
+            this.angle = Math.random() * 2 * Math.PI;
+            this.tilt = Math.random() * 10 - 5;
+            this.tiltAngleIncrement = 0.05 + Math.random() / 10;
+          }
+          update() {
+            this.y += this.speed;
+            this.angle += this.tiltAngleIncrement;
+            this.tilt = Math.sin(this.angle) * 15;
+
+            if (this.y > canvas.height + this.radius) {
+              this.x = Math.random() * canvas.width;
+              this.y = -this.radius;
+              this.radius = Math.random() * 4 + 1;
+              this.speed = Math.random() * 1.5 + 0.2;
             }
-            animate();
+          }
+          draw() {
+            ctx.save();
+            ctx.fillStyle = `rgba(255, 255, 255, 0.8)`;
+            ctx.beginPath();
+            ctx.ellipse(this.x + this.tilt, this.y, this.radius * 0.6, this.radius * 1.2, 0, 0, Math.PI * 2);
+            ctx.fill();
+            // twinkle highlight
+            if (Math.random() > 0.94) {
+              ctx.fillStyle = "rgba(255, 255, 255, 0.7)";
+              ctx.beginPath();
+              ctx.arc(this.x + this.tilt, this.y, this.radius * 1.5, 0, Math.PI * 2);
+              ctx.fill();
+            }
+            ctx.restore();
+          }
         }
 
-        // Snowfall for Christmas — enhanced with twinkle shimmer
-        function snowFallAnimation() {
-            let flakes = [];
-            const maxFlakes = 120;
-
-            class Flake {
-                constructor() {
-                    this.x = Math.random() * canvas.width;
-                    this.y = Math.random() * canvas.height;
-                    this.radius = Math.random() * 4 + 1;
-                    this.speed = Math.random() * 1.5 + 0.2;
-                    this.angle = Math.random() * 2 * Math.PI;
-                    this.tilt = Math.random() * 10 - 5;
-                    this.tiltAngleIncrement = 0.05 + Math.random() / 10;
-                }
-                update() {
-                    this.y += this.speed;
-                    this.angle += this.tiltAngleIncrement;
-                    this.tilt = Math.sin(this.angle) * 15;
-
-                    if (this.y > canvas.height + this.radius) {
-                        this.x = Math.random() * canvas.width;
-                        this.y = -this.radius;
-                        this.radius = Math.random() * 4 + 1;
-                        this.speed = Math.random() * 1.5 + 0.2;
-                    }
-                }
-                draw() {
-                    ctx.save();
-                    ctx.fillStyle = `rgba(255, 255, 255, 0.8)`;
-                    ctx.beginPath();
-                    ctx.ellipse(this.x + this.tilt, this.y, this.radius * 0.6, this.radius * 1.2, 0, 0, Math.PI * 2);
-                    ctx.fill();
-                    // twinkle highlight
-                    if (Math.random() > 0.94) {
-                        ctx.fillStyle = "rgba(255 255 255 / 0.7)";
-                        ctx.beginPath();
-                        ctx.arc(this.x + this.tilt, this.y, this.radius * 1.5, 0, Math.PI * 2);
-                        ctx.fill();
-                    }
-                    ctx.restore();
-                }
-            }
-
-            for (let i = 0; i < maxFlakes; i++) {
-                flakes.push(new Flake());
-            }
-
-            function animate() {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                flakes.forEach(flake => {
-                    flake.update();
-                    flake.draw();
-                });
-                animationId = requestAnimationFrame(animate);
-            }
-            animate();
+        for (let i = 0; i < maxFlakes; i++) {
+          flakes.push(new Flake());
         }
 
-        // Diwali fireworks — get burst effect with color trails
-        /* function diwaliLightsAnimation() {
-            let fireworks = [];
-            let particles = [];
-        
-            class Firework {
-                constructor() {
-                    this.x = Math.random() * canvas.width;
-                    this.y = canvas.height;
-                    this.targetY = canvas.height * (0.2 + Math.random() * 0.5);
-                    this.speedY = 7 + Math.random() * 5;
-                    this.color = `hsl(${Math.random() * 50 + 20}, 100%, 60%)`;
-                    this.trail = [];
-                    this.done = false;
-                }
-                update() {
-                    this.trail.push({x: this.x, y: this.y});
-                    if(this.trail.length > 10) this.trail.shift();
-        
-                    this.y -= this.speedY;
-                    if(this.y <= this.targetY) {
-                        this.done = true;
-                        this.explode();
-                    }
-                }
-                explode() {
-                    const petals = 7 + Math.floor(Math.random() * 3); // number of flower petals
-        const rings = 2 + Math.floor(Math.random() * 4);  // number of rings
-        const radiusStep = 2.5;
-        
-        for (let r = 1; r <= rings; r++) {
-            for (let i = 0; i < petals; i++) {
+        function animate() {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          flakes.forEach(flake => {
+            flake.update();
+            flake.draw();
+          });
+          animationId = requestAnimationFrame(animate);
+        }
+        animate();
+      }
+
+      // Diwali fireworks — get burst effect with color trails
+      function diwaliLightsAnimation() {
+        let fireworks = [];
+        let particles = [];
+
+        class Firework {
+          constructor() {
+            this.x = Math.random() * canvas.width;
+            this.y = canvas.height;
+            this.targetY = canvas.height * (0.2 + Math.random() * 0.5);
+            this.speedY = 7 + Math.random() * 5;
+            this.color = `hsl(${Math.random() * 360}, 100%, 60%)`;
+            this.trail = [];
+            this.done = false;
+          }
+
+          update() {
+            this.trail.push({ x: this.x, y: this.y });
+            if (this.trail.length > 10) this.trail.shift();
+
+            this.y -= this.speedY;
+            if (this.y <= this.targetY) {
+              this.done = true;
+              this.explode();
+            }
+          }
+
+          explode() {
+            const petals = 7 + Math.floor(Math.random() * 3);
+            const rings = 2 + Math.floor(Math.random() * 4);
+            const radiusStep = 2.5;
+
+            for (let r = 1; r <= rings; r++) {
+              for (let i = 0; i < petals; i++) {
                 const angle = (Math.PI * 2 / petals) * i;
                 const speed = radiusStep * r;
                 const vx = Math.cos(angle) * speed;
                 const vy = Math.sin(angle) * speed;
-                particles.push(new Particle(this.x, this.y, this.color, vx, vy));
+
+                // Each particle gets a different bright HSL color
+                const color = `hsl(${Math.random() * 360}, 100%, 60%)`;
+                particles.push(new Particle(this.x, this.y, color, vx, vy));
+              }
             }
+          }
+
+          draw() {
+            ctx.beginPath();
+            ctx.fillStyle = this.color;
+            ctx.strokeStyle = this.color;
+            ctx.lineWidth = 2;
+            ctx.moveTo(this.x, this.y);
+            this.trail.forEach(pos => ctx.lineTo(pos.x, pos.y));
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, 3, 0, Math.PI * 2);
+            ctx.fill();
+          }
         }
-        
-                }
-                draw() {
-                    ctx.beginPath();
-                    ctx.fillStyle = this.color;
-                    ctx.strokeStyle = this.color;
-                    ctx.lineWidth = 2;
-                    ctx.moveTo(this.x, this.y);
-                    this.trail.forEach(pos => {
-                        ctx.lineTo(pos.x, pos.y);
-                    });
-                    ctx.stroke();
-        
-                    ctx.beginPath();
-                    ctx.arc(this.x, this.y, 3, 0, Math.PI * 2);
-                    ctx.fill();
-                }
-            }
-        
-            
+
         class Particle {
-            constructor(x, y, color, vx = (Math.random() - 0.5) * 6, vy = (Math.random() - 0.5) * 6) {
-                this.x = x;
-                this.y = y;
-                this.color = color;
-                this.radius = 3;
-                this.speedX = vx;
-                this.speedY = vy;
-                this.gravity = 0.05;
-                this.life = 80 + Math.random() * 40;
-                this.alpha = 1;
-                this.decay = 0.01 + Math.random() * 0.015;
-            }
-            
-        
-        
-                update() {
-                    this.speedY += this.gravity;
-                    this.x += this.speedX;
-                    this.y += this.speedY;
-                    this.life--;
-                    this.alpha -= this.decay;
-                    if(this.alpha<0) this.alpha=0;
-                }
-                draw() {
-                    ctx.beginPath();
-                    ctx.fillStyle = `rgba(255,215,0,${this.alpha})`;
-                    ctx.shadowColor = this.color;
-                    ctx.shadowBlur = 12;
-                    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-                    ctx.fill();
-                    ctx.shadowBlur = 0;
-                }
-                isDead() {
-                    return this.life <= 0 || this.alpha <= 0;
-                }
-            }
-        
-            function animate() {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                // Launch fireworks
-                if (Math.random() < 0.04) fireworks.push(new Firework());
-        
-                // Update and draw fireworks
-                for (let i = fireworks.length -1; i >= 0; i--) {
-                    const f = fireworks[i];
-                    f.update();
-                    f.draw();
-                    if(f.done) fireworks.splice(i, 1);
-                }
-        
-                // Update and draw particles
-                for (let i = particles.length - 1; i >= 0; i--) {
-                    const p = particles[i];
-                    p.update();
-                    p.draw();
-                    if(p.isDead()) particles.splice(i, 1);
-                }
-        
-                // Overlay a subtle dark background for contrast
-                ctx.fillStyle = 'rgba(0,0,0,0.15)';
-                ctx.fillRect(0,0,canvas.width,canvas.height);
-        
-                animationId = requestAnimationFrame(animate);
-            }
-            animate();
-        }
-         */
+          constructor(x, y, color, vx = (Math.random() - 0.5) * 6, vy = (Math.random() - 0.5) * 6) {
+            this.x = x;
+            this.y = y;
+            this.color = color;
+            this.radius = 3;
+            this.speedX = vx;
+            this.speedY = vy;
+            this.gravity = 0.05;
+            this.life = 80 + Math.random() * 40;
+            this.alpha = 1;
+            this.decay = 0.01 + Math.random() * 0.015;
+          }
 
-        function diwaliLightsAnimation() {
-            let fireworks = [];
-            let particles = [];
+          update() {
+            this.speedY += this.gravity;
+            this.x += this.speedX;
+            this.y += this.speedY;
+            this.life--;
+            this.alpha -= this.decay;
+            if (this.alpha < 0) this.alpha = 0;
+          }
 
-            class Firework {
-                constructor() {
-                    this.x = Math.random() * canvas.width;
-                    this.y = canvas.height;
-                    this.targetY = canvas.height * (0.2 + Math.random() * 0.5);
-                    this.speedY = 7 + Math.random() * 5;
-                    this.color = `hsl(${Math.random() * 360}, 100%, 60%)`;
-                    this.trail = [];
-                    this.done = false;
-                }
+          draw() {
+            ctx.beginPath();
+            ctx.fillStyle = this.color.replace('hsl', 'hsla').replace(')', `,${this.alpha})`);
+            ctx.shadowColor = this.color;
+            ctx.shadowBlur = 12;
+            ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.shadowBlur = 0;
+          }
 
-                update() {
-                    this.trail.push({ x: this.x, y: this.y });
-                    if (this.trail.length > 10) this.trail.shift();
-
-                    this.y -= this.speedY;
-                    if (this.y <= this.targetY) {
-                        this.done = true;
-                        this.explode();
-                    }
-                }
-
-                explode() {
-                    const petals = 7 + Math.floor(Math.random() * 3);
-                    const rings = 2 + Math.floor(Math.random() * 4);
-                    const radiusStep = 2.5;
-
-                    for (let r = 1; r <= rings; r++) {
-                        for (let i = 0; i < petals; i++) {
-                            const angle = (Math.PI * 2 / petals) * i;
-                            const speed = radiusStep * r;
-                            const vx = Math.cos(angle) * speed;
-                            const vy = Math.sin(angle) * speed;
-
-                            // Each particle gets a different bright HSL color
-                            const color = `hsl(${Math.random() * 360}, 100%, 60%)`;
-                            particles.push(new Particle(this.x, this.y, color, vx, vy));
-                        }
-                    }
-                }
-
-                draw() {
-                    ctx.beginPath();
-                    ctx.fillStyle = this.color;
-                    ctx.strokeStyle = this.color;
-                    ctx.lineWidth = 2;
-                    ctx.moveTo(this.x, this.y);
-                    this.trail.forEach(pos => ctx.lineTo(pos.x, pos.y));
-                    ctx.stroke();
-
-                    ctx.beginPath();
-                    ctx.arc(this.x, this.y, 3, 0, Math.PI * 2);
-                    ctx.fill();
-                }
-            }
-
-            class Particle {
-                constructor(x, y, color, vx = (Math.random() - 0.5) * 6, vy = (Math.random() - 0.5) * 6) {
-                    this.x = x;
-                    this.y = y;
-                    this.color = color;
-                    this.radius = 3;
-                    this.speedX = vx;
-                    this.speedY = vy;
-                    this.gravity = 0.05;
-                    this.life = 80 + Math.random() * 40;
-                    this.alpha = 1;
-                    this.decay = 0.01 + Math.random() * 0.015;
-                }
-
-                update() {
-                    this.speedY += this.gravity;
-                    this.x += this.speedX;
-                    this.y += this.speedY;
-                    this.life--;
-                    this.alpha -= this.decay;
-                    if (this.alpha < 0) this.alpha = 0;
-                }
-
-                draw() {
-                    ctx.beginPath();
-                    ctx.fillStyle = this.color.replace('hsl', 'hsla').replace(')', `,${this.alpha})`);
-                    ctx.shadowColor = this.color;
-                    ctx.shadowBlur = 12;
-                    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-                    ctx.fill();
-                    ctx.shadowBlur = 0;
-                }
-
-                isDead() {
-                    return this.life <= 0 || this.alpha <= 0;
-                }
-            }
-
-            function animate() {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-                if (Math.random() < 0.04) fireworks.push(new Firework());
-
-                for (let i = fireworks.length - 1; i >= 0; i--) {
-                    const f = fireworks[i];
-                    f.update();
-                    f.draw();
-                    if (f.done) fireworks.splice(i, 1);
-                }
-
-                for (let i = particles.length - 1; i >= 0; i--) {
-                    const p = particles[i];
-                    p.update();
-                    p.draw();
-                    if (p.isDead()) particles.splice(i, 1);
-                }
-
-                ctx.fillStyle = 'rgba(0,0,0,0.15)';
-                ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-                requestAnimationFrame(animate);
-            }
-
-            animate();
+          isDead() {
+            return this.life <= 0 || this.alpha <= 0;
+          }
         }
 
-        const festivalCards = document.querySelectorAll('.festival-card');
+        function animate() {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-        function openFestivalModal(festivalKey) {
-            const festival = festivalData[festivalKey];
-            if (!festival) return;
+          if (Math.random() < 0.04) fireworks.push(new Firework());
 
-            title.textContent = festival.title;
-            desc.textContent = festival.desc;
-            modal.classList.add('active');
-            modal.style.display = 'flex';
-            resizeCanvas();
+          for (let i = fireworks.length - 1; i >= 0; i--) {
+            const f = fireworks[i];
+            f.update();
+            f.draw();
+            if (f.done) fireworks.splice(i, 1);
+          }
 
-            // Start animation
-            runAnimation(festival.animation);
+          for (let i = particles.length - 1; i >= 0; i--) {
+            const p = particles[i];
+            p.update();
+            p.draw();
+            if (p.isDead()) particles.splice(i, 1);
+          }
 
-            document.body.style.overflow = 'hidden';
-            closeBtn.focus();
+          ctx.fillStyle = 'rgba(0,0,0,0.15)';
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+          requestAnimationFrame(animate);
         }
 
-        function runAnimation(type) {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            cancelAnimationFrame(animationId);
+        animate();
+      }
 
-            switch (type) {
-                case 'holiColors':
-                    holiColorsAnimation();
-                    break;
-                case 'snowFall':
-                    snowFallAnimation();
-                    break;
-                case 'diwaliLights':
-                    diwaliLightsAnimation();
-                    break;
-                default:
-                    break;
+      // Mother's Day animation with hearts and roses
+      function mothersDayAnimation() {
+        const hearts = [];
+        const colors = ['#FF0000', '#FF4C4C', '#FF6666', '#FF1A1A', '#FF3399', '#FF66B2', '#FF1A75']; // Various shades of red and pink
+
+        class Heart {
+          constructor() {
+            this.x = Math.random() * canvas.width;
+            this.y = -20; // Start above the canvas
+            this.size = Math.random() * 20 + 10; // Size between 10 and 30
+            this.speedY = Math.random() * 2 + 1; // Falling speed between 1 and 3
+            this.color = colors[Math.floor(Math.random() * colors.length)];
+            this.opacity = Math.random() * 0.5 + 0.5; // Opacity between 0.5 and 1
+            this.tilt = Math.random() * 0.4 - 0.2; // Slight horizontal tilt for sway effect
+          }
+
+          update() {
+            this.y += this.speedY;
+            this.x += this.tilt; // Horizontal sway
+            if (this.y > canvas.height + this.size) {
+              this.y = -this.size;
+              this.x = Math.random() * canvas.width;
+              this.size = Math.random() * 20 + 10;
+              this.speedY = Math.random() * 2 + 1;
+              this.color = colors[Math.floor(Math.random() * colors.length)];
+              this.opacity = Math.random() * 0.5 + 0.5;
+              this.tilt = Math.random() * 0.4 - 0.2;
             }
+          }
+
+          draw() {
+            ctx.save();
+            ctx.fillStyle = this.color;
+            ctx.globalAlpha = this.opacity;
+            const x = this.x;
+            const y = this.y;
+            const size = this.size;
+
+            ctx.beginPath();
+            ctx.moveTo(x, y);
+            ctx.bezierCurveTo(x, y - size / 2, x - size, y - size / 2, x - size, y + size / 5);
+            ctx.bezierCurveTo(x - size, y + size, x, y + size * 1.2, x, y + size * 1.6);
+            ctx.bezierCurveTo(x, y + size * 1.2, x + size, y + size, x + size, y + size / 5);
+            ctx.bezierCurveTo(x + size, y - size / 2, x, y - size / 2, x, y);
+            ctx.closePath();
+
+            ctx.fill();
+            ctx.restore();
+          }
         }
 
-        function closeFestivalModal() {
-            modal.classList.remove('active');
-            modal.style.display = 'none';
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            cancelAnimationFrame(animationId);
-            document.body.style.overflow = '';
+        for (let i = 0; i < 40; i++) {
+          hearts.push(new Heart());
         }
 
-        festivalCards.forEach(card => {
-            card.addEventListener('click', () => openFestivalModal(card.dataset.festival));
-            card.addEventListener('keypress', e => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    openFestivalModal(card.dataset.festival);
-                }
-            });
+        function animate() {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          hearts.forEach(heart => {
+            heart.update();
+            heart.draw();
+          });
+          animationId = requestAnimationFrame(animate);
+        }
+        animate();
+      }
+
+
+      const festivalCards = document.querySelectorAll('.festival-card');
+
+      function openFestivalModal(festivalKey) {
+        const festival = festivalData[festivalKey];
+        if (!festival) return;
+
+        title.textContent = festival.title;
+        desc.textContent = festival.desc;
+
+        // Clear existing images and videos
+        const mediaContainer = document.getElementById('mediaContainer');
+        mediaContainer.innerHTML = ''; // Clear previous content
+
+ // Add images
+festival.images.forEach(imageSrc => {
+  const imageCard = document.createElement('div');
+  imageCard.className = 'col-md-4 filter-item';
+  imageCard.setAttribute('data-type', 'image');
+  imageCard.innerHTML = `
+    <div class="p-3 bg-secondary h-100 rounded shadow d-flex flex-column align-items-center text-center">
+      <a data-fancybox="gallery" href="${imageSrc}">
+        <img src="${imageSrc}" class="img-fluid rounded mb-3" style="height: 200px; object-fit: cover;">
+      </a>
+    </div>
+  `;
+  mediaContainer.appendChild(imageCard);
+});
+
+// Add videos
+festival.videos.forEach(videoSrc => {
+  const videoCard = document.createElement('div');
+  videoCard.className = 'col-md-4 filter-item';
+  videoCard.setAttribute('data-type', 'video');
+  videoCard.innerHTML = `
+    <div class="p-3 bg-secondary h-100 rounded shadow d-flex flex-column align-items-center text-center">
+      <a data-fancybox="gallery" href="${videoSrc}">
+        <video controls style="height: 200px;" class="mb-3 w-100 rounded">
+          <source src="${videoSrc}" type="video/mp4">
+        </video>
+      </a>
+    </div>
+  `;
+  mediaContainer.appendChild(videoCard);
+});
+
+        modal.classList.add('active');
+        modal.style.display = 'flex';
+        resizeCanvas();
+
+        // Start animation
+        runAnimation(festival.animation);
+
+        document.body.style.overflow = 'hidden';
+        closeBtn.focus();
+      }
+
+      function runAnimation(type) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        cancelAnimationFrame(animationId);
+
+        switch (type) {
+          case 'holiColors':
+            holiColorsAnimation();
+            break;
+          case 'snowFall':
+            snowFallAnimation();
+            break;
+          case 'diwaliLights':
+            diwaliLightsAnimation();
+            break;
+          case 'mothersDay':
+            mothersDayAnimation();
+            break;
+          default:
+            break;
+        }
+      }
+
+      function closeFestivalModal() {
+        modal.classList.remove('active');
+        modal.style.display = 'none';
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        cancelAnimationFrame(animationId);
+        document.body.style.overflow = '';
+      }
+
+      festivalCards.forEach(card => {
+        card.addEventListener('click', () => openFestivalModal(card.dataset.festival));
+        card.addEventListener('keypress', e => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            openFestivalModal(card.dataset.festival);
+          }
         });
+      });
 
-        closeBtn.addEventListener('click', closeFestivalModal);
+      closeBtn.addEventListener('click', closeFestivalModal);
 
-        window.addEventListener('keydown', e => {
-            if (e.key === 'Escape' && modal.classList.contains('active')) {
-                closeFestivalModal();
-            }
-        });
+      window.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+          closeFestivalModal();
+        }
+      });
     </script>
 
 
-      
-        <!-- Footer Start -->
-        <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
-            <div class="container py-5">
-                <div class="row g-5">
-                    <div class="col-lg-3 col-md-6">
-                        <h3 class="text-white mb-4">Get In Touch</h3>
-                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
-                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
-                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
-                        <div class="d-flex pt-2">
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <h3 class="text-white mb-4">Quick Links</h3>
-                        <a class="btn btn-link text-white-50" href="">About Us</a>
-                        <a class="btn btn-link text-white-50" href="">Contact Us</a>
-                        <a class="btn btn-link text-white-50" href="">Our Services</a>
-                        <a class="btn btn-link text-white-50" href="">Privacy Policy</a>
-                        <a class="btn btn-link text-white-50" href="">Terms & Condition</a>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <h3 class="text-white mb-4">Photo Gallery</h3>
-                        <div class="row g-2 pt-2">
-                            <div class="col-4">
-                                <img class="img-fluid rounded bg-light p-1" src="img/classes-1.jpg" alt="">
-                            </div>
-                            <div class="col-4">
-                                <img class="img-fluid rounded bg-light p-1" src="img/classes-2.jpg" alt="">
-                            </div>
-                            <div class="col-4">
-                                <img class="img-fluid rounded bg-light p-1" src="img/classes-3.jpg" alt="">
-                            </div>
-                            <div class="col-4">
-                                <img class="img-fluid rounded bg-light p-1" src="img/classes-4.jpg" alt="">
-                            </div>
-                            <div class="col-4">
-                                <img class="img-fluid rounded bg-light p-1" src="img/classes-5.jpg" alt="">
-                            </div>
-                            <div class="col-4">
-                                <img class="img-fluid rounded bg-light p-1" src="img/classes-6.jpg" alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <h3 class="text-white mb-4">Newsletter</h3>
-                        <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
-                        <div class="position-relative mx-auto" style="max-width: 400px;">
-                            <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
-                            <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="copyright">
-                    <div class="row">
-                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                            &copy; <a class="border-bottom" href="#">Your Site Name</a>, All Right Reserved. 
-							
-							<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-							Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
-                        </div>
-                        <div class="col-md-6 text-center text-md-end">
-                            <div class="footer-menu">
-                                <a href="">Home</a>
-                                <a href="">Cookies</a>
-                                <a href="">Help</a>
-                                <a href="">FQAs</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Footer End -->
+
+    <!-- Footer Start -->
+    <script src="footer.js"></script>
+    <!-- Footer End -->
 
 
-        <!-- Back to Top -->
-        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
-    </div>
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+  </div>
 
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+  <!-- JavaScript Libraries -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/wow/wow.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/waypoints/waypoints.min.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+  <!-- Template Javascript -->
+  <script src="js/main.js"></script>
 </body>
 
 </html>
+
+<!-- Carousel -->
+<!--    <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+           
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+          </div>
+
+         
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="img/diwali1.jpg" alt="Los Angeles" class="d-block w-100 carousel-image">
+              <div class="carousel-caption">
+                <h3>Los Angeles</h3>
+                <p>We had such a great time in LA!</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="img/diwali2.jpg" alt="Chicago" class="d-block w-100 carousel-image">
+              <div class="carousel-caption">
+                <h3>Chicago</h3>
+                <p>Thank you, Chicago!</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="img/diwali3.jpg" alt="New York" class="d-block w-100 carousel-image">
+              <div class="carousel-caption">
+                <h3>New York</h3>
+                <p>We love the Big Apple!</p>
+              </div>
+            </div>
+          </div>
+
+          
+          <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </button>
+
+        </div> -->

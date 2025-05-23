@@ -1,313 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <title>Kider - Preschool Website Template</title>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta content="" name="keywords">
-  <meta content="" name="description">
-
-  <!-- Favicon -->
-  <link href="img/favicon.ico" rel="icon">
-
-  <!-- Google Web Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@600&family=Lobster+Two:wght@700&display=swap"
-    rel="stylesheet">
-
-  <!-- Icon Font Stylesheet -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
-  <!-- Libraries Stylesheet -->
-  <link href="lib/animate/animate.min.css" rel="stylesheet">
-  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
-  <!-- Customized Bootstrap Stylesheet -->
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-
-
-  <!-- Template Stylesheet -->
-  <link href="css/style.css" rel="stylesheet">
-  <script src="menu.js"></script>
-
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
-
-    /* Reset and base */
-    * {
-      box-sizing: border-box;
-      user-select: none;
-    }
-
-    body {
-      font-family: 'Poppins', Arial, sans-serif;
-      background: url('img/bg-06.png') no-repeat center center fixed;
-      background-size: cover;
-      margin: 0;
-      padding: 0;
-      overflow-x: hidden;
-      color: #222;
-    }
-
-
-    h1 {
-      text-align: center;
-      margin: 40px 0 20px;
-      font-size: 3.2rem;
-      color: #472d2d;
-      letter-spacing: 1.2px;
-      text-shadow:
-        2px 2px 0 #ff6f61,
-        -1px -1px 0 #ff6f61;
-    }
-
-    .celebrations-container {
-      max-width: 1100px;
-      margin: 0 auto 60px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 28px;
-      justify-content: center;
-      padding: 0 20px 40px;
-    }
-
-    .festival-card {
-      width: 280px;
-      background: linear-gradient(145deg, #ffffff, #ffffff);
-      border-radius: 26px;
-      /*  box-shadow:
-            0 8px 12px rgba(255 168 0 / 0.3),
-            inset -5px -5px 10px #fff3d6,
-            inset 5px 5px 17px #f2d492; */
-      cursor: pointer;
-      overflow: hidden;
-      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
-        box-shadow 0.3s ease;
-      position: relative;
-    }
-
-    .festival-card::before {
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 40%;
-      top: 0;
-      left: 0;
-      background: linear-gradient(45deg, #ff6f61);
-      border-bottom-left-radius: 26px;
-      border-bottom-right-radius: 26px;
-      filter: blur(15px);
-      opacity: 0.4;
-      z-index: 0;
-      transition: opacity 0.35s ease;
-    }
-
-    .festival-card:hover {
-      transform: translateY(-12px);
-      box-shadow:
-        0 12px 25px rgb(255, 111, 97);
-      /*inset -5px -5px 20px #ff6f61,
-            inset 5px 5px 22px #ff6f61;
-     */
-    }
-
-    .festival-card:hover::before {
-      opacity: 0.7;
-    }
-
-    .festival-card img {
-      width: 100%;
-      height: 170px;
-      object-fit: cover;
-      filter: drop-shadow(0 8px 8px rgb(255 168 0 / 0.35));
-      border-bottom: 4px solid #ff6f61;
-      border-top-left-radius: 26px;
-      border-top-right-radius: 26px;
-      z-index: 1;
-      position: relative;
-      transition: transform 0.5s ease;
-    }
-
-    .festival-card:hover img {
-      transform: scale(1.03) rotate(2deg);
-    }
-
-    .festival-card h3 {
-      margin: 16px 0 8px;
-      font-size: 2rem;
-      color: #ff6f61;
-      text-shadow: 1px 1px 2px #ff6f61;
-      z-index: 1;
-      position: relative;
-    }
-
-    .festival-card p {
-      margin: 0 20px 24px;
-      font-size: 1.1rem;
-      line-height: 1.4;
-      font-weight: 500;
-      color: #6b3e00;
-      text-shadow: 0 0 1px #ff6f61;
-      z-index: 1;
-      position: relative;
-    }
-
-    /* Modal */
-
-    .festival-modal {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      display: none;
-      background: rgba(10, 10, 10, 0.85);
-      z-index: 9999;
-      justify-content: center;
-      align-items: center;
-      overflow-y: auto;
-      -webkit-overflow-scrolling: touch;
-      animation: fadeInScale 0.5s ease forwards;
-      backdrop-filter: blur(10px);
-      padding: 20px;
-    }
-
-    .festival-modal.active {
-      display: flex;
-    }
-
-    .festival-content {
-      position: relative;
-      background: radial-gradient(circle at top left, #fff, #fff);
-      padding: 36px 48px 48px;
-      border-radius: 32px;
-      text-align: center;
-
-      box-shadow:
-        0 12px 24px rgb(255, 111, 97);
-      ;
-      /* inset 0 0 80px 5px #ffac33; */
-      max-width: 1600px;
-      max-height: 90vh;
-      overflow-y: auto;
-      color: #664400;
-    }
-
-    .festival-content::-webkit-scrollbar {
-      width: 10px;
-    }
-
-    .festival-content::-webkit-scrollbar-track {
-      background: #fbe9b7;
-      border-radius: 20px;
-    }
-
-    .festival-content::-webkit-scrollbar-thumb {
-      background: #ff9e0d;
-      border-radius: 20px;
-      box-shadow: inset 0 0 6px #a85e00;
-    }
-
-    .close-btn {
-      position: absolute;
-      top: 16px;
-      right: 28px;
-      font-size: 40px;
-      cursor: pointer;
-      color: #a75e00;
-      background: #ffe27a;
-      border-radius: 50%;
-      width: 44px;
-      height: 44px;
-      line-height: 44px;
-      text-align: center;
-      box-shadow:
-        0 3px 8pxrgb(255, 111, 97);
-      /* inset 0 0 8px #fff5a3; */
-      transition: background-color 0.3s ease, color 0.3s ease;
-      user-select: none;
-      border: none;
-    }
-
-    .close-btn:hover,
-    .close-btn:focus {
-      background-color: #ff1212;
-      color: #fff;
-      outline: none;
-      box-shadow: 0 0 14px 2px #000000;
-    }
-
-    #festivalTitle {
-      font-size: 2.8rem;
-      font-weight: 800;
-      margin-bottom: 18px;
-      /* text-shadow:
-          2px 2px 0 #ffa800,
-          -1px -1px 0 #663a00; */
-      letter-spacing: 0.06em;
-    }
-
-    #festivalDesc {
-      font-size: 1.25rem;
-      line-height: 1.5;
-      margin-bottom: 24px;
-      color: #000000;
-      /* text-shadow: 0 0 8px #ffd87c40; */
-      font-weight: 600;
-    }
-
-    #festivalCanvas {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: 1;
-      pointer-events: none;
-      mix-blend-mode: screen;
-    }
-
-    /* Animations */
-
-    @keyframes fadeInScale {
-      from {
-        opacity: 0;
-        transform: scale(0.8);
-      }
-
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=
+  , initial-scale=1.0">
+  <title>Document</title>
 </head>
-
 <body>
   <div class="container-fluid  p-0">
 
     <!-- Page Header End -->
     <div class="container-fluid py-5 page-header position-relative mb-5">
       <div class="container py-5">
-        <h1 class="display-2 text-white animated slideInDown mb-4">Contact Us</h1>
+        <h1 class="display-2 text-white animated slideInDown mb-4">Celebrations </h1>
         <nav aria-label="breadcrumb animated slideInDown">
           <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item"><a href="#">Pages</a></li>
-            <li class="breadcrumb-item text-white active" aria-current="page">Contact Us</li>
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item"><a href="celebrations.html">Celebrations</a></li>
           </ol>
         </nav>
       </div>
     </div>
-
-
-    <!-- Page Header End -->
-    <h1>Play School Celebrations</h1>
-
 
     <div class="celebrations-container">
       <!-- MOTHERS DAY -->
@@ -325,39 +38,36 @@
         aria-label="mothers day festival celebration card">
         <img src="img/fathers-day.jfif" alt="Mothers Day">
         <h3>
-          <center>fathers Day</center>
+          <center>Fathers Day</center>
         </h3>
         <p>Festival of Love, joy, and togetherness!</p>
 
       </div>
-      <!-- HAPPY HOLI -->
-      <div class="festival-card" data-festival="holi" tabindex="0" aria-label="Holi festival celebration card">
-        <img src="img/holi1.jpg" alt="Holi">
+      <!--  COLOURS DAY -->
+      <div class="festival-card" data-festival="colours" tabindex="0" aria-label="Holi festival celebration card">
+        <img src="img/holi1.jpg" alt="colours">
         <h3>
-          <center>Holi</center>
+          <center>Colours Day </center>
         </h3>
         <p>Festival of Colors, joy, and togetherness!</p>
       </div>
-      <!-- HAPPY DIWALI -->
-      <div class="festival-card" data-festival="diwali" tabindex="0" aria-label="Diwali festival celebration card">
-        <img src="img/diwali1.jpg" alt="Diwali">
+
+      <!-- Labours Day -->
+      <div class="festival-card" data-festival="labour" tabindex="0" aria-label="Diwali festival celebration card">
+        <img src="img/diwali1.jpg" alt="labour">
         <h3>
-          <center>Diwali</center>
+          <center>Labours Day</center>
         </h3>
         <p>Festival of Lights, celebrated with diyas and fireworks.</p>
       </div>
-      <!-- CHRISTMAS -->
-      <div class="festival-card" data-festival="christmas" tabindex="0"
-        aria-label="Christmas festival celebration card">
-        <img src="img/christmas.jpg" alt="Christmas">
+      <!-- WORLD LAUGHTER DAY -->
+      <div class="festival-card" data-festival="laughter" tabindex="0" aria-label="Christmas festival celebration card">
+        <img src="img/christmas.jpg" alt="laughter">
         <h3>
-          <center>Christmas</center>
+          <center>World Laughter Day</center>
         </h3>
         <p>Celebrate joy, gifts, and Santa Claus!</p>
       </div>
-
-
-
 
     </div>
 
@@ -372,93 +82,44 @@
         <canvas id="festivalCanvas"></canvas>
 
 
-
-        <style>
-          /* Video And Photo Button Styles */
-          .btn:hover {
-            transform: scale(1.05);
-            transition: all 0.3s ease-in-out;
-          }
-
-          /* <!-- Style for fixed height and crop --> */
-
-          .carousel-image {
-            height: 400px;
-            object-fit: cover;
-          }
-        </style>
-
-        <!-- Carousel -->
-        <div id="demo" class="carousel slide" data-bs-ride="carousel">
-
-          <!-- Indicators/dots -->
-          <div class="carousel-indicators">
-            <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-            <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-            <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
-          </div>
-
-          <!-- The slideshow/carousel -->
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="img/diwali1.jpg" alt="Los Angeles" class="d-block w-100 carousel-image">
-              <div class="carousel-caption">
-                <h3>Los Angeles</h3>
-                <p>We had such a great time in LA!</p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img src="img/diwali2.jpg" alt="Chicago" class="d-block w-100 carousel-image">
-              <div class="carousel-caption">
-                <h3>Chicago</h3>
-                <p>Thank you, Chicago!</p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img src="img/diwali3.jpg" alt="New York" class="d-block w-100 carousel-image">
-              <div class="carousel-caption">
-                <h3>New York</h3>
-                <p>We love the Big Apple!</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Left and right controls/icons -->
-          <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
-            <span class="carousel-control-next-icon"></span>
-          </button>
-
-        </div>
-
         <!-- Filter Buttons -->
-        <div class="d-flex justify-content-center gap-4 mt-4">
-          <button class="btn btn-primary me-2 filter-btn" data-filter="all">All</button>
-          <a href="#photoGallery"
-            class="btn btn-lg btn-info shadow-lg rounded-pill px-4 py-2 d-flex align-items-center filter-btn"
-            data-filter="image">
-            <i class="fas fa-camera-retro me-2"></i> View Photos
-          </a>
+        <div class="container mt-4">
+          <div class="row g-3 justify-content-center text-center">
 
-          <a href="#videoSection"
-            class="btn btn-lg btn-warning shadow-lg rounded-pill px-4 py-2 d-flex align-items-center filter-btn"
-            data-filter="video">
-            <i class="fas fa-video me-2"></i> Watch Video
-          </a>
+            <div class="col-12 col-md-auto">
+              <button class="btn btn-primary w-100 filter-btn" data-filter="all">
+                All
+              </button>
+            </div>
+
+            <div class="col-12 col-md-auto">
+              <button
+                class="btn btn-lg btn-info shadow-lg rounded-pill px-4 py-2 d-flex justify-content-center align-items-center w-100 filter-btn"
+                data-filter="image" data-target="#photoGallery">
+                <i class="fas fa-camera-retro me-2"></i> View Photos
+              </button>
+            </div>
+
+            <div class="col-12 col-md-auto">
+              <button
+                class="btn btn-lg btn-warning shadow-lg rounded-pill px-4 py-2 d-flex justify-content-center align-items-center w-100 filter-btn"
+                data-filter="video" data-target="#videoSection">
+                <i class="fas fa-video me-2"></i> Watch Video
+              </button>
+
+            </div>
+
+          </div>
         </div>
-
-        <!-- Cards Container -->
+        <!-- images / Videos card Container -->
         <div class="container text-black py-4">
-          <div class="row g-4">
+          <div class="row g-4" id="mediaContainer">
 
             <!-- IMAGE CARD -->
             <div class="col-md-4 filter-item" data-type="image">
               <div class="p-3 bg-secondary h-100 rounded shadow d-flex flex-column align-items-center text-center">
-                <img src="img/bg-05.png" class="img-fluid rounded mb-3" style="height: 200px; object-fit: cover;">
-                <h3 class="text-danger">Image: Los Angeles</h3>
-                <p>We had such a great time in LA!</p>
+                <img src="img/default.png" class="img-fluid rounded mb-3"
+                  style="height: 200px; object-fit: cover; width: 100%;">
               </div>
             </div>
 
@@ -466,33 +127,14 @@
             <div class="col-md-4 filter-item" data-type="video">
               <div class="p-3 bg-secondary h-100 rounded shadow d-flex flex-column align-items-center text-center">
                 <video controls style="height: 200px;" class="mb-3 w-100 rounded">
-                  <source src="videos/sample1.mp4" type="video/mp4">
+                  <source src="videos/default.mp4" type="video/mp4">
                   Your browser does not support the video tag.
                 </video>
-                <h3 class="text-danger">Video: New York</h3>
-                <p>Amazing memories!</p>
               </div>
             </div>
 
-            <!-- More IMAGE and VIDEO CARDS (repeat with different media) -->
-            <div class="col-md-4 filter-item" data-type="image">
-              <div class="p-3 bg-secondary h-100 rounded shadow d-flex flex-column align-items-center text-center">
-                <img src="img/bg-03.png" class="img-fluid rounded mb-3" style="height: 200px; object-fit: cover;">
-                <h3 class="text-danger">Image: Chicago</h3>
-                <p>Fun day in the city!</p>
-              </div>
-            </div>
 
-            <div class="col-md-4 filter-item" data-type="video">
-              <div class="p-3 bg-secondary h-100 rounded shadow d-flex flex-column align-items-center text-center">
-                <video controls style="height: 200px;" class="mb-3 w-100 rounded">
-                  <source src="videos/sample2.mp4" type="video/mp4">
-                  Your browser does not support the video tag.
-                </video>
-                <h3 class="text-danger">Video: LA Nightlife</h3>
-                <p>So vibrant and fun!</p>
-              </div>
-            </div>
+
 
           </div>
         </div>
@@ -500,25 +142,40 @@
         <!-- Filtering Script -->
         <script>
           const filterButtons = document.querySelectorAll('.filter-btn');
-          const filterItems = document.querySelectorAll('.filter-item');
 
-          filterButtons.forEach(btn => {
-            btn.addEventListener('click', () => {
-              const filter = btn.getAttribute('data-filter');
+          filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+              const filter = button.getAttribute('data-filter');
 
+              // Re-select filterItems on each click
+              const filterItems = document.querySelectorAll('.filter-item');
+              const items = Array.from(filterItems);
+
+              // Sort items so matching ones come first
+              const sortedItems = items.sort((a, b) => {
+                const aMatch = a.getAttribute('data-type') === filter;
+                const bMatch = b.getAttribute('data-type') === filter;
+
+                if (filter === 'all') return 0;
+                return aMatch === bMatch ? 0 : aMatch ? -1 : 1;
+              });
+
+              // Append sorted items back to container
+              const mediaContainer = document.getElementById('mediaContainer');
+              sortedItems.forEach(item => mediaContainer.appendChild(item));
+
+              // Toggle visibility
               filterItems.forEach(item => {
                 const type = item.getAttribute('data-type');
                 if (filter === 'all' || type === filter) {
-                  item.style.display = 'block';
+                  item.classList.remove('d-none');
                 } else {
-                  item.style.display = 'none';
+                  item.classList.add('d-none');
                 }
               });
             });
           });
         </script>
-
-
 
       </div>
     </div>
@@ -526,30 +183,40 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script>
       const festivalData = {
-        holi: {
+        colours: {
           title: 'Holi Celebration',
           desc: 'Children enjoyed Holi with natural colors, music, and dancing. It was a day full of laughter and colors!',
-          animation: 'holiColors'
+          animation: 'holiColors',
+          images: ['img/colour-1.jfif', 'img/colour-2.jfif', 'img/colour-1.jfif'], // Array of image paths
+          videos: ['videos/holi1.mp4', 'videos/holi2.mp4'] // Array of video paths
         },
-        diwali: {
+        labour: {
           title: 'Diwali Celebration',
           desc: 'Bright diyas, paper lanterns, and fireworks lit up the school. Kids made rangolis and exchanged sweets.',
-          animation: 'diwaliLights'
+          animation: 'diwaliLights',
+          images: ['img/diwali1.jpg', 'img/diwali2.jpg'], // Array of image paths
+          videos: ['videos/diwali1.mp4', 'videos/diwali1.mp4'] // Array of video paths
         },
-        christmas: {
-          title: 'Christmas Celebration',
+        laughter: {
+          title: 'World Laughter Day Celebration',
           desc: 'Santa visited the kids with gifts! They sang carols, decorated trees, and enjoyed cakes.',
-          animation: 'snowFall'
+          animation: 'snowFall',
+          images: ['img/christmas1.png', 'img/christmas2.png'], // Array of image paths
+          videos: ['videos/christmas1.mp4'] // Array of video paths
         },
         mothersDay: {
           title: 'Mother\'s Day Celebration',
           desc: 'Kids made beautiful cards and gifts for their mothers. They performed a special dance to show their love.',
-          animation: 'mothersDay'
+          animation: 'mothersDay',
+          images: ['img/mothersDay1.jfif', 'img/mothersDay2.jfif'], // Array of image paths
+          videos: ['videos/vid-1.mp4'] // Array of video paths
         },
         fathersDay: {
           title: 'Father\'s Day Celebration',
-          desc: 'Kids made beautiful cards and gifts for their mothers. They performed a special dance to show their love.',
-          animation: 'mothersDay'
+          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
+          animation: 'mothersDay',
+          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
+          videos: ['videos/fathersDay1.mp4'] // Array of video paths
         }
       };
 
@@ -971,6 +638,43 @@
 
         title.textContent = festival.title;
         desc.textContent = festival.desc;
+
+        // Clear existing images and videos
+        const mediaContainer = document.getElementById('mediaContainer');
+        mediaContainer.innerHTML = ''; // Clear previous content
+
+ // Add images
+festival.images.forEach(imageSrc => {
+  const imageCard = document.createElement('div');
+  imageCard.className = 'col-md-4 filter-item';
+  imageCard.setAttribute('data-type', 'image');
+  imageCard.innerHTML = `
+    <div class="p-3 bg-secondary h-100 rounded shadow d-flex flex-column align-items-center text-center">
+      <a data-fancybox="gallery" href="${imageSrc}">
+        <img src="${imageSrc}" class="img-fluid rounded mb-3" style="height: 200px; object-fit: cover;">
+      </a>
+    </div>
+  `;
+  mediaContainer.appendChild(imageCard);
+});
+
+// Add videos
+festival.videos.forEach(videoSrc => {
+  const videoCard = document.createElement('div');
+  videoCard.className = 'col-md-4 filter-item';
+  videoCard.setAttribute('data-type', 'video');
+  videoCard.innerHTML = `
+    <div class="p-3 bg-secondary h-100 rounded shadow d-flex flex-column align-items-center text-center">
+      <a data-fancybox="gallery" href="${videoSrc}">
+        <video controls style="height: 200px;" class="mb-3 w-100 rounded">
+          <source src="${videoSrc}" type="video/mp4">
+        </video>
+      </a>
+    </div>
+  `;
+  mediaContainer.appendChild(videoCard);
+});
+
         modal.classList.add('active');
         modal.style.display = 'flex';
         resizeCanvas();
@@ -1034,83 +738,7 @@
 
 
     <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
-      <div class="container py-5">
-        <div class="row g-5">
-          <div class="col-lg-3 col-md-6">
-            <h3 class="text-white mb-4">Get In Touch</h3>
-            <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
-            <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
-            <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
-            <div class="d-flex pt-2">
-              <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
-              <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-              <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-              <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6">
-            <h3 class="text-white mb-4">Quick Links</h3>
-            <a class="btn btn-link text-white-50" href="">About Us</a>
-            <a class="btn btn-link text-white-50" href="">Contact Us</a>
-            <a class="btn btn-link text-white-50" href="">Our Services</a>
-            <a class="btn btn-link text-white-50" href="">Privacy Policy</a>
-            <a class="btn btn-link text-white-50" href="">Terms & Condition</a>
-          </div>
-          <div class="col-lg-3 col-md-6">
-            <h3 class="text-white mb-4">Photo Gallery</h3>
-            <div class="row g-2 pt-2">
-              <div class="col-4">
-                <img class="img-fluid rounded bg-light p-1" src="img/classes-1.jpg" alt="">
-              </div>
-              <div class="col-4">
-                <img class="img-fluid rounded bg-light p-1" src="img/classes-2.jpg" alt="">
-              </div>
-              <div class="col-4">
-                <img class="img-fluid rounded bg-light p-1" src="img/classes-3.jpg" alt="">
-              </div>
-              <div class="col-4">
-                <img class="img-fluid rounded bg-light p-1" src="img/classes-4.jpg" alt="">
-              </div>
-              <div class="col-4">
-                <img class="img-fluid rounded bg-light p-1" src="img/classes-5.jpg" alt="">
-              </div>
-              <div class="col-4">
-                <img class="img-fluid rounded bg-light p-1" src="img/classes-6.jpg" alt="">
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6">
-            <h3 class="text-white mb-4">Newsletter</h3>
-            <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
-            <div class="position-relative mx-auto" style="max-width: 400px;">
-              <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
-              <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="copyright">
-          <div class="row">
-            <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-              &copy; <a class="border-bottom" href="#">Your Site Name</a>, All Right Reserved.
-
-              <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-              Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
-            </div>
-            <div class="col-md-6 text-center text-md-end">
-              <div class="footer-menu">
-                <a href="">Home</a>
-                <a href="">Cookies</a>
-                <a href="">Help</a>
-                <a href="">FQAs</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <script src="footer.js"></script>
     <!-- Footer End -->
 
 
