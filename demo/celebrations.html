@@ -14,7 +14,9 @@
   <!-- Google Web Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@600&family=Lobster+Two:wght@700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@600&family=Lobster+Two:wght@700&display=swap"
+    rel="stylesheet">
 
   <!-- Icon Font Stylesheet -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -26,7 +28,7 @@
 
   <!-- Customized Bootstrap Stylesheet -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
-  
+
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
 
 
@@ -67,7 +69,7 @@
     }
 
     .celebrations-container {
-      max-width: 1100px;
+      max-width: 1525px;
       margin: 0 auto 60px;
       display: flex;
       flex-wrap: wrap;
@@ -77,18 +79,19 @@
     }
 
     .festival-card {
-      width: 280px;
+      width: 350px;
       background: linear-gradient(145deg, #ffffff, #ffffff);
       border-radius: 26px;
-      /*  box-shadow:
-            0 8px 12px rgba(255 168 0 / 0.3),
-            inset -5px -5px 10px #fff3d6,
-            inset 5px 5px 17px #f2d492; */
+      box-shadow:
+        0 8px 12px rgba(255, 255, 255, 0.859);
+      /*  inset -5px -5px 10px #fff3d6,
+            inset 5px 5px 17px #f2d492;  */
       cursor: pointer;
       overflow: hidden;
       transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
         box-shadow 0.3s ease;
       position: relative;
+
     }
 
     .festival-card::before {
@@ -176,10 +179,13 @@
       backdrop-filter: blur(10px);
       padding: 20px;
     }
-
-    .festival-modal.active {
-      display: flex;
+@media screen and (max-width: 768px) {
+      .festival-modal {
+        padding: 10px;
+        }
     }
+
+  
 
     .festival-content {
       position: relative;
@@ -195,7 +201,7 @@
 
       box-shadow:
         0 12px 24px rgb(97, 237, 255);
-      ;
+      
       /* inset 0 0 80px 5px #ffac33; */
       max-width: 1600px;
       max-height: 90vh;
@@ -272,7 +278,7 @@
       left: 0;
       width: 100vw;
       height: 100vh;
-      z-index: 1;
+      z-index: 11111;
       pointer-events: none;
       mix-blend-mode: screen;
     }
@@ -292,91 +298,474 @@
     }
 
     body.fancybox-active {
-  overflow: hidden !important;
-  z-index: 1 !important;
-}
-.fancybox__container {
-  animation: fadeIn 0.3s ease-in-out;
+      overflow: hidden !important;
+      z-index:111 !important;
+    }
+
+    .fancybox__container {
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+/* Search Bar */
+
+/* Center the container */
+.search-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
 }
 
-@keyframes fadeIn {
-  from {
+/* Style the search bar */
+.fancy-search-bar {
+  padding: 12px 40px 12px 20px;
+  width: 100%;
+  max-width: 400px;
+  font-size: 16px;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s ease-in-out;
+  outline: none;
+  background-color: white;
+  
+}
+
+/* On focus: animated expansion and glow */
+.fancy-search-bar:focus {
+  max-width: 480px;
+  border: 2px solid #ff6a00;
+  box-shadow: 0 0 12px rgba(255, 106, 0, 0.6);
+  transform: scale(1.05);
+}
+
+/* Optional: smooth hover glow */
+.fancy-search-bar:hover {
+  box-shadow: 0 0 8px rgba(255, 106, 0, 0.2);
+ 
+}
+ /* NO CONTENT MESSAGE */
+.no-content-message {
+  background: #ffefd5; /* soft peach */
+  color: #ff6a00;      /* bright orange */
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(255, 106, 0, 0.3);
+  padding: 20px 30px;
+  margin: 20px auto;
+  max-width: 400px;
+  user-select: none;
+  transition: transform 0.3s ease;
+}
+
+.no-content-message p {
+  margin: 0;
+}
+
+/* Fun bounce effect when message appears */
+.no-content-message.show {
+  animation: bounceIn 0.5s forwards;
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.7);
     opacity: 0;
   }
-  to {
+  60% {
+    transform: scale(1.1);
     opacity: 1;
   }
+  100% {
+    transform: scale(1);
+  }
 }
-
-  </style>
+  
+</style>
+ 
 </head>
 
-<!-- Before </body> -->
+<!-- Before -->
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
+
 <body>
   <div class="container-fluid  p-0">
 
+<!-- Page Header Start -->
+<div class="container-fluid celebration-page-header position-relative mb-5">
+ 
+  <div class="container py-5 position-relative">
+    <h1 class="display-2 text-white animated slideInDown mb-4">Celebrations</h1>
+    <nav aria-label="breadcrumb" class="animated slideInDown">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+        <li class="breadcrumb-item"><a href="celebrations.html">Celebrations</a></li>
+      </ol>
+    </nav>
+  </div>
+</div>
+<!-- Page Header End -->
+
+<!-- Page Header End -->
+
+
     <!-- Page Header End -->
-    <div class="container-fluid py-5 page-header position-relative mb-5">
-      <div class="container py-5">
-        <h1 class="display-2 text-white animated slideInDown mb-4">Celebrations </h1>
-        <nav aria-label="breadcrumb animated slideInDown">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-            <li class="breadcrumb-item"><a href="celebrations.html">Celebrations</a></li>
-          </ol>
-        </nav>
-      </div>
-    </div>
 
-    <div class="celebrations-container">
-      <!-- MOTHERS DAY -->
-      <div class="festival-card" data-festival="mothersDay" tabindex="0"
-        aria-label="mothers day festival celebration card">
-        <img src="img/mothers-day.jfif" alt="Mothers Day">
-        <h3>
-          <center>Mothers Day</center>
-        </h3>
-        <p>Festival of Love, joy, and togetherness!</p>
+    
+<!-- Search Bar Container -->
+<div class="search-wrapper">
+  <input type="text" id="searchInput" placeholder="Search For celebrations " class="fancy-search-bar">
+</div><br>
 
-      </div>
-      <!-- Fathers DAY -->
-      <div class="festival-card" data-festival="fathersDay" tabindex="0"
-        aria-label="mothers day festival celebration card">
-        <img src="img/fathers-day.jfif" alt="Mothers Day">
-        <h3>
-          <center>Fathers Day</center>
-        </h3>
-        <p>Festival of Love, joy, and togetherness!</p>
+<div class="celebrations-container"></div>
 
-      </div>
-      <!--  COLOURS DAY -->
-      <div class="festival-card" data-festival="colours" tabindex="0" aria-label="Holi festival celebration card">
-        <img src="img/holi1.jpg" alt="colours">
-        <h3>
-          <center>Colours Day </center>
-        </h3>
-        <p>Festival of Colors, joy, and togetherness!</p>
-      </div>
+    <script>
+      const cards = [
+        {
+          key: "mothersDay", /*To Open Modal  */
+          title: "Mothers Day",
+          desc: "Festival of Love, joy, and togetherness!",
+          cardImage: "img/mothers-day.jfif",
+          ariaLabel: "mothers day festival celebration card"
+        },
+        {
+          key: "fathersDay",
+          title: "Fathers Day",
+          desc: "Festival of Love, joy, and togetherness!",
+          cardImage: "img/fathers-day.jfif",
+          ariaLabel: "fathers day festival celebration card"
+        },
+        {
+          key: "colours",
+          title: "Colours Day",
+          desc: "Festival of Colors, joy, and togetherness!",
+          cardImage: "img/holi1.jpg",
+          ariaLabel: "Holi festival celebration card"
+        },
+        {
+          key: "labour",
+          title: "Labours Day",
+          desc: "Festival of Lights, celebrated with diyas and fireworks.",
+          cardImage: "img/diwali1.jpg",
+          ariaLabel: "Diwali festival celebration card"
+        },
+        {
+          key: "laughter",
+          title: "World Laughter Day",
+          desc: "Celebrate joy, gifts, and Santa Claus!",
+          cardImage: "img/christmas.jpg",
+          ariaLabel: "Christmas festival celebration card"
+        },
+        {
+          key: "Baisakhi",
+          title: "Baisakhi ",
+          desc: "Celebrate joy, gifts, and Santa Claus!",
+          cardImage: "img/christmas.jpg",
+          ariaLabel: "Christmas festival celebration card"
+        },
+        {
+          key: "red_color_day",
+          title: "Red Colour Day",
+          desc: "Celebrate joy, gifts, and Santa Claus!",
+          cardImage: "img/christmas.jpg",
+          ariaLabel: "Christmas festival celebration card"
+        },
+        {
+          key: "Blue_color_day",
+          title: "Blue Colour Day",
+          desc: "Celebrate joy, gifts, and Santa Claus!",
+          cardImage: "img/christmas.jpg",
+          ariaLabel: "Christmas festival celebration card"
+        },
+        {
+          key: "Yellow_colour_day",
+          title: "Yellow Colour Day",
+          desc: "Celebrate joy, gifts, and Santa Claus!",
+          cardImage: "img/christmas.jpg",
+          ariaLabel: "Christmas festival celebration card"
+        },
+        {
+          key: "Cargill_Vijay_diwas",
+          title: "Cargill Vijay diwas",
+          desc: "Celebrate joy, gifts, and Santa Claus!",
+          cardImage: "img/christmas.jpg",
+          ariaLabel: "Christmas festival celebration card"
+        },
+        {
+          key: "World_Emoji_day",
+          title: "World Emoji day",
+          desc: "Celebrate joy, gifts, and Santa Claus!",
+          cardImage: "img/christmas.jpg",
+          ariaLabel: "Christmas festival celebration card"
+        },
+        {
+          key: "Chocolate",
+          title: "Chocolate day",
+          desc: "Celebrate joy, gifts, and Santa Claus!",
+          cardImage: "img/christmas.jpg",
+          ariaLabel: "Christmas festival celebration card"
+        },
+        {
+          key: "Hariyali_teej",
+          title: "Hariyali teej ",
+          desc: "Celebrate joy, gifts, and Santa Claus!",
+          cardImage: "img/christmas.jpg",
+          ariaLabel: "Christmas festival celebration card"
+        },
+        {
+          key: "International_Tiger_day",
+          title: "International Tiger day",
+          desc: "Celebrate joy, gifts, and Santa Claus!",
+          cardImage: "img/christmas.jpg",
+          ariaLabel: "Christmas festival celebration card"
+        },
+        {
+          key: "Green_Colour_Day",
+          title: "Green Colour Day",
+          desc: "Celebrate joy, gifts, and Santa Claus!",
+          cardImage: "img/christmas.jpg",
+          ariaLabel: "Christmas festival celebration card"
+        },
+        {
+          key: "Friendship",
+          title: "Friendship day",
+          desc: "Celebrate joy, gifts, and Santa Claus!",
+          cardImage: "img/christmas.jpg",
+          ariaLabel: "Christmas festival celebration card"
+        },
+        {
+          key: "Independence",
+          title: "Independence day ",
+          desc: "Celebrate joy, gifts, and Santa Claus!",
+          cardImage: "img/christmas.jpg",
+          ariaLabel: "Christmas festival celebration card"
+        },
+        {
+          key: "Raksha_Bandhan",
+          title: "Raksha Bandhan",
+          desc: "Celebrate joy, gifts, and Santa Claus!",
+          cardImage: "img/christmas.jpg",
+          ariaLabel: "Christmas festival celebration card"
+        },
+        {
+          key: "Sports_day",
+          title: "National sports day ",
+          desc: "Celebrate joy, gifts, and Santa Claus!",
+          cardImage: "img/christmas.jpg",
+          ariaLabel: "Christmas festival celebration card"
+        },
+        {
+          key: "ganesh",
+          title: "Ganesh chaturthi ",
+          desc: "Celebrate joy, gifts, and Santa Claus!",
+          cardImage: "img/christmas.jpg",
+          ariaLabel: "Christmas festival celebration card"
+        },
+        {
+          key: "Black_day",
+          title: "Black day",
+          desc: "Celebrate joy, gifts, and Santa Claus!",
+          cardImage: "img/christmas.jpg",
+          ariaLabel: "Christmas festival celebration card"
+        },
+        {
+          key: "coconut",
+          title: "Coconut day",
+          desc: "Celebrate joy, gifts, and Santa Claus!",
+          cardImage: "img/christmas.jpg",
+          ariaLabel: "Christmas festival celebration card"
+        },
+        {
+          key: "Teachers",
+          title: "Teachers day",
+          desc: "Celebrate joy, gifts, and Santa Claus!",
+          cardImage: "img/christmas.jpg",
+          ariaLabel: "Christmas festival celebration card"
+        },
+        {
+          key: "Teddy_bear",
+          title: "National teddy bear day",
+          desc: "Celebrate joy, gifts, and Santa Claus!",
+          cardImage: "img/christmas.jpg",
+          ariaLabel: "Christmas festival celebration card"
+        },
+        {
+          key: "Hindi_Diwas",
+          title: "Hindi Diwas",
+          desc: "Celebrate joy, gifts, and Santa Claus!",
+          cardImage: "img/christmas.jpg",
+          ariaLabel: "Christmas festival celebration card"
+        },
+        {
+          key: "World_heart_day",
+          title: "World heart day",
+          desc: "Celebrate joy, gifts, and Santa Claus!",
+          cardImage: "img/christmas.jpg",
+          ariaLabel: "Christmas festival celebration card"
+        },
+        {
+          key: "White_day",
+          title: "White day",
+          desc: "Celebrate joy, gifts, and Santa Claus!",
+          cardImage: "img/christmas.jpg",
+          ariaLabel: "Christmas festival celebration card"
+        },
+        {
+          key: "Gandhi_jayanti",
+          title: "Gandhi jayanti",
+          desc: "Celebrate joy, gifts, and Santa Claus!",
+          cardImage: "img/christmas.jpg",
+          ariaLabel: "Christmas festival celebration card"
+        },
+        {
+          key: "World_smile_day",
+          title: "World smile day ",
+          desc: "Celebrate joy, gifts, and Santa Claus!",
+          cardImage: "img/christmas.jpg",
+          ariaLabel: "Christmas festival celebration card"
+        },
+        {
+          key: "Global_handwashing_day",
+          title: "Global handwashing day",
+          desc: "Celebrate joy, gifts, and Santa Claus!",
+          cardImage: "img/christmas.jpg",
+          ariaLabel: "Christmas festival celebration card"
+        },
+        {
+          key: "Halloween",
+          title: "Halloween",
+          desc: "Celebrate joy, gifts, and Santa Claus!",
+          cardImage: "img/christmas.jpg",
+          ariaLabel: "Christmas festival celebration card"
+        },
+        {
+          key: "Orange",
+          title: "Orange day",
+          desc: "Celebrate joy, gifts, and Santa Claus!",
+          cardImage: "img/christmas.jpg",
+          ariaLabel: "Christmas festival celebration card"
+        },
+        {
+          key: "Guru_nanak_jayanti",
+          title: "Guru nanak jayanti",
+          desc: "Celebrate joy, gifts, and Santa Claus!",
+          cardImage: "img/christmas.jpg",
+          ariaLabel: "Christmas festival celebration card"
+        },
+        {
+          key: "Children",
+          title: "Children's day",
+          desc: "Celebrate joy, gifts, and Santa Claus!",
+          cardImage: "img/christmas.jpg",
+          ariaLabel: "Christmas festival celebration card"
+        },
+        {
+          key: "World_kindness_day",
+          title: "World kindness day",
+          desc: "Celebrate joy, gifts, and Santa Claus!",
+          cardImage: "img/christmas.jpg",
+          ariaLabel: "Christmas festival celebration card"
+        },
+        {
+          key: "Education",
+          title: "Education day",
+          desc: "Celebrate joy, gifts, and Santa Claus!",
+          cardImage: "img/christmas.jpg",
+          ariaLabel: "Christmas festival celebration card"
+        },
+        {
+          key: "Pink_day",
+          title: "Pink day",
+          desc: "Celebrate joy, gifts, and Santa Claus!",
+          cardImage: "img/christmas.jpg",
+          ariaLabel: "Christmas festival celebration card"
+        }
+      ];
 
-      <!-- Labours Day -->
-      <div class="festival-card" data-festival="labour" tabindex="0" aria-label="Diwali festival celebration card">
-        <img src="img/diwali1.jpg" alt="labour">
-        <h3>
-          <center>Labours Day</center>
-        </h3>
-        <p>Festival of Lights, celebrated with diyas and fireworks.</p>
-      </div>
-      <!-- WORLD LAUGHTER DAY -->
-      <div class="festival-card" data-festival="laughter" tabindex="0" aria-label="Christmas festival celebration card">
-        <img src="img/christmas.jpg" alt="laughter">
-        <h3>
-          <center>World Laughter Day</center>
-        </h3>
-        <p>Celebrate joy, gifts, and Santa Claus!</p>
-      </div>
+     
+const container = document.querySelector('.celebrations-container');
+const searchInput = document.getElementById('searchInput');
 
-    </div>
+// Create no content message element and append to container (hidden initially)
+const noContentMessage = document.createElement('div');
+noContentMessage.className = 'no-content-message';
+noContentMessage.style.display = 'none'; // hide initially
+noContentMessage.innerHTML = '<p>😕 Oops! No celebrations found. Try searching again!</p>';
+container.appendChild(noContentMessage);
+
+// Function to show modal
+function openModal(cardKey) {
+  const modal = document.getElementById(`${cardKey}Modal`);
+  if (modal) {
+    const modalInstance = new bootstrap.Modal(modal);
+    modalInstance.show();
+  }
+}
+
+// Function to render cards and bind modal event
+function renderCards(filteredCards) {
+  container.innerHTML = ''; // Clear content first
+
+  if (filteredCards.length === 0) {
+    // Show no content message with animation
+    container.appendChild(noContentMessage);
+    noContentMessage.style.display = 'block';
+    noContentMessage.classList.remove('show'); // reset animation
+    void noContentMessage.offsetWidth; // trigger reflow to restart animation
+    noContentMessage.classList.add('show');
+    return;
+  }
+
+  // Hide no content message when there are cards to show
+  noContentMessage.style.display = 'none';
+  noContentMessage.classList.remove('show');
+
+  filteredCards.forEach(card => {
+    const cardDiv = document.createElement('div');
+    cardDiv.className = 'festival-card';
+    cardDiv.setAttribute('data-festival', card.key);
+    cardDiv.setAttribute('tabindex', '0');
+    cardDiv.setAttribute('aria-label', card.ariaLabel);
+
+    cardDiv.innerHTML = `
+      <img src="${card.cardImage}" alt="${card.title}">
+      <h3><center>${card.title}</center></h3>
+      <p>${card.desc}</p>
+    `;
+
+    // Attach click to open corresponding modal
+    cardDiv.addEventListener('click', () => {
+      openModal(card.key);
+    });
+
+    container.appendChild(cardDiv);
+  });
+}
+
+// Initial card render
+renderCards(cards);
+
+// Filter logic
+searchInput.addEventListener('input', () => {
+  const searchTerm = searchInput.value.toLowerCase();
+  const filteredCards = cards.filter(card =>
+    card.title.toLowerCase().includes(searchTerm)
+  );
+  renderCards(filteredCards);
+});
+
+    </script>
 
     <div class="festival-modal" id="festivalModal" role="dialog" aria-modal="true" aria-labelledby="festivalTitle"
       aria-describedby="festivalDesc">
@@ -439,14 +828,10 @@
                 </video>
               </div>
             </div>
-
-
-
-
           </div>
         </div>
 
-        <!-- Filtering Script -->
+        <!-- Filtering  BTN Script -->
         <script>
           const filterButtons = document.querySelectorAll('.filter-btn');
 
@@ -488,6 +873,7 @@
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
     <script>
       const festivalData = {
         colours: {
@@ -519,6 +905,230 @@
           videos: ['videos/vid-1.mp4'] // Array of video paths
         },
         fathersDay: {
+          title: 'Father\'s Day Celebration',
+          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
+          animation: 'mothersDay',
+          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
+          videos: ['videos/fathersDay1.mp4'] // Array of video paths
+        },
+        Baisakhi: {
+          title: 'Baisakhi Celebration',
+          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
+          animation: 'mothersDay',
+          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
+          videos: ['videos/fathersDay1.mp4'] // Array of video paths
+        },
+        red_color_day: {
+          title: ' Red Colour Day Celebration',
+          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
+          animation: 'mothersDay',
+          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
+          videos: ['videos/fathersDay1.mp4'] // Array of video paths
+        },
+        Blue_color_day: {
+          title: 'Father\'s Day Celebration',
+          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
+          animation: 'mothersDay',
+          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
+          videos: ['videos/fathersDay1.mp4'] // Array of video paths
+        },
+        Yellow_colour_day: {
+          title: 'Father\'s Day Celebration',
+          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
+          animation: 'mothersDay',
+          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
+          videos: ['videos/fathersDay1.mp4'] // Array of video paths
+        },
+        Cargill_Vijay_diwas: {
+          title: 'Father\'s Day Celebration',
+          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
+          animation: 'mothersDay',
+          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
+          videos: ['videos/fathersDay1.mp4'] // Array of video paths
+        },
+        World_Emoji_day: {
+          title: 'Father\'s Day Celebration',
+          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
+          animation: 'mothersDay',
+          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
+          videos: ['videos/fathersDay1.mp4'] // Array of video paths
+        },
+        Chocolate: {
+          title: 'Father\'s Day Celebration',
+          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
+          animation: 'mothersDay',
+          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
+          videos: ['videos/fathersDay1.mp4'] // Array of video paths
+        },
+        Hariyali_teej: {
+          title: 'Father\'s Day Celebration',
+          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
+          animation: 'mothersDay',
+          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
+          videos: ['videos/fathersDay1.mp4'] // Array of video paths
+        },
+        International_Tiger_day: {
+          title: 'Father\'s Day Celebration',
+          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
+          animation: 'mothersDay',
+          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
+          videos: ['videos/fathersDay1.mp4'] // Array of video paths
+        },
+        Green_Colour_Day: {
+          title: 'Father\'s Day Celebration',
+          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
+          animation: 'mothersDay',
+          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
+          videos: ['videos/fathersDay1.mp4'] // Array of video paths
+        },
+        Friendship: {
+          title: 'Father\'s Day Celebration',
+          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
+          animation: 'mothersDay',
+          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
+          videos: ['videos/fathersDay1.mp4'] // Array of video paths
+        },
+        Independence: {
+          title: 'Father\'s Day Celebration',
+          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
+          animation: 'mothersDay',
+          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
+          videos: ['videos/fathersDay1.mp4'] // Array of video paths
+        },
+        Raksha_Bandhan: {
+          title: 'Father\'s Day Celebration',
+          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
+          animation: 'mothersDay',
+          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
+          videos: ['videos/fathersDay1.mp4'] // Array of video paths
+        },
+        Sports_day: {
+          title: 'Father\'s Day Celebration',
+          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
+          animation: 'mothersDay',
+          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
+          videos: ['videos/fathersDay1.mp4'] // Array of video paths
+        },
+        ganesh: {
+          title: 'Father\'s Day Celebration',
+          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
+          animation: 'mothersDay',
+          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
+          videos: ['videos/fathersDay1.mp4'] // Array of video paths
+        },
+        Black_day: {
+          title: 'Father\'s Day Celebration',
+          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
+          animation: 'mothersDay',
+          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
+          videos: ['videos/fathersDay1.mp4'] // Array of video paths
+        },
+        coconut: {
+          title: 'Father\'s Day Celebration',
+          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
+          animation: 'mothersDay',
+          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
+          videos: ['videos/fathersDay1.mp4'] // Array of video paths
+        },
+        Teachers: {
+          title: 'Father\'s Day Celebration',
+          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
+          animation: 'mothersDay',
+          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
+          videos: ['videos/fathersDay1.mp4'] // Array of video paths
+        },
+        Teddy_bear: {
+          title: 'Father\'s Day Celebration',
+          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
+          animation: 'mothersDay',
+          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
+          videos: ['videos/fathersDay1.mp4'] // Array of video paths
+        },
+        Hindi_Diwas: {
+          title: 'Father\'s Day Celebration',
+          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
+          animation: 'mothersDay',
+          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
+          videos: ['videos/fathersDay1.mp4'] // Array of video paths
+        },
+        World_heart_day: {
+          title: 'Father\'s Day Celebration',
+          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
+          animation: 'mothersDay',
+          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
+          videos: ['videos/fathersDay1.mp4'] // Array of video paths
+        },
+        White_day: {
+          title: 'Father\'s Day Celebration',
+          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
+          animation: 'mothersDay',
+          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
+          videos: ['videos/fathersDay1.mp4'] // Array of video paths
+        },
+        Gandhi_jayanti: {
+          title: 'Father\'s Day Celebration',
+          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
+          animation: 'mothersDay',
+          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
+          videos: ['videos/fathersDay1.mp4'] // Array of video paths
+        },
+        World_smile_day: {
+          title: 'Father\'s Day Celebration',
+          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
+          animation: 'mothersDay',
+          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
+          videos: ['videos/fathersDay1.mp4'] // Array of video paths
+        },
+        Global_handwashing_day: {
+          title: 'Father\'s Day Celebration',
+          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
+          animation: 'mothersDay',
+          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
+          videos: ['videos/fathersDay1.mp4'] // Array of video paths
+        },
+        Halloween: {
+          title: 'Father\'s Day Celebration',
+          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
+          animation: 'mothersDay',
+          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
+          videos: ['videos/fathersDay1.mp4'] // Array of video paths
+        },
+        Orange: {
+          title: 'Father\'s Day Celebration',
+          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
+          animation: 'mothersDay',
+          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
+          videos: ['videos/fathersDay1.mp4'] // Array of video paths
+        },
+        Guru_nanak_jayanti: {
+          title: 'Father\'s Day Celebration',
+          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
+          animation: 'mothersDay',
+          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
+          videos: ['videos/fathersDay1.mp4'] // Array of video paths
+        },
+        Children: {
+          title: 'Father\'s Day Celebration',
+          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
+          animation: 'mothersDay',
+          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
+          videos: ['videos/fathersDay1.mp4'] // Array of video paths
+        },
+        World_kindness_day: {
+          title: 'Father\'s Day Celebration',
+          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
+          animation: 'mothersDay',
+          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
+          videos: ['videos/fathersDay1.mp4'] // Array of video paths
+        },
+        Education: {
+          title: 'Father\'s Day Celebration',
+          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
+          animation: 'mothersDay',
+          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
+          videos: ['videos/fathersDay1.mp4'] // Array of video paths
+        },
+        Pink_day: {
           title: 'Father\'s Day Celebration',
           desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
           animation: 'mothersDay',
@@ -950,27 +1560,27 @@
         const mediaContainer = document.getElementById('mediaContainer');
         mediaContainer.innerHTML = ''; // Clear previous content
 
- // Add images
-festival.images.forEach(imageSrc => {
-  const imageCard = document.createElement('div');
-  imageCard.className = 'col-md-4 filter-item';
-  imageCard.setAttribute('data-type', 'image');
-  imageCard.innerHTML = `
+        // Add images
+        festival.images.forEach(imageSrc => {
+          const imageCard = document.createElement('div');
+          imageCard.className = 'col-md-4 filter-item';
+          imageCard.setAttribute('data-type', 'image');
+          imageCard.innerHTML = `
     <div class="p-3 bg-secondary h-100 rounded shadow d-flex flex-column align-items-center text-center">
       <a data-fancybox="gallery" href="${imageSrc}">
         <img src="${imageSrc}" class="img-fluid rounded mb-3" style="height: 200px; object-fit: cover;">
       </a>
     </div>
   `;
-  mediaContainer.appendChild(imageCard);
-});
+          mediaContainer.appendChild(imageCard);
+        });
 
-// Add videos
-festival.videos.forEach(videoSrc => {
-  const videoCard = document.createElement('div');
-  videoCard.className = 'col-md-4 filter-item';
-  videoCard.setAttribute('data-type', 'video');
-  videoCard.innerHTML = `
+        // Add videos
+        festival.videos.forEach(videoSrc => {
+          const videoCard = document.createElement('div');
+          videoCard.className = 'col-md-4 filter-item';
+          videoCard.setAttribute('data-type', 'video');
+          videoCard.innerHTML = `
     <div class="p-3 bg-secondary h-100 rounded shadow d-flex flex-column align-items-center text-center">
       <a data-fancybox="gallery" href="${videoSrc}">
         <video controls style="height: 200px;" class="mb-3 w-100 rounded">
@@ -979,8 +1589,8 @@ festival.videos.forEach(videoSrc => {
       </a>
     </div>
   `;
-  mediaContainer.appendChild(videoCard);
-});
+          mediaContainer.appendChild(videoCard);
+        });
 
         modal.classList.add('active');
         modal.style.display = 'flex';
