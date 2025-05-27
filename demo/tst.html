@@ -1,147 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Media Gallery</title>
-
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- ✅ Font Awesome (CDN only - recommended) -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Z0Pxs0WZcs/9z7J7ZPllOP7F+jIc2IM6+fujzR4tLxazIrc3+Zr4cTfEXkX3fQMH5a9eOe7QmT+rk0zBbp9G4Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-
+  <title>Spooky Halloween</title>
   <style>
     body {
-      background-color: #f8f9fa;
+      margin: 0;
+      overflow: hidden;
+      background: radial-gradient(#000000, #0a0a0a);
     }
-
-    .filter-btn {
-      transition: all 0.3s ease;
-    }
-
-    .filter-btn:hover {
-      transform: scale(1.05);
-    }
-
-    .filter-item {
-      transition: all 0.3s ease-in-out;
-    }
-
-    .filter-item img,
-    .filter-item video {
-      height: 200px;
-      width: 100%;
-      object-fit: cover;
-      border-radius: 8px;
-    }
-
-    .filter-item .card-content {
-      background-color: #ffffff;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      padding: 15px;
-    }
-
-    @media (max-width: 767px) {
-      .filter-item {
-        margin-bottom: 20px;
-      }
+    canvas {
+      display: block;
     }
   </style>
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
 </head>
 <body>
+  <canvas id="halloweenCanvas"></canvas>
+  <script>
+    function initHalloweenCanvas() {
+      const canvas = document.getElementById("halloweenCanvas");
+      const ctx = canvas.getContext("2d");
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
 
-  <!-- Filter Buttons -->
-  <div class="container mt-4">
-    <div class="row g-3 justify-content-center text-center">
-      <div class="col-12 col-md-auto">
-        <button class="btn btn-primary w-100 filter-btn" data-filter="all">
-          All
-        </button>
-      </div>
+      let animationId;
+      const pumpkins = [];
+      const bats = [];
+      const sparkles = [];
+      const fogLayers = [];
 
-      <div class="col-12 col-md-auto">
-        <button class="btn btn-lg btn-info shadow-lg rounded-pill px-4 py-2 d-flex justify-content-center align-items-center w-100 filter-btn"
-                data-filter="image">
-          <i class="fas fa-camera-retro me-2"></i> View Photos
-        </button>
-      </div>
-
-      <div class="col-12 col-md-auto">
-        <button class="btn btn-lg btn-warning shadow-lg rounded-pill px-4 py-2 d-flex justify-content-center align-items-center w-100 filter-btn"
-                data-filter="video">
-          <i class="fas fa-video me-2"></i>Watch Video
- 
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Image / Video Cards -->
-<!-- Container for Dynamic Media -->
-<div class="container text-black py-4">
-  <div class="row g-4" id="mediaContainer">
-    <!-- Media items will be inserted here dynamically -->
-  </div>
-</div>
-
-  <!-- Filtering Script -->
-<script>
-  const mediaContainer = document.getElementById('mediaContainer');
-
-  // Fetch media from JSON
-  fetch('json/gallery.json')
-    .then(response => response.json())
-    .then(mediaItems => {
-      mediaItems.forEach(item => {
-        const col = document.createElement('div');
-        col.className = 'col-md-4 filter-item';
-        col.setAttribute('data-type', item.type);
-
-        let content = '';
-        if (item.type === 'image') {
-          content = `
-            <div class="card-content d-flex flex-column align-items-center text-center">
-              <img src="${item.src}" alt="${item.title}" class="img-fluid">
-             
-            </div>`;
-        } else if (item.type === 'video') {
-          content = `
-            <div class="card-content d-flex flex-column align-items-center text-center">
-              <video controls class="w-100">
-                <source src="${item.src}" type="video/mp4">
-                Your browser does not support the video tag.
-              </video> 
-            </div>`;
+      class Pumpkin {
+        constructor(x, y, size) {
+          this.x = x;
+          this.y = y;
+          this.size = size;
+          this.alpha = 0;
+          this.jitter = Math.random() * 2;
         }
 
-        col.innerHTML = content;
-        mediaContainer.appendChild(col);
-      });
-    });
-
-  // Filtering logic
-  const filterButtons = document.querySelectorAll('.filter-btn');
-  filterButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      const filter = button.getAttribute('data-filter');
-      const filterItems = document.querySelectorAll('.filter-item');
-
-      filterItems.forEach(item => {
-        const type = item.getAttribute('data-type');
-        if (filter === 'all' || type === filter) {
-          item.classList.remove('d-none');
-        } else {
-          item.classList.add('d-none');
+        update() {
+          this.alpha = Math.min(this.alpha + 0.01, 1);
+          this.y += Math.sin(Date.now() / 300 + this.x) * 0.1;
         }
-      });
-    });
-  });
-</script>
 
+        draw() {
+          ctx.save();
+          ctx.globalAlpha = this.alpha;
+          ctx.fillStyle = "darkorange";
+          ctx.beginPath();
+          ctx.ellipse(this.x, this.y, this.size, this.size * 0.8, 0.1 * Math.sin(Date.now() / 500), 0, Math.PI * 2);
+          ctx.fill();
 
-  <!-- Bootstrap JS (Optional if needed) -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+          // Eyes
+          ctx.fillStyle = "red";
+          ctx.beginPath();
+          ctx.moveTo(this.x - this.size / 3, this.y - this.size / 4);
+          ctx.lineTo(this.x - this.size / 4, this.y - this.size / 2);
+          ctx.lineTo(this.x - this.size / 6, this.y - this.size / 4);
+          ctx.closePath();
+          ctx.fill();
 
+          ctx.beginPath();
+          ctx.moveTo(this.x + this.size / 3, this.y - this.size / 4);
+          ctx.lineTo(this.x + this.size / 4, this.y - this.size / 2);
+          ctx.lineTo(this.x + this.size / 6, this.y - this.size / 4);
+          ctx.closePath();
+          ctx.fill();
+
+          // Jagged mouth
+          ctx.beginPath();
+          ctx.moveTo(this.x - this.size / 2.5, this.y + this.size / 5);
+          for (let i = 0; i < 5; i++) {
+            ctx.lineTo(this.x - this.size / 2.5 + i * (this.size / 5), this.y + this.size / 5 + ((i % 2 === 0) ? 10 : -10));
+          }
+          ctx.lineTo(this.x + this.size / 2.5, this.y + this.size / 5);
+          ctx.closePath();
+          ctx.fill();
+          ctx.restore();
+        }
+      }
+
+      class Bat {
+        constructor() {
+          this.x = Math.random() * canvas.width;
+          this.y = Math.random() * canvas.height * 0.5;
+          this.size = 20 + Math.random() * 20;
+          this.speedX = -1.5 + Math.random() * 3;
+          this.speedY = -0.5 + Math.random();
+          this.angle = 0;
+        }
+
+        update() {
+          this.x += this.speedX;
+          this.y += this.speedY;
+          this.angle += 0.1;
+          if (this.x < -50 || this.x > canvas.width + 50 || this.y < -50 || this.y > canvas.height + 50) {
+            this.x = Math.random() * canvas.width;
+            this.y = canvas.height * 0.5 + Math.random() * canvas.height * 0.5;
+          }
+        }
+
+        draw() {
+          ctx.save();
+          ctx.translate(this.x, this.y);
+          ctx.rotate(Math.sin(this.angle) * 0.5);
+          ctx.fillStyle = "black";
+          ctx.beginPath();
+          ctx.moveTo(0, 0);
+          ctx.lineTo(-this.size, -this.size / 2);
+          ctx.lineTo(-this.size / 2, 0);
+          ctx.lineTo(-this.size, this.size / 2);
+          ctx.lineTo(0, 0);
+          ctx.lineTo(this.size, -this.size / 2);
+          ctx.lineTo(this.size / 2, 0);
+          ctx.lineTo(this.size, this.size / 2);
+          ctx.closePath();
+          ctx.fill();
+          ctx.restore();
+        }
+      }
+
+      class Sparkle {
+        constructor() {
+          this.x = Math.random() * canvas.width;
+          this.y = Math.random() * canvas.height;
+          this.size = Math.random() * 2 + 1;
+          this.alpha = Math.random();
+          this.speedY = 0.5 + Math.random();
+        }
+
+        update() {
+          this.y -= this.speedY;
+          this.alpha -= 0.01;
+          if (this.alpha <= 0) {
+            this.x = Math.random() * canvas.width;
+            this.y = canvas.height;
+            this.alpha = 1;
+          }
+        }
+
+        draw() {
+          ctx.save();
+          ctx.globalAlpha = this.alpha;
+          ctx.fillStyle = "white";
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.restore();
+        }
+      }
+
+      function drawFog() {
+        const gradient = ctx.createRadialGradient(
+          canvas.width / 2, canvas.height / 2, 0,
+          canvas.width / 2, canvas.height / 2, canvas.width
+        );
+        gradient.addColorStop(0, "rgba(50,50,50,0.1)");
+        gradient.addColorStop(1, "rgba(0,0,0,0.8)");
+        ctx.fillStyle = gradient;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+      }
+
+      function drawMessage() {
+        ctx.save();
+        ctx.fillStyle = "#FF0000";
+        ctx.shadowColor = "#660000";
+        ctx.shadowBlur = 40;
+        ctx.font = "bold 64px 'Creepster', cursive";
+        ctx.textAlign = "center";
+        ctx.fillText("🎃 Beware... Halloween Awaits! 👻", canvas.width / 2, canvas.height * 0.2);
+        ctx.restore();
+      }
+
+      function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        drawFog();
+        drawMessage();
+
+        pumpkins.forEach(p => {
+          p.update();
+          p.draw();
+        });
+
+        bats.forEach(b => {
+          b.update();
+          b.draw();
+        });
+
+        sparkles.forEach(s => {
+          s.update();
+          s.draw();
+        });
+
+        animationId = requestAnimationFrame(animate);
+      }
+
+      for (let i = 0; i < 5; i++) {
+        pumpkins.push(new Pumpkin(
+          canvas.width / 2 - 100 + i * 70,
+          canvas.height - 120 + Math.random() * 20,
+          40 + Math.random() * 20
+        ));
+      }
+
+      for (let i = 0; i < 12; i++) bats.push(new Bat());
+      for (let i = 0; i < 60; i++) sparkles.push(new Sparkle());
+
+      animate();
+    }
+
+    // Call the function
+    initHalloweenCanvas();
+  </script>
 </body>
 </html>

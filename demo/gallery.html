@@ -33,6 +33,9 @@
  <!-- ✅ Font Awesome (CDN only - recommended) -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Z0Pxs0WZcs/9z7J7ZPllOP7F+jIc2IM6+fujzR4tLxazIrc3+Zr4cTfEXkX3fQMH5a9eOe7QmT+rk0zBbp9G4Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+<!-- Fancybox CDN -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
 
   <style>
     body {
@@ -134,15 +137,15 @@
   </div>
 </div>
 
-  <!-- Filtering Script -->
-<script>
+
+  <!--  Script for images and video with filter  -->
+    <script>
   const mediaContainer = document.getElementById('mediaContainer');
 
-  // Fetch media from JSON
   fetch('json/gallery.json')
     .then(response => response.json())
     .then(mediaItems => {
-      mediaItems.forEach(item => {
+      mediaItems.forEach((item, index) => {
         const col = document.createElement('div');
         col.className = 'col-md-4 filter-item';
         col.setAttribute('data-type', item.type);
@@ -150,26 +153,26 @@
         let content = '';
         if (item.type === 'image') {
           content = `
-            <div class="card-content d-flex flex-column align-items-center text-center">
-              <img src="${item.src}" alt="${item.title}" class="img-fluid">
-             
-            </div>`;
+            <a data-fancybox="gallery" data-caption="${item.title}" href="${item.src}">
+              <img src="${item.src}" alt="${item.title}" class="img-fluid rounded shadow">
+            </a>
+          `;
         } else if (item.type === 'video') {
           content = `
-            <div class="card-content d-flex flex-column align-items-center text-center">
-              <video controls class="w-100">
+            <a data-fancybox="gallery" data-caption="${item.title}" data-type="video" href="${item.src}">
+              <video muted class="w-100 rounded shadow">
                 <source src="${item.src}" type="video/mp4">
-                Your browser does not support the video tag.
-              </video> 
-            </div>`;
+              </video>
+            </a>
+          `;
         }
 
-        col.innerHTML = content;
+        col.innerHTML = `<div class="card-content text-center">${content}</div>`;
         mediaContainer.appendChild(col);
       });
     });
 
-  // Filtering logic
+  // Filtering logic (unchanged)
   const filterButtons = document.querySelectorAll('.filter-btn');
   filterButtons.forEach(button => {
     button.addEventListener('click', () => {
@@ -178,15 +181,13 @@
 
       filterItems.forEach(item => {
         const type = item.getAttribute('data-type');
-        if (filter === 'all' || type === filter) {
-          item.classList.remove('d-none');
-        } else {
-          item.classList.add('d-none');
-        }
+        item.classList.toggle('d-none', filter !== 'all' && type !== filter);
       });
     });
   });
 </script>
+
+
 
 
   <!-- Bootstrap JS (Optional if needed) -->

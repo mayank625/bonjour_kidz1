@@ -13,7 +13,7 @@ document.write(`
                     <a href="#" class="nav-item nav-link">About Us</a>
                     <a href="services.html" class="nav-item nav-link">Services</a>
                     <a href="celebrations.html" class="nav-item nav-link">Celebrations</a>
-                    <a href="#" class="nav-item nav-link">Gallery</a>
+                    <a href="gallery.html" class="nav-item nav-link">Gallery</a>
                     <a href="franchise.html" class="nav-item nav-link">Franchise</a>
                     <a href="teachers.html" class="nav-item nav-link">Teachers</a>
 
