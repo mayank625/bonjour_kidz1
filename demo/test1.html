@@ -2,1738 +2,197 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <title>Kider - Preschool Website Template</title>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta content="" name="keywords">
-  <meta content="" name="description">
-
-  <!-- Favicon -->
-  <link href="img/favicon.ico" rel="icon">
-
-  <!-- Google Web Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <meta charset="UTF-8" />
+  <title>Course Reviews with Persistent Storage</title>
   <link
-    href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@600&family=Lobster+Two:wght@700&display=swap"
-    rel="stylesheet">
-
-  <!-- Icon Font Stylesheet -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
-  <!-- Libraries Stylesheet -->
-  <link href="lib/animate/animate.min.css" rel="stylesheet">
-  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
-  <!-- Customized Bootstrap Stylesheet -->
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
-
-
-
-  <!-- Template Stylesheet -->
-  <link href="css/style.css" rel="stylesheet">
-  <script src="menu.js"></script>
-
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
-
-    /* Reset and base */
-    * {
-      box-sizing: border-box;
-      user-select: none;
-    }
-
     body {
-      font-family: 'Poppins', Arial, sans-serif;
-      background: url('img/bg-06.png') no-repeat center center fixed;
-      background-size: cover;
-      margin: 0;
-      padding: 0;
-      overflow-x: hidden;
-      color: #222;
+      background: linear-gradient(-45deg, #f0f4f8, #ffe8e0, #fff0ea, #f0f4f8);
+      background-size: 400% 400%;
+      animation: gradientBG 10s ease infinite;
+      font-family: 'Roboto', sans-serif;
+      color: #2c3e50;
     }
 
-
-    h1 {
-      text-align: center;
-      margin: 40px 0 20px;
-      font-size: 3.2rem;
-      color: #472d2d;
-      letter-spacing: 1.2px;
-      text-shadow:
-        2px 2px 0 #ff6f61,
-        -1px -1px 0 #ff6f61;
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
-    .celebrations-container {
-      max-width: 1525px;
-      margin: 0 auto 60px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 28px;
-      justify-content: center;
-      padding: 0 20px 40px;
+    .review-card {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 1rem;
+      transition: transform 0.3s ease, border 0.3s ease;
+      border: 2px solid transparent; /* Default border */
     }
 
-    .festival-card {
-      width: 350px;
-      background: linear-gradient(145deg, #ffffff, #ffffff);
-      border-radius: 26px;
-      box-shadow:
-        0 8px 12px rgba(255, 255, 255, 0.859);
-      /*  inset -5px -5px 10px #fff3d6,
-            inset 5px 5px 17px #f2d492;  */
-      cursor: pointer;
-      overflow: hidden;
-      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
-        box-shadow 0.3s ease;
-      position: relative;
-
+    .review-card:hover {
+      transform: scale(1.05);
+      border: 2px solid #FE5D37; /* Border on hover */
     }
 
-    .festival-card::before {
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 40%;
-      top: 0;
-      left: 0;
-      background: linear-gradient(45deg, #ff6f61);
-      border-bottom-left-radius: 26px;
-      border-bottom-right-radius: 26px;
-      filter: blur(15px);
-      opacity: 0.4;
-      z-index: 0;
-      transition: opacity 0.35s ease;
+    .modal-content {
+      border-radius: 16px;
     }
-
-    .festival-card:hover {
-      transform: translateY(-12px);
-      box-shadow:
-        0 12px 25px rgb(255, 111, 97);
-      /*inset -5px -5px 20px #ff6f61,
-            inset 5px 5px 22px #ff6f61;
-     */
-    }
-
-    .festival-card:hover::before {
-      opacity: 0.7;
-    }
-
-    .festival-card img {
-      width: 100%;
-      height: 170px;
-      object-fit: cover;
-      filter: drop-shadow(0 8px 8px rgb(255 168 0 / 0.35));
-      border-bottom: 4px solid #ff6f61;
-      border-top-left-radius: 26px;
-      border-top-right-radius: 26px;
-      z-index: 1;
-      position: relative;
-      transition: transform 0.5s ease;
-    }
-
-    .festival-card:hover img {
-      transform: scale(1.03) rotate(2deg);
-    }
-
-    .festival-card h3 {
-      margin: 16px 0 8px;
-      font-size: 2rem;
-      color: #ff6f61;
-      text-shadow: 1px 1px 2px #ff6f61;
-      z-index: 1;
-      position: relative;
-    }
-
-    .festival-card p {
-      margin: 0 20px 24px;
-      font-size: 1.1rem;
-      line-height: 1.4;
-      font-weight: 500;
-      color: #6b3e00;
-      text-shadow: 0 0 1px #ff6f61;
-      z-index: 1;
-      position: relative;
-    }
-
-    /* Modal */
-
-    .festival-modal {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      display: none;
-      background: rgba(10, 10, 10, 0.85);
-      z-index: 1;
-      justify-content: center;
-      align-items: center;
-      overflow-y: auto;
-      -webkit-overflow-scrolling: touch;
-      animation: fadeInScale 0.5s ease forwards;
-      backdrop-filter: blur(10px);
-      padding: 20px;
-    }
-@media screen and (max-width: 768px) {
-      .festival-modal {
-        padding: 10px;
-        }
-    }
-
-  
-
-    .festival-content {
-      position: relative;
-      /*  background: radial-gradient(circle at top left, #a40101, #fff); */
-      background-image: url('img/bg-07.png');
-      background-size: cover;
-      /* or 'contain' depending on your need */
-      background-repeat: no-repeat;
-
-      padding: 36px 48px 48px;
-      border-radius: 32px;
-      text-align: center;
-
-      box-shadow:
-        0 12px 24px rgb(97, 237, 255);
-      
-      /* inset 0 0 80px 5px #ffac33; */
-      max-width: 1600px;
-      max-height: 90vh;
-      overflow-y: auto;
-      color: #664400;
-    }
-
-    .festival-content::-webkit-scrollbar {
-      width: 10px;
-    }
-
-    .festival-content::-webkit-scrollbar-track {
-      background: #fbe9b7;
-      border-radius: 20px;
-    }
-
-    .festival-content::-webkit-scrollbar-thumb {
-      background: #ff9e0d;
-      border-radius: 20px;
-      box-shadow: inset 0 0 6px #a85e00;
-    }
-
-    .close-btn {
-      position: absolute;
-      top: 16px;
-      right: 28px;
-      font-size: 40px;
-      cursor: pointer;
-      color: #a75e00;
-      background: #ffe27a;
-      border-radius: 50%;
-      width: 44px;
-      height: 44px;
-      line-height: 44px;
-      text-align: center;
-      box-shadow:
-        0 3px 8pxrgb(255, 111, 97);
-      /* inset 0 0 8px #fff5a3; */
-      transition: background-color 0.3s ease, color 0.3s ease;
-      user-select: none;
-      border: none;
-    }
-
-    .close-btn:hover,
-    .close-btn:focus {
-      background-color: #ff1212;
-      color: #fff;
-      outline: none;
-      box-shadow: 0 0 14px 2px #000000;
-    }
-
-    #festivalTitle {
-      font-size: 1.25rem;
-      font-weight: 800;
-      margin-bottom: 18px;
-      /* text-shadow:
-          2px 2px 0 #ffa800,
-          -1px -1px 0 #663a00; */
-      letter-spacing: 0.06em;
-    }
-
-    #festivalDesc {
-      font-size: 1rem;
-      line-height: 1.5;
-      margin-bottom: 24px;
-      color: #000000;
-      /* text-shadow: 0 0 8px #ffd87c40; */
-      font-weight: 600;
-    }
-
-    #festivalCanvas {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: 11111;
-      pointer-events: none;
-      mix-blend-mode: screen;
-    }
-
-    /* Animations */
-
-    @keyframes fadeInScale {
-      from {
-        opacity: 0;
-        transform: scale(0.8);
-      }
-
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
-
-    body.fancybox-active {
-      overflow: hidden !important;
-      z-index:111 !important;
-    }
-
-    .fancybox__container {
-      animation: fadeIn 0.3s ease-in-out;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-
-      to {
-        opacity: 1;
-      }
-    }
-/* Search Bar */
-
-/* Center the container */
-.search-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 50px;
-}
-
-/* Style the search bar */
-.fancy-search-bar {
-  padding: 12px 40px 12px 20px;
-  width: 100%;
-  max-width: 400px;
-  font-size: 16px;
-  border-radius: 25px;
-  border: 1px solid #ccc;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  transition: all 0.4s ease-in-out;
-  outline: none;
-  background-color: white;
-  
-}
-
-/* On focus: animated expansion and glow */
-.fancy-search-bar:focus {
-  max-width: 480px;
-  border: 2px solid #ff6a00;
-  box-shadow: 0 0 12px rgba(255, 106, 0, 0.6);
-  transform: scale(1.05);
-}
-
-/* Optional: smooth hover glow */
-.fancy-search-bar:hover {
-  box-shadow: 0 0 8px rgba(255, 106, 0, 0.2);
- 
-}
- /* NO CONTENT MESSAGE */
-.no-content-message {
-  background: #ffefd5; /* soft peach */
-  color: #ff6a00;      /* bright orange */
-  font-size: 1.4rem;
-  font-weight: 600;
-  text-align: center;
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(255, 106, 0, 0.3);
-  padding: 20px 30px;
-  margin: 20px auto;
-  max-width: 400px;
-  user-select: none;
-  transition: transform 0.3s ease;
-}
-
-.no-content-message p {
-  margin: 0;
-}
-
-/* Fun bounce effect when message appears */
-.no-content-message.show {
-  animation: bounceIn 0.5s forwards;
-}
-
-@keyframes bounceIn {
-  0% {
-    transform: scale(0.7);
-    opacity: 0;
-  }
-  60% {
-    transform: scale(1.1);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1);
-  }
-}
- .celebration-page-header {
-  min-height: 500px;       /* Ensures enough space for full image */
-  position: relative;
-  overflow: hidden;        /* Prevents image overflow */
-}
-
-@media (max-width: 576px) {
-  .celebration-page-header {
-    min-height: 300px;
-  }
-}
-
-</style>
- 
+  </style>
 </head>
 
-<!-- Before -->
-<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
+<body class="bg-light">
+  <div class="container py-5">
+    <h2 class="mb-4">Student Reviews</h2>
 
-<body>
-  <div class="container-fluid  p-0">
+    <!-- Button to trigger Write Review Modal -->
+    <button
+      class="btn btn-primary mb-4"
+      data-bs-toggle="modal"
+      data-bs-target="#writeReviewModal"
+    >
+      Write a Review
+    </button>
 
-<!-- Page Header Start -->
-<div class="container-fluid celebration-page-header position-relative mb-5">
-  <!-- Background Image Fully Visible -->
-  <img src="../img/bg-08.png"
-       alt="Celebration Background"
-       class="position-absolute top-0 start-0 w-100 h-100"
-       style="object-fit: contain; z-index: -1; height: 100px;">
-
-  <div class="container py-5 position-relative">
-    <h1 class="display-2 text-white animated slideInDown mb-4">Celebrations</h1>
-    <nav aria-label="breadcrumb" class="animated slideInDown">
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-        <li class="breadcrumb-item"><a href="celebrations.html">Celebrations</a></li>
-      </ol>
-    </nav>
+    <!-- Reviews container -->
+    <div id="reviews-container" class="row"></div>
   </div>
-</div>
-<!-- Page Header End -->
 
-<!-- Page Header End -->
+  <!-- Modal for writing a review -->
+  <div
+    class="modal fade"
+    id="writeReviewModal"
+    tabindex="-1"
+    aria-labelledby="writeReviewModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <form id="reviewForm" class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="writeReviewModalLabel">Write a Review</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="reviewerName" class="form-label">Your Name</label>
+            <input type="text" class="form-control" id="reviewerName" required />
+          </div>
+          <div class="mb-3">
+            <label for="courseName" class="form-label">Course Name</label>
+            <input type="text" class="form-control" id="courseName" required />
+          </div>
+          <div class="mb-3">
+            <label for="reviewText" class="form-label">Your Review</label>
+            <textarea
+              class="form-control"
+              id="reviewText"
+              rows="3"
+              required
+            ></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-success">Submit Review</button>
+        </div>
+      </form>
+    </div>
+  </div>
 
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Page Header End -->
+  <script>
+    const reviewForm = document.getElementById('reviewForm');
+    const reviewsContainer = document.getElementById('reviews-container');
 
-    
-<!-- Search Bar Container -->
-<div class="search-wrapper">
-  <input type="text" id="searchInput" placeholder="Search For celebrations " class="fancy-search-bar">
-</div><br>
+    // Key to store reviews in localStorage
+    const STORAGE_KEY = 'courseReviews';
 
-<div class="celebrations-container"></div>
-
-    <script>
-      const cards = [
-        {
-          key: "mothersDay", /*To Open Modal  */
-          title: "Mothers Day",
-          desc: "Festival of Love, joy, and togetherness!",
-          cardImage: "img/mothers-day.jfif",
-          ariaLabel: "mothers day festival celebration card"
-        },
-        {
-          key: "fathersDay",
-          title: "Fathers Day",
-          desc: "Festival of Love, joy, and togetherness!",
-          cardImage: "img/fathers-day.jfif",
-          ariaLabel: "fathers day festival celebration card"
-        },
-        {
-          key: "colours",
-          title: "Colours Day",
-          desc: "Festival of Colors, joy, and togetherness!",
-          cardImage: "img/holi1.jpg",
-          ariaLabel: "Holi festival celebration card"
-        },
-        {
-          key: "labour",
-          title: "Labours Day",
-          desc: "Festival of Lights, celebrated with diyas and fireworks.",
-          cardImage: "img/diwali1.jpg",
-          ariaLabel: "Diwali festival celebration card"
-        },
-        {
-          key: "laughter",
-          title: "World Laughter Day",
-          desc: "Celebrate joy, gifts, and Santa Claus!",
-          cardImage: "img/christmas.jpg",
-          ariaLabel: "Christmas festival celebration card"
-        },
-        {
-          key: "Baisakhi",
-          title: "Baisakhi ",
-          desc: "Celebrate joy, gifts, and Santa Claus!",
-          cardImage: "img/christmas.jpg",
-          ariaLabel: "Christmas festival celebration card"
-        },
-        {
-          key: "red_color_day",
-          title: "Red Colour Day",
-          desc: "Celebrate joy, gifts, and Santa Claus!",
-          cardImage: "img/christmas.jpg",
-          ariaLabel: "Christmas festival celebration card"
-        },
-        {
-          key: "Blue_color_day",
-          title: "Blue Colour Day",
-          desc: "Celebrate joy, gifts, and Santa Claus!",
-          cardImage: "img/christmas.jpg",
-          ariaLabel: "Christmas festival celebration card"
-        },
-        {
-          key: "Yellow_colour_day",
-          title: "Yellow Colour Day",
-          desc: "Celebrate joy, gifts, and Santa Claus!",
-          cardImage: "img/christmas.jpg",
-          ariaLabel: "Christmas festival celebration card"
-        },
-        {
-          key: "Cargill_Vijay_diwas",
-          title: "Cargill Vijay diwas",
-          desc: "Celebrate joy, gifts, and Santa Claus!",
-          cardImage: "img/christmas.jpg",
-          ariaLabel: "Christmas festival celebration card"
-        },
-        {
-          key: "World_Emoji_day",
-          title: "World Emoji day",
-          desc: "Celebrate joy, gifts, and Santa Claus!",
-          cardImage: "img/christmas.jpg",
-          ariaLabel: "Christmas festival celebration card"
-        },
-        {
-          key: "Chocolate",
-          title: "Chocolate day",
-          desc: "Celebrate joy, gifts, and Santa Claus!",
-          cardImage: "img/christmas.jpg",
-          ariaLabel: "Christmas festival celebration card"
-        },
-        {
-          key: "Hariyali_teej",
-          title: "Hariyali teej ",
-          desc: "Celebrate joy, gifts, and Santa Claus!",
-          cardImage: "img/christmas.jpg",
-          ariaLabel: "Christmas festival celebration card"
-        },
-        {
-          key: "International_Tiger_day",
-          title: "International Tiger day",
-          desc: "Celebrate joy, gifts, and Santa Claus!",
-          cardImage: "img/christmas.jpg",
-          ariaLabel: "Christmas festival celebration card"
-        },
-        {
-          key: "Green_Colour_Day",
-          title: "Green Colour Day",
-          desc: "Celebrate joy, gifts, and Santa Claus!",
-          cardImage: "img/christmas.jpg",
-          ariaLabel: "Christmas festival celebration card"
-        },
-        {
-          key: "Friendship",
-          title: "Friendship day",
-          desc: "Celebrate joy, gifts, and Santa Claus!",
-          cardImage: "img/christmas.jpg",
-          ariaLabel: "Christmas festival celebration card"
-        },
-        {
-          key: "Independence",
-          title: "Independence day ",
-          desc: "Celebrate joy, gifts, and Santa Claus!",
-          cardImage: "img/christmas.jpg",
-          ariaLabel: "Christmas festival celebration card"
-        },
-        {
-          key: "Raksha_Bandhan",
-          title: "Raksha Bandhan",
-          desc: "Celebrate joy, gifts, and Santa Claus!",
-          cardImage: "img/christmas.jpg",
-          ariaLabel: "Christmas festival celebration card"
-        },
-        {
-          key: "Sports_day",
-          title: "National sports day ",
-          desc: "Celebrate joy, gifts, and Santa Claus!",
-          cardImage: "img/christmas.jpg",
-          ariaLabel: "Christmas festival celebration card"
-        },
-        {
-          key: "ganesh",
-          title: "Ganesh chaturthi ",
-          desc: "Celebrate joy, gifts, and Santa Claus!",
-          cardImage: "img/christmas.jpg",
-          ariaLabel: "Christmas festival celebration card"
-        },
-        {
-          key: "Black_day",
-          title: "Black day",
-          desc: "Celebrate joy, gifts, and Santa Claus!",
-          cardImage: "img/christmas.jpg",
-          ariaLabel: "Christmas festival celebration card"
-        },
-        {
-          key: "coconut",
-          title: "Coconut day",
-          desc: "Celebrate joy, gifts, and Santa Claus!",
-          cardImage: "img/christmas.jpg",
-          ariaLabel: "Christmas festival celebration card"
-        },
-        {
-          key: "Teachers",
-          title: "Teachers day",
-          desc: "Celebrate joy, gifts, and Santa Claus!",
-          cardImage: "img/christmas.jpg",
-          ariaLabel: "Christmas festival celebration card"
-        },
-        {
-          key: "Teddy_bear",
-          title: "National teddy bear day",
-          desc: "Celebrate joy, gifts, and Santa Claus!",
-          cardImage: "img/christmas.jpg",
-          ariaLabel: "Christmas festival celebration card"
-        },
-        {
-          key: "Hindi_Diwas",
-          title: "Hindi Diwas",
-          desc: "Celebrate joy, gifts, and Santa Claus!",
-          cardImage: "img/christmas.jpg",
-          ariaLabel: "Christmas festival celebration card"
-        },
-        {
-          key: "World_heart_day",
-          title: "World heart day",
-          desc: "Celebrate joy, gifts, and Santa Claus!",
-          cardImage: "img/christmas.jpg",
-          ariaLabel: "Christmas festival celebration card"
-        },
-        {
-          key: "White_day",
-          title: "White day",
-          desc: "Celebrate joy, gifts, and Santa Claus!",
-          cardImage: "img/christmas.jpg",
-          ariaLabel: "Christmas festival celebration card"
-        },
-        {
-          key: "Gandhi_jayanti",
-          title: "Gandhi jayanti",
-          desc: "Celebrate joy, gifts, and Santa Claus!",
-          cardImage: "img/christmas.jpg",
-          ariaLabel: "Christmas festival celebration card"
-        },
-        {
-          key: "World_smile_day",
-          title: "World smile day ",
-          desc: "Celebrate joy, gifts, and Santa Claus!",
-          cardImage: "img/christmas.jpg",
-          ariaLabel: "Christmas festival celebration card"
-        },
-        {
-          key: "Global_handwashing_day",
-          title: "Global handwashing day",
-          desc: "Celebrate joy, gifts, and Santa Claus!",
-          cardImage: "img/christmas.jpg",
-          ariaLabel: "Christmas festival celebration card"
-        },
-        {
-          key: "Halloween",
-          title: "Halloween",
-          desc: "Celebrate joy, gifts, and Santa Claus!",
-          cardImage: "img/christmas.jpg",
-          ariaLabel: "Christmas festival celebration card"
-        },
-        {
-          key: "Orange",
-          title: "Orange day",
-          desc: "Celebrate joy, gifts, and Santa Claus!",
-          cardImage: "img/christmas.jpg",
-          ariaLabel: "Christmas festival celebration card"
-        },
-        {
-          key: "Guru_nanak_jayanti",
-          title: "Guru nanak jayanti",
-          desc: "Celebrate joy, gifts, and Santa Claus!",
-          cardImage: "img/christmas.jpg",
-          ariaLabel: "Christmas festival celebration card"
-        },
-        {
-          key: "Children",
-          title: "Children's day",
-          desc: "Celebrate joy, gifts, and Santa Claus!",
-          cardImage: "img/christmas.jpg",
-          ariaLabel: "Christmas festival celebration card"
-        },
-        {
-          key: "World_kindness_day",
-          title: "World kindness day",
-          desc: "Celebrate joy, gifts, and Santa Claus!",
-          cardImage: "img/christmas.jpg",
-          ariaLabel: "Christmas festival celebration card"
-        },
-        {
-          key: "Education",
-          title: "Education day",
-          desc: "Celebrate joy, gifts, and Santa Claus!",
-          cardImage: "img/christmas.jpg",
-          ariaLabel: "Christmas festival celebration card"
-        },
-        {
-          key: "Pink_day",
-          title: "Pink day",
-          desc: "Celebrate joy, gifts, and Santa Claus!",
-          cardImage: "img/christmas.jpg",
-          ariaLabel: "Christmas festival celebration card"
+    // Load reviews from localStorage and display
+    function loadReviews() {
+      const reviewsJSON = localStorage.getItem(STORAGE_KEY);
+      if (reviewsJSON) {
+        try {
+          const reviews = JSON.parse(reviewsJSON);
+          reviewsContainer.innerHTML = ''; // clear existing
+          reviews.forEach(({ name, course, review }) => {
+            addReviewToDOM(name, course, review, false);
+          });
+        } catch (e) {
+          console.error('Failed to parse reviews from localStorage', e);
+          reviewsContainer.innerHTML = '';
         }
-      ];
+      } else {
+        // If no reviews saved, add a default sample review
+        addReviewToDOM(
+          'Alice',
+          'JavaScript Course',
+          'Great course! Helped me a lot.',
+          true
+        );
+      }
+    }
 
-     
-const container = document.querySelector('.celebrations-container');
-const searchInput = document.getElementById('searchInput');
+    // Add review to the page, and optionally save to localStorage
+    function addReviewToDOM(name, course, review, save = true) {
+      const colDiv = document.createElement('div');
+      colDiv.className = 'col-md-6';
 
-// Create no content message element and append to container (hidden initially)
-const noContentMessage = document.createElement('div');
-noContentMessage.className = 'no-content-message';
-noContentMessage.style.display = 'none'; // hide initially
-noContentMessage.innerHTML = '<p>😕 Oops! No celebrations found. Try searching again!</p>';
-container.appendChild(noContentMessage);
+      colDiv.innerHTML = `
+        <div class="card review-card p-3">
+          <h5 class="card-title">${escapeHtml(name)}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">${escapeHtml(course)}</h6>
+          <p class="card-text">${escapeHtml(review)}</p>
+        </div>
+      `;
 
-// Function to show modal
-function openModal(cardKey) {
-  const modal = document.getElementById(`${cardKey}Modal`);
-  if (modal) {
-    const modalInstance = new bootstrap.Modal(modal);
-    modalInstance.show();
-  }
-}
+      reviewsContainer.prepend(colDiv);
 
-// Function to render cards and bind modal event
-function renderCards(filteredCards) {
-  container.innerHTML = ''; // Clear content first
+      if (save) {
+        // Get current reviews from localStorage or empty array
+        let currentReviews = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+        currentReviews.unshift({ name, course, review });
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(currentReviews));
+      }
+    }
 
-  if (filteredCards.length === 0) {
-    // Show no content message with animation
-    container.appendChild(noContentMessage);
-    noContentMessage.style.display = 'block';
-    noContentMessage.classList.remove('show'); // reset animation
-    void noContentMessage.offsetWidth; // trigger reflow to restart animation
-    noContentMessage.classList.add('show');
-    return;
-  }
+    // Simple escape to prevent HTML injection in review content
+    function escapeHtml(text) {
+      return text
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
 
-  // Hide no content message when there are cards to show
-  noContentMessage.style.display = 'none';
-  noContentMessage.classList.remove('show');
+    // Form submission handler
+    reviewForm.addEventListener('submit', function (e) {
+      e.preventDefault();
 
-  filteredCards.forEach(card => {
-    const cardDiv = document.createElement('div');
-    cardDiv.className = 'festival-card';
-    cardDiv.setAttribute('data-festival', card.key);
-    cardDiv.setAttribute('tabindex', '0');
-    cardDiv.setAttribute('aria-label', card.ariaLabel);
+      const name = document.getElementById('reviewerName').value.trim();
+      const course = document.getElementById('courseName').value.trim();
+      const review = document.getElementById('reviewText').value.trim();
 
-    cardDiv.innerHTML = `
-      <img src="${card.cardImage}" alt="${card.title}">
-      <h3><center>${card.title}</center></h3>
-      <p>${card.desc}</p>
-    `;
+      if (name && course && review) {
+        addReviewToDOM(name, course, review);
 
-    // Attach click to open corresponding modal
-    cardDiv.addEventListener('click', () => {
-      openModal(card.key);
+        // Reset form and close modal
+        reviewForm.reset();
+        const modal = bootstrap.Modal.getInstance(
+          document.getElementById('writeReviewModal')
+        );
+        modal.hide();
+      }
     });
 
-    container.appendChild(cardDiv);
-  });
-}
-
-// Initial card render
-renderCards(cards);
-
-// Filter logic
-searchInput.addEventListener('input', () => {
-  const searchTerm = searchInput.value.toLowerCase();
-  const filteredCards = cards.filter(card =>
-    card.title.toLowerCase().includes(searchTerm)
-  );
-  renderCards(filteredCards);
-});
-
-    </script>
-
-    <div class="festival-modal" id="festivalModal" role="dialog" aria-modal="true" aria-labelledby="festivalTitle"
-      aria-describedby="festivalDesc">
-
-      <div class="festival-content">
-
-        <button class="close-btn" aria-label="Close celebration details">&times;</button>
-        <h2 id="festivalTitle"></h2>
-        <p id="festivalDesc"></p>
-        <canvas id="festivalCanvas"></canvas>
-
-
-        <!-- Filter Buttons -->
-        <div class="container mt-4">
-          <div class="row g-3 justify-content-center text-center">
-
-            <div class="col-12 col-md-auto">
-              <button class="btn btn-primary w-100 filter-btn" data-filter="all">
-                All
-              </button>
-            </div>
-
-            <div class="col-12 col-md-auto">
-              <button
-                class="btn btn-lg btn-info shadow-lg rounded-pill px-4 py-2 d-flex justify-content-center align-items-center w-100 filter-btn"
-                data-filter="image" data-target="#photoGallery">
-                <i class="fas fa-camera-retro me-2"></i> View Photos
-              </button>
-            </div>
-
-            <div class="col-12 col-md-auto">
-              <button
-                class="btn btn-lg btn-warning shadow-lg rounded-pill px-4 py-2 d-flex justify-content-center align-items-center w-100 filter-btn"
-                data-filter="video" data-target="#videoSection">
-                <i class="fas fa-video me-2"></i> Watch Video
-              </button>
-
-            </div>
-
-          </div>
-        </div>
-        <!-- images / Videos card Container -->
-        <div class="container text-black py-4">
-          <div class="row g-4" id="mediaContainer">
-
-            <!-- IMAGE CARD -->
-            <div class="col-md-4 filter-item" data-type="image">
-              <div class="p-3 bg-secondary h-100 rounded shadow d-flex flex-column align-items-center text-center">
-                <img src="img/default.png" class="img-fluid rounded mb-3"
-                  style="height: 200px; object-fit: cover; width: 100%;">
-              </div>
-            </div>
-
-            <!-- VIDEO CARD -->
-            <div class="col-md-4 filter-item" data-type="video">
-              <div class="p-3 bg-secondary h-100 rounded shadow d-flex flex-column align-items-center text-center">
-                <video controls style="height: 200px;" class="mb-3 w-100 rounded">
-                  <source src="videos/default.mp4" type="video/mp4">
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Filtering  BTN Script -->
-        <script>
-          const filterButtons = document.querySelectorAll('.filter-btn');
-
-          filterButtons.forEach(button => {
-            button.addEventListener('click', () => {
-              const filter = button.getAttribute('data-filter');
-
-              // Re-select filterItems on each click
-              const filterItems = document.querySelectorAll('.filter-item');
-              const items = Array.from(filterItems);
-
-              // Sort items so matching ones come first
-              const sortedItems = items.sort((a, b) => {
-                const aMatch = a.getAttribute('data-type') === filter;
-                const bMatch = b.getAttribute('data-type') === filter;
-
-                if (filter === 'all') return 0;
-                return aMatch === bMatch ? 0 : aMatch ? -1 : 1;
-              });
-
-              // Append sorted items back to container
-              const mediaContainer = document.getElementById('mediaContainer');
-              sortedItems.forEach(item => mediaContainer.appendChild(item));
-
-              // Toggle visibility
-              filterItems.forEach(item => {
-                const type = item.getAttribute('data-type');
-                if (filter === 'all' || type === filter) {
-                  item.classList.remove('d-none');
-                } else {
-                  item.classList.add('d-none');
-                }
-              });
-            });
-          });
-        </script>
-
-      </div>
-    </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-
-    <script>
-      const festivalData = {
-        colours: {
-          title: 'Holi Celebration',
-          desc: 'Children enjoyed Holi with natural colors, music, and dancing. It was a day full of laughter and colors!',
-          animation: 'holiColors',
-          images: ['img/colour-1.jfif', 'img/colour-2.jfif', 'img/colour-1.jfif'], // Array of image paths
-          videos: ['videos/holi1.mp4', 'videos/holi2.mp4'] // Array of video paths
-        },
-        labour: {
-          title: 'Diwali Celebration',
-          desc: 'Bright diyas, paper lanterns, and fireworks lit up the school. Kids made rangolis and exchanged sweets.',
-          animation: 'diwaliLights',
-          images: ['img/diwali1.jpg', 'img/diwali2.jpg'], // Array of image paths
-          videos: ['videos/diwali1.mp4', 'videos/diwali1.mp4'] // Array of video paths
-        },
-        laughter: {
-          title: 'World Laughter Day Celebration',
-          desc: 'Santa visited the kids with gifts! They sang carols, decorated trees, and enjoyed cakes.',
-          animation: 'snowFall',
-          images: ['img/christmas1.png', 'img/christmas2.png'], // Array of image paths
-          videos: ['videos/christmas1.mp4'] // Array of video paths
-        },
-        mothersDay: {
-          title: 'Mother\'s Day Celebration',
-          desc: 'Kids made beautiful cards and gifts for their mothers. They performed a special dance to show their love.',
-          animation: 'mothersDay',
-          images: ['img/mothersDay1.jfif', 'img/mothersDay2.jfif'], // Array of image paths
-          videos: ['videos/vid-1.mp4'] // Array of video paths
-        },
-        fathersDay: {
-          title: 'Father\'s Day Celebration',
-          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
-          animation: 'mothersDay',
-          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
-          videos: ['videos/fathersDay1.mp4'] // Array of video paths
-        },
-        Baisakhi: {
-          title: 'Baisakhi Celebration',
-          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
-          animation: 'mothersDay',
-          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
-          videos: ['videos/fathersDay1.mp4'] // Array of video paths
-        },
-        red_color_day: {
-          title: ' Red Colour Day Celebration',
-          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
-          animation: 'mothersDay',
-          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
-          videos: ['videos/fathersDay1.mp4'] // Array of video paths
-        },
-        Blue_color_day: {
-          title: 'Father\'s Day Celebration',
-          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
-          animation: 'mothersDay',
-          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
-          videos: ['videos/fathersDay1.mp4'] // Array of video paths
-        },
-        Yellow_colour_day: {
-          title: 'Father\'s Day Celebration',
-          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
-          animation: 'mothersDay',
-          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
-          videos: ['videos/fathersDay1.mp4'] // Array of video paths
-        },
-        Cargill_Vijay_diwas: {
-          title: 'Father\'s Day Celebration',
-          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
-          animation: 'mothersDay',
-          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
-          videos: ['videos/fathersDay1.mp4'] // Array of video paths
-        },
-        World_Emoji_day: {
-          title: 'Father\'s Day Celebration',
-          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
-          animation: 'mothersDay',
-          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
-          videos: ['videos/fathersDay1.mp4'] // Array of video paths
-        },
-        Chocolate: {
-          title: 'Father\'s Day Celebration',
-          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
-          animation: 'mothersDay',
-          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
-          videos: ['videos/fathersDay1.mp4'] // Array of video paths
-        },
-        Hariyali_teej: {
-          title: 'Father\'s Day Celebration',
-          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
-          animation: 'mothersDay',
-          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
-          videos: ['videos/fathersDay1.mp4'] // Array of video paths
-        },
-        International_Tiger_day: {
-          title: 'Father\'s Day Celebration',
-          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
-          animation: 'mothersDay',
-          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
-          videos: ['videos/fathersDay1.mp4'] // Array of video paths
-        },
-        Green_Colour_Day: {
-          title: 'Father\'s Day Celebration',
-          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
-          animation: 'mothersDay',
-          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
-          videos: ['videos/fathersDay1.mp4'] // Array of video paths
-        },
-        Friendship: {
-          title: 'Father\'s Day Celebration',
-          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
-          animation: 'mothersDay',
-          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
-          videos: ['videos/fathersDay1.mp4'] // Array of video paths
-        },
-        Independence: {
-          title: 'Father\'s Day Celebration',
-          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
-          animation: 'mothersDay',
-          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
-          videos: ['videos/fathersDay1.mp4'] // Array of video paths
-        },
-        Raksha_Bandhan: {
-          title: 'Father\'s Day Celebration',
-          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
-          animation: 'mothersDay',
-          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
-          videos: ['videos/fathersDay1.mp4'] // Array of video paths
-        },
-        Sports_day: {
-          title: 'Father\'s Day Celebration',
-          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
-          animation: 'mothersDay',
-          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
-          videos: ['videos/fathersDay1.mp4'] // Array of video paths
-        },
-        ganesh: {
-          title: 'Father\'s Day Celebration',
-          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
-          animation: 'mothersDay',
-          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
-          videos: ['videos/fathersDay1.mp4'] // Array of video paths
-        },
-        Black_day: {
-          title: 'Father\'s Day Celebration',
-          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
-          animation: 'mothersDay',
-          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
-          videos: ['videos/fathersDay1.mp4'] // Array of video paths
-        },
-        coconut: {
-          title: 'Father\'s Day Celebration',
-          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
-          animation: 'mothersDay',
-          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
-          videos: ['videos/fathersDay1.mp4'] // Array of video paths
-        },
-        Teachers: {
-          title: 'Father\'s Day Celebration',
-          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
-          animation: 'mothersDay',
-          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
-          videos: ['videos/fathersDay1.mp4'] // Array of video paths
-        },
-        Teddy_bear: {
-          title: 'Father\'s Day Celebration',
-          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
-          animation: 'mothersDay',
-          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
-          videos: ['videos/fathersDay1.mp4'] // Array of video paths
-        },
-        Hindi_Diwas: {
-          title: 'Father\'s Day Celebration',
-          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
-          animation: 'mothersDay',
-          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
-          videos: ['videos/fathersDay1.mp4'] // Array of video paths
-        },
-        World_heart_day: {
-          title: 'Father\'s Day Celebration',
-          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
-          animation: 'mothersDay',
-          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
-          videos: ['videos/fathersDay1.mp4'] // Array of video paths
-        },
-        White_day: {
-          title: 'Father\'s Day Celebration',
-          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
-          animation: 'mothersDay',
-          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
-          videos: ['videos/fathersDay1.mp4'] // Array of video paths
-        },
-        Gandhi_jayanti: {
-          title: 'Father\'s Day Celebration',
-          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
-          animation: 'mothersDay',
-          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
-          videos: ['videos/fathersDay1.mp4'] // Array of video paths
-        },
-        World_smile_day: {
-          title: 'Father\'s Day Celebration',
-          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
-          animation: 'mothersDay',
-          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
-          videos: ['videos/fathersDay1.mp4'] // Array of video paths
-        },
-        Global_handwashing_day: {
-          title: 'Father\'s Day Celebration',
-          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
-          animation: 'mothersDay',
-          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
-          videos: ['videos/fathersDay1.mp4'] // Array of video paths
-        },
-        Halloween: {
-          title: 'Father\'s Day Celebration',
-          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
-          animation: 'mothersDay',
-          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
-          videos: ['videos/fathersDay1.mp4'] // Array of video paths
-        },
-        Orange: {
-          title: 'Father\'s Day Celebration',
-          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
-          animation: 'mothersDay',
-          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
-          videos: ['videos/fathersDay1.mp4'] // Array of video paths
-        },
-        Guru_nanak_jayanti: {
-          title: 'Father\'s Day Celebration',
-          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
-          animation: 'mothersDay',
-          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
-          videos: ['videos/fathersDay1.mp4'] // Array of video paths
-        },
-        Children: {
-          title: 'Father\'s Day Celebration',
-          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
-          animation: 'mothersDay',
-          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
-          videos: ['videos/fathersDay1.mp4'] // Array of video paths
-        },
-        World_kindness_day: {
-          title: 'Father\'s Day Celebration',
-          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
-          animation: 'mothersDay',
-          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
-          videos: ['videos/fathersDay1.mp4'] // Array of video paths
-        },
-        Education: {
-          title: 'Father\'s Day Celebration',
-          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
-          animation: 'mothersDay',
-          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
-          videos: ['videos/fathersDay1.mp4'] // Array of video paths
-        },
-        Pink_day: {
-          title: 'Father\'s Day Celebration',
-          desc: 'Kids made beautiful cards and gifts for their fathers. They performed a special dance to show their love.',
-          animation: 'mothersDay',
-          images: ['img/fathersDay1.png', 'img/fathersDay2.png'], // Array of image paths
-          videos: ['videos/fathersDay1.mp4'] // Array of video paths
-        }
-      };
-
-      const modal = document.getElementById('festivalModal');
-      const title = document.getElementById('festivalTitle');
-      const desc = document.getElementById('festivalDesc');
-      const canvas = document.getElementById('festivalCanvas');
-      const ctx = canvas.getContext('2d');
-      const closeBtn = modal.querySelector('.close-btn');
-
-      let animationId;
-
-      function resizeCanvas() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-      }
-      window.addEventListener('resize', () => {
-        if (modal.style.display === 'flex') resizeCanvas();
-      });
-
-      function openModal() {
-        modal.classList.add('active');
-        modal.style.display = 'flex';
-        resizeCanvas();
-        closeBtn.focus();
-        document.body.style.overflow = 'hidden';
-      }
-
-      function closeModal() {
-        modal.classList.remove('active');
-        modal.style.display = 'none';
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        cancelAnimationFrame(animationId);
-        document.body.style.overflow = '';
-      }
-
-      // Animate Holi colors as floating vibrant balloons that softly pop into splashes
-      function holiColorsAnimation() {
-        const balloons = [];
-        const colors = [
-          '#e91e63', '#9c27b0', '#673ab7', '#3f51b5', '#2196f3',
-          '#03a9f4', '#00bcd4', '#009688', '#4caf50', '#8bc34a',
-          '#cddc39', '#ffeb3b', '#ffc107', '#ff9800', '#ff5722'
-        ];
-
-        class Balloon {
-          constructor() {
-            this.radius = Math.random() * 18 + 20;
-            this.x = Math.random() * canvas.width;
-            this.y = canvas.height + this.radius + Math.random() * 100;
-            this.speedY = Math.random() * 1.4 + 0.5;
-            this.color = colors[Math.floor(Math.random() * colors.length)];
-            this.alpha = 1;
-            this.popped = false;
-            this.popSize = 0;
-            this.popX = 0;
-            this.popY = 0;
-          }
-
-          update() {
-            if (!this.popped) {
-              this.y -= this.speedY;
-              // Slight horizontal oscillation
-              this.x += Math.sin(this.y / 10) * 0.7;
-              if (this.y + this.radius < canvas.height / 3) {
-                this.pop();
-              }
-            } else {
-              this.popSize += 1.8;
-              this.alpha -= 0.03;
-              if (this.alpha < 0) this.alpha = 0;
-            }
-          }
-
-          pop() {
-            if (!this.popped) {
-              this.popped = true;
-              this.popX = this.x;
-              this.popY = this.y;
-            }
-          }
-
-          draw() {
-            if (!this.popped) {
-              // Balloon body (circle)
-              ctx.save();
-              ctx.globalAlpha = this.alpha;
-              ctx.fillStyle = this.color;
-              ctx.beginPath();
-              ctx.ellipse(this.x, this.y, this.radius * 0.7, this.radius, 0, 0, Math.PI * 2);
-              ctx.fill();
-
-              // Highlight
-              ctx.beginPath();
-              ctx.ellipse(this.x - this.radius * 0.3, this.y - this.radius * 0.4, this.radius * 0.15, this.radius * 0.3, 0, 0, Math.PI * 2);
-              ctx.fillStyle = 'rgba(255, 255, 255, 0.35)';
-              ctx.fill();
-              ctx.restore();
-
-              // String
-              ctx.save();
-              ctx.strokeStyle = 'rgba(0,0,0,0.1)';
-              ctx.lineWidth = 1.2;
-              ctx.beginPath();
-              ctx.moveTo(this.x, this.y + this.radius);
-              ctx.quadraticCurveTo(this.x + 5, this.y + this.radius + 15, this.x, this.y + this.radius + 30);
-              ctx.stroke();
-              ctx.restore();
-
-            } else {
-              // Draw pop splash shape growing and fading
-              ctx.save();
-              ctx.globalAlpha = this.alpha * 0.7;
-              const size = this.popSize;
-              const cx = this.popX;
-              const cy = this.popY;
-
-              // Draw splashes as colorful blobs: circles and ellipses arranged randomly around pop center
-              for (let i = 0; i < 6; i++) {
-                const angle = (Math.PI * 2 / 6) * i + (this.popSize / 10);
-                const dist = size * 0.6 + Math.sin(this.popSize / 4 + i) * 10;
-                const x = cx + Math.cos(angle) * dist;
-                const y = cy + Math.sin(angle) * dist;
-                const radius = size / 3 * (Math.sin(i * 3 + size / 5) * 0.3 + 0.7);
-                ctx.beginPath();
-                ctx.ellipse(x, y, radius * 1.3, radius * 0.7, angle / 2, 0, Math.PI * 2);
-                ctx.fillStyle = this.color;
-                ctx.fill();
-              }
-              // Center burst
-              ctx.beginPath();
-              ctx.ellipse(cx, cy, size * 0.9, size * 0.6, 0, 0, Math.PI * 2);
-              ctx.fillStyle = this.color;
-              ctx.fill();
-              ctx.restore();
-            }
-          }
-          isGone() {
-            return this.popped && this.alpha <= 0;
-          }
-        }
-
-        for (let i = 0; i < 40; i++) {
-          balloons.push(new Balloon());
-        }
-
-        function animate() {
-          ctx.clearRect(0, 0, canvas.width, canvas.height);
-          balloons.forEach((b, i) => {
-            b.update();
-            b.draw();
-            if (b.isGone()) {
-              balloons[i] = new Balloon();
-            }
-          });
-          animationId = requestAnimationFrame(animate);
-        }
-        animate();
-      }
-
-      // Snowfall for Christmas — enhanced with twinkle shimmer
-      function snowFallAnimation() {
-        let flakes = [];
-        const maxFlakes = 120;
-
-        class Flake {
-          constructor() {
-            this.x = Math.random() * canvas.width;
-            this.y = Math.random() * canvas.height;
-            this.radius = Math.random() * 4 + 1;
-            this.speed = Math.random() * 1.5 + 0.2;
-            this.angle = Math.random() * 2 * Math.PI;
-            this.tilt = Math.random() * 10 - 5;
-            this.tiltAngleIncrement = 0.05 + Math.random() / 10;
-          }
-          update() {
-            this.y += this.speed;
-            this.angle += this.tiltAngleIncrement;
-            this.tilt = Math.sin(this.angle) * 15;
-
-            if (this.y > canvas.height + this.radius) {
-              this.x = Math.random() * canvas.width;
-              this.y = -this.radius;
-              this.radius = Math.random() * 4 + 1;
-              this.speed = Math.random() * 1.5 + 0.2;
-            }
-          }
-          draw() {
-            ctx.save();
-            ctx.fillStyle = `rgba(255, 255, 255, 0.8)`;
-            ctx.beginPath();
-            ctx.ellipse(this.x + this.tilt, this.y, this.radius * 0.6, this.radius * 1.2, 0, 0, Math.PI * 2);
-            ctx.fill();
-            // twinkle highlight
-            if (Math.random() > 0.94) {
-              ctx.fillStyle = "rgba(255, 255, 255, 0.7)";
-              ctx.beginPath();
-              ctx.arc(this.x + this.tilt, this.y, this.radius * 1.5, 0, Math.PI * 2);
-              ctx.fill();
-            }
-            ctx.restore();
-          }
-        }
-
-        for (let i = 0; i < maxFlakes; i++) {
-          flakes.push(new Flake());
-        }
-
-        function animate() {
-          ctx.clearRect(0, 0, canvas.width, canvas.height);
-          flakes.forEach(flake => {
-            flake.update();
-            flake.draw();
-          });
-          animationId = requestAnimationFrame(animate);
-        }
-        animate();
-      }
-
-      // Diwali fireworks — get burst effect with color trails
-      function diwaliLightsAnimation() {
-        let fireworks = [];
-        let particles = [];
-
-        class Firework {
-          constructor() {
-            this.x = Math.random() * canvas.width;
-            this.y = canvas.height;
-            this.targetY = canvas.height * (0.2 + Math.random() * 0.5);
-            this.speedY = 7 + Math.random() * 5;
-            this.color = `hsl(${Math.random() * 360}, 100%, 60%)`;
-            this.trail = [];
-            this.done = false;
-          }
-
-          update() {
-            this.trail.push({ x: this.x, y: this.y });
-            if (this.trail.length > 10) this.trail.shift();
-
-            this.y -= this.speedY;
-            if (this.y <= this.targetY) {
-              this.done = true;
-              this.explode();
-            }
-          }
-
-          explode() {
-            const petals = 7 + Math.floor(Math.random() * 3);
-            const rings = 2 + Math.floor(Math.random() * 4);
-            const radiusStep = 2.5;
-
-            for (let r = 1; r <= rings; r++) {
-              for (let i = 0; i < petals; i++) {
-                const angle = (Math.PI * 2 / petals) * i;
-                const speed = radiusStep * r;
-                const vx = Math.cos(angle) * speed;
-                const vy = Math.sin(angle) * speed;
-
-                // Each particle gets a different bright HSL color
-                const color = `hsl(${Math.random() * 360}, 100%, 60%)`;
-                particles.push(new Particle(this.x, this.y, color, vx, vy));
-              }
-            }
-          }
-
-          draw() {
-            ctx.beginPath();
-            ctx.fillStyle = this.color;
-            ctx.strokeStyle = this.color;
-            ctx.lineWidth = 2;
-            ctx.moveTo(this.x, this.y);
-            this.trail.forEach(pos => ctx.lineTo(pos.x, pos.y));
-            ctx.stroke();
-
-            ctx.beginPath();
-            ctx.arc(this.x, this.y, 3, 0, Math.PI * 2);
-            ctx.fill();
-          }
-        }
-
-        class Particle {
-          constructor(x, y, color, vx = (Math.random() - 0.5) * 6, vy = (Math.random() - 0.5) * 6) {
-            this.x = x;
-            this.y = y;
-            this.color = color;
-            this.radius = 3;
-            this.speedX = vx;
-            this.speedY = vy;
-            this.gravity = 0.05;
-            this.life = 80 + Math.random() * 40;
-            this.alpha = 1;
-            this.decay = 0.01 + Math.random() * 0.015;
-          }
-
-          update() {
-            this.speedY += this.gravity;
-            this.x += this.speedX;
-            this.y += this.speedY;
-            this.life--;
-            this.alpha -= this.decay;
-            if (this.alpha < 0) this.alpha = 0;
-          }
-
-          draw() {
-            ctx.beginPath();
-            ctx.fillStyle = this.color.replace('hsl', 'hsla').replace(')', `,${this.alpha})`);
-            ctx.shadowColor = this.color;
-            ctx.shadowBlur = 12;
-            ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-            ctx.fill();
-            ctx.shadowBlur = 0;
-          }
-
-          isDead() {
-            return this.life <= 0 || this.alpha <= 0;
-          }
-        }
-
-        function animate() {
-          ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-          if (Math.random() < 0.04) fireworks.push(new Firework());
-
-          for (let i = fireworks.length - 1; i >= 0; i--) {
-            const f = fireworks[i];
-            f.update();
-            f.draw();
-            if (f.done) fireworks.splice(i, 1);
-          }
-
-          for (let i = particles.length - 1; i >= 0; i--) {
-            const p = particles[i];
-            p.update();
-            p.draw();
-            if (p.isDead()) particles.splice(i, 1);
-          }
-
-          ctx.fillStyle = 'rgba(0,0,0,0.15)';
-          ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-          requestAnimationFrame(animate);
-        }
-
-        animate();
-      }
-
-      // Mother's Day animation with hearts and roses
-      function mothersDayAnimation() {
-        const hearts = [];
-        const colors = ['#FF0000', '#FF4C4C', '#FF6666', '#FF1A1A', '#FF3399', '#FF66B2', '#FF1A75']; // Various shades of red and pink
-
-        class Heart {
-          constructor() {
-            this.x = Math.random() * canvas.width;
-            this.y = -20; // Start above the canvas
-            this.size = Math.random() * 20 + 10; // Size between 10 and 30
-            this.speedY = Math.random() * 2 + 1; // Falling speed between 1 and 3
-            this.color = colors[Math.floor(Math.random() * colors.length)];
-            this.opacity = Math.random() * 0.5 + 0.5; // Opacity between 0.5 and 1
-            this.tilt = Math.random() * 0.4 - 0.2; // Slight horizontal tilt for sway effect
-          }
-
-          update() {
-            this.y += this.speedY;
-            this.x += this.tilt; // Horizontal sway
-            if (this.y > canvas.height + this.size) {
-              this.y = -this.size;
-              this.x = Math.random() * canvas.width;
-              this.size = Math.random() * 20 + 10;
-              this.speedY = Math.random() * 2 + 1;
-              this.color = colors[Math.floor(Math.random() * colors.length)];
-              this.opacity = Math.random() * 0.5 + 0.5;
-              this.tilt = Math.random() * 0.4 - 0.2;
-            }
-          }
-
-          draw() {
-            ctx.save();
-            ctx.fillStyle = this.color;
-            ctx.globalAlpha = this.opacity;
-            const x = this.x;
-            const y = this.y;
-            const size = this.size;
-
-            ctx.beginPath();
-            ctx.moveTo(x, y);
-            ctx.bezierCurveTo(x, y - size / 2, x - size, y - size / 2, x - size, y + size / 5);
-            ctx.bezierCurveTo(x - size, y + size, x, y + size * 1.2, x, y + size * 1.6);
-            ctx.bezierCurveTo(x, y + size * 1.2, x + size, y + size, x + size, y + size / 5);
-            ctx.bezierCurveTo(x + size, y - size / 2, x, y - size / 2, x, y);
-            ctx.closePath();
-
-            ctx.fill();
-            ctx.restore();
-          }
-        }
-
-        for (let i = 0; i < 40; i++) {
-          hearts.push(new Heart());
-        }
-
-        function animate() {
-          ctx.clearRect(0, 0, canvas.width, canvas.height);
-          hearts.forEach(heart => {
-            heart.update();
-            heart.draw();
-          });
-          animationId = requestAnimationFrame(animate);
-        }
-        animate();
-      }
-
-
-      const festivalCards = document.querySelectorAll('.festival-card');
-
-      function openFestivalModal(festivalKey) {
-        const festival = festivalData[festivalKey];
-        if (!festival) return;
-
-        title.textContent = festival.title;
-        desc.textContent = festival.desc;
-
-        // Clear existing images and videos
-        const mediaContainer = document.getElementById('mediaContainer');
-        mediaContainer.innerHTML = ''; // Clear previous content
-
-        // Add images
-        festival.images.forEach(imageSrc => {
-          const imageCard = document.createElement('div');
-          imageCard.className = 'col-md-4 filter-item';
-          imageCard.setAttribute('data-type', 'image');
-          imageCard.innerHTML = `
-    <div class="p-3 bg-secondary h-100 rounded shadow d-flex flex-column align-items-center text-center">
-      <a data-fancybox="gallery" href="${imageSrc}">
-        <img src="${imageSrc}" class="img-fluid rounded mb-3" style="height: 200px; object-fit: cover;">
-      </a>
-    </div>
-  `;
-          mediaContainer.appendChild(imageCard);
-        });
-
-        // Add videos
-        festival.videos.forEach(videoSrc => {
-          const videoCard = document.createElement('div');
-          videoCard.className = 'col-md-4 filter-item';
-          videoCard.setAttribute('data-type', 'video');
-          videoCard.innerHTML = `
-    <div class="p-3 bg-secondary h-100 rounded shadow d-flex flex-column align-items-center text-center">
-      <a data-fancybox="gallery" href="${videoSrc}">
-        <video controls style="height: 200px;" class="mb-3 w-100 rounded">
-          <source src="${videoSrc}" type="video/mp4">
-        </video>
-      </a>
-    </div>
-  `;
-          mediaContainer.appendChild(videoCard);
-        });
-
-        modal.classList.add('active');
-        modal.style.display = 'flex';
-        resizeCanvas();
-
-        // Start animation
-        runAnimation(festival.animation);
-
-        document.body.style.overflow = 'hidden';
-        closeBtn.focus();
-      }
-
-      function runAnimation(type) {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        cancelAnimationFrame(animationId);
-
-        switch (type) {
-          case 'holiColors':
-            holiColorsAnimation();
-            break;
-          case 'snowFall':
-            snowFallAnimation();
-            break;
-          case 'diwaliLights':
-            diwaliLightsAnimation();
-            break;
-          case 'mothersDay':
-            mothersDayAnimation();
-            break;
-          default:
-            break;
-        }
-      }
-
-      function closeFestivalModal() {
-        modal.classList.remove('active');
-        modal.style.display = 'none';
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        cancelAnimationFrame(animationId);
-        document.body.style.overflow = '';
-      }
-
-      festivalCards.forEach(card => {
-        card.addEventListener('click', () => openFestivalModal(card.dataset.festival));
-        card.addEventListener('keypress', e => {
-          if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            openFestivalModal(card.dataset.festival);
-          }
-        });
-      });
-
-      closeBtn.addEventListener('click', closeFestivalModal);
-
-      window.addEventListener('keydown', e => {
-        if (e.key === 'Escape' && modal.classList.contains('active')) {
-          closeFestivalModal();
-        }
-      });
-    </script>
-
-
-
-    <!-- Footer Start -->
-    <script src="footer.js"></script>
-    <!-- Footer End -->
-
-
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
-  </div>
-
-  <!-- JavaScript Libraries -->
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="lib/wow/wow.min.js"></script>
-  <script src="lib/easing/easing.min.js"></script>
-  <script src="lib/waypoints/waypoints.min.js"></script>
-  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-
-  <!-- Template Javascript -->
-  <script src="js/main.js"></script>
+    // Initialize
+    loadReviews();
+  </script>
 </body>
-
 </html>
-
-<!-- Carousel -->
-<!--    <div id="demo" class="carousel slide" data-bs-ride="carousel">
-
-           
-          <div class="carousel-indicators">
-            <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-            <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-            <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
-          </div>
-
-         
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="img/diwali1.jpg" alt="Los Angeles" class="d-block w-100 carousel-image">
-              <div class="carousel-caption">
-                <h3>Los Angeles</h3>
-                <p>We had such a great time in LA!</p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img src="img/diwali2.jpg" alt="Chicago" class="d-block w-100 carousel-image">
-              <div class="carousel-caption">
-                <h3>Chicago</h3>
-                <p>Thank you, Chicago!</p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img src="img/diwali3.jpg" alt="New York" class="d-block w-100 carousel-image">
-              <div class="carousel-caption">
-                <h3>New York</h3>
-                <p>We love the Big Apple!</p>
-              </div>
-            </div>
-          </div>
-
-          
-          <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
-            <span class="carousel-control-next-icon"></span>
-          </button>
-
-        </div> -->

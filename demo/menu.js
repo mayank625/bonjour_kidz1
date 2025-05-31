@@ -14,21 +14,9 @@ document.write(`
                     <a href="services.html" class="nav-item nav-link">Services</a>
                     <a href="celebrations.html" class="nav-item nav-link">Celebrations</a>
                     <a href="gallery.html" class="nav-item nav-link">Gallery</a>
+                    <a href="testimonial.html" class="nav-item nav-link">Testimonials</a>
                     <a href="franchise.html" class="nav-item nav-link">Franchise</a>
                     <a href="teachers.html" class="nav-item nav-link">Teachers</a>
-
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">More</a>
-                        <div class="dropdown-menu rounded-0 rounded-bottom border-0 shadow-sm m-0">
-                            <a href="#" class="dropdown-item">School Facilities</a>
-                            <a href="#" class="dropdown-item">Popular Teachers</a>
-                            <a href="#" class="dropdown-item">Become A Teachers</a>
-                            <a href="#" class="dropdown-item">Make Appointment</a>
-                            <a href="#" class="dropdown-item">Testimonial</a>
-                            <a href="#" class="dropdown-item">404 Error</a>
-                        </div>
-                    </div>
-                    
                     <a href="#" class="nav-item nav-link">Contact Us</a>
 
                 </div>
@@ -77,3 +65,14 @@ document.write(`
         </nav>
         <!-- Navbar End -->
         `)
+/*  <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">More</a>
+                        <div class="dropdown-menu rounded-0 rounded-bottom border-0 shadow-sm m-0">
+                            <a href="#" class="dropdown-item">School Facilities</a>
+                            <a href="#" class="dropdown-item">Popular Teachers</a>
+                            <a href="#" class="dropdown-item">Become A Teachers</a>
+                            <a href="#" class="dropdown-item">Make Appointment</a>
+                            <a href="#" class="dropdown-item">Testimonial</a>
+                            <a href="#" class="dropdown-item">404 Error</a>
+                        </div>
+                    </div> */
