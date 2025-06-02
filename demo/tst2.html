@@ -1,496 +1,411 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <title>Testimonials Sorting</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
-   <!-- ✅ Font Awesome (CDN only - recommended) -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Z0Pxs0WZcs/9z7J7ZPllOP7F+jIc2IM6+fujzR4tLxazIrc3+Zr4cTfEXkX3fQMH5a9eOe7QmT+rk0zBbp9G4Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta charset="utf-8">
+    <title>Bonjour Play School - Services</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
 
-  
-<!-- Fancybox CDN -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
-<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
-  <style>
-    .user-icon {
-      font-size: 20px;
-      border-radius: 50%;
-      padding: 10px;
-      color: white;
-      display: inline-block;
-      margin: 0 10px;
-      width: 40px;
-      height: 40px;
-      text-align: center;
-      line-height: 40px;
-    }
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
 
-    .user-red {
-      background-color: #e74c3c;
-    }
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@600&family=Lobster+Two:wght@700&display=swap"
+        rel="stylesheet">
 
-    .user-blue {
-      background-color: #3498db;
-    }
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
-    .user-green {
-      background-color: #2ecc71;
-    }
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
-    .user-orange {
-      background-color: #e67e22;
-    }
-    .user-purple {
-      background-color: #ab21c7;
-    }
-    .user-yellow {
-      background-color: #fffb16;
-    }
-    .user-pink {
-      background-color: #ff0ecb;
-    }
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    body {
-      margin: 0;
-      background: linear-gradient(-45deg, #f0f4f8, #ffe8e0, #fff0ea, #f0f4f8), url('img/download2.jfif');
-      background-size: 400% 400%;
-      animation: gradientBG 10s ease infinite;
-      font-family: 'Roboto', sans-serif;
-      color: #2c3e50;
-    }
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <script src="menu.js"></script>
 
-    @keyframes gradientBG {
-      0% {
-        background-position: 0% 50%;
-      }
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <style>
+        /* Back TO Top Btn */
+        .back-to-top {
+            position: fixed;
+            bottom: 60px;
+            right: 20px;
+            z-index: 9999;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+        }
 
-      50% {
-        background-position: 100% 50%;
-      }
+        .passionate-section {
+            padding: 40px 10px; /* Reduced padding for mobile */
+            max-width: 1310px;
+            margin: auto;
+            position: relative;
+            overflow: hidden;
+        }
 
-      100% {
-        background-position: 0% 50%;
-      }
-    }
+        .passionate-section h3 {
+            font-size: 1.5rem; /* Adjusted font size for mobile */
+            margin-bottom: 20px; /* Reduced margin */
+            font-weight: bold;
+            color: #333;
+        }
 
-    .container {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 40px;
-      background: #fff;
-      border-radius: 16px;
-      box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
-      margin: 40px;
-    }
+        .passionate-row {
+            display: flex;
+            flex-direction: column; /* Stack elements on mobile */
+            align-items: center;
+            margin-bottom: 40px; /* Reduced margin */
+            gap: 20px; /* Reduced gap */
+        }
 
-    .comments-section {
-      flex: 1;
-      width: 100%;
-    }
+        .image-box {
+            flex: 1;
+            max-width: 100%; /* Make image box responsive */
+            height: auto; /* Allow height to adjust */
+            border-radius: 20px; /* Adjusted border radius */
+            overflow: hidden;
+            position: relative;
+            animation: floatLeft 1.2s ease-out forwards;
+        }
 
-    .tabs {
-      display: flex;
-      gap: 20px;
-      margin-bottom: 20px;
-    }
+        .image-box img {
+            width: 100%;
+            height: auto; /* Maintain aspect ratio */
+            object-fit: cover;
+            border-radius: 20px; /* Adjusted border radius */
+        }
 
-    .tab {
-      padding: 8px 16px;
-      border: 2px solid #FE5D37;
-      border-radius: 20px;
-      cursor: pointer;
-      font-weight: bold;
-      color: #FE5D37;
-      background-color: white;
-      transition: all 0.3s ease;
-    }
+        .text-box {
+            flex: 2;
+            font-size: 14px;
+            color: #555;
+            line-height: 1.5; /* Adjusted line height */
+            animation: fadeIn 1.5s ease-in forwards;
+        }
 
-    .tab.active {
-      background-color: #FE5D37;
-      color: rgb(255, 255, 255);
-    }
+        .main-course-heading {
+            font-family: 'Chewy', cursive;
+            font-size: 24px; /* Adjusted font size for mobile */
+            color: #FE5D37;
+            margin-top: 10px; /* Reduced margin */
+        }
 
+        .strongmsg {
+            font-size: 16px; /* Adjusted font size for mobile */
+            color: #bd452a;
+            font-weight: bold;
+            font-family: 'Chewy', cursive;
+        }
 
-    .card {
-      min-width: 320px;
-      background-color: #fff;
-      border-radius: 16px;
-      padding: 20px;
-      /* Padding inside the card */
-      position: relative;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-      cursor: pointer;
-      overflow: hidden;
-      color: rgb(0, 0, 0);
-      margin: 10px;
-      /* Add margin around each card */
-    }
+        .info-row {
+            display: flex;
+            flex-direction: column; /* Stack info on mobile */
+            align-items: flex-start; /* Align to start */
+            margin-top: 10px; /* Reduced margin */
+            animation: floatLeft 1.2s ease-in-out forwards;
+        }
 
-    /* Background image behind content using CSS variable */
-    .card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: var(--bg-img);
-      background-size: cover;
-      background-position: center;
-      opacity: 0;
-      /* Hidden by default */
-      transition: opacity 0.3s ease;
-      z-index: 0;
-      border-radius: 16px;
-    }
+        .info-left,
+        .info-right {
+            font-size: 14px; /* Adjusted font size for mobile */
+            font-weight: bold;
+            color: #444;
+        }
 
-    /* Show background on hover */
-    .card:hover::before {
-      opacity: 0.4;
-      /* Show on hover */
-    }
+        /* Media Queries for Responsive Design */
+        @media (min-width: 768px) {
+            .passionate-row {
+                flex-direction: row; /* Use row layout on larger screens */
+            }
 
-    .card>* {
-      position: relative;
-      z-index: 1;
-    }
+            .info-row {
+                flex-direction: row; /* Use row layout for info on larger screens */
+                justify-content: space-between; /* Space out info */
+                width: 100%; /* Full width */
+            }
+        }
 
-    .user {
-      display: flex;
-      align-items: center;
-      margin-bottom: 10px;
-      color: #000;
-      /* fixed color */
-    }
-
-    .user img {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      margin-right: 10px;
-    }
-
-    .username {
-      font-weight: bold;
-    }
-
-    .role-time {
-      font-size: 12px;
-      color: #000000;
-    }
-
-    .comment {
-      margin: 10px 0;
-    }
-
-    .toggle {
-      position: absolute;
-      top: 20px;
-      right: 40px;
-      font-size: 14px;
-      color: #2c3e50;
-      user-select: none;
-    }
-
-    .toggle input[type="checkbox"] {
-      display: none;
-    }
-
-    .toggle-label {
-      background: #ffcab8;
-      border-radius: 20px;
-      display: inline-block;
-      width: 40px;
-      height: 20px;
-      position: relative;
-      vertical-align: middle;
-      margin-left: 8px;
-      cursor: pointer;
-    }
-
-    .toggle-label::before {
-      content: '';
-      position: absolute;
-      width: 14px;
-      height: 14px;
-      background: #FE5D37;
-      border-radius: 50%;
-      top: 3px;
-      left: 3px;
-      transition: 0.3s;
-    }
-
-    input[type="checkbox"]:checked+.toggle-label::before {
-      transform: translateX(20px);
-    }
-  </style>
+        /* Other styles remain unchanged */
+    </style>
 </head>
+
 <body>
-  <div class="toggle">
-    Show Reviews
-    <input type="checkbox" id="comment-toggle" checked />
-    <label for="comment-toggle" class="toggle-label"></label>
-  </div>
+    <div class="container-fluid bg-white p-0">
+       
+        <!-- Spinner End -->
 
-  <div class="container">
-    <div class="comments-section">
-      <div class="tabs">
-        <div class="tab active" id="newestTab">Newest Reviews</div>
-        <div class="tab" id="oldestTab">Oldest Reviews</div>
-        <div class="tab" id="videosTab">videos Reviews</div>
-
-      </div>
-      <div class="cards" id="commentsContainer"></div>
+        <!-- Page Header End -->
+        <div class="container-fluid py-5 page-header position-relative mb-5">
+            <div class="container py-5">
+                <h1 class="display-2 text-white animated slideInDown mb-4">Services</h1>
+                <nav aria-label="breadcrumb animated slideInDown">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                        <li class="breadcrumb-item text-white active" aria-current="page">Classes</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <!-- Page Header End -->
     </div>
-  </div>
-<script>
-  // Comments data with timestamps and optional videoUrl
-  const comments = [
-   {
-    iconClass: "fa-solid fa-user",
-    colorClass: "user-red",
-    username: "Manish",
-    time: "5 minutes ago",
-    timestamp: Date.now() - 5 * 60 * 1000, // 5 minutes ago
-    comment: "Nice Play SchooL for Kids",
-  },
-  {
-    iconClass: "fa-solid fa-user",
-    colorClass: "user-blue",
-    username: "Ankita Awasthi",
-    time: "2 months ago",
-    timestamp: Date.now() - 60 * 24 * 60 * 60 * 1000, // ~60 days ago
-    comment: "I am extremely happy with the experience at Bonjour Kidz. It has been a second home for my child. The teachers are warm, caring and create a nurturing environment that encourages learning and growth. The school's innovative approach to learning, combined with its state of the art facilities, has made learning a fun and enjoyable experience. The curriculum is well structured and the activities are engaging and fun. The school's communication with parents is excellent, keeping us informed about our child's progress. Special thanks to all the teachers of Bonjour Kidz who are always ready to help and support us.",
-  },
-  {
-    iconClass: "fa-solid fa-user",
-    colorClass: "user-green",
-    username: "Ashish Awasthi",
-    time: "2 months ago",
-    timestamp: Date.now() - 60 * 24 * 60 * 60 * 1000,
-    comment: "Hi, My daughter have grown so much ever since they joined the school We've even noticed their positive school values carrying over at home. It was a good decision. She has grown and developed their personality tremendously both knowledge-wise and behaviour-wise in just an year. <br>Thankyou for all the teachers their in bonjour kidz.",
-  },
-  {
-    iconClass: "fa-solid fa-user",
-    colorClass: "user-yellow",
-    username: "Shalini Mishra",
-    time: "2 weeks ago",
-    timestamp: Date.now() - 14 * 24 * 60 * 60 * 1000,
-    comment: "Thank you Bonjour’s teacher for making mother’s day celebration so special. Your effort was much appreciated. All the activities was fantastic. Special thanks to Aparna mam and all staff who made day very fabulous.",
-  },
-  {
-    iconClass: "fa-solid fa-user",
-    colorClass: "user-red",
-    username: "Anshika Gupta",
-    time: "2 months ago",
-    timestamp: Date.now() - 60 * 24 * 60 * 60 * 1000,
-    comment: "highly recommended school for playgroup and pre nurserry!<br>  very nice staff and very cooperative!<br>  my kid was very easily adjusted and loved this school",
-  },
-  {
-    iconClass: "fa-solid fa-user",
-    colorClass: "user-purple",
-    username: "deepa taneja",
-    time: "2 months ago",
-    timestamp: Date.now() - 60 * 24 * 60 * 60 * 1000,
-    comment: "Best caring, patient and kind teachers.<br>  Their concepts and methodology help kids in building essential skills.",
-  },
-  {
-    iconClass: "fa-solid fa-user",
-    colorClass: "user-red",
-    username: "Shalini Tiwari Educator",
-    time: "2 months ago",
-    timestamp: Date.now() - 60 * 24 * 60 * 60 * 1000,
-    comment: "Bonjour kids school is very nice for kids<br>  It's a very good for little minds they learn many activities and the staff is<br>  very cooperative and loving",
-  },
-  {
-    iconClass: "fa-solid fa-user",
-    colorClass: "user-pink",
-    username: "Ambika Sharma",
-    time: "2 months ago",
-    timestamp: Date.now() - 60 * 24 * 60 * 60 * 1000,
-    comment: "Very nice school for young minds. Staff is so cooperative and sincere.Highly recommend Bonjour kids.",
-  },
-  {
-    iconClass: "fa-solid fa-user",
-    colorClass: "user-red",
-    username: "Shambhavi Dubey",
-    time: "a months ago",
-    timestamp: Date.now() - 30 * 24 * 60 * 60 * 1000,
-    comment: "Pretty nice school for kids.<br>  With all level of security,kids can learn.<br>  Really impressed with the school.",
-  },
-  {
-    iconClass: "fa-solid fa-user",
-    colorClass: "user-blue",
-    username: "shraddha pandey",
-    time: "2 months ago",
-    timestamp: Date.now() - 60 * 24 * 60 * 60 * 1000,
-    comment: "Amazing place with overall development of your child.... you can choose this school without having a second thought about it...",
-  },
-  {
-    iconClass: "fa-solid fa-user",
-    colorClass: "user-red",
-    username: "Kumar Nitish Bharti",
-    time: "2 weeks ago",
-    timestamp: Date.now() - 14 * 24 * 60 * 60 * 1000,
-    comment: "Mother's day celebration today was awesome...hats off to Bonjour kids teacher for such an incredible function..",
-  },
-  {
-    iconClass: "fa-solid fa-user",
-    colorClass: "user-green",
-    username: "Vidur Agarwal",
-    time: "a year  ago",
-    timestamp: Date.now() - 365 * 24 * 60 * 60 * 1000,
-    comment: "Had a very warm and nice experience with bonjour playschool. My kid loved going to school each day. Teachers and staff are very lovable. Kids are taken care very well. Day care facility is also great. Meals are healthy and hygiene is maintained.",
-  },
-  {
-    iconClass: "fa-solid fa-user",
-    colorClass: "user-red",
-    username: "Surabhee Agrawal",
-    time: "a year  ago",
-    timestamp: Date.now() - 365 * 24 * 60 * 60 * 1000,
-    comment: "Bonjour playschool is a very nice playschool and day care with caring, loving and hygenic atmosphere. Teachers and staff are very cooperative. Lots of curricular and co-curricular activities are performed to enhance the knowledge and learning of kids.",
-  },
-  {
-    iconClass: "fa-solid fa-user",
-    colorClass: "user-yellow",
-    username: "Himika Agarwal",
-    time: "a year  ago",
-    timestamp: Date.now() - 365 * 24 * 60 * 60 * 1000,
-    comment: "Bonjour kids is a very nice play school.<br> Teachers staff is well educated and caring.",
-  },
-  {
-    iconClass: "fa-solid fa-user",
-    colorClass: "user-purple",
-    username: "Sachin Thakral",
-    time: "2 months ago",
-    timestamp: Date.now() - 60 * 24 * 60 * 60 * 1000,
-    comment: "Good play school for kids",
-  },
-  {
-    iconClass: "fa-solid fa-user",
-    colorClass: "user-orange",
-    username: "Garima Pandey",
-    time: "2 months ago",
-    timestamp: Date.now() - 60 * 24 * 60 * 60 * 1000,
-    comment: "Very nice atmosphere",
-  },
-    {
-      iconClass: "fa-solid fa-user",
-      colorClass: "user-orange",
-      username: "Video Reviewer",
-      time: "1 week ago",
-      timestamp: new Date().getTime() - 7 * 24 * 60 * 60 * 1000,
-      comment: "Check out this review video!",
-      videoUrl: "videos/testimonial-1.mp4",
-    },
-     {
-       iconClass: "fa-solid fa-user",
-      colorClass: "user-orange",
-      username: "Video Reviewer", 
-      time: "1 week ago",
-      timestamp: new Date().getTime() - 7 * 24 * 60 * 60 * 1000,
-      comment: "Check out this review video!",
-      videoUrl: "videos/testimonial-2.mp4",
-    }
-    // Add more comments/videos as needed
-  ];
+    
+    <div class="container-fluid">
 
-  // Render comments to container
-  function renderComments(list) {
-    const container = document.getElementById('commentsContainer');
-    container.innerHTML = ''; // Clear existing comments
+        <section class="popular-classes">
+            <h3 class="text-box main-course-heading" style="color:rgb(255, 122, 14);">Popular Programs</h3>
 
-    if (list.length === 0) {
-      container.innerHTML = '<p>No reviews to show.</p>';
-      return;
-    }
+            <div class="classes-grid w-100">
+                <!-- Class 1 -->
+                <div class="class-box">
+                    <div class="class-image">
+                        <img src="https://storage.googleapis.com/a1aa/image/07fd1bed-c81a-4d4e-f4eb-f72110ed0c70.jpg"
+                            alt="Playgroup" class="img-fluid"> <!-- Added img-fluid class -->
+                    </div>
+                    <span class="badge bg-blue">1-3 YEARS</span>
+                    <h4 class="class-title">Playgroup</h4>
+                    <p class="class-description">By creating a safe, consistent and welcoming environment</p>
+                </div>
 
-    list.forEach(({ iconClass, colorClass, username, time, comment, videoUrl }) => {
-      const card = document.createElement('div');
-      card.className = 'card';
+                <!-- Class 2 -->
+                <div class="class-box">
+                    <div class="class-image">
+                        <img src="https://storage.googleapis.com/a1aa/image/8ab5d51f-7257-4a96-b29d-b7db730da379.jpg"
+                            alt="Nursery" class="img-fluid"> <!-- Added img-fluid class -->
+                    </div>
+                    <span class="badge bg-orange">3-4 YEARS</span>
+                    <h4 class="class-title">Nursery</h4>
+                    <p class="class-description">By creating a safe, consistent and welcoming environment</p>
+                </div>
 
-      card.innerHTML = `
-        <div class="user">
-          <i class="${iconClass} user-icon ${colorClass}"></i>
-          <div>
-            <div class="username">${username}</div>
-            <div class="role-time">${time}</div>
-          </div>
-        </div>
-        <div class="comment">${comment}</div>
+                <!-- Class 3 -->
+                <div class="class-box">
+                    <div class="class-image">
+                        <img src="https://storage.googleapis.com/a1aa/image/f4a5a5c8-a197-472c-f404-f68f839df698.jpg"
+                            alt="Junior" class="img-fluid"> <!-- Added img-fluid class -->
+                    </div>
+                    <span class="badge bg-green">3.5-5 YEARS</span>
+                    <h4 class="class-title">Junior</h4>
+                    <p class="class-description">By creating a safe, consistent and welcoming environment</p>
+                </div>
 
-        
-        ${videoUrl ? `<div class="video-container" style="margin-top:10px;">
-          <iframe width="auto" height="200px" src="${videoUrl}" frameborder="0" allowfullscreen></iframe>
-        </div>
-        ` : ''}
-      `;
-      container.appendChild(card);
-    });
-  }
+                <!-- Class 4 -->
+                <div class="class-box">
+                    <div class="class-image">
+                        <img src="https://storage.googleapis.com/a1aa/image/abf5a992-1219-4122-bfd8-fa3779b7e093.jpg"
+                            alt="Senior" class="img-fluid"> <!-- Added img-fluid class -->
+                    </div>
+                    <span class="badge bg-blue">4.5-6 YEARS</span>
+                    <h4 class="class-title">Senior</h4>
+                    <p class="class-description">By creating a safe, consistent and welcoming environment</p>
+                </div>
+            </div>
+        </section>
 
-  // Sort newest non-video comments first
-  function sortNewestNonVideos() {
-    return comments
-      .filter(c => !c.videoUrl)   // exclude videos
-      .slice()
-      .sort((a, b) => b.timestamp - a.timestamp);
-  }
+        <section class="passionate-section">
+            <!-- Play Group  -->
+            <div class="passionate-row">
+                <div class="image-box">
+                    <img src="https://storage.googleapis.com/a1aa/image/650db58f-2b22-4f68-3329-e721eb4b30fc.jpg"
+                        alt="Team Image" class="img-fluid"> <!-- Added img-fluid class -->
+                </div>
+                <div class="text-box">
+                    <h3 class="main-course-heading">Play Group</h3>
+                    <p>Children at Play group start exploring and interacting socially. This is the time they need to be
+                        given
+                        exposure to sensory materials and activities for their wholistic development.
+                    </p>
 
-  // Sort oldest non-video comments first
-  function sortOldestNonVideos() {
-    return comments
-      .filter(c => !c.videoUrl)   // exclude videos
-      .slice()
-      .sort((a, b) => a.timestamp - b.timestamp);
-  }
+                    <p>At Bonjour Kidz Play School & Day Care, we understand that young children grow and learn the most
+                        when they receive undivided attention and the right stimulation.
+                        As parents, you can be assured that our inclusive, engaging and interactive learning
+                        environments are
+                        capable of adapting to your child’s specific learning and development requirements.
+                    </p>
 
-  // Filter only video comments
-  function filterVideos() {
-    return comments.filter(c => c.videoUrl);
-  }
+                    <strong class="strongmsg">"Early experiences in the first few years of life are critical for
+                        acquisition of
+                        skills as maximum brain development happens during this period."</strong>
 
-  // Tabs
-  const newestTab = document.getElementById('newestTab');
-  const oldestTab = document.getElementById('oldestTab');
-  const videosTab = document.getElementById('videosTab');
+                    <div class="info-row">
+                        <h6 class="info-left">Age Group: 2.5 - 3.5 YEARS</h6>
+                        <h6 class="info-right">Duration: 2.5 Hours Per Day</h6>
+                    </div>
+                </div>
+            </div>
 
-  function setActiveTab(tab) {
-    [newestTab, oldestTab, videosTab].forEach(t => t.classList.remove('active'));
-    tab.classList.add('active');
-  }
+            <!--  Pre Nursery  -->
+            <div class="passionate-row reverse">
+                <div class="image-box">
+                    <img src="https://storage.googleapis.com/a1aa/image/650db58f-2b22-4f68-3329-e721eb4b30fc.jpg"
+                        alt="Team Image" class="img-fluid"> <!-- Added img-fluid class -->
+                </div>
+                <div class="text-box">
+                    <h3 class="main-course-heading">Pre Nursery</h3>
+                    <p>At this stage child needs to be developed and prepared for everything they are going to encounter
+                        in the school,
+                        e.g. following a common routine, communicating in a large group, paying attention for a longer
+                        span, eating on their own,
+                        making friends, looking after their bodily needs, their belongings, dealing with strangers,
+                        reading, writing etc.
+                    </p>
 
-  newestTab.addEventListener('click', () => {
-    setActiveTab(newestTab);
-    renderComments(sortNewestNonVideos());
-  });
+                    <p>At Bonjour Kidz Play School & Day Care, we understand that young children grow and learn the most
+                        when they
+                        receive undivided attention and the right stimulation.
+                        As parents, you can be assured that our inclusive, engaging and interactive learning
+                        environments are
+                        capable of adapting to your child’s specific learning and development requirements.
+                    </p>
 
-  oldestTab.addEventListener('click', () => {
-    setActiveTab(oldestTab);
-    renderComments(sortOldestNonVideos());
-  });
+                    <strong class="strongmsg">"Early experiences in the first few years of life are critical for
+                        acquisition of
+                        skills as maximum brain development happens during this period."
+                    </strong>
 
-  videosTab.addEventListener('click', () => {
-    setActiveTab(videosTab);
-    renderComments(filterVideos());
-  });
+                    <div class="info-row">
+                        <h6 class="info-left">Age Group: 2 - 3 YEARS</h6>
+                        <h6 class="info-right">Duration: 2.5 Hours Per Day</h6>
+                    </div>
+                </div>
+            </div>
 
-  // Toggle show/hide comments container
-  const toggleCheckbox = document.getElementById('comment-toggle');
-  toggleCheckbox.addEventListener('change', () => {
-    const container = document.getElementById('commentsContainer');
-    container.style.display = toggleCheckbox.checked ? 'block' : 'none';
-  });
+            <!-- Nursery -->
+            <div class="passionate-row">
+                <div class="image-box">
+                    <img src="https://storage.googleapis.com/a1aa/image/650db58f-2b22-4f68-3329-e721eb4b30fc.jpg"
+                        alt="Team Image" class="img-fluid"> <!-- Added img-fluid class -->
+                </div>
+                <div class="text-box">
+                    <h3 class="main-course-heading">Nursery</h3>
+                    <p>Quality education in the early years of preschool sets a firm foundation in the overall
+                        development of a child.
+                        At Bonjour Kidz Play School & Day Care, the nursery curriculum provides a right array of
+                        activities to help children move
+                        towards achieving their early learning goals.
+                    </p>
 
-  // Initial load: newest non-video comments
-  setActiveTab(newestTab);
-  renderComments(sortNewestNonVideos());
-</script>
+                    <p>In Nursery, children are engaged in school readiness activities such as reading, writing,
+                        counting, number recognition
+                        and problem solving in a fun filled but purposeful manner. Children are encouraged to
+                        corroborate their learning through
+                        collaborative activities in the areas of dramatics, science and arts.
+                    </p>
 
+                    <strong class="strongmsg">"Early experiences in the first few years of life are critical for
+                        acquisition of
+                        skills as maximum brain development happens during this period."</strong>
 
+                    <div class="info-row">
+                        <h6 class="info-left">Age Group: 2.5 - 3.5 YEARS</h6>
+                        <h6 class="info-right">Duration: 2.5 Hours Per Day</h6>
+                    </div>
+                </div>
+            </div>
 
-</body>
-</html>
+            <!-- KINDERGARTEN(K.G) -->
+            <div class="passionate-row reverse">
+                <div class="image-box">
+                    <img src="https://storage.googleapis.com/a1aa/image/650db58f-2b22-4f68-3329-e721eb4b30fc.jpg"
+                        alt="Team Image" class="img-fluid"> <!-- Added img-fluid class -->
+                </div>
+                <div class="text-box">
+                    <h3 class="main-course-heading">KINDERGARTEN(K.G)</h3>
+                    <p>The transition from preschool to primary school is a crucial time of change for both children as
+                        well as their parents.
+                        At Bonjour Kidz Play School & Day Care, the Kindergarten (K.G.) curriculum ensures smooth
+                        transition to formal schooling with
+                        meaningful and progressive learning experiences.
+                    </p>
+
+                    <p>In addition to age-appropriate activities in Kindergarten, which prepare a child for success in
+                        formal school; various
+                        other activities are conducted in the areas of language, numbers, general knowledge, music, art
+                        in a planned manner throughout the program.
+                        Through these activities, children learn the alphabet and letter sounds, numbers and simple math
+                        and master early writing skills.
+                    </p>
+
+                    <strong class="strongmsg">"Early experiences in the first few years of life are critical for
+                        acquisition of
+                        skills as maximum brain development happens during this period."</strong>
+
+                    <div class="info-row">
+                        <h6 class="info-left">Junior K.G.: 3.4 To 4.5 YEARS <br> <span>Senior K.G.: 4.5 To 5.5
+                                YEARS</span></h6>
+                        <h6 class="info-right">Duration: 2.5 Hours Per Day</h6>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day Care -->
+            <div class="passionate-row">
+                <div class="image-box">
+                    <img src="https://storage.googleapis.com/a1aa/image/650db58f-2b22-4f68-3329-e721eb4b30fc.jpg"
+                        alt="Team Image" class="img-fluid"> <!-- Added img-fluid class -->
+                </div>
+                <div class="text-box">
+                    <h3 class="main-course-heading">Day Care</h3>
+                    <p>Bonjour Kidz Play School & Daycare program includes preschool and post that a nap time, meals and
+                        evening activities.
+                        Learning is a dynamic process which occurs throughout the day, thus the child needs to be
+                        engaged in meaningful,
+                        playful and joyful learning experiences. The Day care program has been carefully designed for
+                        children from the age of 9 Months+
+                        such that the child is constructively engaged and involved in different explorations before
+                        returning to their parents.
+                    </p>
+
+                    <strong class="strongmsg">"Early experiences in the first few years of life are critical for
+                        acquisition of
+                        skills as maximum brain development happens during this period."
+                    </strong>
+
+                    <div class="info-row">
+                        <h6 class="info-left">Age Group: 2 Years - 12 YEARS</h6>
+                        <h6 class="info-right">Duration: 3 Hours Per Day</h6>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="floating-bg">
+        <!-- Circles -->
+        <div class="bg-shape circle circle1"></div>
+        <div class="bg-shape circle circle2"></div>
+
+        <!-- Rings -->
+        <div class="bg-shape ring ring1"></div>
+        <div class="bg-shape ring ring2"></div>
+
+        <!-- Triangles -->
+        <div class="bg-shape triangle triangle1"></div>
+        <div class="bg-shape triangle triangle2"></div>
+
+        <!-- Squares -->
+        <div class="bg-shape square square2"></div>
+    </div>
+
+    <!-- Footer Start -->
+    <script src="footer.js"></script>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a href="#" class=" back-to-top btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+    <!--

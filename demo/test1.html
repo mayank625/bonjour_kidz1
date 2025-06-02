@@ -1,198 +1,296 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <title>Course Reviews with Persistent Storage</title>
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-  />
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <title>
+    Rainbow Play School - Courses
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&amp;display=swap" rel="stylesheet" />
   <style>
     body {
-      background: linear-gradient(-45deg, #f0f4f8, #ffe8e0, #fff0ea, #f0f4f8);
-      background-size: 400% 400%;
-      animation: gradientBG 10s ease infinite;
-      font-family: 'Roboto', sans-serif;
-      color: #2c3e50;
-    }
-
-    @keyframes gradientBG {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    .review-card {
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      margin-bottom: 1rem;
-      transition: transform 0.3s ease, border 0.3s ease;
-      border: 2px solid transparent; /* Default border */
-    }
-
-    .review-card:hover {
-      transform: scale(1.05);
-      border: 2px solid #FE5D37; /* Border on hover */
-    }
-
-    .modal-content {
-      border-radius: 16px;
+      font-family: 'Poppins', sans-serif;
     }
   </style>
 </head>
 
-<body class="bg-light">
-  <div class="container py-5">
-    <h2 class="mb-4">Student Reviews</h2>
+<body class="bg-white text-gray-900"> 
+  <!-- MENU -->
+   <script src="menu.js"></script>
+  <!-- MENU END -->
 
-    <!-- Button to trigger Write Review Modal -->
-    <button
-      class="btn btn-primary mb-4"
-      data-bs-toggle="modal"
-      data-bs-target="#writeReviewModal"
-    >
-      Write a Review
-    </button>
 
-    <!-- Reviews container -->
-    <div id="reviews-container" class="row"></div>
-  </div>
 
-  <!-- Modal for writing a review -->
-  <div
-    class="modal fade"
-    id="writeReviewModal"
-    tabindex="-1"
-    aria-labelledby="writeReviewModalLabel"
-    aria-hidden="true"
-  >
-    <div class="modal-dialog">
-      <form id="reviewForm" class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="writeReviewModalLabel">Write a Review</h5>
-          <button
-            type="button"
-            class="btn-close"
-            data-bs-dismiss="modal"
-            aria-label="Close"
-          ></button>
-        </div>
-        <div class="modal-body">
-          <div class="mb-3">
-            <label for="reviewerName" class="form-label">Your Name</label>
-            <input type="text" class="form-control" id="reviewerName" required />
-          </div>
-          <div class="mb-3">
-            <label for="courseName" class="form-label">Course Name</label>
-            <input type="text" class="form-control" id="courseName" required />
-          </div>
-          <div class="mb-3">
-            <label for="reviewText" class="form-label">Your Review</label>
-            <textarea
-              class="form-control"
-              id="reviewText"
-              rows="3"
-              required
-            ></textarea>
+  <!-- Main Content -->
+  <main class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 -mt-20 relative z-10">
+    <!-- Passionate team section -->
+    <section class="pt-10 pb-16">
+      <h3 class="font-semibold text-lg text-gray-900 mb-8">
+        Passionate team
+      </h3>
+      <div class="flex flex-col md:flex-row md:items-center md:space-x-12">
+        <div class="relative flex-shrink-0 w-full md:w-80 h-48 md:h-56 rounded-[60px] overflow-hidden">
+          <img alt="Close-up photo of colored pencils in a container on a desk, blurred background"
+            class="w-full h-full object-cover rounded-[60px]" height="224"
+            src="https://storage.googleapis.com/a1aa/image/650db58f-2b22-4f68-3329-e721eb4b30fc.jpg" width="320" />
+          <div class="absolute -top-3 -left-3 w-8 h-8 bg-pink-400 rounded-full">
           </div>
         </div>
-        <div class="modal-footer">
-          <button type="submit" class="btn btn-success">Submit Review</button>
+        <div class="mt-8 md:mt-0 text-xs text-gray-700 leading-relaxed max-w-2xl">
+          <p class="mb-3">
+            Approximately engage diverse resources for next generation systems.
+            Professionally foster extensive paradigms via e-vis multidisciplinary
+            systems. Synergistically deploy maintainable products and
+            frictionless methodologies.
+          </p>
+          <p class="mb-3">
+            On behalf of the entire staff, I would like to extend the warmest of
+            welcomes to Kidzoni School. Kidzoni celebrates a tradition of
+            excellence in education by setting high expectations for academic,
+            social, and emotional growth. Our dedicated staff and our supportive
+            parents jointly facilitate the development of our students as eager,
+            life-long learners and as compassionate, responsible human beings.
+          </p>
+          <p>
+            We are committed to continual improvement through collaboration and
+            innovation as we propel our learners to lives of achievement, meaning,
+            and fulfillment.
+          </p>
         </div>
-      </form>
+      </div>
+    </section>
+    <!-- Popular Classes Section -->
+    <section class="pb-16">
+      <h3 class="font-semibold text-lg text-gray-900 mb-8">
+        Popular Classes
+      </h3>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-4xl">
+        <!-- Class 1 -->
+        <div class="flex flex-col items-center text-center space-y-2">
+          <div class="w-24 h-24 rounded-[40px] overflow-hidden">
+            <img alt="Child wearing Spiderman costume and blue cap" class="w-full h-full object-cover rounded-[40px]"
+              height="96" src="https://storage.googleapis.com/a1aa/image/07fd1bed-c81a-4d4e-f4eb-f72110ed0c70.jpg"
+              width="96" />
+          </div>
+          <span class="text-xs text-white bg-blue-400 rounded-full px-3 py-0.5 font-semibold">
+            1-3 YEARS
+          </span>
+          <h4 class="text-pink-500 font-semibold text-sm">
+            Playgroup
+          </h4>
+          <p class="text-[9px] text-gray-600 max-w-[110px]">
+            By creating a safe, consistent and welcoming environment
+          </p>
+        </div>
+        <!-- Class 2 -->
+        <div class="flex flex-col items-center text-center space-y-2">
+          <div class="w-24 h-24 rounded-[40px] overflow-hidden">
+            <img alt="Child playing video game controller" class="w-full h-full object-cover rounded-[40px]" height="96"
+              src="https://storage.googleapis.com/a1aa/image/8ab5d51f-7257-4a96-b29d-b7db730da379.jpg" width="96" />
+          </div>
+          <span class="text-xs text-white bg-orange-300 rounded-full px-3 py-0.5 font-semibold">
+            3-4 YEARS
+          </span>
+          <h4 class="text-pink-500 font-semibold text-sm">
+            Nursery
+          </h4>
+          <p class="text-[9px] text-gray-600 max-w-[110px]">
+            By creating a safe, consistent and welcoming environment
+          </p>
+        </div>
+        <!-- Class 3 -->
+        <div class="flex flex-col items-center text-center space-y-2">
+          <div class="w-24 h-24 rounded-[40px] overflow-hidden">
+            <img alt="Child holding a medicine bottle" class="w-full h-full object-cover rounded-[40px]" height="96"
+              src="https://storage.googleapis.com/a1aa/image/f4a5a5c8-a197-472c-f404-f68f839df698.jpg" width="96" />
+          </div>
+          <span class="text-xs text-white bg-green-400 rounded-full px-3 py-0.5 font-semibold">
+            3.5-5 YEARS
+          </span>
+          <h4 class="text-pink-500 font-semibold text-sm">
+            Junior
+          </h4>
+          <p class="text-[9px] text-gray-600 max-w-[110px]">
+            By creating a safe, consistent and welcoming environment
+          </p>
+        </div>
+        <!-- Class 4 -->
+        <div class="flex flex-col items-center text-center space-y-2">
+          <div class="w-24 h-24 rounded-[40px] overflow-hidden">
+            <img alt="Child and teacher learning together" class="w-full h-full object-cover rounded-[40px]" height="96"
+              src="https://storage.googleapis.com/a1aa/image/abf5a992-1219-4122-bfd8-fa3779b7e093.jpg" width="96" />
+          </div>
+          <span class="text-xs text-white bg-blue-400 rounded-full px-3 py-0.5 font-semibold">
+            4.5-6 YEARS
+          </span>
+          <h4 class="text-pink-500 font-semibold text-sm">
+            Senior
+          </h4>
+          <p class="text-[9px] text-gray-600 max-w-[110px]">
+            By creating a safe, consistent and welcoming environment
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- Redefining early child care education section -->
+    <section class="pb-20 max-w-6xl mx-auto">
+      <div class="flex flex-col lg:flex-row lg:items-center lg:space-x-12">
+        <div class="lg:flex-1">
+          <h3 class="font-semibold text-gray-900 text-base max-w-xs mb-8 leading-tight">
+            We’re redefining early child care education
+          </h3>
+          <div class="grid grid-cols-2 gap-4 max-w-xs">
+            <div class="flex items-start space-x-3">
+              <div
+                class="flex items-center justify-center w-8 h-8 rounded-lg bg-cyan-200 text-cyan-600 font-semibold text-sm">
+                01
+              </div>
+              <div>
+                <h4 class="text-pink-400 font-semibold text-xs leading-tight">
+                  Active learning
+                </h4>
+                <p class="text-gray-700 text-[9px] leading-tight max-w-[180px]">
+                  Children love this class room as it has many toys and educational
+                  games.
+                </p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-3">
+              <div
+                class="flex items-center justify-center w-8 h-8 rounded-lg bg-cyan-200 text-cyan-600 font-semibold text-sm">
+                02
+              </div>
+              <div>
+                <h4 class="text-pink-400 font-semibold text-xs leading-tight">
+                  Active learning
+                </h4>
+                <p class="text-gray-700 text-[9px] leading-tight max-w-[180px]">
+                  Children love this class room as it has many toys and educational
+                  games.
+                </p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-3">
+              <div
+                class="flex items-center justify-center w-8 h-8 rounded-lg bg-pink-200 text-pink-500 font-semibold text-sm">
+                03
+              </div>
+              <div>
+                <h4 class="text-pink-400 font-semibold text-xs leading-tight">
+                  Active learning
+                </h4>
+                <p class="text-gray-700 text-[9px] leading-tight max-w-[180px]">
+                  Children love this class room as it has many toys and educational
+                  games.
+                </p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-3">
+              <div
+                class="flex items-center justify-center w-8 h-8 rounded-lg bg-pink-200 text-pink-500 font-semibold text-sm">
+                04
+              </div>
+              <div>
+                <h4 class="text-pink-400 font-semibold text-xs leading-tight">
+                  Active learning
+                </h4>
+                <p class="text-gray-700 text-[9px] leading-tight max-w-[180px]">
+                  Children love this class room as it has many toys and educational
+                  games.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mt-10 lg:mt-0 lg:flex-1 relative w-full max-w-md mx-auto lg:mx-0">
+          <img alt="Children in classroom wearing masks and writing on paper"
+            class="rounded-[60px] w-full h-auto object-cover" height="224"
+            src="https://storage.googleapis.com/a1aa/image/f5215425-7c85-4779-0e88-c36f611dfd91.jpg" width="320" />
+          <div class="absolute -top-10 -left-10 w-24 h-24 rounded-full border-8 border-pink-200">
+          </div>
+          <div class="absolute -bottom-6 -right-6 w-12 h-12 rounded-full bg-yellow-300">
+          </div>
+          <div aria-hidden="true" class="absolute top-10 right-0 w-6 h-6 text-cyan-400">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d="M18 13v-1m0 0h-1m1 1h1m-1-1v-1m-6 6v-1m0 0h-1m1 1h1m-1-1v-1m-6 6v-1m0 0h-1m1 1h1m-1-1v-1"
+                stroke-linecap="round" stroke-linejoin="round">
+              </path>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- Footer -->
+  <footer class="bg-[#2f2f5a] text-gray-300 pt-20 pb-10 relative overflow-hidden rounded-t-[120px]">
+    <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
+      <nav class="flex flex-wrap justify-center space-x-4 text-[9px] font-semibold mb-6">
+        <a class="hover:underline" href="#">
+          Home
+        </a>
+        <a class="hover:underline" href="#">
+          Administration
+        </a>
+        <a class="hover:underline" href="#">
+          Faculty
+        </a>
+        <a class="hover:underline" href="#">
+          Parents &amp; Students
+        </a>
+        <a class="hover:underline" href="#">
+          Photo Gallery
+        </a>
+        <a class="hover:underline" href="#">
+          Bookmarks
+        </a>
+        <a class="hover:underline" href="#">
+          Calendar
+        </a>
+      </nav>
+      <div class="flex justify-center space-x-6 text-xs text-cyan-400 mb-6">
+        <span>
+          Follow Us:
+        </span>
+        <a aria-label="Facebook" class="hover:text-white" href="#">
+          <i class="fab fa-facebook-f">
+          </i>
+        </a>
+        <a aria-label="Twitter" class="hover:text-white" href="#">
+          <i class="fab fa-twitter">
+          </i>
+        </a>
+        <a aria-label="Tumblr" class="hover:text-white" href="#">
+          <i class="fab fa-tumblr">
+          </i>
+        </a>
+        <a aria-label="LinkedIn" class="hover:text-white" href="#">
+          <i class="fab fa-linkedin-in">
+          </i>
+        </a>
+        <a aria-label="Pinterest" class="hover:text-white" href="#">
+          <i class="fab fa-pinterest-p">
+          </i>
+        </a>
+      </div>
+      <p class="text-[9px] text-center text-gray-400">
+        Copyright © 2023 Rainbow Play School.
+        <br />
+        Powered by Rainbow UI. All rights reserved.
+      </p>
     </div>
-  </div>
-
-  <!-- Bootstrap JS Bundle -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-  <script>
-    const reviewForm = document.getElementById('reviewForm');
-    const reviewsContainer = document.getElementById('reviews-container');
-
-    // Key to store reviews in localStorage
-    const STORAGE_KEY = 'courseReviews';
-
-    // Load reviews from localStorage and display
-    function loadReviews() {
-      const reviewsJSON = localStorage.getItem(STORAGE_KEY);
-      if (reviewsJSON) {
-        try {
-          const reviews = JSON.parse(reviewsJSON);
-          reviewsContainer.innerHTML = ''; // clear existing
-          reviews.forEach(({ name, course, review }) => {
-            addReviewToDOM(name, course, review, false);
-          });
-        } catch (e) {
-          console.error('Failed to parse reviews from localStorage', e);
-          reviewsContainer.innerHTML = '';
-        }
-      } else {
-        // If no reviews saved, add a default sample review
-        addReviewToDOM(
-          'Alice',
-          'JavaScript Course',
-          'Great course! Helped me a lot.',
-          true
-        );
-      }
-    }
-
-    // Add review to the page, and optionally save to localStorage
-    function addReviewToDOM(name, course, review, save = true) {
-      const colDiv = document.createElement('div');
-      colDiv.className = 'col-md-6';
-
-      colDiv.innerHTML = `
-        <div class="card review-card p-3">
-          <h5 class="card-title">${escapeHtml(name)}</h5>
-          <h6 class="card-subtitle mb-2 text-muted">${escapeHtml(course)}</h6>
-          <p class="card-text">${escapeHtml(review)}</p>
-        </div>
-      `;
-
-      reviewsContainer.prepend(colDiv);
-
-      if (save) {
-        // Get current reviews from localStorage or empty array
-        let currentReviews = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
-        currentReviews.unshift({ name, course, review });
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(currentReviews));
-      }
-    }
-
-    // Simple escape to prevent HTML injection in review content
-    function escapeHtml(text) {
-      return text
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;')
-        .replace(/'/g, '&#039;');
-    }
-
-    // Form submission handler
-    reviewForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-
-      const name = document.getElementById('reviewerName').value.trim();
-      const course = document.getElementById('courseName').value.trim();
-      const review = document.getElementById('reviewText').value.trim();
-
-      if (name && course && review) {
-        addReviewToDOM(name, course, review);
-
-        // Reset form and close modal
-        reviewForm.reset();
-        const modal = bootstrap.Modal.getInstance(
-          document.getElementById('writeReviewModal')
-        );
-        modal.hide();
-      }
-    });
-
-    // Initialize
-    loadReviews();
-  </script>
+    <div class="absolute -top-10 left-6 w-20 h-20">
+      <img alt="Cartoon boy jumping with orange hair and striped shirt" class="w-full h-full object-contain" height="80"
+        src="https://storage.googleapis.com/a1aa/image/d67719d5-cef3-4a98-dd5c-e3a2df23bfc4.jpg" width="80" />
+    </div>
+    <div class="absolute -top-10 right-6 w-12 h-12">
+      <img alt="Yellow pencil with pink eraser icon" class="w-full h-full object-contain" height="48"
+        src="https://storage.googleapis.com/a1aa/image/8b8b593f-bf6f-4b56-7ffb-9f61e554c643.jpg" width="48" />
+    </div>
+  </footer>
 </body>
+
 </html>
