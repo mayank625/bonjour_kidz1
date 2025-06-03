@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Bonjour Play School - Services</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta name="keywords" content="Play School, Preschool, Kids Learning, Child Development, Bonjour School Services">
+<meta name="description" content="Explore the vibrant services offered by Bonjour Play School – nurturing early education with care, creativity, and fun.">
+
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@600&family=Lobster+Two:wght@700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <script src="menu.js"></script>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+<!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+
+    <style>
+        /* Back TO Top Btn */
+        .back-to-top {
+            position: fixed;
+            bottom: 60px;
+            right: 20px;
+            z-index: 9999;
+            /* Make sure it's higher than other elements */
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+        }
+
+        .passionate-section {
+            padding: 80px 10px;
+            max-width: 1310px;
+            margin: auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .passionate-section h3 {
+            font-size: 2rem;
+            margin-bottom: 40px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .passionate-row {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-bottom: 60px;
+            gap: 40px;
+        }
+
+        .passionate-row.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .image-box {
+            flex: 1;
+            max-width: 400px;
+            height: 350px;
+            border-radius: 60px;
+            overflow: hidden;
+            position: relative;
+            animation: floatLeft 1.2s ease-out forwards;
+        }
+
+        .image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 60px;
+            border: #ffffff solid 2px;
+         }
+
+        .text-box {
+            flex: 2;
+            font-size: 14px;
+            color: #555;
+            line-height: 1.8;
+            animation: fadeIn 1.5s ease-in forwards;
+        }
+
+        .main-course-heading {
+            font-family: 'Chewy', cursive;
+            font-size: 36px;
+            color: #FE5D37;
+            margin-top: 20px;
+        }
+
+        .strongmsg {
+            font-size: 20px;
+            color: #bd452a;
+            font-weight: bold;
+            font-family: 'Chewy', cursive;
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+            animation: floatLeft 1.2s ease-in-out forwards;
+        }
+
+        .info-left,
+        .info-right {
+            font-size: 16px;
+            font-weight: bold;
+            color: #444;
+        }
+
+        /* Animations */
+        @keyframes floatLeft {
+            from {
+                transform: translateX(-80px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+@media (max-width: 768px) {
+  .passionate-row {
+    flex-direction: column !important; /* stack vertically on mobile */
+    gap: 20px;
+  }
+
+  .passionate-row.reverse {
+    flex-direction: column !important; /* override reverse on mobile */
+  }
+
+  .image-box {
+    max-width: 100% !important;
+    width: 100% !important;
+    height: auto !important; /* let height adjust automatically */
+    border-radius: 30px; /* smaller radius for mobile */
+    animation: none; /* optionally disable animation on mobile */
+  }
+
+  .image-box img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: cover;
+    border-radius: 30px;
+  }
+
+  .text-box {
+    flex: unset !important;
+    width: 100% !important;
+    font-size: 16px; /* easier to read on mobile */
+  }
+
+  .info-row {
+    flex-direction: column;
+    gap: 5px;
+    align-items: flex-start;
+  }
+
+  .info-left,
+  .info-right {
+    font-size: 14px;
+  }
+
+  .main-course-heading {
+    font-size: 28px;
+    margin-top: 10px;
+  }
+
+  .passionate-section {
+    padding: 40px 15px;
+  }
+}
+
+
+
+        /* POPULAR Programs */
+      .swiper-button-next,
+.swiper-button-prev {
+  color: white;
+  background-color: #ff7a0e;
+  padding: 10px;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  width: 44px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background-color: #e96a05;
+  transform: scale(1.1);
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 18px;
+}
+
+
+        .popular-classes {
+            padding: 10px 20px;
+            max-width: 1200px;
+            margin: auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .popular-classes h3 {
+            font-size: 2rem;
+            margin-bottom: 40px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .classes-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            z-index: 1;
+            position: relative;
+        }
+
+        .class-box {
+            background: #fff;
+            border-radius: 30px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            width: 260px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            
+        }
+
+        .class-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .class-image img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 20px;
+            margin-bottom: 15px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 6px 12px;
+            font-size: 12px;
+            color: white;
+            border-radius: 12px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .bg-blue {
+            background-color: #3b82f6;
+        }
+
+        .bg-orange {
+            background-color: #f97316;
+        }
+
+        .bg-green {
+            background-color: #10b981;
+        }
+
+        .class-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #222;
+            margin-bottom: 10px;
+        }
+
+        .class-description {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+       
+
+        /* BACKGROUND SHAPE ANIMTION */
+        .floating-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        /* Base shape styles */
+        .bg-shape {
+            position: absolute;
+            opacity: 0.15;
+        }
+
+        /* Circles */
+        .circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            animation: rotate 20s linear infinite;
+        }
+
+        .circle1 {
+            background: #f87171;
+            /* red */
+            top: 10%;
+            right: 10%;
+        }
+
+        .circle2 {
+            background: #fbbf24;
+            /* yellow */
+            top: 30%;
+            left: 55%;
+        }
+
+        /* Rings */
+        .ring {
+            width: 80px;
+            height: 80px;
+            border: 6px solid;
+            border-radius: 50%;
+            animation: rotate 25s linear infinite;
+        }
+
+        .ring1 {
+            border-color: #3b82f6;
+            /* blue */
+            bottom: 15%;
+            left: 5%;
+        }
+
+        .ring2 {
+            border-color: #9333ea;
+            /* purple */
+            top: 20%;
+            right: 20%;
+        }
+
+        /* Triangles */
+        .triangle {
+            width: 0;
+            height: 0;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+            animation: rotate 30s linear infinite;
+        }
+
+        .triangle1 {
+            border-bottom: 80px solid #34d399;
+            /* green */
+            top: 90%;
+            right: 20%;
+        }
+
+        .triangle2 {
+            border-bottom: 80px solid #ec4899;
+            /* pink */
+            top: 20%;
+            left: 20%;
+            transform: rotate(180deg);
+        }
+
+        /* Square Base Style */
+        .square {
+            width: 80px;
+            height: 80px;
+            background-color: #0ea5e9;
+            /* sky blue */
+            position: absolute;
+            opacity: 0.15;
+            animation: rotateSquare 20s linear infinite;
+        }
+
+        /* Position of the square */
+        .square1 {
+            top: 40%;
+            left: 40%;
+        }
+
+        .square2 {
+            background-color: #f43f5e;
+            /* pink */
+            bottom: 1%;
+            right: 60%;
+            animation: rotateSquare 15s linear infinite;
+        }
+
+        /* Rotation animation */
+        @keyframes rotateSquare {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Rotation Animation */
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg) translateZ(0);
+            }
+
+            100% {
+                transform: rotate(360deg) translateZ(0);
+            }
+        }
+
+        @keyframes floatUpDown {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        .circle1,
+        .ring1 {
+            animation: rotate 20s linear infinite, floatUpDown 6s ease-in-out infinite;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid bg-white p-0">
+        <!-- Spinner Start -->
+        <div id="spinner"
+            class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+        <!-- Page Header End -->
+        <div class="container-fluid py-5 page-header position-relative mb-5">
+            <div class="container py-5">
+                <h1 class="display-2 text-white animated slideInDown mb-4">  Programs</h1>
+                <nav aria-label="breadcrumb animated slideInDown">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item"> <a href="#" style="color: white;">  Programs</a></li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <!-- Page Header End -->
+    </div>
+    
+    <div class="container-fluid">
+
+        <section class="popular-classes">
+  <h3 class="text-box main-course-heading" style="color:rgb(255, 122, 14);">
+    Popular Programs
+  </h3>
+
+  <!-- Swiper container -->
+  <div class="swiper popular-classes-swiper">
+    <div class="swiper-wrapper">
+
+      <!-- Slide 1 -->
+      <div class="swiper-slide class-box">
+        <div class="class-image">
+          <img
+            src="https://storage.googleapis.com/a1aa/image/07fd1bed-c81a-4d4e-f4eb-f72110ed0c70.jpg"
+            alt="Playgroup"
+          />
+        </div>
+        <span class="badge bg-blue">1.5 - 2.5 YEARS</span>
+        <h4 class="class-title">Play Group</h4>
+        <p class="class-description">
+         Fun-filled activities that nurture early development and social skills in a safe, loving space.
+        </p>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="swiper-slide class-box">
+        <div class="class-image">
+          <img
+            src="https://storage.googleapis.com/a1aa/image/8ab5d51f-7257-4a96-b29d-b7db730da379.jpg"
+            alt="Nursery"
+          />
+        </div>
+        <span class="badge bg-orange">2 - 3 YEARS</span>
+        <h4 class="class-title">Pre Nursery</h4>
+        <p class="class-description">
+          Gentle introduction to learning through play, helping toddlers develop social and motor skills.
+        </p>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="swiper-slide class-box">
+        <div class="class-image">
+          <img
+            src="https://storage.googleapis.com/a1aa/image/f4a5a5c8-a197-472c-f404-f68f839df698.jpg"
+            alt="Junior"
+          />
+        </div>
+        <span class="badge bg-green">2.5 - 3.5 YEARS</span>
+        <h4 class="class-title">Nursery</h4>
+        <p class="class-description">
+          A joyful start to learning with stories, rhymes, and hands-on activities in a caring environment.
+        </p>
+      </div>
+
+      <!-- Slide 4 -->
+      <div class="swiper-slide class-box">
+        <div class="class-image">
+          <img
+            src="https://storage.googleapis.com/a1aa/image/abf5a992-1219-4122-bfd8-fa3779b7e093.jpg"
+            alt="Senior"
+          />
+        </div>
+        <span class="badge bg-blue">3.5 - 4.5 YEARS</span>
+        <h4 class="class-title">Junior (K.G.) </h4>
+        <p class="class-description">
+            Introducing early concepts through play-based learning to spark curiosity and confidence.
+        </p>
+      </div>
+
+        <!-- Slide 5 -->
+      <div class="swiper-slide class-box">
+        <div class="class-image">
+          <img
+            src="https://storage.googleapis.com/a1aa/image/abf5a992-1219-4122-bfd8-fa3779b7e093.jpg"
+            alt="Senior"
+          />
+        </div>
+        <span class="badge bg-blue">4.5 - 5.5 YEARS</span>
+        <h4 class="class-title">Senior (K.G.) </h4>
+        <p class="class-description">
+            Building strong foundations in reading, writing, and math through fun and interactive learning.        </p>
+      </div>
+        <!-- Slide 6 -->
+      <div class="swiper-slide class-box">
+        <div class="class-image">
+          <img
+            src="https://storage.googleapis.com/a1aa/image/abf5a992-1219-4122-bfd8-fa3779b7e093.jpg"
+            alt="Senior"
+          />
+        </div>
+        <span class="badge bg-blue">2 - 12 YEARS</span>
+        <h4 class="class-title"> Day Care </h4>
+        <p class="class-description">
+           Safe, caring, and playful learning space for little ones at Bonjour Play School.
+        </p>
+      </div>
+      
+    </div>
+
+    <!-- Navigation buttons -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+
+    <!-- Pagination (dots) -->
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
+
+        <section class="passionate-section">
+
+
+            <!-- Play Group  -->
+            <div class="passionate-row">
+                <div class="image-box">
+                    <img src="https://storage.googleapis.com/a1aa/image/650db58f-2b22-4f68-3329-e721eb4b30fc.jpg"
+                        alt="Team Image">
+                </div>
+                <div class="text-box">
+                    <h3 class="main-course-heading">Play Group</h3>
+                    <p>Children at Play group start exploring and interacting socially. This is the time they need to be
+                        given
+                        exposure to sensory materials and activities for their wholistic development.
+                    </p>
+
+                    <p>At Bonjour Kidz Play School & Day Care, we understand that young children grow and learn the most
+                        when they receive undivided attention and the right stimulation.
+                        As parents, you can be assured that our inclusive, engaging and interactive learning
+                        environments are
+                        capable of adapting to your child’s specific learning and development requirements.
+                    </p>
+
+                    <strong class="strongmsg">"Early experiences in the first few years of life are critical for
+                        acquisition of
+                        skills as maximum brain development happens during this period."</strong>
+
+                    <div class="info-row">
+                        <h6 class="info-left">Age Group: 2.5 - 3.5 YEARS</h6>
+                        <h6 class="info-right">Duration: 2.5 Hours Per Day</h6>
+                    </div>
+                </div>
+
+            </div>
+
+            <!--  Pre Nursery  -->
+            <div class="passionate-row reverse">
+                <div class="image-box">
+                    <img src="https://storage.googleapis.com/a1aa/image/650db58f-2b22-4f68-3329-e721eb4b30fc.jpg"
+                        alt="Team Image">
+                </div>
+                <div class="text-box">
+                    <h3 class="main-course-heading">Pre Nursery</h3>
+                    <p>At this stage child needs to be developed and prepared for everything they are going to encounter
+                        in the school,
+                        e.g. following a common routine, communicating in a large group, paying attention for a longer
+                        span, eating on their own,
+                        making friends, looking after their bodily needs, their belongings, dealing with strangers,
+                        reading, writing etc.
+                    </p>
+
+                    <p>At Bonjour Kidz Play School & Day Care, we understand that young children grow and learn the most
+                        when they
+                        receive undivided attention and the right stimulation.
+                        As parents, you can be assured that our inclusive, engaging and interactive learning
+                        environments are
+                        capable of adapting to your child’s specific learning and development requirements.
+                    </p>
+
+                    <strong class="strongmsg">"Early experiences in the first few years of life are critical for
+                        acquisition of
+                        skills as maximum brain development happens during this period."
+                    </strong>
+
+                    <div class="info-row">
+                        <h6 class="info-left">Age Group: 2 - 3 YEARS</h6>
+                        <h6 class="info-right">Duration: 2.5 Hours Per Day</h6>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Nursery -->
+            <div class="passionate-row">
+                <div class="image-box">
+                    <img src="https://storage.googleapis.com/a1aa/image/650db58f-2b22-4f68-3329-e721eb4b30fc.jpg"
+                        alt="Team Image">
+                </div>
+                <div class="text-box">
+                    <h3 class="main-course-heading">Nursery</h3>
+                    <p>Quality education in the early years of preschool sets a firm foundation in the overall
+                        development of a child.
+                        At Bonjour Kidz Play School & Day Care, the nursery curriculum provides a right array of
+                        activities to help children move
+                        towards achieving their early learning goals.
+                    </p>
+
+                    <p>In Nursery, children are engaged in school readiness activities such as reading, writing,
+                        counting, number recognition
+                        and problem solving in a fun filled but purposeful manner. Children are encouraged to
+                        corroborate their learning through
+                        collaborative activities in the areas of dramatics, science and arts.
+                    </p>
+
+                    <strong class="strongmsg">"Early experiences in the first few years of life are critical for
+                        acquisition of
+                        skills as maximum brain development happens during this period."</strong>
+
+                    <div class="info-row">
+                        <h6 class="info-left">Age Group: 2.5 - 3.5 YEARS</h6>
+                        <h6 class="info-right">Duration: 2.5 Hours Per Day</h6>
+                    </div>
+                </div>
+            </div>
+
+            <!-- KINDERGARTEN(K.G) -->
+            <div class="passionate-row reverse">
+                <div class="image-box">
+                    <img src="https://storage.googleapis.com/a1aa/image/650db58f-2b22-4f68-3329-e721eb4b30fc.jpg"
+                        alt="Team Image">
+                </div>
+                <div class="text-box">
+                    <h3 class="main-course-heading">KINDERGARTEN(K.G)</h3>
+                    <p>The transition from preschool to primary school is a crucial time of change for both children as
+                        well as their parents.
+                        At Bonjour Kidz Play School & Day Care, the Kindergarten (K.G.) curriculum ensures smooth
+                        transition to formal schooling with
+                        meaningful and progressive learning experiences.
+                    </p>
+
+                    <p>In addition to age-appropriate activities in Kindergarten, which prepare a child for success in
+                        formal school; various
+                        other activities are conducted in the areas of language, numbers, general knowledge, music, art
+                        in a planned manner throughout the program.
+                        Through these activities, children learn the alphabet and letter sounds, numbers and simple math
+                        and master early writing skills.
+                    </p>
+
+                    <strong class="strongmsg">"Early experiences in the first few years of life are critical for
+                        acquisition of
+                        skills as maximum brain development happens during this period."</strong>
+
+                    <div class="info-row">
+                        <h6 class="info-left">Junior K.G.: 3.4 To 4.5 YEARS <br> <span>Senior K.G.: 4.5 To 5.5
+                                YEARS</span></h6>
+                        <h6 class="info-right">Duration: 2.5 Hours Per Day</h6>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day Care -->
+            <div class="passionate-row">
+                <div class="image-box">
+                    <img src="https://storage.googleapis.com/a1aa/image/650db58f-2b22-4f68-3329-e721eb4b30fc.jpg"
+                        alt="Team Image">
+                </div>
+                <div class="text-box">
+                    <h3 class="main-course-heading">Day Care</h3>
+                    <p>Bonjour Kidz Play School & Daycare program includes preschool and post that a nap time, meals and
+                        evening activities.
+                        Learning is a dynamic process which occurs throughout the day, thus the child needs to be
+                        engaged in meaningful,
+                        playful and joyful learning experiences. The Day care program has been carefully designed for
+                        children from the age of 9 Months+
+                        such that the child is constructively engaged and involved in different explorations before
+                        returning to their parents.
+                    </p>
+
+                    <strong class="strongmsg">"Early experiences in the first few years of life are critical for
+                        acquisition of
+                        skills as maximum brain development happens during this period."
+                    </strong>
+
+                    <div class="info-row">
+                        <h6 class="info-left">Age Group: 2 Years - 12 YEARS</h6>
+                        <h6 class="info-right">Duration: 3 Hours Per Day</h6>
+                    </div>
+                </div>
+            </div>
+
+    
+        </section>
+
+    </div>
+
+
+
+    <div class="floating-bg">
+        <!-- Circles -->
+        <div class="bg-shape circle circle1"></div>
+        <div class="bg-shape circle circle2"></div>
+
+        <!-- Rings -->
+        <div class="bg-shape ring ring1"></div>
+        <div class="bg-shape ring ring2"></div>
+
+        <!-- Triangles -->
+        <div class="bg-shape triangle triangle1"></div>
+        <div class="bg-shape triangle triangle2"></div>
+
+        <!-- Squares -->
+        <div class="bg-shape square square2"></div>
+
+    </div>
+
+
+
+
+    <!-- Footer Start -->
+    <script src="footer.js"></script>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a href="#" class=" back-to-top btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+<!--carousel script  -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const swiper = new Swiper('.popular-classes-swiper', {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 20,
+      },
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 30,
+      },
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 30,
+      },
+    },
+  });
+ });
+</script>
+<!--carousel script End -->
+
+
+</body>
+
+</html>

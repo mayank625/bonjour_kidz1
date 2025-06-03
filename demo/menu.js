@@ -9,9 +9,9 @@ document.write(`
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav mx-auto ">
-                    <a href="index.html" class="nav-item nav-link active">Home</a>
-                    <a href="#" class="nav-item nav-link">About Us</a>
-                    <a href="services.html" class="nav-item nav-link">Services</a>
+                    <a href="index.html" class="nav-item nav-link  ">Home</a>
+                    <a href="about.html" class="nav-item nav-link">About Us</a>
+                    <a href="services.html" class="nav-item nav-link">Programs</a>
                     <a href="celebrations.html" class="nav-item nav-link">Celebrations</a>
                     <a href="gallery.html" class="nav-item nav-link">Gallery</a>
                     <a href="testimonial.html" class="nav-item nav-link">Testimonials</a>
