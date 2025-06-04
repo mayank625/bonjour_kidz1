@@ -11,13 +11,13 @@ document.write(`
                 <div class="navbar-nav mx-auto ">
                     <a href="index.html" class="nav-item nav-link  ">Home</a>
                     <a href="about.html" class="nav-item nav-link">About Us</a>
-                    <a href="services.html" class="nav-item nav-link">Programs</a>
+                    <a href="programs.html" class="nav-item nav-link">Programs</a>
                     <a href="celebrations.html" class="nav-item nav-link">Celebrations</a>
                     <a href="gallery.html" class="nav-item nav-link">Gallery</a>
                     <a href="testimonial.html" class="nav-item nav-link">Testimonials</a>
                     <a href="franchise.html" class="nav-item nav-link">Franchise</a>
                     <a href="teachers.html" class="nav-item nav-link">Teachers</a>
-                    <a href="#" class="nav-item nav-link">Contact Us</a>
+                    <a href="contact.html" class="nav-item nav-link">Contact Us</a>
 
                 </div>
   
