@@ -1,686 +1,283 @@
 <html lang="en">
-
 <head>
-  <meta charset="utf-8" />
-  <meta content="width=device-width, initial-scale=1" name="viewport" />
-  <title>Kidsa About Page</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- Swiper CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
-  <!-- Swiper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Infinite Carousel with Text</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+  />
   <style>
     body {
-      font-family: "Inter", sans-serif;
       margin: 0;
-      padding: 0;
-      background-color: #f8fafc;
-      color: #475569;
+      background-color: #777;
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
     }
-
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    img {
-      display: block;
-      max-width: 100%;
-      height: auto;
-    }
-
     .container {
-      max-width: 1500px;
-      margin-left: auto;
-      margin-right: auto;
-      padding-left: 1.5rem;
-      padding-right: 1.5rem;
-    }
-
-    section {
-      padding-top: 5rem;
-      padding-bottom: 5rem;
-      position: relative;
-    }
-
-
-
-
-
-    /* Main white section with wave top */
-    .main-section {
-      /*       background-color: rgb(255, 255, 255);
- */
-      padding-top: 5rem;
-      padding-bottom: 1rem;
-      position: relative;
-      overflow: visible;
-    }
-
-    .main-content {
       display: flex;
-      flex-wrap: wrap;
-      gap: 2.5rem;
-      align-items: flex-start;
-      position: relative;
-      z-index: 2;
-      margin-bottom: 0rem;
-      /* removes bottom space */
-    }
-
-    /* IMAGE STYLES */
-    .blob-image {
-      width: 100%;
-      max-width: 330px;
-      height: auto;
-      aspect-ratio: 1 / 1;
-      border-radius: 36% 43% 60% 28% / 40% 57% 31% 72%;
-      object-fit: cover;
-      flex-shrink: 0;
-    }
-
-    /* TEXT SECTION */
-    .right-text {
-      max-width: 1000px;
-      flex: 1 1 320px;
-      margin: 2rem auto 0;
-      padding: 0 1rem;
-      background-color: none;
-    }
-
-    .right-text h3 {
-      font-weight: 600;
-      font-size: 1.875rem;
-      margin-bottom: rem;
-      line-height: 1.2;
-      color: #1e293b;
-    }
-
-    .right-text p {
-      font-size: 1.125rem;
-      color: #64748b;
-      line-height: 1.5;
-      margin-bottom: 3rem;
-      /* removes bottom space */
-    }
-
-    /* === MOBILE (max-width: 640px) === */
-    @media (max-width: 640px) {
-      .main-content {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        margin-bottom: 0rem;
-      }
-
-      .blob-image {
-        max-width: 80%;
-        margin: 0 auto 1.5rem;
-        display: block;
-      }
-
-      .right-text {
-        margin-top: 1rem;
-        margin-bottom: 1.5rem;
-        text-align: center;
-      }
-
-      .right-text h1 {
-        font-size: 2.5rem;
-        margin-bottom: 0.5rem;
-      }
-    }
-
-    /* === TABLET (641px to 1023px) === */
-    @media (min-width: 641px) and (max-width: 1023px) {
-      .main-content {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        margin-bottom: 0rex;
-      }
-
-      .blob-image {
-        max-width: 80%;
-        display: block;
-        margin: 0 auto 1.5rem;
-      }
-
-      .right-text {
-        margin-top: 2rem;
-        margin-bottom: 2rem;
-        padding: 1rem;
-      }
-
-      .right-text h1 {
-        font-size: 5.5rem;
-        margin-bottom: 0.5rem;
-      }
-    }
-
-    /* === DESKTOP (1024px and above) === */
-    @media (min-width: 1024px) {
-      .main-content {
-        flex-direction: row;
-        align-items: flex-start;
-        text-align: left;
-      }
-
-      .blob-image {
-        max-width: 400px;
-      }
-
-      .right-text {
-        margin-top: auto;
-      }
-
-      .right-text h1 {
-        font-size: 5.5rem;
-      }
-    }
-
-
-    /* Contact */
-    .contact-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      align-items: center;
-      justify-content: flex-start;
-      font-size: 0.95rem;
-      color: #334155;
-      margin-top: 2rem;
-    }
-
-    .contact-item {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      background: #f1f5f9;
-      padding: 1rem 1.25rem;
-      border-radius: 0.75rem;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
-      min-width: 250px;
-      transition: background 0.3s;
-    }
-
-    .contact-item:hover {
-      background: #e2e8f0;
-    }
-
-    .contact-item i {
-      color: #f9a56a;
-      font-size: 1.25rem;
-      flex-shrink: 0;
-    }
-
-    .contact-item .label {
-      font-weight: 600;
-      display: block;
-      color: #1e293b;
-    }
-
-    .contact-item .value {
-      color: #64748b;
-    }
-
-    .contact-item:hover {
-      transform: translateY(-5px);
-      border: 1px solid #3e3e3e50;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-      /* soft shadow */
-      transition: all 0.3s ease;
-      /* smooth animation */
-    }
-
-    /* Features Section */
-    .features-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      margin-bottom: 2.5rem;
-      justify-content: space-between;
-    }
-
-    .feature-item {
-      flex: 1 1 calc(33.333% - 2rem);
-      /* Three per row with gap */
-      max-width: calc(33.333% - 2rem);
-      background: #f8fafc;
-      border-radius: 0.75rem;
-      padding: 1rem;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-      display: flex;
-      gap: 1rem;
-      align-items: flex-start;
-      transition: transform 0.3s ease;
-    }
-
-    .feature-item:hover {
-      transform: translateY(-5px);
-      border: 1px solid #3e3e3e50;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-      /* soft shadow */
-      transition: all 0.3s ease;
-      /* smooth animation */
-    }
-
-    @media (max-width: 992px) {
-      .feature-item {
-        flex: 1 1 calc(50% - 1.5rem);
-        /* 2 per row on tablets */
-        max-width: calc(50% - 1.5rem);
-      }
-    }
-
-    @media (max-width: 576px) {
-      .feature-item {
-        flex: 1 1 100%;
-        /* 1 per row on mobile */
-        max-width: 100%;
-      }
-    }
-
-
-    /* Stats Section */
-    .stats-section {
-      background-color: #7da6b6;
-      color: white;
-      padding-top: 3rem;
-      padding-bottom: 3rem;
-      text-align: center;
-    }
-
-    .stats-container {
-      max-width: 1350px;
-      margin-left: auto;
-      margin-right: auto;
-      padding-left: 1.5rem;
-      padding-right: 1.5rem;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2rem;
-    }
-
-    @media (min-width: 640px) {
-      .stats-container {
-        grid-template-columns: repeat(4, 1fr);
-      }
-    }
-
-    .stat-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .stat-item i {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .stat-number {
-      font-weight: 600;
-      font-size: 1.25rem;
-    }
-
-    .stat-label {
-      font-size: 0.875rem;
-    }
-
-
-    /* ABOUT BONJOUR PLAY SCHOOL */
-
-    .heading-container {
-      max-width: 100%;
-      flex: 1 1 320px;
-      margin: 2rem auto 0;
-      /* Default: top margin added, auto left/right, 0 bottom */
-      padding: 0 1rem;
-      /* Optional: add some padding on mobile */
-      margin-bottom: 2rem;
-    }
-
-    /* General image styling */
-    .heading-container .img img {
-      width: 100%;
-      height: auto;
-      display: block;
+      max-width: 1200px;
       margin: 0 auto;
-      margin: 20p;
+      padding: 24px;
+      gap: 32px;
+      flex-wrap: wrap;
     }
-
-    /* Small screens (mobile) */
-    @media (max-width: 640px) {
-      .heading-container {
-        margin-bottom: 1.5rem;
-        text-align: center;
-        width: 90%;
-      }
-
-      .heading-container h1 {
-        font-size: 2.5rem;
-        margin-bottom: 0.5rem;
-        font-weight: 600;
-        line-height: 1.2;
-        color: #1e293b;
-        text-align: center;
-        text-transform: uppercase;
-      }
+    .text-section {
+      flex: 0 0 33.33%; /* 4 out of 12 columns */
+      color: white;
     }
-
-
-    /* Tablet & below - make columns stack */
-    @media (max-width: 1023px) {
-
-      .heading-container .col-md-8,
-      .heading-container .col-md-4 {
-        flex: 0 0 100%;
-        max-width: 100%;
-        text-align: center;
-      }
-
-      .heading-container .img {
-        text-align: center;
-        margin-top: 1rem;
-      }
+    .text-section h1 {
+      font-weight: 800;
+      font-size: 3rem;
+      line-height: 1;
+      margin: 0 0 16px 0;
     }
-
-
-    /* Large screens (desktop) */
-    @media (min-width: 1024px) {
-      .heading-container {
-        margin-top: 5rem;
-        margin-bottom: auto;
-        width: 90%;
-      }
-
-      .heading-container h1 {
-        font-size: 3.5rem;
-        margin-bottom: 1.5rem;
-        font-weight: 600;
-        line-height: 1.2;
-        color: #1e293b;
-        text-align: center;
-        text-transform: uppercase;
-      }
-
-      .heading-container p {
-        font-size: 1.125rem;
-        color: #64748b;
-        line-height: 1.5;
-        margin-bottom: 0;
-        /* 👈 This removes space under the paragraph */
-
-      }
+    .text-section p {
+      font-size: 1.25rem;
+      line-height: 1.5;
+      margin: 0;
     }
-
-    /* BACKGROUND SHAPE ANIMTION */
-    .floating-bg {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
+    .carousel-wrapper {
+      flex: 0 0 66.67%; /* 8 out of 12 columns */
+      position: relative;
+      overflow: hidden; /* Hide overflow for sliding effect */
+    }
+    .carousel {
+      display: flex;
+      transition: transform 0.5s ease; /* Smooth transition for sliding */
+      width: calc(192px * 8); /* Total width for 8 items (5 original + 3 duplicates) */
+    }
+    .carousel-item {
+      width: 192px;
+      height: 384px;
+      border: 2px solid white;
+      border-radius: 24px;
+      background-color: #111;
       overflow: hidden;
-      z-index: -1;
+      cursor: pointer;
+      flex-shrink: 0;
+      margin-right: 16px; /* Add gap between images */
     }
-
-    .bg-shape {
-      position: absolute;
-      opacity: 0.15;
+    .carousel-item:last-child {
+      margin-right: 0; /* Remove margin for the last item */
     }
-
-    /* Circles */
-    .circle {
-      width: 100px;
-      height: 100px;
+    .carousel-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 24px;
+    }
+    .pagination {
+      display: flex;
+      gap: 12px;
+      margin-top: 16px;
+      justify-content: center;
+      user-select: none;
+    }
+    .pagination-dot {
+      width: 14px;
+      height: 14px;
       border-radius: 50%;
-      animation: rotate 20s linear infinite;
+      background-color: rgba(255, 255, 255, 0.5);
+      cursor: pointer;
+      transition: background-color 0.3s ease;
     }
-
-    .circle1 {
-      background: #f87171;
-      top: 10%;
-      right: 10%;
-      animation: rotate 20s linear infinite, floatUpDown 6s ease-in-out infinite;
+    .pagination-dot.active {
+      background-color: white;
     }
-
-    /* Squares */
-    .square {
-      width: 80px;
-      height: 80px;
-      background-color: #0ea5e9;
-      animation: rotateSquare 20s linear infinite;
-    }
-
-    .square1 {
-      top: 40%;
-      left: 40%;
-    }
-
-    .square2 {
-      background-color: #f43f5e;
-      bottom: 1%;
-      right: 60%;
-      animation: rotateSquare 15s linear infinite;
-    }
-
-    /* Triangles */
-    .triangle {
-      width: 0;
-      height: 0;
-      border-left: 50px solid transparent;
-      border-right: 50px solid transparent;
-      animation: rotate 30s linear infinite;
-    }
-
-    .triangle1 {
-      border-bottom: 80px solid #34d399;
-      top: 90%;
-      right: 20%;
-    }
-
-    .triangle2 {
-      border-bottom: 80px solid #ec4899;
-      top: 20%;
-      left: 20%;
-      transform: rotate(180deg);
-    }
-
-    /* Rings */
-    .ring {
-      width: 100px;
-      height: 100px;
-      border: 8px solid;
-      border-radius: 50%;
-      animation: rotate 25s linear infinite;
-    }
-
-    .ring1 {
-      border-color: #3b82f6;
-      bottom: 15%;
-      left: 5%;
-      animation: rotate 20s linear infinite, floatUpDown 6s ease-in-out infinite;
-    }
-
-    .ring2 {
-      border-color: #9333ea;
-      top: 20%;
-      right: 20%;
-    }
-
-    /* Animations */
-    @keyframes rotate {
-      0% {
-        transform: rotate(0deg) translateZ(0);
+    @media (max-width: 768px) {
+      .text-section {
+        flex: 0 0 100%; /* Full width on mobile */
+        text-align: center;
       }
-
-      100% {
-        transform: rotate(360deg) translateZ(0);
+      .text-section h1 {
+        font-size: 2.5rem;
       }
-    }
-
-    @keyframes rotateSquare {
-      0% {
-        transform: rotate(0deg);
+      .carousel-wrapper {
+        flex: 0 0 100%; /* Full width on mobile */
       }
-
-      100% {
-        transform: rotate(360deg);
+      .carousel {
+        width: calc(192px * 5); /* Show only 5 items on mobile */
       }
-    }
-
-    @keyframes floatUpDown {
-      0% {
-        transform: translateY(0);
-      }
-
-      50% {
-        transform: translateY(-20px);
-      }
-
-      100% {
-        transform: translateY(0);
+      .carousel-item {
+        width: 140px; /* Adjust item width for mobile */
+        height: 240px; /* Adjust item height for mobile */
       }
     }
   </style>
 </head>
-
 <body>
+  <div class="container" role="region" aria-label="London image carousel">
+    <section class="text-section" aria-live="polite" aria-atomic="true">
+      <h1 id="cityTitle">London</h1>
+      <p id="cityText">Explore the vibrant city of London, known for its rich history, stunning architecture, and diverse culture. From the iconic Big Ben to the bustling markets of Camden, London offers a unique blend of tradition and modernity. Discover world-class museums, beautiful parks, and a thriving arts scene that captivates visitors from around the globe.</p>
+    </section>
 
+    <div class="carousel-wrapper">
+      <div class="carousel" id="carousel" role="list" aria-live="polite" aria-atomic="true">
+        <!-- Items will be dynamically shown/hidden -->
+      </div>
 
-
-  <!-- Main content white background with wave top -->
-  <section class="main-section">
-
-    <div class="container main-content">
-      <img src="img/teachers/director.jpg" width="320" height="320" alt="director" class="blob-image" />
-
-      <div class="right-text">
-        <h1>Director</h1>
-        <h3>Learn To Play, Converse With Confidence</h3>
-        <p> Mrs. Aparna Saini, founder of Bonjour Play School, holds an M.Sc in Microbiology, along with B.Ed and M.Ed
-          degrees. With over 10 years of teaching experience in formal schools, she started Bonjour Play School in 2019
-          with a vision to provide quality early childhood education. Today, the school proudly operates three
-          successful branches, known for their nurturing environment and holistic learning approach.</p>
-        <!-- CONTACT INFO -->
-        <div class="contact-row">
-          <div class="contact-item">
-            <i class="fas fa-user"></i>
-            <div>
-              <span class="value">Mrs. Aparna Saini</span>
-            </div>
-          </div>
-          <div class="contact-item">
-            <i class="fas fa-phone-alt"></i>
-            <div>
-              <span class="value">+123-456-789</span>
-            </div>
-          </div>
-        </div>
+      <div class="pagination" id="pagination" role="tablist" aria-label="Carousel Pagination">
+        <!-- Pagination dots dynamically created -->
       </div>
     </div>
-
-    <div class="container-fluid">
-      <div class="row heading-container">
-
-        <div class="col-md-8">
-          <h1>About Bonjour PLay School</h1>
-          <p>At Bonjour Kidz Play School & Day Care, children are nurtured in an atmosphere of love & affection which
-            alone facilities the harmonious development of young minds. We emphasize on letting the child learn by playing
-            and exploring.</p>
-          <br>
-
-          <p>
-            Bonjour Kidz Play School & Day Care help your child be a winner for life:“HELP ME DO IT MY SELF” is the life
-            theme of our school. The children are encouraged to learn. How to learn and ‘I can do it’ attitude. Our aim is
-            to help young minds grow and learn in an amicable environment, resulting in the all-round development of the
-            child. We want to play responsible and positive role in shaping up your child’s tomorrow.
-          </p>
-        </div>
-
-        <div class="col-md-4 img text-center mt-3">
-          <img src="img/b3.png" width="320" height="320" alt="director" class="blob-image" />
-        </div>
-
-        <div class="col-md-12 mt-3">
-          <!-- FEATURES -->
-          <div class="features-row">
-            <div class="feature-item">
-              <div class="feature-icon"><i class="fas fa-graduation-cap"></i></div>
-              <div class="feature-text">
-                <h4>Quality Education</h4>
-                <p>We provide quality education with experienced teachers.</p>
-              </div>
-            </div>
-            <div class="feature-item">
-              <div class="feature-icon"><i class="fas fa-heart"></i></div>
-              <div class="feature-text">
-                <h4>Safe Environment</h4>
-                <p>Your child's safety is our top priority.</p>
-              </div>
-            </div>
-            <div class="feature-item">
-              <div class="feature-icon"><i class="fas fa-users"></i></div>
-              <div class="feature-text">
-                <h4>Community Focused</h4>
-                <p>We foster a strong community among parents and children.</p>
-              </div>
-            </div>
-            <div class="feature-item">
-              <div class="feature-icon"><i class="fas fa-lightbulb"></i></div>
-              <div class="feature-text">
-                <h4>Innovative Learning</h4>
-                <p>Creative methods to encourage out-of-the-box thinking.</p>
-              </div>
-            </div>
-            <div class="feature-item">
-              <div class="feature-icon"><i class="fas fa-laptop-code"></i></div>
-              <div class="feature-text">
-                <h4>Digital Skills</h4>
-                <p>Introducing kids to essential tech and coding fundamentals.</p>
-              </div>
-            </div>
-            <div class="feature-item">
-              <div class="feature-icon"><i class="fas fa-book-reader"></i></div>
-              <div class="feature-text">
-                <h4>Library Access</h4>
-                <p>Well-stocked library to promote reading habits in students.</p>
-              </div>
-            </div>
-          </div>=
-        </div>
-
-
-      </div>
-    </div>
-  </section>
-
- 
-  <!-- aniamted Shapes background Animtion Start-->
-  <div class="floating-bg">
-    <div class="bg-shape circle circle1"></div>
-    <div class="bg-shape square square1"></div>
-    <div class="bg-shape square square2"></div>
-    <div class="bg-shape triangle triangle1"></div>
-    <div class="bg-shape triangle triangle2"></div>
-    <div class="bg-shape ring ring1"></div>
-    <div class="bg-shape ring ring2"></div>
   </div>
-  <!-- aniamted Shapes background Animtion End -->
-</body>
 
+  <script>
+   (function () {
+  const slides = [
+    {
+      title: "London",
+      text: "Explore the vibrant city of London, known for its rich history, stunning architecture, and diverse culture.",
+      bgSrc: "img/fest-gallery/1.jpeg",
+      thumbSrc: "img/fest-gallery/1.jpeg",
+    },
+    {
+      title: "London",
+      text: "From the iconic Big Ben to the bustling markets of Camden, London offers a unique blend of tradition and modernity.",
+      bgSrc: "img/fest-gallery/2.jpeg",
+      thumbSrc: "img/fest-gallery/2.jpeg",
+    },
+    {
+      title: "London",
+      text: "Discover world-class museums, beautiful parks, and a thriving arts scene that captivates visitors from around the globe.",
+      bgSrc: "img/fest-gallery/3.jpeg",
+      thumbSrc: "img/fest-gallery/3.jpeg",
+    },
+    {
+      title: "London",
+      text: "Experience the vibrant nightlife and culinary delights that make London a top destination for travelers.",
+      bgSrc: "img/fest-gallery/4.jpeg",
+      thumbSrc: "img/fest-gallery/4.jpeg",
+    },
+    {
+      title: "London",
+      text: "Whether you're visiting for the first time or returning, there's always something new to explore in London.",
+      bgSrc: "img/fest-gallery/5.jpeg",
+      thumbSrc: "img/fest-gallery/5.jpeg",
+    },
+  ];
+
+  // Duplicate the first three slides for infinite scrolling
+  const duplicatedSlides = slides.slice(0, 3).map(slide => ({ ...slide }));
+  const allSlides = [...slides, ...duplicatedSlides];
+
+  let activeIndex = 0;
+  let autoSlideInterval;
+
+  const cityTitle = document.getElementById("cityTitle");
+  const cityText = document.getElementById("cityText");
+  const carousel = document.getElementById("carousel");
+  const pagination = document.getElementById("pagination");
+
+  // Create carousel items dynamically
+  allSlides.forEach((slide, index) => {
+    const div = document.createElement("div");
+    div.classList.add("carousel-item");
+    div.setAttribute("role", "listitem");
+    div.setAttribute("tabindex", "-1");
+    div.setAttribute("aria-label", `London image ${index + 1}`);
+    const img = document.createElement("img");
+    img.src = slide.thumbSrc;
+    img.alt = `Image ${index + 1} representing London city with rounded corners and white border`;
+    div.appendChild(img);
+    carousel.appendChild(div);
+
+    // Click and keyboard event for selecting slide
+    div.addEventListener("click", () => {
+      activeIndex = index;
+      updateCarousel();
+      resetAutoSlide();
+    });
+    div.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        activeIndex = index;
+        updateCarousel();
+        resetAutoSlide();
+      }
+    });
+  });
+
+  // Create pagination dots dynamically
+  slides.forEach((_, index) => {
+    const dot = document.createElement("button");
+    dot.classList.add("pagination-dot");
+    dot.setAttribute("role", "tab");
+    dot.setAttribute("aria-label", `Go to slide ${index + 1}`);
+    dot.setAttribute("tabindex", "-1");
+    dot.addEventListener("click", () => {
+      activeIndex = index;
+      updateCarousel();
+      resetAutoSlide();
+    });
+    pagination.appendChild(dot);
+  });
+
+  const items = carousel.querySelectorAll(".carousel-item");
+  const dots = pagination.querySelectorAll(".pagination-dot");
+
+  function updateCarousel() {
+    const total = allSlides.length;
+
+    // Update carousel position
+    const offset = -activeIndex * 208; // Adjust based on item width + margin
+    carousel.style.transform = `translateX(${offset}px)`;
+
+    // Set active item
+    items.forEach((item, index) => {
+      item.classList.remove("active");
+      item.tabIndex = -1;
+    });
+    items[activeIndex].classList.add("active");
+    items[activeIndex].tabIndex = 0;
+
+    // Update background image and text
+    cityTitle.textContent = allSlides[activeIndex].title;
+    cityText.textContent = allSlides[activeIndex].text;
+
+    // Update pagination dots
+    dots.forEach((dot, index) => {
+      dot.classList.remove("active");
+      dot.setAttribute("tabindex", "-1");
+    });
+    dots[activeIndex % slides.length].classList.add("active");
+    dots[activeIndex % slides.length].setAttribute("tabindex", "0");
+
+    // If we reach the last duplicated slide, jump back to the first original slide
+    if (activeIndex === allSlides.length - 1) {
+      setTimeout(() => {
+        activeIndex = 0;
+        carousel.style.transition = 'none'; // Disable transition for instant jump
+        updateCarousel();
+      }, 500); // Wait for the transition to finish before jumping back
+    } else {
+      carousel.style.transition = 'transform 0.5s ease'; // Re-enable transition
+    }
+  }
+
+  // Auto slide every 4 seconds
+  function startAutoSlide() {
+    autoSlideInterval = setInterval(() => {
+      activeIndex = (activeIndex + 1) % allSlides.length;
+      updateCarousel();
+    }, 4000);
+  }
+  function resetAutoSlide() {
+    clearInterval(autoSlideInterval);
+    startAutoSlide();
+  }
+
+  updateCarousel();
+  startAutoSlide();
+
+  // Update carousel on window resize to handle mobile/desktop changes
+  window.addEventListener("resize", updateCarousel);
+})();
+
+  </script>
+</body>
 </html>

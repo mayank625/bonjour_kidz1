@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Bonjour Play School - Home</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Google Web Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Montserrat:wght@200;400;600&display=swap"
+    rel="stylesheet">
+
+  <!-- Icon Font Stylesheet -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Libraries Stylesheet -->
+  <link href="lib/animate/animate.min.css" rel="stylesheet">
+  <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+  <!-- Customized Bootstrap Stylesheet -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+  <!-- Template Stylesheet -->
+
+  <link href="css/style.css" rel="stylesheet">
+  <script src="menu.js"></script>
+  <style> 
+
+    /* POPULAR Programs */
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: white;
+      background-color: #ff7a0e;
+      padding: 10px;
+      border-radius: 50%;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      width: 44px;
+      height: 44px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .swiper-button-next:hover,
+    .swiper-button-prev:hover {
+      background-color: #e96a05;
+      transform: scale(1.1);
+    }
+
+    .swiper-button-next::after,
+    .swiper-button-prev::after {
+      font-size: 18px;
+    }
+
+
+    .popular-classes {
+      padding: 10px 20px;
+      max-width: 1200px;
+      margin: auto;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .popular-classes h3 {
+      font-size: 2rem;
+      margin-bottom: 40px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .classes-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+      z-index: 1;
+      position: relative;
+    }
+
+    .class-box {
+      background: #fff;
+      border-radius: 30px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      width: 260px;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+
+    }
+
+    .class-box:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .class-image img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 20px;
+      margin-bottom: 15px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 12px;
+      color: white;
+      border-radius: 12px;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .bg-blue {
+      background-color: #3b82f6;
+    }
+
+    .bg-orange {
+      background-color: #f97316;
+    }
+
+    .bg-green {
+      background-color: #10b981;
+    }
+
+    .class-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #222;
+      margin-bottom: 10px;
+    }
+
+    .class-description {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.5;
+    }
+
+    /* TESTIMONIALS */
+
+    .testimonial-section {
+      padding: 4rem 0;
+      /*     background: linear-gradient(135deg, #f9f9f9 0%, #e3f2fd 100%);
+ */
+      position: relative;
+      overflow: hidden;
+    }
+
+    .testimonial-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('img/testimonial-bg.png') no-repeat center center;
+      background-size: cover;
+      opacity: 0.1;
+      z-index: 1;
+    }
+
+    .testimonial-box {
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      z-index: 2;
+    }
+
+    .testimonial-box:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .testimonial-content p {
+      font-size: 1.125rem;
+      color: #555;
+      margin-bottom: 1rem;
+      font-style: italic;
+    }
+
+    .testimonial-author {
+      font-weight: bold;
+      color: #333;
+      margin-top: 10px;
+    }
+
+    .teacher-card {
+      position: relative;
+      display: inline-block;
+    }
+
+    .teacher-card img {
+      position: relative;
+      border-radius: 50%;
+      border: 3px solid #ff7418;
+      width: 100%;
+      max-width: 200px;
+      height: auto;
+      margin: 0 auto 15px;
+      display: block;
+      transition: transform 0.3s ease;
+      z-index: 2;
+      /* keep image sharp */
+    }
+
+    /* Glow effect using a pseudo-element behind the image */
+    .teacher-card:hover::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 220px;
+      height: 220px;
+      background: rgba(255, 116, 24, 0.6);
+      /* orange semi-transparent */
+      border-radius: 50%;
+      filter: blur(15px);
+      transform: translate(-50%, -50%);
+      z-index: 1;
+      transition: opacity 0.3s ease;
+      opacity: 1;
+    }
+
+    /* Initially hidden */
+    .teacher-card::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 220px;
+      height: 220px;
+      background: rgba(255, 116, 24, 0);
+      /* transparent */
+      border-radius: 50%;
+      filter: blur(15px);
+      transform: translate(-50%, -50%);
+      z-index: 1;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    /* Slight zoom on image */
+    .teacher-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      text-align: center;
+      color: #1e293b;
+      margin-bottom: 40px;
+    }
+
+ 
+  /* CONTACT US  */
+      .contact-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+        position: relative;
+      }
+
+      .contact-title {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+      }
+
+      .contact-container {
+        background-color: white;
+        border-radius: 24px;
+        max-width: 1024px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 0 40px rgba(75, 59, 212, 0.3);
+        padding: 2rem;
+        position: relative;
+      }
+
+      @media (min-width: 768px) {
+        .contact-container {
+          flex-direction: row;
+          padding: 3rem;
+        }
+      }
+
+      .contact-inner {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        width: 100%;
+      }
+
+      @media (min-width: 768px) {
+        .contact-inner {
+          flex-direction: row;
+          align-items: flex-start;
+          gap: 3rem;
+        }
+      }
+
+      .contact-image {
+        width: 320px;
+        max-width: 100%;
+      }
+
+      .contact-heading {
+        color: #FE5D37;
+        font-weight: 600;
+        font-size: 1.125rem;
+        margin-bottom: 1.5rem;
+        user-select: none;
+      }
+
+      .contact-form {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 400px;
+        gap: 1rem;
+      }
+
+      .contact-form input,
+      .contact-form textarea {
+        background-color: #F3F3FF;
+        border-radius: 9999px;
+        padding: 0.75rem 1.25rem;
+        font-size: 0.75rem;
+        color: #9A9AB0;
+        border: none;
+        outline: none;
+      }
+
+      .contact-form textarea {
+        border-radius: 16px;
+        resize: none;
+      }
+
+      .contact-button {
+        background-color: #FE5D37;
+        color: white;
+        font-weight: 600;
+        font-size: 0.875rem;
+        border: none;
+        border-radius: 9999px;
+        padding: 0.75rem 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .contact-button:hover {
+        background-color: #f43f5e;
+      }
+
+      .contact-socials {
+        position: absolute;
+        bottom: -24px;
+        right: 48px;
+        background-color: white;
+        border-radius: 9999px;
+        padding: 0.5rem 1.5rem;
+        display: flex;
+        gap: 1.5rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      .contact-socials a {
+        color: #FE5D37;
+        font-size: 1.125rem;
+        transition: color 0.3s ease;
+      }
+
+      .contact-socials a:hover {
+        color: #f43f5e;
+      }
+    </style>
+</head>
+
+<body>
+  <!---------------------------------------------------------------------------
+                        MAIN CAROUSEL 
+----------------------------------------------------------------------------->
+  <div class="container-fluid  p-0">
+    <!-- Spinner Start -->
+    <div id="spinner"
+      class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50  d-flex align-items-center justify-content-center">
+      <div class="spinner-grow text-primary" role="status"></div>
+    </div>
+    <!-- Page Header End -->
+    <div class="container-fluid py-5 program-page-header position-relative mb-5">
+      <div class="container py-5">
+
+<h1 style="color: rgb(0, 0, 0); text-transform: uppercase; text-align: center; justify-content: center; font-size: 100px;">bonjour event</h1>
+
+
+
+
+      </div>
+    </div>
+  </div>
+<!---------------------------------------------------------------------------
+                        ABOUT US SECTION START
+----------------------------------------------------------------------------->
+    <section class="main-section">
+
+      <div class="container main-content">
+
+        <div>
+          <h2 class="section-title" style="
+      font-size: 2.5rem;
+      font-weight: 700;
+      text-align: center;
+      color: #1e293b;
+      margin-bottom: 30px;">
+            About Bonjour Kidz Play School & Day Care
+          </h2>
+          <p style="font-size: 1.125rem; line-height: 1.8; color: #444; margin-bottom: 20px;">
+            At <strong>Bonjour Kidz Play School & Day Care</strong>, children are nurtured in an atmosphere of
+            <strong>love, warmth, and encouragement</strong>. We believe that only in such a joyful and secure
+            environment can young minds truly flourish. Our approach emphasizes learning through <strong>play,
+              exploration, and curiosity</strong>, laying a strong foundation for lifelong learning.
+          </p>
+          <p style="font-size: 1.125rem; line-height: 1.8; color: #444; margin-bottom: 20px;">
+            We help your child become a <strong>confident and independent thinker</strong>. Our guiding theme —
+            <em>"Help me do it myself"</em> — encourages children to take initiative, develop problem-solving skills,
+            and foster the all-important <strong>"I can do it"</strong> attitude.
+          </p>
+          <p style="font-size: 1.125rem; line-height: 1.8; color: #444; margin-bottom: 20px;">
+            At Bonjour, we understand that each child is unique. Our aim is to create a <strong>safe, inclusive, and
+              stimulating environment</strong> that supports their physical, emotional, cognitive, and social
+            development. We provide the right balance of structure and freedom, so that your child can learn and grow at
+            their own pace.
+          </p>
+          <p style="font-size: 1.125rem; line-height: 1.8; color: #444; margin-bottom: 20px;">
+            We don’t just prepare children for school — we prepare them for life. With caring teachers, engaging
+            activities, and a curriculum rooted in love and respect, Bonjour Kidz Play School is more than a preschool —
+            it’s a <strong>home away from home</strong>.
+          </p>
+          <blockquote
+            style="font-style: italic; color: #6b7280; border-left: 4px solid #ff5a1e; padding-left: 15px; margin: 30px 0;">
+            “Education is not the filling of a pail, but the lighting of a fire.”<br>
+            <span style="font-weight: 500;">At Bonjour, we light that fire of wonder, confidence, and joy in every
+              child.</span>
+          </blockquote>
+          <p style="text-align: center; font-size: 1.2rem; font-weight: 600; color: #1e293b;">
+            Join us in building the future — <em>one smile, one step, one story at a time.</em>
+          </p>
+        </div>
+      </div>
+
+    </section>
+<!---------------------------------------------------------------------------
+                      POPULAR PROGRAMS SECTION START 
+----------------------------------------------------------------------------->
+    <div class="container-fluid">
+
+      <section class="popular-classes">
+        <h3
+          style="     font-weight: 600;font-size: 5ch;margin-bottom: 1rem;color: #1e293b;line-height: 1.2;text-align: center;">
+
+          Popular Programs</h3>
+
+
+        <!-- Swiper container -->
+        <div class="swiper popular-classes-swiper">
+          <div class="swiper-wrapper">
+
+            <!-- Slide 1 -->
+            <div class="swiper-slide class-box">
+              <div class="class-image">
+                <img src="https://storage.googleapis.com/a1aa/image/07fd1bed-c81a-4d4e-f4eb-f72110ed0c70.jpg"
+                  alt="Playgroup" />
+              </div>
+              <span class="badge bg-blue">1.5 - 2.5 YEARS</span>
+              <h4 class="class-title">Play Group</h4>
+              <p class="class-description">
+                Fun-filled activities that nurture early development and social skills in a safe, loving space.
+              </p>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="swiper-slide class-box">
+              <div class="class-image">
+                <img src="https://storage.googleapis.com/a1aa/image/8ab5d51f-7257-4a96-b29d-b7db730da379.jpg"
+                  alt="Nursery" />
+              </div>
+              <span class="badge bg-orange">2 - 3 YEARS</span>
+              <h4 class="class-title">Pre Nursery</h4>
+              <p class="class-description">
+                Gentle introduction to learning through play, helping toddlers develop social and motor skills.
+              </p>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="swiper-slide class-box">
+              <div class="class-image">
+                <img src="https://storage.googleapis.com/a1aa/image/f4a5a5c8-a197-472c-f404-f68f839df698.jpg"
+                  alt="Junior" />
+              </div>
+              <span class="badge bg-green">2.5 - 3.5 YEARS</span>
+              <h4 class="class-title">Nursery</h4>
+              <p class="class-description">
+                A joyful start to learning with stories, rhymes, and hands-on activities in a caring environment.
+              </p>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="swiper-slide class-box">
+              <div class="class-image">
+                <img src="https://storage.googleapis.com/a1aa/image/abf5a992-1219-4122-bfd8-fa3779b7e093.jpg"
+                  alt="Senior" />
+              </div>
+              <span class="badge bg-blue">3.5 - 4.5 YEARS</span>
+              <h4 class="class-title">Junior (K.G.) </h4>
+              <p class="class-description">
+                Introducing early concepts through play-based learning to spark curiosity and confidence.
+              </p>
+            </div>
+
+            <!-- Slide 5 -->
+            <div class="swiper-slide class-box">
+              <div class="class-image">
+                <img src="https://storage.googleapis.com/a1aa/image/abf5a992-1219-4122-bfd8-fa3779b7e093.jpg"
+                  alt="Senior" />
+              </div>
+              <span class="badge bg-blue">4.5 - 5.5 YEARS</span>
+              <h4 class="class-title">Senior (K.G.) </h4>
+              <p class="class-description">
+                Building strong foundations in reading, writing, and math through fun and interactive learning. </p>
+            </div>
+            <!-- Slide 6 -->
+            <div class="swiper-slide class-box">
+              <div class="class-image">
+                <img src="https://storage.googleapis.com/a1aa/image/abf5a992-1219-4122-bfd8-fa3779b7e093.jpg"
+                  alt="Senior" />
+              </div>
+              <span class="badge bg-blue">2 - 12 YEARS</span>
+              <h4 class="class-title"> Day Care </h4>
+              <p class="class-description">
+                Safe, caring, and playful learning space for little ones at Bonjour Play School.
+              </p>
+            </div>
+
+          </div>
+
+          <!-- Navigation buttons -->
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+
+          <!-- Pagination (dots) -->
+          <div class="swiper-pagination"></div>
+        </div>
+      </section>
+
+
+
+    </div>
+<!---------------------------------------------------------------------------
+                        TESTIMONIAL SECTION START
+----------------------------------------------------------------------------->
+    <section class="testimonial-section">
+      <div class="container">
+        <h3 class="text-center" style="font-weight: 600; font-size: 2.5rem; margin-bottom: 2rem; color: #1e293b;">
+          What Our Parents Say
+        </h3>
+        <div class="swiper testimonial-swiper">
+          <div class="swiper-wrapper">
+
+            <!-- Testimonial 1 -->
+            <div class="swiper-slide testimonial-box">
+              <div class="testimonial-content">
+                <p>"Bonjour Play School has been a wonderful experience for my child. The teachers are caring and the
+                  environment is nurturing!"</p>
+                <h5 class="testimonial-author">- Sarah Johnson</h5>
+              </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="swiper-slide testimonial-box">
+              <div class="testimonial-content">
+                <p>"My daughter loves going to Bonjour! She has made so many friends and is learning so much through
+                  play."</p>
+                <h5 class="testimonial-author">- Michael Smith</h5>
+              </div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="swiper-slide testimonial-box">
+              <div class="testimonial-content">
+                <p>"The curriculum is fantastic, and I appreciate the focus on both education and emotional
+                  development."</p>
+                <h5 class="testimonial-author">- Emily Davis</h5>
+              </div>
+            </div>
+
+            <!-- Testimonial 4 -->
+            <div class="swiper-slide testimonial-box">
+              <div class="testimonial-content">
+                <p>"A great place for kids to learn and grow! The staff is amazing and truly cares about each child."
+                </p>
+                <h5 class="testimonial-author">- John Doe</h5>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Navigation buttons -->
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+
+          <!-- Pagination (dots) -->
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      const testimonialSwiper = new Swiper('.testimonial-swiper', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        breakpoints: {
+          320: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 30,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+        },
+      });
+    </script>
+<!---------------------------------------------------------------------------
+                        TEACHERS SECTION START
+----------------------------------------------------------------------------->
+    <section class="teachers-section" style="padding: 60px 20px; ">
+      <div class="container" style="max-width: 1100px; margin: 0 auto;">
+        <h2 class="section-title" style="
+      font-size: 2.5rem;
+      font-weight: 700;
+      text-align: center;
+      color: #1e293b;
+      margin-bottom: 40px;">
+          Meet Our Teachers
+        </h2>
+        <p style="text-align: center; font-size: 1.125rem; color: #555; margin-bottom: 40px;">
+          Our passionate and caring educators create a joyful learning environment to nurture your child's curiosity and
+          confidence.
+        </p>
+
+        <div class="teachers-grid" style="
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+    ">
+          <!-- Teacher 1 -->
+          <div class="teacher-card" style="text-align: center;">
+            <img src="img/teachers/sangeeta-pathak.png" alt="Teacher Name"
+              style="width: 100%; max-width: 200px; height: auto; border-radius: 50%; border: 3px solid #ff7418; margin: 0 auto 15px;">
+            <h4 style="margin: 0; font-size: 1.25rem; color: #1e293b;">Ms. Priya Sharma</h4>
+            <p style="margin: 5px 0; color: #6b7280;">Senior KG Educator</p>
+          </div>
+
+          <!-- Teacher 2 -->
+          <div class="teacher-card" style="text-align: center;">
+            <img src="img/teachers/rashmi-singh.png" alt="Teacher Name"
+              style="width: 100%; max-width: 200px; height: auto; border-radius: 50%; border: 3px solid #ff7418; margin: 0 auto 15px;">
+            <h4 style="margin: 0; font-size: 1.25rem; color: #1e293b;">Mrs. Rashmi Singh</h4>
+            <p style="margin: 5px 0; color: #6b7280;">Nursery Specialist</p>
+          </div>
+
+          <!-- Teacher 3 -->
+          <div class="teacher-card" style="text-align: center;">
+            <img src="img/teachers/jyoti-mishra.png" alt="Teacher Name"
+              style="width: 100%; max-width: 200px; height: auto; border-radius: 50%; border: 3px solid #ff7418; margin: 0 auto 15px;">
+            <h4 style="margin: 0; font-size: 1.25rem; color: #1e293b;">Mrs. Jyothi Mishra </h4>
+            <p style="margin: 5px 0; color: #6b7280;">Play Group Facilitator</p>
+          </div>
+
+          <!-- Add more teacher cards as needed -->
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+          <a href="teachers.html" style="
+        display: inline-block;
+        padding: 12px 25px;
+        background-color: #FE5D37;
+;
+        color: white;
+        font-weight: 600;
+        border-radius: 8px;
+        text-decoration: none;
+        transition: background 0.3s ease;">
+            View All Teachers →
+          </a>
+        </div>
+      </div>
+    </section>
+    
+<!---------------------------------------------------------------------------
+                        CONTACT US SECTION START
+----------------------------------------------------------------------------->
+    <section class="contact-section">
+      <h2 class="contact-title">Contact US</h2>
+      <div class="contact-container">
+        <div class="contact-inner">
+          <div>
+             <img class="contact-image"
+              src="img/contact-us.png"
+              alt="People illustration" width="100" height="300" draggable="false" />
+          </div>
+          <form class="contact-form">
+            <input type="text" placeholder="User name" />
+            <input type="email" placeholder="Email" />
+            <textarea rows="4" placeholder="Message..."></textarea>
+            <button class="contact-button" type="submit">
+              Submit
+              <i class="fas fa-arrow-right"></i>
+            </button>
+          </form>
+        </div>
+        <div class="contact-socials">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </section>
+<!---------------------------------------------------------------------------
+                      BACKGROUND SHAPE ANIMTION 
+----------------------------------------------------------------------------->
+    <div class="floating-bg">
+      <!-- Circles -->
+      <div class="bg-shape circle circle1"></div>
+      <div class="bg-shape circle circle2"></div>
+
+      <!-- Rings -->
+      <div class="bg-shape ring ring1"></div>
+      <div class="bg-shape ring ring2"></div>
+
+      <!-- Triangles -->
+      <div class="bg-shape triangle triangle1"></div>
+      <div class="bg-shape triangle triangle2"></div>
+
+      <!-- Squares -->
+      <div class="bg-shape square square2"></div>
+
+    </div>
+<!---------------------------------------------------------------------------
+                         FOOTER START 
+----------------------------------------------------------------------------->
+    <script src="footer.js"></script>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a href="#" class=" back-to-top btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    <!--carousel script  -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const swiper = new Swiper('.popular-classes-swiper', {
+          slidesPerView: 1,
+          spaceBetween: 30,
+          loop: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+          breakpoints: {
+            320: {
+              slidesPerView: 1,
+              spaceBetween: 20,
+            },
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 30,
+            },
+            1024: {
+              slidesPerView: 3,
+              spaceBetween: 30,
+            },
+          },
+        });
+      });
+    </script>
+    <!--carousel script End -->
+</body>
+
+</html>
