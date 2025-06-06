@@ -575,175 +575,163 @@ mask-repeat: repeat-x;
 }
 
 
-/*** Footer ***/
-.footer .btn.btn-social {
-    margin-right: 5px;
-    width: 45px;
-    height: 45px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #FFFFFF;
-    border: 1px solid rgba(255,255,255,0.5);
-    border-radius: 45px;
-    transition: .3s;
+/***===============================
+            Footer
+ ============================= ***/ 
+ .footer .btn.btn-social {
+margin-right: 5px;
+width: 45px;
+height: 45px;
+display: flex;
+align-items: center;
+justify-content: center;
+color: #FFFFFF;
+border: 1px solid rgba(255,255,255,0.5);
+border-radius: 45px;
+transition: .3s;
 }
 
 .footer .btn.btn-social:hover {
-    border-color: var(--primary);
-    background: var(--primary);
+border-color: var(--primary);
+background: var(--primary);
 }
 
 .footer .btn.btn-link {
-    display: block;
-    margin-bottom: 5px;
-    padding: 0;
-    text-align: left;
-    font-size: 16px;
-    font-weight: normal;
-    text-transform: capitalize;
-    transition: .3s;
+display: block;
+margin-bottom: 5px;
+padding: 0;
+text-align: left;
+font-size: 16px;
+font-weight: normal;
+text-transform: capitalize;
+transition: .3s;
 }
 
 .footer .btn.btn-link::before {
-    position: relative;
-    content: "\f105";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    margin-right: 10px;
+position: relative;
+content: "\f105";
+font-family: "Font Awesome 5 Free";
+font-weight: 900;
+margin-right: 10px;
 }
 
 .footer .btn.btn-link:hover {
-    color: var(--primary) !important;
-    letter-spacing: 1px;
-    box-shadow: none;
+color: var(--primary) !important;
+letter-spacing: 1px;
+box-shadow: none;
 }
 
 .footer .form-control {
-    border-color: rgba(255,255,255,0.5);
+border-color: rgba(255,255,255,0.5);
 }
 
 .footer .copyright {
-    padding: 25px 0;
-    font-size: 15px;
-    border-top: 1px solid rgba(256, 256, 256, .1);
+padding: 25px 0;
+font-size: 15px;
+border-top: 1px solid rgba(256, 256, 256, .1); 
 }
 
 .footer .copyright a {
-    color: #FFFFFF;
+color: #FFFFFF;
 }
 
 .footer .footer-menu a {
-     margin-bottom: 15px;
-    padding-right: 15px;
-    border-right: 1px solid rgba(255, 255, 255, .1);
+margin-bottom: 15px;
+padding-right: 15px;
+border-right: 1px solid rgba(255, 255, 255, .1);
 }
 
 .footer .copyright a:hover,
 .footer .footer-menu a:hover {
-    color: var(--primary) !important;
+color: var(--primary) !important;
 }
 
 .footer .footer-menu a:last-child {
-    margin-right: 0;
-    padding-right: 0;
-    border-right: none;
+margin-right: 0;
+padding-right: 0;
+border-right: none;
 }
-@media screen and (max-width: 991px) {
-    .footer .copyright {
-        margin-bottom: 40px;
-        
-    }
-    .footer {
-        margin-bottom:  none;
-        height: 1525px;
-    }
-
-   
+ 
+.footer {
+    position: relative; /* Ensure footer is positioned correctly */
+    z-index: 1; /* Ensure footer is above other elements */
 }
-        /* Futr */
+.futr {
+  color: #FFFFFF;
+  padding: 10px 20px;
+  display: inline-flex;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  background-color: #FE5D37;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  white-space: nowrap;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
 
-        .futr {
-            /* background-color: var(--primary); */
-            color: white;
-            padding: 10px 20px;
-            margin-bottom: -10px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            z-index: 100;
-            border: none;/* Add Border  */
-            /* box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2); */
-            flex-wrap: wrap;
-        }
+.futr .action-links {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
 
-        .futr>div {
-            max-width: 100%;
-        }
+.futr .action-links a {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+  white-space: nowrap;
+}
 
-       
-       
+.futr .action-links a img {
+  width: 18px;
+  height: 18px;
+}
 
-        .futr .action-links {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            flex-shrink: 1;
-            flex-wrap: wrap;
-            justify-content: center;
-           background-color: #FE5D37;
-            padding: 10px;
-            border-top-left-radius: 20px;
-            border-top-Right-radius: 20px;
-           
-        }
+@media (max-width: 768px) {
+  .footer .btn.btn-social {
+    width: 35px;
+    height: 35px; 
+  }
 
-        .futr .action-links a {
-            color: white;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            font-size: 14px;
-            white-space: nowrap;
-        }
+  .footer .copyright {
+    margin-bottom: 50px;
+    padding-bottom: 10px;
+  }
 
-        .futr .action-links a img {
-            width: 18px;
-            height: 18px;
-        }
+  .footer .btn.btn-link {
+    font-size: 14px;
+  }
+}
 
-        .futr .slash {
-            /* transform: rotate(15deg); */
-            font-size: 18px;
-            opacity: 0.6;
-        }
+@media (max-width: 600px) {
+  .futr {
+    width: 100%;
+    left: 0;
+    right: 0;
+    transform: none;
+    justify-content: center;
+    padding: 12px 10px;
+    border-radius: 30px 30px 0 0;
+  }
 
-        
+  .futr .social-icons,
+  .futr .right-end {
+    display: none;
+  }
 
-        @media (max-width: 600px) {
-
-            .futr .social-icons,
-            .futr .right-end {
-                display: none;
-            }
-
-            .futr {
-                justify-content: center;
-                padding: 12px 10px;
-                border-top-left-radius: 20px;
-                border-top-right-radius: 20px;
-                margin-bottom: -13px;
-            }
-
-            .futr .action-links {
-                gap: 10px;
-                flex-wrap: wrap;
-            }
-        }
+  .futr .action-links {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+}
 
 
     :root {

@@ -228,7 +228,7 @@
  
     /* Centering content in the display-container */
     .display-container {
-      border: 2px solid #ddd;
+      border: 2px solid #481515;
       padding: 20px;
       margin-top: 20px;
       min-height: 100px;
@@ -240,138 +240,64 @@
       text-align: center;
       /* Center the text */
     }
-/* Locate Our Office  */
-
-    .tab-btn {
-        background-color: #f1f1f1;
-        border: 3px solid #FF0000;
-        padding: 10px 20px;
-        cursor: pointer;
-        margin-bottom: 10px;
-        margin-right: 10px;
-        /* Adds space between buttons */
+/* ============================================================================
+                MAIN CONTENT ABOUT BOJOUR PLAY SCHOOL  
+============================================================================== */
+    .main-section {
+      padding: 60px 20px;
+      background-color: none; /* optional: light background */
     }
 
-    .button {
-        background-color: #04AA6D;
-        border: none;
-        color: white;
-        padding: 5px 10px;
-        text-align: center;
-        display: inline-block;
-        font-size: 16px;
-        margin: 4px 2px;
-        transition-duration: 0.4s;
-        cursor: pointer;
+    .main-content {
+      max-width: 1000px;
+      margin: 0 auto;
     }
 
-    .button0 {
-        background-color: white;
-        color: black;
-        border: 2px solid #04AA6D;
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      text-align: center;
+      color: #1e293b;
+      margin-bottom: 30px;
     }
 
-    .button0:hover {
-        background-color: purple;
-        color: white;
+    .main-section p {
+      font-size: 1.125rem;
+      line-height: 1.8;
+      color: #444;
+      margin-bottom: 20px;
     }
 
-    .button1 {
-        background-color: white;
-        color: black;
-        border: 2px solid #04AA6D;
+    .main-section strong {
+      font-weight: bold;
     }
 
-    .button1:hover {
-        background-color: #04AA6D;
-        color: white;
+    .main-section em {
+      font-style: italic;
     }
 
-    .button2 {
-        background-color: white;
-        color: black;
-        border: 2px solid #008CBA;
+    .main-section blockquote {
+      font-style: italic;
+      color: #6b7280;
+      border-left: 4px solid #ff5a1e;
+      padding-left: 15px;
+      margin: 30px 0;
     }
 
-    .button2:hover {
-        background-color: #008CBA;
-        color: white;
+    .main-section blockquote span {
+      font-weight: 500;
     }
 
-    .button3 {
-        background-color: white;
-        color: black;
-        border: 2px solid #f44336;
+    .main-section p:last-of-type {
+      text-align: center;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #1e293b;
     }
 
-    .button3:hover {
-        background-color: #f44336;
-        color: white;
-    }
-
-    .button4 {
-        background-color: white;
-        color: black;
-        border: 2px solid #4d13b9;
-    }
-
-    .button4:hover {
-        background-color: blue;
-        color: white;
-    }
-
-    /* Centering content in the display-container */
-    .display-container {
-        border: 2px solid #ffffff;
-        background-color: #ffffff;
-        padding: 20px;
-        margin-top: 20px;
-        min-height: 100px;
-        display: flex;
-        justify-content: center;
-        /* Center horizontally */
-        align-items: center;
-        /* Center vertically */
-        text-align: center;
-        /* Center the text */
-    }
-
-    .tab-container {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        /* Optional: allows wrapping on smaller screens */
-        gap: 10px;
-        /* Optional: adds spacing between buttons */
-    }
-
-    ul {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-    }
-                /* Locate Our Office End */
-
-    /* Back TO Top Btn */
-    .back-to-top {
-      position: fixed;
-      bottom: 60px;
-      right: 20px;
-      z-index: 9999;
-      /* Make sure it's higher than other elements */
-      border-radius: 50%;
-      width: 45px;
-      height: 45px;
-      justify-content: center;
-      align-items: center;
-      display: flex;
-    }
-
-
-
-    /*===========================
-        POPULAR PROGRAMS
-    ============================== */
+/* ======================================================
+                  POPULAR PROGRAMS
+============================================================ */
     
     .swiper-button-next,
     .swiper-button-prev {
@@ -482,59 +408,10 @@
       color: #666;
       line-height: 1.5;
     }
-/*============================
-       Testimonials
-============================== */
-.testimonial-section {
-      padding: 4rem 0;
-      /*     background: linear-gradient(135deg, #f9f9f9 0%, #e3f2fd 100%);
- */
-      position: relative;
-      overflow: hidden;
-    }
-
-    .testimonial-section::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('img/testimonial-bg.png') no-repeat center center;
-      background-size: cover;
-      opacity: 0.1;
-      z-index: 1;
-    }
-
-    .testimonial-box {
-      background: #fff;
-      border-radius: 20px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-      padding: 30px;
-      text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      position: relative;
-      z-index: 2;
-    }
-
-    .testimonial-box:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-    }
-
-    .testimonial-content p {
-      font-size: 1.125rem;
-      color: #555;
-      margin-bottom: 1rem;
-      font-style: italic;
-    }
-
-    .testimonial-author {
-      font-weight: bold;
-      color: #333;
-      margin-top: 10px;
-    }
-
+    
+/* ===============================================================
+                    MEET OUR TEACHERS STYLE
+================================================================== */
     .teacher-card {
       position: relative;
       display: inline-block;
@@ -602,11 +479,70 @@
       color: #1e293b;
       margin-bottom: 40px;
     }
-/* =============================
-          CONTACT US
-================================ */
+/*============================
+       Testimonials
+============================== */
+    .testimonial-section {
+      padding: 4rem 0;
+      /* background: linear-gradient(135deg, #f9f9f9 0%, #e3f2fd 100%);*/ 
+      position: relative;
+      overflow: hidden;
+    }
 
-  /* CONTACT US  */
+    .testimonial-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('img/testimonial-bg.png') no-repeat center center;
+      background-size: cover;
+      opacity: 0.1;
+      z-index: 1;
+    }
+
+    .testimonial-box {
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      z-index: 2;
+      height: 300px; /* Default for desktop */
+    }
+
+    /* For mobile view (max-width: 768px or below) */
+    @media (max-width: 768px) {
+      .testimonial-box {
+        height: auto;
+      }
+    }
+
+
+    .testimonial-box:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .testimonial-content p {
+      font-size: 1.125rem;
+      color: #555;
+      margin-bottom: 1rem;
+      font-style: italic;
+    }
+
+
+    .testimonial-author {
+      font-weight: bold;
+      color: #333;
+      margin-top: 10px;
+    }
+/* ==========================================================
+          CONTACT US
+============================================================= */
       .contact-section {
         display: flex;
         flex-direction: column;
@@ -614,6 +550,7 @@
         justify-content: center;
         padding: 1rem;
         position: relative;
+        margin-bottom: 20px;
       }
 
       .contact-title {
@@ -673,7 +610,7 @@
         display: flex;
         flex-direction: column;
         width: 100%;
-        max-width: 400px;
+        max-width: 500px;
         gap: 1rem;
       }
 
@@ -685,7 +622,7 @@
         font-size: 0.75rem;
         color: #9A9AB0;
         border: none;
-        outline: none;
+        outline: none; 
       }
 
       .contact-form textarea {
@@ -711,29 +648,136 @@
 
       .contact-button:hover {
         background-color: #f43f5e;
-      }
+      } 
+/* ============================================================================
+            LOCATE OUR OFFICE 
+============================================================================== */
 
-      .contact-socials {
-        position: absolute;
-        bottom: -24px;
-        right: 48px;
+    .tab-btn {
+      background-color: #f1f1f1;
+      border: 3px solid #FF0000;
+      padding: 10px 20px;
+      cursor: pointer;
+      margin-bottom: 10px;
+      margin-right: 10px;
+      /* Adds space between buttons */
+    }
+
+    .button {
+        background-color: #04AA6D;
+        border: none;
+        color: white;
+        padding: 5px 10px;
+        text-align: center;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+    }
+
+    .button0 {
         background-color: white;
-        border-radius: 9999px;
-        padding: 0.5rem 1.5rem;
+        color: black;
+        border: 2px solid #800080;
+    }
+
+    .button0:hover {
+        background-color: #800080;
+        color: white;
+    }
+
+    .button1 {
+        background-color: white;
+        color: black;
+        border: 2px solid #04AA6D;
+    }
+
+    .button1:hover {
+        background-color: #04AA6D;
+        color: white;
+    }
+
+    .button2 {
+        background-color: white;
+        color: black;
+        border: 2px solid #008CBA;
+    }
+
+    .button2:hover {
+        background-color: #008CBA;
+        color: white;
+    }
+
+    .button3 {
+        background-color: white;
+        color: black;
+        border: 2px solid #f44336;
+    }
+
+    .button3:hover {
+        background-color: #f44336;
+        color: white;
+    }
+
+    .button4 {
+        background-color: white;
+        color: black;
+        border: 2px solid #4d13b9;
+    }
+
+    .button4:hover {
+        background-color: blue;
+        color: white;
+    }
+
+    /* Centering content in the display-container */
+    .display-container {
+        border: 2px solid #ffffff;
+        background-color: #ffffff;
+        padding: 20px;
+        margin-top: 20px;
+        min-height: 100px;
         display: flex;
-        gap: 1.5rem;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      }
+        justify-content: center;
+        /* Center horizontally */
+        align-items: center;
+        /* Center vertically */
+        text-align: center;
+        /* Center the text */
+    }
 
-      .contact-socials a {
-        color: #FE5D37;
-        font-size: 1.125rem;
-        transition: color 0.3s ease;
-      }
+    .tab-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        /* Optional: allows wrapping on smaller screens */
+        gap: 10px;
+        /* Optional: adds spacing between buttons */
+    }
 
-      .contact-socials a:hover {
-        color: #f43f5e;
-      }
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+/* ==============================================================================
+            BACK TO TOP BUTTON
+================================================================================ */
+    /* Back TO Top Btn */
+    .back-to-top {
+      position: fixed;
+      bottom: 60px;
+      right: 20px;
+      z-index: 9999;
+      /* Make sure it's higher than other elements */
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+    }
   </style>
 </head>
 
@@ -811,55 +855,46 @@
 <!---------------------------------------------------------------------------
                         ABOUT US SECTION START
 ----------------------------------------------------------------------------->
-    <section class="main-section">
-
-      <div class="container main-content">
-
-        <div>
-          <h2 class="section-title" style="
-      font-size: 2.5rem;
-      font-weight: 700;
-      text-align: center;
-      color: #1e293b;
-      margin-bottom: 30px;">
-            About Bonjour Kidz Play School & Day Care
-          </h2>
-          <p style="font-size: 1.125rem; line-height: 1.8; color: #444; margin-bottom: 20px;">
-            At <strong>Bonjour Kidz Play School & Day Care</strong>, children are nurtured in an atmosphere of
-            <strong>love, warmth, and encouragement</strong>. We believe that only in such a joyful and secure
-            environment can young minds truly flourish. Our approach emphasizes learning through <strong>play,
-              exploration, and curiosity</strong>, laying a strong foundation for lifelong learning.
-          </p>
-          <p style="font-size: 1.125rem; line-height: 1.8; color: #444; margin-bottom: 20px;">
-            We help your child become a <strong>confident and independent thinker</strong>. Our guiding theme —
-            <em>"Help me do it myself"</em> — encourages children to take initiative, develop problem-solving skills,
-            and foster the all-important <strong>"I can do it"</strong> attitude.
-          </p>
-          <p style="font-size: 1.125rem; line-height: 1.8; color: #444; margin-bottom: 20px;">
-            At Bonjour, we understand that each child is unique. Our aim is to create a <strong>safe, inclusive, and
-              stimulating environment</strong> that supports their physical, emotional, cognitive, and social
-            development. We provide the right balance of structure and freedom, so that your child can learn and grow at
-            their own pace.
-          </p>
-          <p style="font-size: 1.125rem; line-height: 1.8; color: #444; margin-bottom: 20px;">
-            We don’t just prepare children for school — we prepare them for life. With caring teachers, engaging
-            activities, and a curriculum rooted in love and respect, Bonjour Kidz Play School is more than a preschool —
-            it’s a <strong>home away from home</strong>.
-          </p>
-          <blockquote
-            style="font-style: italic; color: #6b7280; border-left: 4px solid #ff5a1e; padding-left: 15px; margin: 30px 0;">
-            “Education is not the filling of a pail, but the lighting of a fire.”<br>
-            <span style="font-weight: 500;">At Bonjour, we light that fire of wonder, confidence, and joy in every
-              child.</span>
-          </blockquote>
-          <p style="text-align: center; font-size: 1.2rem; font-weight: 600; color: #1e293b;">
-            Join us in building the future — <em>one smile, one step, one story at a time.</em>
-          </p>
-        </div>
+ <section class="main-section">
+    <div class="container main-content">
+      <div>
+        <h2 class="section-title">
+          About Bonjour     Play School & Day Care
+        </h2>
+        <p>
+          At <strong>Bonjour     Play School & Day Care</strong>, children are nurtured in an atmosphere of
+          <strong>love, warmth, and encouragement</strong>. We believe that only in such a joyful and secure
+          environment can young minds truly flourish. Our approach emphasizes learning through <strong>play,
+            exploration, and curiosity</strong>, laying a strong foundation for lifelong learning.
+        </p>
+        <p>
+          We help your child become a <strong>confident and independent thinker</strong>. Our guiding theme —
+          <em>"Help me do it myself"</em> — encourages children to take initiative, develop problem-solving skills,
+          and foster the all-important <strong>"I can do it"</strong> attitude.
+        </p>
+        <p>
+          At Bonjour, we understand that each child is unique. Our aim is to create a <strong>safe, inclusive, and
+            stimulating environment</strong> that supports their physical, emotional, cognitive, and social
+          development. We provide the right balance of structure and freedom, so that your child can learn and grow at
+          their own pace.
+        </p>
+        <p>
+          We don’t just prepare children for school — we prepare them for life. With caring teachers, engaging
+          activities, and a curriculum rooted in love and respect, Bonjour     Play School is more than a preschool —
+          it’s a <strong>home away from home</strong>.
+        </p>
+        <blockquote>
+          “Education is not the filling of a pail, but the lighting of a fire.”<br>
+          <span>At Bonjour, we light that fire of wonder, confidence, and joy in every
+            child.</span>
+        </blockquote>
+        <p>
+          Join us in building the future — <em>one smile, one step, one story at a time.</em>
+        </p>
       </div>
+    </div>
+  </section>
 
-    </section>
-    
 <!---------------------------------------------------------------------------
                       POPULAR PROGRAMS SECTION START 
 ----------------------------------------------------------------------------->
@@ -1079,36 +1114,33 @@
             <!-- Testimonial 1 -->
             <div class="swiper-slide testimonial-box">
               <div class="testimonial-content">
-                <p>"Bonjour Play School has been a wonderful experience for my child. The teachers are caring and the
-                  environment is nurturing!"</p>
-                <h5 class="testimonial-author">- Sarah Johnson</h5>
+                <p>"Thank you Bonjour’s teacher for making mother’s day celebration so special. Your effort was much appreciated. All the activities was fantastic. Special thanks to Aparna mam and all staff who made day very fabulous."</p>
+                <h5 class="testimonial-author"> Shalini Mishra </h5>
               </div>
             </div>
 
             <!-- Testimonial 2 -->
             <div class="swiper-slide testimonial-box">
               <div class="testimonial-content">
-                <p>"My daughter loves going to Bonjour! She has made so many friends and is learning so much through
-                  play."</p>
-                <h5 class="testimonial-author">- Michael Smith</h5>
+                <p>"Hi, My daughter have grown so much ever since they joined the school We've even noticed their positive school values carrying over at home. It was a good decision. She has grown and developed their personality tremendously both knowledge-wise and behaviour-wise in just an year."</p>
+                <h5 class="testimonial-author">Ashish Awasthi </h5>
               </div>
             </div>
 
             <!-- Testimonial 3 -->
             <div class="swiper-slide testimonial-box">
               <div class="testimonial-content">
-                <p>"The curriculum is fantastic, and I appreciate the focus on both education and emotional
-                  development."</p>
-                <h5 class="testimonial-author">- Emily Davis</h5>
+                <p>"Bonjour kids school is very nice for kids. It's a very good for little minds they learn many activities and the staff is very cooperative and loving"</p>
+                <h5 class="testimonial-author">Shalini Tiwari Educator </h5>
               </div>
             </div>
 
             <!-- Testimonial 4 -->
             <div class="swiper-slide testimonial-box">
               <div class="testimonial-content">
-                <p>"A great place for kids to learn and grow! The staff is amazing and truly cares about each child."
+                <p>"Amazing place with overall development of your child.... you can choose this school without having a second thought about it."
                 </p>
-                <h5 class="testimonial-author">- John Doe</h5>
+                <h5 class="testimonial-author">shraddha pandey </h5>
               </div>
             </div>
 
@@ -1175,40 +1207,12 @@
             </button>
           </form>
         </div>
-        <div class="contact-socials">
-          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-        </div>
+        
       </div>
     </section>
 <!---------------------------------------------------------------------------
-                      BACKGROUND SHAPE ANIMTION 
+                       LOCATE OUR OFFICE 
 ----------------------------------------------------------------------------->
-    <div class="floating-bg">
-      <!-- Circles -->
-      <div class="bg-shape circle circle1"></div>
-      <div class="bg-shape circle circle2"></div>
-
-      <!-- Rings -->
-      <div class="bg-shape ring ring1"></div>
-      <div class="bg-shape ring ring2"></div>
-
-      <!-- Triangles -->
-      <div class="bg-shape triangle triangle1"></div>
-      <div class="bg-shape triangle triangle2"></div>
-
-      <!-- Squares -->
-      <div class="bg-shape square square2"></div>
-
-    </div>
-
-
-
-
-
-
-    <!-- Locate Our Office Start -->
     <div class="container">
         <div class="row">
             <div class="col-lg-12 align-self-center">
@@ -1252,7 +1256,7 @@
                                                 </li>
                                                 <li>
                                                     <p><i class="fa fa-envelope"></i> <strong>Email:</strong>
-                                                        bonjourkidzplayschool@gmail.com</p>
+                                                        bonjour   playschool@gmail.com</p>
                                                 </li>
                                             </ul>
                                         </div>
@@ -1269,7 +1273,7 @@
                                                 </li>
                                                 <li>
                                                     <p><i class="fa fa-envelope"></i> <strong>Email:</strong>
-                                                        bonjourkidzplayschool@gmail.com</p>
+                                                        bonjour   playschool@gmail.com</p>
                                                 </li>
                                             </ul>
                                         </div>
@@ -1287,7 +1291,7 @@
                                                 </li>
                                                 <li>
                                                     <p><i class="fa fa-envelope"></i> <strong>Email:</strong>
-                                                        bonjourkidzplayschool@gmail.com</p>
+                                                        bonjour   playschool@gmail.com</p>
                                                 </li>
                                             </ul>
                                         </div>
@@ -1362,7 +1366,49 @@
             </div>
         </div>
     </div>
-    <!-- Locate Our Office End -->
+    <script>
+    function openTab(tabName) {
+        var i, tabContent;
+        var displayContainer = document.getElementById('display-container');
+        displayContainer.style.display = 'block';
+
+        // Hide all tab contents
+        tabContent = document.getElementsByClassName("tab-content");
+        for (i = 0; i < tabContent.length; i++) {
+            tabContent[i].style.display = "none";
+        }
+
+        // Get the selected tab's content and show it in the display container
+        var selectedTabContent = document.getElementById(tabName).innerHTML;
+        displayContainer.innerHTML = selectedTabContent;
+    }
+
+    // Call this on page load
+    window.onload = function () {
+        openTab('tab0'); // Automatically opens Cherry County on load
+    };
+</script>
+
+<!---------------------------------------------------------------------------
+                      BACKGROUND SHAPE ANIMATION 
+----------------------------------------------------------------------------->
+       <div class="floating-bg">
+      <!-- Circles -->
+      <div class="bg-shape circle circle1"></div>
+      <div class="bg-shape circle circle2"></div>
+
+      <!-- Rings -->
+      <div class="bg-shape ring ring1"></div>
+      <div class="bg-shape ring ring2"></div>
+
+      <!-- Triangles -->
+      <div class="bg-shape triangle triangle1"></div>
+      <div class="bg-shape triangle triangle2"></div>
+
+      <!-- Squares -->
+      <div class="bg-shape square square2"></div>
+
+    </div> 
 
   <!-- Back to Top -->
   <a href="#" class="btn btn-primary border-3 border-primary rounded-circle back-to-top"><i
