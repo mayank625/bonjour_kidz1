@@ -10,7 +10,7 @@ document.write(`
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav mx-auto ">
                     <a href="index.html" class="nav-item nav-link  ">Home</a>
-                    <a href="about.html" class="nav-item nav-link">About Us</a>
+                    <a href="about.html" class="nav-item nav-link">About Us</a> 
                     <a href="programs.html" class="nav-item nav-link">Programs</a>
                     <a href="celebrations.html" class="nav-item nav-link">Celebrations</a>
                     <a href="gallery.html" class="nav-item nav-link">Gallery</a>

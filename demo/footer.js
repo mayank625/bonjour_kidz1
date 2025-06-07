@@ -31,104 +31,102 @@ document.write(`
             </div>
         </div>
     </div>
-    <div class="container">
-        <div class="copyright">
-            <div class="row">
-                <div class="col-sm-6 text-center text-md-start mb-3 mb-md-0">
-                    <p style="font-size: smaller;">© 2025 Bonjour Kidz Play School & Day Care. All rights reserved | Design by <span style="color: #008CBA;"><a href=""> EGT</a></span></p>
+          <div class="container">
+              <div class="copyright">
+                  <div class="row">
+                      <div class="col-sm-6 text-center text-md-start mb-3 mb-md-0">
+                          <p style="font-size: smaller;">© 2025 Bonjour Kidz Play School & Day Care. All rights reserved | Design by <span style="color: #008CBA;"><a href=""> EGT</a></span></p>
+                      </div>
+                      <div class="col-md-6 text-center text-md-end">
+                          <div class="footer-menu">
+                              <a href="#">Home</a>
+                              <a href="#">Cookies</a>
+                              <a href="#">Help</a>
+                              <a href="#">FQAs</a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+</div>
+          <!-- futr -->
+            <div class="futr">
+                <!-- Social Media Icons -->
+                <div class="social-icons"></div>
+                <!-- Action Links with icons and slash -->
+                <div class="action-links">
+                    <!-- Join Us Button -->
+                    <a href="#" class="btn btn-primary rounded-pill px-3" data-bs-toggle="modal" data-bs-target="#admission">
+                        <img src="img/admission_icon.png" alt="Admission Icon" /> Admission Enquiry
+                    </a>
+                    <div class="slash">|</div>
+                    <a href="franchise.html"><img src="img/start-a-franchise.png" alt="Franchise Icon" /> Start a Franchise</a>
                 </div>
-                <div class="col-md-6 text-center text-md-end">
-                    <div class="footer-menu">
-                        <a href="#">Home</a>
-                        <a href="#">Cookies</a>
-                        <a href="#">Help</a>
-                        <a href="#">FQAs</a>
-                    </div>
-                </div>
+                <!-- Right End Section -->
+                <div class="right-end"></div>
             </div>
-        </div>
-    </div>
-</div>
-<!-- futr -->
-<div class="futr">
-    <!-- Social Media Icons -->
-    <div class="social-icons"></div>
-    <!-- Action Links with icons and slash -->
-    <div class="action-links">
-        <!-- Join Us Button -->
-        <a href="#" class="btn btn-primary rounded-pill px-3" data-bs-toggle="modal" data-bs-target="#admission">
-            <img src="img/admission_icon.png" alt="Admission Icon" /> Admission Enquiry
-        </a>
-        <div class="slash">|</div>
-        <a href="franchise.html"><img src="img/start-a-franchise.png" alt="Franchise Icon" /> Start a Franchise</a>
-    </div>
-    <!-- Right End Section -->
-    <div class="right-end"></div>
-</div>
-<!-- futr END -->
+            <!-- futr END -->
 
 
-         
-<!-- Footer End -->
-
-<!-- Modal -->
-    <div class="modal fade" id="admission" data-bs-backdrop="false" 
-        tabindex="-1" aria-labelledby="joinUsModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="joinUsModalLabel">Admission Enquiry Form</h5>
-                    <button type="button" class="btn-danger color-danger btn-close " data-bs-dismiss="modal" aria-label="Close" ></button>
-                </div>
-                <div class="modal-body">
-                   
-
-<div class="form-wrapper "  >
-  <form id="admission">
-    <div class="mb-3">
-      <label for="name" class="form-label">
-        <i class="fa fa-user form-icon"></i> Child's Name
-      </label>
-      <input type="text" class="form-control" id="name" placeholder="e.g., Aarav or Meera" required>
-    </div>
-
-    <div class="mb-3">
-      <label for="email" class="form-label">
-        <i class="fa fa-envelope form-icon"></i> Parent's Email
-      </label>
-      <input type="email" class="form-control" id="email" placeholder="example@mail.com" required>
-    </div>
-
-    <div class="mb-3">
-      <label for="phone" class="form-label">
-        <i class="fa fa-phone form-icon"></i> Contact Number
-      </label>
-      <input type="tel" class="form-control" id="phone" placeholder="10-digit mobile number" maxlength="10" required>
-    </div>
-
-    <div class="mb-3">
-      <label for="message" class="form-label">
-        <i class="fa fa-comment form-icon"></i> Message
-      </label>
-      <textarea class="form-control" id="message" rows="3" placeholder="Write your query..." required></textarea>
-    </div>
-
-    <div class="text-center">
-      <button type="submit" class="btn btn-danger">
-        <i class="fa fa-paper-plane"></i> Submit
-      </button>
-      <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
-        <i class="fa fa-times"></i> Close
-      </button>
-    </div>
-  </form>
-</div>
 
                 </div>
             </div>
         </div>
     </div>
 `)
+ document.write(`
+    <!-- Modal -->
+    <div class="modal fade" id="admission" data-bs-backdrop="true" 
+        tabindex="-1" aria-labelledby="joinUsModalLabel" aria-hidden="true" style="z-index: 1050;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-light">
+                    <h5 class="modal-title" id="joinUsModalLabel">Admission Enquiry Form</h5>
+                    <button type="button" class="btn-danger color-danger btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body ">
+                    <div class="form-wrapper">
+                        <form id="admission">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">
+                                    <i class="fa fa-user form-icon"></i> Child's Name
+                                </label>
+                                <input type="text" class="form-control" id="name" placeholder="e.g., Aarav or Meera" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">
+                                    <i class="fa fa-envelope form-icon"></i> Parent's Email
+                                </label>
+                                <input type="email" class="form-control" id="email" placeholder="example@mail.com" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="phone" class="form-label">
+                                    <i class="fa fa-phone form-icon"></i> Contact Number
+                                </label>
+                                <input type="tel" class="form-control" id="phone" placeholder="10-digit mobile number" maxlength="10" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">
+                                    <i class="fa fa-comment form-icon"></i> Message
+                                </label>
+                                <textarea class="form-control" id="message" rows="3" placeholder="Write your query..." required></textarea>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-danger">
+                                    <i class="fa fa-paper-plane"></i> Submit
+                                </button>
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+                                    <i class="fa fa-times"></i> Close
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+`);
+
 const style = document.createElement('style');
 style.innerHTML = `
   .form-wrapper {
@@ -148,8 +146,9 @@ style.innerHTML = `
     padding: 30px;
     border-radius: 15px;
   }
-    
- `;
+`;
+document.head.appendChild(style);
+
 document.head.appendChild(style);
 /*   <div class="col-lg-3 col-md-6">
                         <h3 class="text-white mb-4">Our Branches</h3>
